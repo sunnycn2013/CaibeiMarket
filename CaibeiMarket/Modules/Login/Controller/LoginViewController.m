@@ -12,6 +12,7 @@
 
 @property(nonatomic,strong)IBOutlet UITextField  * telephoneNum;
 @property(nonatomic,strong)IBOutlet UIButton     * loginButton;
+@property (weak, nonatomic) IBOutlet UIButton    * registButton;
 
 @end
 
@@ -22,6 +23,7 @@
     self.title = @"登录";    
     [_telephoneNum setPlaceholder:@"请输入手机号"];
     _loginButton.layer.cornerRadius = 15.0;
+    _registButton.layer.cornerRadius = 15.0;
     
     UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeKeyBoard:)];
     [self.view addGestureRecognizer:tapGesture];
@@ -59,6 +61,11 @@
 - (IBAction)loginAction:(id)sender
 {
     KPostNotification(KNotificationLoginStateChange, @YES);
+}
+
+- (IBAction)registAction:(id)sender
+{
+    
 }
 
 - (void)didReceiveMemoryWarning {

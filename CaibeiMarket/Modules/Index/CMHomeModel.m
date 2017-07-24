@@ -7,7 +7,31 @@
 //
 
 #import "CMHomeModel.h"
+#import "CMHomeBanner.h"
+#import "CMHomeApp.h"
+#import "CMHomeContent.h"
 
 @implementation CMHomeModel
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self initData];
+    }
+    return self;
+}
+
+- (void)initData
+{
+    CMHomeBanner * banner = [CMHomeBanner new];
+    CMHomeApp * app = [CMHomeApp new];
+    CMHomeContent  * content = [CMHomeContent new];
+    
+    self.homeModels = [NSMutableArray array];
+    [self.homeModels addObject:banner];
+    [self.homeModels addObject:app];
+    [self.homeModels addObject:content];
+
+}
 @end

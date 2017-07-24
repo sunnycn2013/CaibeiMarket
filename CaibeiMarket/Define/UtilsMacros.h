@@ -28,6 +28,7 @@
 #define Iphone6ScaleHeight KScreenHeight/667.0
 //根据ip6的屏幕来拉伸
 #define kRealValue(with) ((with)*(KScreenWidth/375.0f))
+#define kIPhone6Scale(with) ((with)*(KScreenWidth/375.0f))
 
 //强弱引用
 #define kWeakSelf(type)  __weak typeof(type) weak##type = type;

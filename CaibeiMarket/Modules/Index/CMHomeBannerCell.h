@@ -1,5 +1,5 @@
 //
-//  AMHomeBannerCell.h
+//  CMHomeBannerCell.h
 //  CaibeiMarket
 //
 //  Created by icaibei on 2017/7/21.
@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CMHomeRenderProtocol.h"
 
-@interface AMHomeBannerCell : NSObject
+@interface CMHomeBannerCell : UITableViewCell<CMHomeRenderProtocol>
 
 @end

@@ -17,6 +17,7 @@ PODS:
   - iCarousel (1.8.3)
   - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
+  - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
@@ -32,6 +33,7 @@ DEPENDENCIES:
   - iCarousel (~> 1.8.3)
   - Masonry (~> 1.0.2)
   - MBProgressHUD (~> 1.0.0)
+  - MJExtension (~> 3.0.13)
   - MJRefresh (~> 3.1.12)
   - SDWebImage (~> 4.0.0)
   - YTKNetwork (~> 2.0.3)
@@ -42,11 +44,12 @@ SPEC CHECKSUMS:
   iCarousel: c5b682d2f6ef3338479e0cd87b5bd4847e73e37e
   Masonry: 1a8c8de06540777a02c86cc2abfc3950ede7cd22
   MBProgressHUD: 797fffbdf83b36406236328cc560949edd850dcf
+  MJExtension: d9fbee1fb9025889dae7d7096e6ecb9d0ff36121
   MJRefresh: 11e1c9d86f2093ddcdbda7836bc2da477ddf568d
   SDWebImage: 6b64a5725896e9de8afbf4ed67d8e1ed331fd11c
   YTKNetwork: 98a278da5b3dd99b20c25a5e1cbb6fa9153d0f5b
   YYKit: c6f89a5e8008fa83a13f9b89fda1ff6ce191eb08
 
-PODFILE CHECKSUM: 8c53fa1b1d428b75960ad54bfe71d525ab352a9d
+PODFILE CHECKSUM: cd6e4452f44fb367ab5ef1435e804c79cc4fadd9
 
 COCOAPODS: 1.1.1

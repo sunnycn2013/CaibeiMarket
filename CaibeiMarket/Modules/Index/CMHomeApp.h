@@ -1,16 +1,14 @@
 //
-//  CMHomeModel.h
+//  CMHomeApp.h
 //  CaibeiMarket
 //
-//  Created by icaibei on 2017/7/21.
+//  Created by alibaba on 2017/7/23.
 //  Copyright © 2017年 qianji. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "CMHomeDataProtocol.h"
 
-@interface CMHomeModel : NSObject
-
-@property (nonatomic,strong)NSMutableArray * homeModels;
+@interface CMHomeApp : NSObject<CMHomeDataProtocol>
 
 @end

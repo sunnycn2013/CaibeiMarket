@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CMHomeRenderProtocol.h"
 
-@interface CMHomeAppCell : NSObject
+@interface CMHomeAppCell : UITableViewCell<CMHomeRenderProtocol>
 
 @end

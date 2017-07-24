@@ -7,10 +7,25 @@
 //
 
 #import "CMHomeViewController.h"
+#import "CMHomeBannerCell.h"
+#import "CMHomeAppCell.h"
+#import "CMHomeContentCell.h"
+
+#import "CMHomeModel.h"
+
+#import "CMHomeDataProtocol.h"
 
 #define itemWidthHeight ((kScreenWidth-10)/2)
 
+NSString * const kCMHomeBannerCellIdentifier       = @"HomeBanner";
+NSString * const kCMHomeFastEntranceCellIdentifier = @"HomeFastEntrance";
+NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
+
+
 @interface CMHomeViewController ()
+
+@property (nonatomic,strong) NSArray * dataArray;
+@property (nonatomic,strong) CMHomeModel * data;
 
 @end
 
@@ -23,6 +38,12 @@
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self];
     [self.view addSubview:self.tableView];
+    self.dataArray = @[kCMHomeBannerCellIdentifier,kCMHomeFastEntranceCellIdentifier,kCMHomeContentCellIdentifier];
+    
+    self.data = [[CMHomeModel alloc] init];
+    
+//    self.edgesForExtendedLayout = UIRectEdgeAll;
+    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -39,7 +60,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void)setupUI
@@ -52,24 +72,37 @@
     });
 }
 #pragma mark - UITableViewDelegate,UITableViewDataSource
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return [self.dataArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString * cellIndetifier = @"cellIndetifier";
+    NSString * cellIndetifier = [self.dataArray objectAtIndex:indexPath.row];
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIndetifier];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndetifier];
+        if ([cellIndetifier isEqualToString:kCMHomeBannerCellIdentifier]) {
+            cell = [[CMHomeBannerCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndetifier];
+        }else if ([cellIndetifier isEqualToString:kCMHomeFastEntranceCellIdentifier]){
+            cell = [[CMHomeAppCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndetifier];
+        }else if ([cellIndetifier isEqualToString:kCMHomeContentCellIdentifier]){
+            cell = [[CMHomeContentCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndetifier];
+        }
+        
     }
-    cell.textLabel.text = @"aaa";
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    id<CMHomeDataProtocol> model = [self.data.homeModels objectAtIndex:indexPath.row];
+    return [model heightForRowCell];
 }
 
 #pragma mark - set get
