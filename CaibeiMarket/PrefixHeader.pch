@@ -1,0 +1,40 @@
+//
+//  PrefixHeader.pch
+//  CaibeiMarket
+//
+//  Created by icaibei on 2017/7/21.
+//  Copyright © 2017年 qianji. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+//全局宏
+#import "UtilsMacros.h"
+#import "URLMacros.h"
+#import "FontAndColorMacros.h"
+#import "ThirdMacros.h"
+#import "CommonMacros.h"
+
+//基础类
+#import "AppDelegate.h"
+#import "AppDelegate+AppService.h"
+#import "RootViewController.h"
+#import "RootNavigationController.h"
+#import "MBProgressHUD+XY.h"
+#import "PPNetworkHelper.h"
+#import "AppManager.h"
+#import "ShareManager.h"
+#import "UserManager.h"
+#import "UIButton+XYButton.h"
+
+//第三方
+#import <YYKit.h>
+#import <MBProgressHUD.h>
+#import <Masonry.h>
+
+#import <MJExtension/MJExtension.h>
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */
