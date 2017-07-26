@@ -4,7 +4,6 @@ require 'cocoapods-multithread-installpod'
 
 source 'https://github.com/CocoaPods/Specs.git'
 
-ali_source 'alibaba-specs-mirror'
 
 platform :ios, '8.0'
 
