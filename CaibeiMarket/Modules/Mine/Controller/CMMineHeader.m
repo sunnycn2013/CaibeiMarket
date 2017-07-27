@@ -11,7 +11,7 @@
 @implementation CMMineHeader
 - (NSString *)identifierAtIndexPath:(NSIndexPath *)indexPath
 {
-    return @"CMMineCell";
+    return @"CMMineHeaderCell";
 }
 
 - (CGFloat)heightForRowAtIndexPath:(NSIndexPath *)indexPath{
