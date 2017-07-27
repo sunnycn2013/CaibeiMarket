@@ -24,6 +24,7 @@
 {
     self.backgroundColor = [UIColor purpleColor];
 }
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated             
 {
     

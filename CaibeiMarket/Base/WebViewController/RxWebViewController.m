@@ -431,4 +431,8 @@
     return _progressView;
 }
 
+- (void)closeItemClicked
+{
+    
+}
 @end

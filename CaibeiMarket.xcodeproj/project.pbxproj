@@ -21,6 +21,10 @@
 		C35220291F243814002707E8 /* CMHomeApp.m in Sources */ = {isa = PBXBuildFile; fileRef = C35220281F243814002707E8 /* CMHomeApp.m */; };
 		C352202C1F243821002707E8 /* CMHomeContent.m in Sources */ = {isa = PBXBuildFile; fileRef = C352202B1F243821002707E8 /* CMHomeContent.m */; };
 		C35220301F245127002707E8 /* CMRegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C352202F1F245127002707E8 /* CMRegistViewController.m */; };
+		C3A4BB5C1F29A2DE0082030A /* CMMineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A4BB5B1F29A2DE0082030A /* CMMineHeaderView.m */; };
+		C3A4BB641F29A88E0082030A /* CMMineItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A4BB631F29A88E0082030A /* CMMineItem.m */; };
+		C3A4BB671F29B8E50082030A /* CMMineHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A4BB661F29B8E50082030A /* CMMineHeader.m */; };
+		C3A4BB6A1F29B9390082030A /* CMMineHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A4BB691F29B9390082030A /* CMMineHeaderCell.m */; };
 		C3B3BBAE1F21AEC9000C9DC8 /* XYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B3BAE01F21AEC8000C9DC8 /* XYButton.m */; };
 		C3B3BBAF1F21AEC9000C9DC8 /* RootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B3BAE31F21AEC8000C9DC8 /* RootNavigationController.m */; };
 		C3B3BBB01F21AEC9000C9DC8 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B3BAE61F21AEC8000C9DC8 /* RootViewController.m */; };
@@ -186,6 +190,16 @@
 		C352202B1F243821002707E8 /* CMHomeContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMHomeContent.m; sourceTree = "<group>"; };
 		C352202E1F245127002707E8 /* CMRegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMRegistViewController.h; sourceTree = "<group>"; };
 		C352202F1F245127002707E8 /* CMRegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMRegistViewController.m; sourceTree = "<group>"; };
+		C3A4BB5A1F29A2DE0082030A /* CMMineHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMineHeaderView.h; sourceTree = "<group>"; };
+		C3A4BB5B1F29A2DE0082030A /* CMMineHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMineHeaderView.m; sourceTree = "<group>"; };
+		C3A4BB5E1F29A7110082030A /* CMRubikCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMRubikCellProtocol.h; sourceTree = "<group>"; };
+		C3A4BB5F1F29A7270082030A /* CMRubikDataProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMRubikDataProtocol.h; sourceTree = "<group>"; };
+		C3A4BB621F29A88E0082030A /* CMMineItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMineItem.h; sourceTree = "<group>"; };
+		C3A4BB631F29A88E0082030A /* CMMineItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMineItem.m; sourceTree = "<group>"; };
+		C3A4BB651F29B8E50082030A /* CMMineHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMineHeader.h; sourceTree = "<group>"; };
+		C3A4BB661F29B8E50082030A /* CMMineHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMineHeader.m; sourceTree = "<group>"; };
+		C3A4BB681F29B9390082030A /* CMMineHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMineHeaderCell.h; sourceTree = "<group>"; };
+		C3A4BB691F29B9390082030A /* CMMineHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMineHeaderCell.m; sourceTree = "<group>"; };
 		C3B3BADF1F21AEC8000C9DC8 /* XYButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYButton.h; sourceTree = "<group>"; };
 		C3B3BAE01F21AEC8000C9DC8 /* XYButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYButton.m; sourceTree = "<group>"; };
 		C3B3BAE21F21AEC8000C9DC8 /* RootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootNavigationController.h; sourceTree = "<group>"; };
@@ -417,6 +431,8 @@
 			children = (
 				B05C5B791F28E9AB009E5CC6 /* CMMineCell.h */,
 				B05C5B7A1F28E9AB009E5CC6 /* CMMineCell.m */,
+				C3A4BB681F29B9390082030A /* CMMineHeaderCell.h */,
+				C3A4BB691F29B9390082030A /* CMMineHeaderCell.m */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -492,6 +508,42 @@
 				B0D0C97B1F1F9C6900EBA36F /* Info.plist */,
 			);
 			path = CaibeiMarketUITests;
+			sourceTree = "<group>";
+		};
+		C3A4BB591F29A2B60082030A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C3A4BB5A1F29A2DE0082030A /* CMMineHeaderView.h */,
+				C3A4BB5B1F29A2DE0082030A /* CMMineHeaderView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C3A4BB5D1F29A67A0082030A /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				C3A4BB5E1F29A7110082030A /* CMRubikCellProtocol.h */,
+				C3A4BB5F1F29A7270082030A /* CMRubikDataProtocol.h */,
+			);
+			name = Protocol;
+			sourceTree = "<group>";
+		};
+		C3A4BB601F29A84C0082030A /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
+		C3A4BB611F29A85A0082030A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C3A4BB621F29A88E0082030A /* CMMineItem.h */,
+				C3A4BB631F29A88E0082030A /* CMMineItem.m */,
+				C3A4BB651F29B8E50082030A /* CMMineHeader.h */,
+				C3A4BB661F29B8E50082030A /* CMMineHeader.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		C3B3BADD1F21AEC8000C9DC8 /* Base */ = {
@@ -811,6 +863,10 @@
 		C3B3BB561F21AEC8000C9DC8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C3A4BB611F29A85A0082030A /* Model */,
+				C3A4BB601F29A84C0082030A /* Category */,
+				C3A4BB5D1F29A67A0082030A /* Protocol */,
+				C3A4BB591F29A2B60082030A /* View */,
 				B05C5B781F28E982009E5CC6 /* Cell */,
 				C3B3BB571F21AEC8000C9DC8 /* MineViewController.h */,
 				C3B3BB581F21AEC8000C9DC8 /* MineViewController.m */,
@@ -1400,6 +1456,7 @@
 				C3B3BBBF1F21AEC9000C9DC8 /* UserManager.m in Sources */,
 				C3B3BBAF1F21AEC9000C9DC8 /* RootNavigationController.m in Sources */,
 				C3B3BBC11F21AEC9000C9DC8 /* EmitterViewController.m in Sources */,
+				C3A4BB641F29A88E0082030A /* CMMineItem.m in Sources */,
 				C3B3BBB71F21AEC9000C9DC8 /* RootWebViewController.m in Sources */,
 				C3B3BBC31F21AEC9000C9DC8 /* PersonListViewController.m in Sources */,
 				C3B3BC0F1F21AEC9000C9DC8 /* MBProgressHUD+XY.m in Sources */,
@@ -1411,6 +1468,7 @@
 				C3B3BBDA1F21AEC9000C9DC8 /* WaterFlowLayout.m in Sources */,
 				C3B3BBD81F21AEC9000C9DC8 /* PersonListCollectionViewCell.m in Sources */,
 				C3B3BBC51F21AEC9000C9DC8 /* CMHomeViewController.m in Sources */,
+				C3A4BB6A1F29B9390082030A /* CMMineHeaderCell.m in Sources */,
 				C35220301F245127002707E8 /* CMRegistViewController.m in Sources */,
 				C3B3BC101F21AEC9000C9DC8 /* HeaderModel.m in Sources */,
 				C3B3BBB11F21AEC9000C9DC8 /* MainTabBarController.m in Sources */,
@@ -1439,6 +1497,7 @@
 				C3D2E08A1F21DFFB0037CFF3 /* CMHomeContentCell.m in Sources */,
 				C3B3BBB01F21AEC9000C9DC8 /* RootViewController.m in Sources */,
 				C35220291F243814002707E8 /* CMHomeApp.m in Sources */,
+				C3A4BB5C1F29A2DE0082030A /* CMMineHeaderView.m in Sources */,
 				C3B3BC1A1F21AEEE000C9DC8 /* AppDelegate+AppService.m in Sources */,
 				C3B3BBE31F21AEC9000C9DC8 /* MineLogic.m in Sources */,
 				C3B3BBBD1F21AEC9000C9DC8 /* GameInfo.m in Sources */,
@@ -1447,6 +1506,7 @@
 				C3B3BBDE1F21AEC9000C9DC8 /* MakeFriendsLogic.m in Sources */,
 				B05C5B7B1F28E9AB009E5CC6 /* CMMineCell.m in Sources */,
 				C3B3BBBA1F21AEC9000C9DC8 /* AppManager.m in Sources */,
+				C3A4BB671F29B8E50082030A /* CMMineHeader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

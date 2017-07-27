@@ -117,11 +117,12 @@ const NSInteger hideTime = 2;
     hud.mode = MBProgressHUDModeCustomView;
     [hud hideAnimated:YES afterDelay:hideTime];
 }
+
 + (void)hideHUD
 {
-    UIView  *winView =(UIView*)[UIApplication sharedApplication].delegate.window;
-    [self hideAllHUDsForView:winView animated:YES];
-    [self hideAllHUDsForView:[kAppDelegate getCurrentUIVC].view animated:YES];
+//    UIView  *winView =(UIView*)[UIApplication sharedApplication].delegate.window;
+//    [self hideAllHUDsForView:winView animated:YES];
+//    [self hideAllHUDsForView:[kAppDelegate getCurrentUIVC].view animated:YES];
 }
 
 #pragma mark ————— 顶部tip —————

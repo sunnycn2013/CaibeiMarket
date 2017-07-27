@@ -18,6 +18,8 @@
 //#define CNavBgFontColor  [UIColor colorWithHexString:@"000000"]
 
 //绿色主题
+#define CMThemeColor  [UIColor colorWithHexString:@"6F5FD9"]
+
 #define CNavBgColor  [UIColor colorWithHexString:@"6F5FD9"]
 #define CNavBgFontColor  [UIColor colorWithHexString:@"ffffff"]
 

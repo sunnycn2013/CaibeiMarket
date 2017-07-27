@@ -32,7 +32,7 @@
     [navBar setTitleTextAttributes:@{NSForegroundColorAttributeName :CNavBgFontColor, NSFontAttributeName : [UIFont systemFontOfSize:18]}];
     
     //导航栏左右文字主题
-    UIBarButtonItem *barButtonItem = [UIBarButtonItem appearance];
+//    UIBarButtonItem *barButtonItem = [UIBarButtonItem appearance];
     
     //    [barButtonItem setTitleTextAttributes:@{NSForegroundColorAttributeName : KWhiteColor, NSFontAttributeName : [UIFont systemFontOfSize:12]} forState:UIControlStateNormal];
     
@@ -82,7 +82,7 @@
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
     if (self.viewControllers.count > 0) {
-        if ([viewController conformsToProtocol:@protocol(XYTransitionProtocol)] && [self isNeedTransition:viewController]) {
+        if ([(id<XYTransitionProtocol>)viewController conformsToProtocol:@protocol(XYTransitionProtocol)] && [self isNeedTransition:viewController]) {
             viewController.hidesBottomBarWhenPushed = NO;
         }else{
             viewController.hidesBottomBarWhenPushed = YES;
