@@ -2,7 +2,7 @@
 //  CMValidationCodeViewController.m
 //  CaibeiMarket
 //
-//  Created by alibaba on 2017/7/23.
+//  Created by icaibei on 2017/7/23.
 //  Copyright © 2017年 qianji. All rights reserved.
 //
 
