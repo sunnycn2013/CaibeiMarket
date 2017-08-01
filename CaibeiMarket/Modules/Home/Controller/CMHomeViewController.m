@@ -37,6 +37,8 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.tableView.mj_header = self.header;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.showsVerticalScrollIndicator = NO;
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self];
     [self.view addSubview:self.tableView];

@@ -32,13 +32,13 @@
 - (void)setUI
 {
     CGFloat width = KScreenWidth;
-    CGFloat height = kIPhone6Scale(250);
+    CGFloat height = kIPhone6Scale(176.0);
     _scrollView = [[iCarousel alloc] initWithFrame:CGRectMake(0, 0, width, height)];
     _scrollView.delegate = self;
     _scrollView.dataSource = self;
     _scrollView.pagingEnabled = YES;
 
-    _scrollView.type = iCarouselTypeRotary;//iCarouselTypeLinear;
+    _scrollView.type = iCarouselTypeInvertedRotary;//iCarouselTypeLinear;
     _scrollView.pagingEnabled = YES;
     _scrollView.bounceDistance = 0.5;
     _scrollView.decelerationRate = 0.5;
@@ -53,7 +53,6 @@
     [_pageControl setCurrentPage:0];
     [self addSubview:_pageControl];
     
-    _scrollView.backgroundColor = [UIColor redColor];
     self.contentView.backgroundColor = [UIColor purpleColor];
 }
 
@@ -71,8 +70,8 @@
     UIImageView * reuseView = (UIImageView *)view;
     if (!reuseView) {
         reuseView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, width, height)];
-        [reuseView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%ld.jpg",index]]];
-        [reuseView setContentMode:UIViewContentModeScaleAspectFill];
+        [reuseView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"index_banner"]]];
+//        [reuseView setContentMode:UIViewContentModeScaleAspectFill];
         reuseView.backgroundColor = [self randomColor];
     }
     return reuseView;

@@ -10,5 +10,7 @@
 #import "CMHomeDataProtocol.h"
 
 @interface CMHomeApp : NSObject<CMHomeDataProtocol>
+@property (nonatomic,strong)NSString * title;
+@property (nonatomic,strong)NSString * imageName;
 
 @end

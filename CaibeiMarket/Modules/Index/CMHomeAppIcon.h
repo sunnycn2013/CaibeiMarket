@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CMHomeApp.h"
 
 @interface CMHomeAppIcon : UIView
+
+@property (nonatomic,strong)CMHomeApp * data;
 
 @end

@@ -93,7 +93,8 @@
         self.mainTabBar = nil;
         UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         
-        LoginViewController * login = [board instantiateViewControllerWithIdentifier:@"LoginViewController"];
+//        LoginViewController * login = [board instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        LoginViewController * login = [[LoginViewController alloc] init];
 
         RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:login];
         

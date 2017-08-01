@@ -8,6 +8,12 @@
 
 #import "CMHomeAppCell.h"
 #import "CMHomeAppIcon.h"
+#import "CMHomeApp.h"
+
+@interface CMHomeAppCell ()
+
+@property (nonatomic,strong)NSArray * data;
+@end
 
 @implementation CMHomeAppCell
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -23,10 +29,29 @@
 
 - (void)setUI
 {
-    self.backgroundColor = [UIColor greenColor];
+    CMHomeApp * app1 = [[CMHomeApp alloc] init];
+    app1.title = @"常见问题";
+    app1.imageName = @"icon_01";
+
+    
+    CMHomeApp * app2 = [[CMHomeApp alloc] init];
+    app2.title = @"关于我们";
+    app2.imageName = @"icon_01";
+    
+    CMHomeApp * app3 = [[CMHomeApp alloc] init];
+    app3.title = @"新开平台";
+    app3.imageName = @"icon_03";
+
+    CMHomeApp * app4 = [[CMHomeApp alloc] init];
+    app4.title = @"活动优惠";
+    app4.imageName = @"icon_04";
+    
+    self.data = @[app1,app2,app3,app4];
+    
+    self.backgroundColor = [UIColor colorWithHexString:@"#FFFFFF"];
     CGFloat paddingLeft = 20;
-    CGFloat iconWidth = (KScreenWidth - 40 - 30)/4;//192
-    CGFloat iconHeight = kIPhone6Scale(135);//192
+    CGFloat iconWidth = (KScreenWidth - 40 - 33)/4;//192
+    CGFloat iconHeight = kIPhone6Scale(95);//
 
     CGFloat gapSpace = 10;
     
@@ -35,6 +60,7 @@
         CGFloat iconX = paddingLeft + i * (iconWidth + gapSpace);
         CGRect frame = CGRectMake(iconX, 0, iconWidth, iconHeight);
         CMHomeAppIcon * app = [[CMHomeAppIcon alloc] initWithFrame:frame];
+        app.data = [self.data objectAtIndex:i];
         [self addSubview:app];
     }
     

@@ -1,83 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Twx-Oy-SaB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
-        <scene sceneID="U8g-8v-lG9">
-            <objects>
-                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Twx-Oy-SaB" customClass="LoginViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Jc8-Bs-Fgu"/>
-                        <viewControllerLayoutGuide type="bottom" id="kBe-gT-jjB"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="sSg-mL-FyD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xOc-dt-EaZ">
-                                <rect key="frame" x="62" y="178" width="251" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vkk-Ha-aM9">
-                                <rect key="frame" x="62" y="284" width="251" height="30"/>
-                                <color key="backgroundColor" red="0.84958511590957642" green="0.41724759340286255" blue="0.90778499841690063" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="bc8-1Z-EoZ"/>
-                                </constraints>
-                                <state key="normal" title="登陆"/>
-                                <connections>
-                                    <action selector="loginAction:" destination="Twx-Oy-SaB" eventType="touchUpInside" id="gkq-TQ-cnj"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GfS-Kg-e0O">
-                                <rect key="frame" x="62" y="373" width="251" height="30"/>
-                                <color key="backgroundColor" red="0.84958511589999997" green="0.41724759340000001" blue="0.90778499840000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="T9I-Nd-FUu"/>
-                                    <constraint firstAttribute="width" constant="251" id="TKQ-aa-iM0"/>
-                                </constraints>
-                                <state key="normal" title="注册"/>
-                                <connections>
-                                    <action selector="registAction:" destination="Twx-Oy-SaB" eventType="touchUpInside" id="m1Y-i2-vFt"/>
-                                    <segue destination="bkF-bR-6jt" kind="show" id="1C7-Ui-vNZ"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.34387311058280096" green="0.84889385498342873" blue="0.91661149263381958" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="GfS-Kg-e0O" secondAttribute="trailing" constant="46" id="5cx-4o-fDc"/>
-                            <constraint firstItem="xOc-dt-EaZ" firstAttribute="width" secondItem="sSg-mL-FyD" secondAttribute="height" multiplier="251:667" id="JYY-HT-io2"/>
-                            <constraint firstItem="Vkk-Ha-aM9" firstAttribute="leading" secondItem="sSg-mL-FyD" secondAttribute="leadingMargin" constant="46" id="Tbc-wM-fUG"/>
-                            <constraint firstItem="GfS-Kg-e0O" firstAttribute="leading" secondItem="sSg-mL-FyD" secondAttribute="leadingMargin" constant="46" id="dqh-Bz-rzI"/>
-                            <constraint firstItem="xOc-dt-EaZ" firstAttribute="top" secondItem="Jc8-Bs-Fgu" secondAttribute="bottom" constant="114" id="gZU-x1-tpr"/>
-                            <constraint firstItem="Vkk-Ha-aM9" firstAttribute="top" secondItem="xOc-dt-EaZ" secondAttribute="bottom" constant="76" id="iCR-fQ-acP"/>
-                            <constraint firstItem="GfS-Kg-e0O" firstAttribute="top" secondItem="Vkk-Ha-aM9" secondAttribute="bottom" constant="59" id="t2d-qK-eQv"/>
-                            <constraint firstItem="xOc-dt-EaZ" firstAttribute="leading" secondItem="sSg-mL-FyD" secondAttribute="leadingMargin" constant="46" id="yXo-Os-yYu"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Vkk-Ha-aM9" secondAttribute="trailing" constant="46" id="zT1-iC-AdO"/>
-                        </constraints>
-                    </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <connections>
-                        <outlet property="loginButton" destination="Vkk-Ha-aM9" id="ViT-cG-nVf"/>
-                        <outlet property="registButton" destination="GfS-Kg-e0O" id="ocx-Nz-6ZG"/>
-                        <outlet property="telephoneNum" destination="xOc-dt-EaZ" id="Tvn-Y2-k9X"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="h3I-ZN-jcS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2009" y="-654"/>
-        </scene>
         <!--Regist View Controller-->
         <scene sceneID="lBd-5E-lTe">
             <objects>
@@ -163,7 +95,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.34387311059999998" green="0.84889385500000003" blue="0.91661149259999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.96460121870040894" green="0.96476620435714722" blue="0.96459084749221802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="uBY-h5-6fO" secondAttribute="trailing" constant="46" id="Gbe-fr-xbl"/>
                             <constraint firstItem="moI-G9-ptx" firstAttribute="top" secondItem="aN2-u2-xKt" secondAttribute="bottom" constant="41" id="Zd6-Vt-NOF"/>
@@ -182,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rHN-uy-ddA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-383.19999999999999" y="-636.4317841079461"/>
+            <point key="canvasLocation" x="-241" y="-636"/>
         </scene>
         <!--Confirm Pwd View Controller-->
         <scene sceneID="Ckn-h4-fao">

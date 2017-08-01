@@ -60,16 +60,16 @@
 //    HomeViewController *homeVC = [[HomeViewController alloc]init];
     CMHomeViewController *homeVC = [CMHomeViewController new];
 //    PersonListViewController *homeVC = [[PersonListViewController alloc]init];
-    [self setupChildViewController:homeVC title:@"首页" imageName:@"icon_tabbar_homepage" seleceImageName:@"icon_tabbar_homepage_selected"];
+    [self setupChildViewController:homeVC title:@"首页" imageName:@"tab_index_normal" seleceImageName:@"tab_index_light"];
     
     MakeFriendsViewController *makeFriendVC = [[MakeFriendsViewController alloc]init];
-    [self setupChildViewController:makeFriendVC title:@"贷款" imageName:@"icon_tabbar_onsite" seleceImageName:@"icon_tabbar_onsite_selected"];
+    [self setupChildViewController:makeFriendVC title:@"贷款" imageName:@"tab_dai_normal" seleceImageName:@"tab_dai_light"];
     
     MsgViewController *msgVC = [[MsgViewController alloc]init];
-    [self setupChildViewController:msgVC title:@"发现" imageName:@"icon_tabbar_merchant_normal" seleceImageName:@"icon_tabbar_merchant_selected"];
+    [self setupChildViewController:msgVC title:@"发现" imageName:@"tab_find_normal" seleceImageName:@"tab_find_light"];
     
     MineViewController *mineVC = [[MineViewController alloc]init];
-    [self setupChildViewController:mineVC title:@"我的" imageName:@"icon_tabbar_mine" seleceImageName:@"icon_tabbar_mine_selected"];
+    [self setupChildViewController:mineVC title:@"我的" imageName:@"tab_my_normal" seleceImageName:@"tab_my_light"];
     
     self.viewControllers = _VCS;
 }
