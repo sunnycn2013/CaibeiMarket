@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		B05C5B7B1F28E9AB009E5CC6 /* CMMineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B05C5B7A1F28E9AB009E5CC6 /* CMMineCell.m */; };
+		B05C5B7E1F2B2485009E5CC6 /* CMMineDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = B05C5B7D1F2B2485009E5CC6 /* CMMineDefine.m */; };
+		B05C5B821F2B27F2009E5CC6 /* CMSetUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B05C5B811F2B27F2009E5CC6 /* CMSetUpViewController.m */; };
+		B074CEFC1F2F6D42001022F8 /* PPNetworkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B074CEF91F2F6D42001022F8 /* PPNetworkCache.m */; };
+		B074CEFD1F2F6D42001022F8 /* PPNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B074CEFB1F2F6D42001022F8 /* PPNetworkHelper.m */; };
 		B0D0C9531F1F9C6900EBA36F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D0C9521F1F9C6900EBA36F /* main.m */; };
 		B0D0C9561F1F9C6900EBA36F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D0C9551F1F9C6900EBA36F /* AppDelegate.m */; };
 		B0D0C95F1F1F9C6900EBA36F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0D0C95D1F1F9C6900EBA36F /* Main.storyboard */; };
@@ -75,7 +79,6 @@
 		C3B3BBE01F21AEC9000C9DC8 /* MsgLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B3BB541F21AEC8000C9DC8 /* MsgLogic.m */; };
 		C3B3BBE11F21AEC9000C9DC8 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B3BB581F21AEC8000C9DC8 /* MineViewController.m */; };
 		C3B3BBE21F21AEC9000C9DC8 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B3BB5A1F21AEC8000C9DC8 /* ProfileViewController.m */; };
-		C3B3BBE31F21AEC9000C9DC8 /* MineLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B3BB5D1F21AEC8000C9DC8 /* MineLogic.m */; };
 		C3B3BBE61F21AEC9000C9DC8 /* DazFire.png in Resources */ = {isa = PBXBuildFile; fileRef = C3B3BB641F21AEC8000C9DC8 /* DazFire.png */; };
 		C3B3BBE71F21AEC9000C9DC8 /* MBHUD_Error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3B3BB661F21AEC8000C9DC8 /* MBHUD_Error@2x.png */; };
 		C3B3BBE81F21AEC9000C9DC8 /* MBHUD_Error@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3B3BB671F21AEC8000C9DC8 /* MBHUD_Error@3x.png */; };
@@ -172,6 +175,14 @@
 		AFE290C7B06501859383EF32 /* Pods-CaibeiMarketUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaibeiMarketUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CaibeiMarketUITests/Pods-CaibeiMarketUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B05C5B791F28E9AB009E5CC6 /* CMMineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMineCell.h; sourceTree = "<group>"; };
 		B05C5B7A1F28E9AB009E5CC6 /* CMMineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMineCell.m; sourceTree = "<group>"; };
+		B05C5B7C1F2B2485009E5CC6 /* CMMineDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMineDefine.h; sourceTree = "<group>"; };
+		B05C5B7D1F2B2485009E5CC6 /* CMMineDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMineDefine.m; sourceTree = "<group>"; };
+		B05C5B801F2B27F2009E5CC6 /* CMSetUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMSetUpViewController.h; sourceTree = "<group>"; };
+		B05C5B811F2B27F2009E5CC6 /* CMSetUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMSetUpViewController.m; sourceTree = "<group>"; };
+		B074CEF81F2F6D42001022F8 /* PPNetworkCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNetworkCache.h; sourceTree = "<group>"; };
+		B074CEF91F2F6D42001022F8 /* PPNetworkCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNetworkCache.m; sourceTree = "<group>"; };
+		B074CEFA1F2F6D42001022F8 /* PPNetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNetworkHelper.h; sourceTree = "<group>"; };
+		B074CEFB1F2F6D42001022F8 /* PPNetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNetworkHelper.m; sourceTree = "<group>"; };
 		B0D0C94E1F1F9C6900EBA36F /* CaibeiMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaibeiMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0D0C9521F1F9C6900EBA36F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B0D0C9541F1F9C6900EBA36F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -301,8 +312,6 @@
 		C3B3BB581F21AEC8000C9DC8 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		C3B3BB591F21AEC8000C9DC8 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		C3B3BB5A1F21AEC8000C9DC8 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
-		C3B3BB5C1F21AEC8000C9DC8 /* MineLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineLogic.h; sourceTree = "<group>"; };
-		C3B3BB5D1F21AEC8000C9DC8 /* MineLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineLogic.m; sourceTree = "<group>"; };
 		C3B3BB641F21AEC8000C9DC8 /* DazFire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DazFire.png; sourceTree = "<group>"; };
 		C3B3BB661F21AEC8000C9DC8 /* MBHUD_Error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MBHUD_Error@2x.png"; sourceTree = "<group>"; };
 		C3B3BB671F21AEC8000C9DC8 /* MBHUD_Error@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MBHUD_Error@3x.png"; sourceTree = "<group>"; };
@@ -459,6 +468,34 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
+		B05C5B7F1F2B27B4009E5CC6 /* SetUp */ = {
+			isa = PBXGroup;
+			children = (
+				B05C5B801F2B27F2009E5CC6 /* CMSetUpViewController.h */,
+				B05C5B811F2B27F2009E5CC6 /* CMSetUpViewController.m */,
+			);
+			name = SetUp;
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B074CEF71F2F6D42001022F8 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				B074CEF81F2F6D42001022F8 /* PPNetworkCache.h */,
+				B074CEF91F2F6D42001022F8 /* PPNetworkCache.m */,
+				B074CEFA1F2F6D42001022F8 /* PPNetworkHelper.h */,
+				B074CEFB1F2F6D42001022F8 /* PPNetworkHelper.m */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
+		B074CEFE1F2F6D81001022F8 /* CMNetWork */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CMNetWork;
+			sourceTree = "<group>";
+		};
 		B0D0C9451F1F9C6900EBA36F = {
 			isa = PBXGroup;
 			children = (
@@ -484,6 +521,8 @@
 		B0D0C9501F1F9C6900EBA36F /* CaibeiMarket */ = {
 			isa = PBXGroup;
 			children = (
+				B074CEFE1F2F6D81001022F8 /* CMNetWork */,
+				B074CEF71F2F6D42001022F8 /* NetWork */,
 				C3B3BC161F21AEEE000C9DC8 /* AppDelegate+AppService.h */,
 				C3B3BC171F21AEEE000C9DC8 /* AppDelegate+AppService.m */,
 				C3B3BC181F21AEEE000C9DC8 /* AppDelegate+PushService.h */,
@@ -877,13 +916,13 @@
 		C3B3BB551F21AEC8000C9DC8 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
-				C3B3BB561F21AEC8000C9DC8 /* Controller */,
-				C3B3BB5B1F21AEC8000C9DC8 /* Logic */,
+				B05C5B7F1F2B27B4009E5CC6 /* SetUp */,
+				C3B3BB561F21AEC8000C9DC8 /* Profile */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
 		};
-		C3B3BB561F21AEC8000C9DC8 /* Controller */ = {
+		C3B3BB561F21AEC8000C9DC8 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
 				C3A4BB611F29A85A0082030A /* Model */,
@@ -895,17 +934,11 @@
 				C3B3BB581F21AEC8000C9DC8 /* MineViewController.m */,
 				C3B3BB591F21AEC8000C9DC8 /* ProfileViewController.h */,
 				C3B3BB5A1F21AEC8000C9DC8 /* ProfileViewController.m */,
+				B05C5B7C1F2B2485009E5CC6 /* CMMineDefine.h */,
+				B05C5B7D1F2B2485009E5CC6 /* CMMineDefine.m */,
 			);
+			name = Profile;
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		C3B3BB5B1F21AEC8000C9DC8 /* Logic */ = {
-			isa = PBXGroup;
-			children = (
-				C3B3BB5C1F21AEC8000C9DC8 /* MineLogic.h */,
-				C3B3BB5D1F21AEC8000C9DC8 /* MineLogic.m */,
-			);
-			path = Logic;
 			sourceTree = "<group>";
 		};
 		C3B3BB631F21AEC8000C9DC8 /* Resource */ = {
@@ -1497,6 +1530,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3B3BC0B1F21AEC9000C9DC8 /* BaseRequestAPI.m in Sources */,
+				B05C5B7E1F2B2485009E5CC6 /* CMMineDefine.m in Sources */,
 				C3B3BBC41F21AEC9000C9DC8 /* SecondViewController.m in Sources */,
 				C3F647001F24AAD5005952EC /* CMHomeAppIcon.m in Sources */,
 				C3F647061F24D229005952EC /* CMConfirmPwdViewController.m in Sources */,
@@ -1508,10 +1542,12 @@
 				C3B3BBDF1F21AEC9000C9DC8 /* MsgViewController.m in Sources */,
 				B0D0C9561F1F9C6900EBA36F /* AppDelegate.m in Sources */,
 				C3B3BC111F21AEC9000C9DC8 /* PPNetworkCache.m in Sources */,
+				B05C5B821F2B27F2009E5CC6 /* CMSetUpViewController.m in Sources */,
 				C3B3BBE21F21AEC9000C9DC8 /* ProfileViewController.m in Sources */,
 				C3B3BBD71F21AEC9000C9DC8 /* GetWaterFallListAPI.m in Sources */,
 				C352202C1F243821002707E8 /* CMHomeContent.m in Sources */,
 				C3B3BBE11F21AEC9000C9DC8 /* MineViewController.m in Sources */,
+				B074CEFC1F2F6D42001022F8 /* PPNetworkCache.m in Sources */,
 				C3B3BBDD1F21AEC9000C9DC8 /* MakeFriendsViewController.m in Sources */,
 				C3B3BBBF1F21AEC9000C9DC8 /* UserManager.m in Sources */,
 				C3B3BBAF1F21AEC9000C9DC8 /* RootNavigationController.m in Sources */,
@@ -1559,8 +1595,8 @@
 				C3B3BBB01F21AEC9000C9DC8 /* RootViewController.m in Sources */,
 				C35220291F243814002707E8 /* CMHomeApp.m in Sources */,
 				C3A4BB5C1F29A2DE0082030A /* CMMineHeaderView.m in Sources */,
+				B074CEFD1F2F6D42001022F8 /* PPNetworkHelper.m in Sources */,
 				C3B3BC1A1F21AEEE000C9DC8 /* AppDelegate+AppService.m in Sources */,
-				C3B3BBE31F21AEC9000C9DC8 /* MineLogic.m in Sources */,
 				C3B3BBBD1F21AEC9000C9DC8 /* GameInfo.m in Sources */,
 				C3B3BBB31F21AEC9000C9DC8 /* TabBarBadge.m in Sources */,
 				C35220261F243809002707E8 /* CMHomeBanner.m in Sources */,

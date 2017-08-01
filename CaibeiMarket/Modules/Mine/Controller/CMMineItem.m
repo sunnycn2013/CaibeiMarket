@@ -7,6 +7,7 @@
 //
 
 #import "CMMineItem.h"
+#import "CMMineDefine.h"
 
 @implementation CMMineItem
 
@@ -17,6 +18,6 @@
 }
 
 - (CGFloat)heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return kIPhone6Scale(80);
+    return CMMineItemHeight;
 }
 @end

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CMRubikCellProtocol.h"
 
-@interface CMMineCell : UITableViewCell
+@interface CMMineCell : UITableViewCell<CMRubikCellProtocol>
 
 @end

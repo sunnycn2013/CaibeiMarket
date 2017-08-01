@@ -35,7 +35,9 @@
 - (void)setUI{
     self.backgroundColor = CMThemeColor;
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-
+    
+    [self addSubview:self.picImageView];
+    [self addSubview:self.phoneNumLabel];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -44,13 +46,29 @@
     // Configure the view for the selected state
 }
 
+- (void)fillData:(id)data
+{
+    
+}
+
 #pragma mark -  set get
 - (UIImageView *)picImageView
 {
     if (!_picImageView) {
-        _picImageView = [[UIImageView alloc] init];
+        _picImageView = [[UIImageView alloc] initWithFrame:CGRectMake(40, 40, 100, 100)];
+        _picImageView.layer.cornerRadius = 50.0;
+        _picImageView.layer.masksToBounds = YES;
     }
     return _picImageView;
+}
+
+- (UILabel *)phoneNumLabel
+{
+    if (!_phoneNumLabel) {
+        _phoneNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(160, 100, 300, 35)];
+        _phoneNumLabel.text = @"1312782572";
+    }
+    return _phoneNumLabel;
 }
 
 @end

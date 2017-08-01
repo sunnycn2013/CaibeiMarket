@@ -7,12 +7,15 @@
 //
 
 #import "CMMineCell.h"
+#import "CMMineDefine.h"
+#import "CMMineItem.h"
+
 
 @interface CMMineCell ()
 
 @property (nonatomic,strong)CALayer * bottomLine;
 @property (nonatomic,strong)UILabel * mineTitleLabel;
-
+@property (nonatomic,strong)CMMineItem * data;
 @end
 
 @implementation CMMineCell
@@ -43,12 +46,22 @@
     // Configure the view for the selected state
 }
 
+- (void)fillData:(id)data
+{
+    if (![data isKindOfClass:[CMMineItem class]]) {
+        return;
+    }
+    self.data = (CMMineItem *)data;
+    [self.mineTitleLabel setText:self.data.title];
+}
+
+#pragma mark -  set get
 - (CALayer *)bottomLine
 {
     if (!_bottomLine) {
         CGFloat width = KScreenWidth;
         _bottomLine = [[CALayer alloc] init];
-        _bottomLine.frame = CGRectMake(0, kIPhone6Scale(80) -0.5, width, 0.5);
+        _bottomLine.frame = CGRectMake(0, CMMineItemHeight -0.5, width, 0.5);
         _bottomLine.backgroundColor = [UIColor lightGrayColor].CGColor;
     }
     return _bottomLine;
@@ -58,7 +71,6 @@
 {
     if (!_mineTitleLabel) {
         CGFloat width = KScreenWidth - 80;
-//        CGFloat height = kIPhone6Scale(80) - 80;
         _mineTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(kIPhone6Scale(50), 10, width, 44)];
         _mineTitleLabel.backgroundColor = [UIColor purpleColor];
         _mineTitleLabel.text = @"申请记录";

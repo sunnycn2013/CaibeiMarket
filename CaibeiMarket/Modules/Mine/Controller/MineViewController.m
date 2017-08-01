@@ -12,6 +12,11 @@
 #import "CMMineHeader.h"
 #import "CMMineCell.h"
 #import "CMMineHeaderCell.h"
+#import "CMRubikCellProtocol.h"
+#import "CMMineDefine.h"
+
+#import "ProfileViewController.h"
+
 
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -35,15 +40,19 @@
     CMMineHeader * header = [[CMMineHeader alloc] init];
     CMMineItem * item1 = [[CMMineItem alloc] init];
     item1.title = @"申请记录";
+    item1.navigationType = CMMineJumpApply;
     
     CMMineItem * item2 = [[CMMineItem alloc] init];
     item2.title = @"我的资料";
+    item2.navigationType = CMMineJumpMyData;
     
     CMMineItem * item3 = [[CMMineItem alloc] init];
     item3.title = @"关于我们";
+    item3.navigationType = CMMineJumpAboutMe;
     
     CMMineItem * item4 = [[CMMineItem alloc] init];
     item4.title = @"设置";
+    item3.navigationType = CMMineJumpSetUp;
     
     self.dataArray = @[header,item1,item2,item3,item4];
     
@@ -89,9 +98,8 @@
 {
     id<CMRubikDataProtocol> model = [self.dataArray objectAtIndex:indexPath.row];
     NSString * cellIndetifier  = [model identifierAtIndexPath:indexPath];
-    
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIndetifier];
-    
+    UITableViewCell <CMRubikCellProtocol> * cell = [tableView dequeueReusableCellWithIdentifier:cellIndetifier];
+    [cell fillData:model];
     return cell;
 }
 
@@ -101,7 +109,11 @@
     return [model heightForRowAtIndexPath:indexPath];
 }
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ProfileViewController * vc = [[ProfileViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 #pragma mark - set get
 - (CMMineHeaderView *)headerView
 {
