@@ -1793,13 +1793,14 @@
 			baseConfigurationReference = AF830D886469122ADA1697D3 /* Pods-CaibeiMarket.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Ruigu Bitech Information Tech Co., Ltd";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Ruigu Bitech Information Tech Co., Ltd";
 				DEVELOPMENT_TEAM = KV6556Y343;
 				GCC_PREFIX_HEADER = $SRCROOT/CaibeiMarket/PrefixHeader.pch;
 				INFOPLIST_FILE = CaibeiMarket/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alibaba.wireless;
+				PRODUCT_BUNDLE_IDENTIFIER = com.icaibei.CaibeiMarket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "44f35dd4-d0d2-4fa8-9b82-27c9e043b230";
 				PROVISIONING_PROFILE_SPECIFIER = "XC: *";
@@ -1811,13 +1812,14 @@
 			baseConfigurationReference = 1C12191434FB86364362E8A1 /* Pods-CaibeiMarket.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Ruigu Bitech Information Tech Co., Ltd";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Ruigu Bitech Information Tech Co., Ltd";
 				DEVELOPMENT_TEAM = KV6556Y343;
 				GCC_PREFIX_HEADER = $SRCROOT/CaibeiMarket/PrefixHeader.pch;
 				INFOPLIST_FILE = CaibeiMarket/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alibaba.wireless;
+				PRODUCT_BUNDLE_IDENTIFIER = com.icaibei.CaibeiMarket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "44f35dd4-d0d2-4fa8-9b82-27c9e043b230";
 				PROVISIONING_PROFILE_SPECIFIER = "XC: *";
