@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "CMRegistViewController.h"
 
 @interface LoginViewController ()
 
@@ -15,7 +16,7 @@
 @property(nonatomic,strong) UITextField  * telephoneTextFiled;
 @property(nonatomic,strong) UITextField  * pwdTextFiled;
 @property(nonatomic,strong) UIButton     * loginButton;
-@property (weak, nonatomic) UIButton     * registButton;
+@property(nonatomic,strong) UIButton     * registButton;
 
 @end
 
@@ -68,7 +69,8 @@
 
 - (void)registAction:(id)sender
 {
-    
+    CMRegistViewController * regist = [[CMRegistViewController alloc] init];
+    [self.navigationController pushViewController:regist animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -135,9 +137,11 @@
     if (!_registButton) {
         _registButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _registButton.frame = CGRectMake(_loginButton.left, _loginButton.bottom + kIPhone6Scale(22), kIPhone6Scale(38), kIPhone6Scale(20));
-        _registButton.backgroundColor = CMThemeColor;
+        _registButton.backgroundColor = [UIColor clearColor];
+        _registButton.centerX = KScreenWidth/2;
         [_registButton setTitle:@"注册" forState:UIControlStateNormal];
-        [_registButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_registButton setTitleColor:CMThemeColor forState:UIControlStateNormal];
+        [_registButton addTarget:self action:@selector(registAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _registButton;
 }

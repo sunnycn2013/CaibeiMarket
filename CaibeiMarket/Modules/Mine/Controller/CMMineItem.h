@@ -15,4 +15,6 @@
 
 @property (nonatomic,strong) NSString * navigationType;
 
+@property (nonatomic,strong) NSString * imageName;
+
 @end

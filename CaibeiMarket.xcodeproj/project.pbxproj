@@ -10,6 +10,14 @@
 		B05C5B7B1F28E9AB009E5CC6 /* CMMineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B05C5B7A1F28E9AB009E5CC6 /* CMMineCell.m */; };
 		B05C5B7E1F2B2485009E5CC6 /* CMMineDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = B05C5B7D1F2B2485009E5CC6 /* CMMineDefine.m */; };
 		B05C5B821F2B27F2009E5CC6 /* CMSetUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B05C5B811F2B27F2009E5CC6 /* CMSetUpViewController.m */; };
+		B074CF021F336836001022F8 /* CMTextFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = B074CF011F336836001022F8 /* CMTextFieldView.m */; };
+		B074CF0B1F337307001022F8 /* apply@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B074CF041F337307001022F8 /* apply@2x.png */; };
+		B074CF0C1F337307001022F8 /* next_light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B074CF051F337307001022F8 /* next_light@2x.png */; };
+		B074CF0D1F337307001022F8 /* next_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B074CF061F337307001022F8 /* next_normal@2x.png */; };
+		B074CF0E1F337307001022F8 /* mydata@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B074CF071F337307001022F8 /* mydata@2x.png */; };
+		B074CF0F1F337307001022F8 /* about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B074CF081F337307001022F8 /* about@2x.png */; };
+		B074CF101F337307001022F8 /* setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B074CF091F337307001022F8 /* setting@2x.png */; };
+		B074CF111F337307001022F8 /* touxiang@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B074CF0A1F337307001022F8 /* touxiang@2x.png */; };
 		B0D0C9531F1F9C6900EBA36F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D0C9521F1F9C6900EBA36F /* main.m */; };
 		B0D0C9561F1F9C6900EBA36F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D0C9551F1F9C6900EBA36F /* AppDelegate.m */; };
 		B0D0C95F1F1F9C6900EBA36F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0D0C95D1F1F9C6900EBA36F /* Main.storyboard */; };
@@ -177,6 +185,15 @@
 		B05C5B7D1F2B2485009E5CC6 /* CMMineDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMineDefine.m; sourceTree = "<group>"; };
 		B05C5B801F2B27F2009E5CC6 /* CMSetUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMSetUpViewController.h; sourceTree = "<group>"; };
 		B05C5B811F2B27F2009E5CC6 /* CMSetUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMSetUpViewController.m; sourceTree = "<group>"; };
+		B074CF001F336836001022F8 /* CMTextFieldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMTextFieldView.h; sourceTree = "<group>"; };
+		B074CF011F336836001022F8 /* CMTextFieldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMTextFieldView.m; sourceTree = "<group>"; };
+		B074CF041F337307001022F8 /* apply@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apply@2x.png"; sourceTree = "<group>"; };
+		B074CF051F337307001022F8 /* next_light@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "next_light@2x.png"; sourceTree = "<group>"; };
+		B074CF061F337307001022F8 /* next_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "next_normal@2x.png"; sourceTree = "<group>"; };
+		B074CF071F337307001022F8 /* mydata@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mydata@2x.png"; sourceTree = "<group>"; };
+		B074CF081F337307001022F8 /* about@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about@2x.png"; sourceTree = "<group>"; };
+		B074CF091F337307001022F8 /* setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting@2x.png"; sourceTree = "<group>"; };
+		B074CF0A1F337307001022F8 /* touxiang@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "touxiang@2x.png"; sourceTree = "<group>"; };
 		B0D0C94E1F1F9C6900EBA36F /* CaibeiMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaibeiMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0D0C9521F1F9C6900EBA36F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B0D0C9541F1F9C6900EBA36F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -486,6 +503,29 @@
 			path = CMNetWork;
 			sourceTree = "<group>";
 		};
+		B074CEFF1F336815001022F8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B074CF001F336836001022F8 /* CMTextFieldView.h */,
+				B074CF011F336836001022F8 /* CMTextFieldView.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		B074CF031F3372CD001022F8 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				B074CF041F337307001022F8 /* apply@2x.png */,
+				B074CF051F337307001022F8 /* next_light@2x.png */,
+				B074CF061F337307001022F8 /* next_normal@2x.png */,
+				B074CF071F337307001022F8 /* mydata@2x.png */,
+				B074CF081F337307001022F8 /* about@2x.png */,
+				B074CF091F337307001022F8 /* setting@2x.png */,
+				B074CF0A1F337307001022F8 /* touxiang@2x.png */,
+			);
+			name = image;
+			sourceTree = "<group>";
+		};
 		B0D0C9451F1F9C6900EBA36F = {
 			isa = PBXGroup;
 			children = (
@@ -511,6 +551,7 @@
 		B0D0C9501F1F9C6900EBA36F /* CaibeiMarket */ = {
 			isa = PBXGroup;
 			children = (
+				B074CEFF1F336815001022F8 /* Common */,
 				B074CEFE1F2F6D81001022F8 /* CMNetWork */,
 				B074CEF71F2F6D42001022F8 /* NetWork */,
 				C3B3BC161F21AEEE000C9DC8 /* AppDelegate+AppService.h */,
@@ -906,6 +947,7 @@
 		C3B3BB551F21AEC8000C9DC8 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				B074CF031F3372CD001022F8 /* image */,
 				B05C5B7F1F2B27B4009E5CC6 /* SetUp */,
 				C3B3BB561F21AEC8000C9DC8 /* Profile */,
 			);
@@ -1314,8 +1356,10 @@
 				C3E3E17D1F301EAD0021EB09 /* index_banner@2x.png in Resources */,
 				C3B3BC051F21AEC9000C9DC8 /* icon_tabbar_onsite@2x.png in Resources */,
 				C3B3BBFE1F21AEC9000C9DC8 /* icon_tabbar_mine_selected@2x.png in Resources */,
+				B074CF101F337307001022F8 /* setting@2x.png in Resources */,
 				C3E3E1891F302FCC0021EB09 /* icon_04@2x.png in Resources */,
 				C3B3BBD01F21AEC9000C9DC8 /* 3.jpg in Resources */,
+				B074CF0B1F337307001022F8 /* apply@2x.png in Resources */,
 				C3B3BBEE1F21AEC9000C9DC8 /* MBHUD_Warn@3x.png in Resources */,
 				C3B3BBF11F21AEC9000C9DC8 /* icon_tabbar_discovery.png in Resources */,
 				C3B3BBE61F21AEC9000C9DC8 /* DazFire.png in Resources */,
@@ -1326,20 +1370,25 @@
 				C3B3BBCF1F21AEC9000C9DC8 /* 2.jpg in Resources */,
 				C3E3E1931F3053080021EB09 /* header@2x.png in Resources */,
 				C3B3BBFD1F21AEC9000C9DC8 /* icon_tabbar_mine_selected.png in Resources */,
+				B074CF0C1F337307001022F8 /* next_light@2x.png in Resources */,
 				C3B3BBC91F21AEC9000C9DC8 /* 0.jpg in Resources */,
 				C3B3BBF41F21AEC9000C9DC8 /* icon_tabbar_homepage@2x.png in Resources */,
 				C3B3BC001F21AEC9000C9DC8 /* icon_tabbar_misc@2x.png in Resources */,
 				B0D0C9641F1F9C6900EBA36F /* LaunchScreen.storyboard in Resources */,
 				C3B3BBD21F21AEC9000C9DC8 /* 5.jpg in Resources */,
+				B074CF111F337307001022F8 /* touxiang@2x.png in Resources */,
 				B0D0C9611F1F9C6900EBA36F /* Assets.xcassets in Resources */,
+				B074CF0D1F337307001022F8 /* next_normal@2x.png in Resources */,
 				C3B3BC071F21AEC9000C9DC8 /* icon_tabbar_onsite_selected@2x.png in Resources */,
 				C3B3BBFF1F21AEC9000C9DC8 /* icon_tabbar_misc.png in Resources */,
 				C3B3BBFC1F21AEC9000C9DC8 /* icon_tabbar_mine@2x.png in Resources */,
 				C3E3E1881F302FCC0021EB09 /* icon_03@3x.png in Resources */,
+				B074CF0F1F337307001022F8 /* about@2x.png in Resources */,
 				B0D0C95F1F1F9C6900EBA36F /* Main.storyboard in Resources */,
 				C3B3BBCB1F21AEC9000C9DC8 /* 10.jpg in Resources */,
 				C3B3BBD61F21AEC9000C9DC8 /* 9.jpg in Resources */,
 				C3B3BBD51F21AEC9000C9DC8 /* 8.jpg in Resources */,
+				B074CF0E1F337307001022F8 /* mydata@2x.png in Resources */,
 				C3B3BBE91F21AEC9000C9DC8 /* MBHUD_Info@2x.png in Resources */,
 				C3B3BBE71F21AEC9000C9DC8 /* MBHUD_Error@2x.png in Resources */,
 				C3B3BC021F21AEC9000C9DC8 /* icon_tabbar_misc_selected@2x.png in Resources */,
@@ -1563,6 +1612,7 @@
 				C3E3E18E1F3032980021EB09 /* CMHomeContentCorverFlowView.m in Sources */,
 				C3B3BBBC1F21AEC9000C9DC8 /* ShareManager.m in Sources */,
 				C3B3BBDC1F21AEC9000C9DC8 /* LoginLogic.m in Sources */,
+				B074CF021F336836001022F8 /* CMTextFieldView.m in Sources */,
 				C3B3BBAE1F21AEC9000C9DC8 /* XYButton.m in Sources */,
 				C3B3BC091F21AEC9000C9DC8 /* AdPageView.m in Sources */,
 				C3B3BC0C1F21AEC9000C9DC8 /* UIButton+XYButton.m in Sources */,

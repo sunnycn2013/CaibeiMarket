@@ -8,11 +8,14 @@
 
 #import "CMHomeContentCell.h"
 #import "CMHomeContentCorverFlowView.h"
+#import "CMTextFieldView.h"
 
 @interface CMHomeContentCell ()
 
-@property (nonatomic,strong) UIView * textFiledBgView;
-@property (nonatomic,strong) UITextField * borrowTextFiled;
+//@property (nonatomic,strong) UIView * textFiledBgView;
+//@property (nonatomic,strong) UITextField * borrowTextFiled;
+@property (nonatomic,strong) CMTextFieldView * borrowTextFiled;
+
 @property (nonatomic,strong) CMHomeContentCorverFlowView * corverFlow;
 @property (nonatomic,strong) UILabel * recentLendingLabel; //  最近借款人
 @property (nonatomic,strong) UIButton * borrowButton;
@@ -36,7 +39,7 @@
 - (void)setUI
 {
     self.backgroundColor = [UIColor colorWithHexString:@"#F6F6F6"];
-    [self addSubview:self.textFiledBgView];
+//    [self addSubview:self.textFiledBgView];
     [self addSubview:self.borrowTextFiled];
 
     [self addSubview:self.corverFlow];
@@ -53,24 +56,24 @@
 
 #pragma mark - set get
 
-- (UIView *)textFiledBgView
-{
-    if (!_textFiledBgView)
-    {
-        CGFloat width = (KScreenWidth - kIPhone6Scale(108));
-        _textFiledBgView = [[UIView alloc] initWithFrame:CGRectMake(kIPhone6Scale(108)/2, kIPhone6Scale(33), width, kIPhone6Scale(45))];
-        _textFiledBgView.layer.cornerRadius = 22.0;
-        _textFiledBgView.backgroundColor = [UIColor whiteColor];
-    }
-    return _textFiledBgView;
-}
+//- (UIView *)textFiledBgView
+//{
+//    if (!_textFiledBgView)
+//    {
+//        CGFloat width = (KScreenWidth - kIPhone6Scale(108));
+//        _textFiledBgView = [[UIView alloc] initWithFrame:CGRectMake(kIPhone6Scale(108)/2, kIPhone6Scale(33), width, kIPhone6Scale(45))];
+//        _textFiledBgView.layer.cornerRadius = 22.0;
+//        _textFiledBgView.backgroundColor = [UIColor whiteColor];
+//    }
+//    return _textFiledBgView;
+//}
 
-- (UITextField *)borrowTextFiled
+- (CMTextFieldView *)borrowTextFiled
 {
     if (!_borrowTextFiled)
     {
         CGFloat width = (KScreenWidth - kIPhone6Scale(148));
-        _borrowTextFiled = [[UITextField alloc] initWithFrame:CGRectMake(kIPhone6Scale(148)/2, kIPhone6Scale(33), width, kIPhone6Scale(45))];
+        _borrowTextFiled = [[CMTextFieldView alloc] initWithFrame:CGRectMake(kIPhone6Scale(148)/2, kIPhone6Scale(33), width, kIPhone6Scale(45))];
         _borrowTextFiled.backgroundColor = [UIColor whiteColor];
         _borrowTextFiled.placeholder = @"输入借款额度";
     }

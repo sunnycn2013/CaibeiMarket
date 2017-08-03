@@ -15,6 +15,6 @@
 }
 
 - (CGFloat)heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return kIPhone6Scale(236);
+    return kIPhone6Scale(180);
 }
 @end
