@@ -103,7 +103,7 @@
         _borrowButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _borrowButton.frame = CGRectMake(kIPhone6Scale(148)/2, _recentLendingLabel.bottom+kIPhone6Scale(33), width, kIPhone6Scale(45));
         _borrowButton.backgroundColor = CMThemeColor;
-        _borrowButton.layer.cornerRadius = 22.0;
+        _borrowButton.layer.cornerRadius = kIPhone6Scale(45)/2;
         [_borrowButton setTitle:@"申请借款" forState:UIControlStateNormal];
         [_borrowButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     }

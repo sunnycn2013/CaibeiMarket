@@ -25,14 +25,13 @@
     [super viewDidLoad];
 
     self.view.backgroundColor = [UIColor colorWithHexString:@"#F6F6F6"];
+    
     [self.view addSubview:self.headerImageView];
     [self.view addSubview:self.telephoneTextFiled];
     [self.view addSubview:self.pwdTextFiled];
     
     [self.view addSubview:self.loginButton];
     [self.view addSubview:self.registButton];
-    _loginButton.layer.cornerRadius = 15.0;
-    _registButton.layer.cornerRadius = 15.0;
     
     UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeKeyBoard:)];
     [self.view addGestureRecognizer:tapGesture];
@@ -123,8 +122,7 @@
         _loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _loginButton.frame = CGRectMake(_pwdTextFiled.left, _pwdTextFiled.bottom + kIPhone6Scale(49), width, height);
         _loginButton.backgroundColor = CMThemeColor;
-        _loginButton.layer.cornerRadius = 22;
-        _loginButton.layer.masksToBounds = YES;
+        _loginButton.layer.cornerRadius = height/2;
         [_loginButton setTitle:@"登录" forState:UIControlStateNormal];
         [_loginButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_loginButton addTarget:self action:@selector(loginAction:) forControlEvents:UIControlEventTouchUpInside];
