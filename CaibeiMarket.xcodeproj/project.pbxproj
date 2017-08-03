@@ -10,8 +10,6 @@
 		B05C5B7B1F28E9AB009E5CC6 /* CMMineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B05C5B7A1F28E9AB009E5CC6 /* CMMineCell.m */; };
 		B05C5B7E1F2B2485009E5CC6 /* CMMineDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = B05C5B7D1F2B2485009E5CC6 /* CMMineDefine.m */; };
 		B05C5B821F2B27F2009E5CC6 /* CMSetUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B05C5B811F2B27F2009E5CC6 /* CMSetUpViewController.m */; };
-		B074CEFC1F2F6D42001022F8 /* PPNetworkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B074CEF91F2F6D42001022F8 /* PPNetworkCache.m */; };
-		B074CEFD1F2F6D42001022F8 /* PPNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B074CEFB1F2F6D42001022F8 /* PPNetworkHelper.m */; };
 		B0D0C9531F1F9C6900EBA36F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D0C9521F1F9C6900EBA36F /* main.m */; };
 		B0D0C9561F1F9C6900EBA36F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D0C9551F1F9C6900EBA36F /* AppDelegate.m */; };
 		B0D0C95F1F1F9C6900EBA36F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0D0C95D1F1F9C6900EBA36F /* Main.storyboard */; };
@@ -179,10 +177,6 @@
 		B05C5B7D1F2B2485009E5CC6 /* CMMineDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMineDefine.m; sourceTree = "<group>"; };
 		B05C5B801F2B27F2009E5CC6 /* CMSetUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMSetUpViewController.h; sourceTree = "<group>"; };
 		B05C5B811F2B27F2009E5CC6 /* CMSetUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMSetUpViewController.m; sourceTree = "<group>"; };
-		B074CEF81F2F6D42001022F8 /* PPNetworkCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNetworkCache.h; sourceTree = "<group>"; };
-		B074CEF91F2F6D42001022F8 /* PPNetworkCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNetworkCache.m; sourceTree = "<group>"; };
-		B074CEFA1F2F6D42001022F8 /* PPNetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNetworkHelper.h; sourceTree = "<group>"; };
-		B074CEFB1F2F6D42001022F8 /* PPNetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNetworkHelper.m; sourceTree = "<group>"; };
 		B0D0C94E1F1F9C6900EBA36F /* CaibeiMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaibeiMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0D0C9521F1F9C6900EBA36F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B0D0C9541F1F9C6900EBA36F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -481,10 +475,6 @@
 		B074CEF71F2F6D42001022F8 /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
-				B074CEF81F2F6D42001022F8 /* PPNetworkCache.h */,
-				B074CEF91F2F6D42001022F8 /* PPNetworkCache.m */,
-				B074CEFA1F2F6D42001022F8 /* PPNetworkHelper.h */,
-				B074CEFB1F2F6D42001022F8 /* PPNetworkHelper.m */,
 			);
 			path = NetWork;
 			sourceTree = "<group>";
@@ -1547,7 +1537,6 @@
 				C3B3BBD71F21AEC9000C9DC8 /* GetWaterFallListAPI.m in Sources */,
 				C352202C1F243821002707E8 /* CMHomeContent.m in Sources */,
 				C3B3BBE11F21AEC9000C9DC8 /* MineViewController.m in Sources */,
-				B074CEFC1F2F6D42001022F8 /* PPNetworkCache.m in Sources */,
 				C3B3BBDD1F21AEC9000C9DC8 /* MakeFriendsViewController.m in Sources */,
 				C3B3BBBF1F21AEC9000C9DC8 /* UserManager.m in Sources */,
 				C3B3BBAF1F21AEC9000C9DC8 /* RootNavigationController.m in Sources */,
@@ -1595,7 +1584,6 @@
 				C3B3BBB01F21AEC9000C9DC8 /* RootViewController.m in Sources */,
 				C35220291F243814002707E8 /* CMHomeApp.m in Sources */,
 				C3A4BB5C1F29A2DE0082030A /* CMMineHeaderView.m in Sources */,
-				B074CEFD1F2F6D42001022F8 /* PPNetworkHelper.m in Sources */,
 				C3B3BC1A1F21AEEE000C9DC8 /* AppDelegate+AppService.m in Sources */,
 				C3B3BBBD1F21AEC9000C9DC8 /* GameInfo.m in Sources */,
 				C3B3BBB31F21AEC9000C9DC8 /* TabBarBadge.m in Sources */,
@@ -1760,7 +1748,7 @@
 				INFOPLIST_FILE = CaibeiMarket/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.icaibei.CaibeiMarket;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alibaba.wireless;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1775,7 +1763,7 @@
 				INFOPLIST_FILE = CaibeiMarket/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.icaibei.CaibeiMarket;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alibaba.wireless;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
