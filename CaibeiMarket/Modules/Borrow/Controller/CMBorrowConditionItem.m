@@ -2,7 +2,7 @@
 //  CMBorrowConditionItem.m
 //  CaibeiMarket
 //
-//  Created by alibaba on 2017/8/4.
+//  Created by icaibei on 2017/8/4.
 //  Copyright © 2017年 qianji. All rights reserved.
 //
 
