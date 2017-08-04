@@ -31,6 +31,8 @@
     self.backgroundColor = [UIColor greenColor];
     [self addSubview:self.bgView];
     [self addSubview:self.textField];
+    self.backgroundColor = [UIColor whiteColor];
+    self.clipsToBounds = YES;
 }
 
 /*
@@ -46,7 +48,7 @@
     [super layoutSubviews];
     [self.bgView setFrame:CGRectMake(0, 0, self.width, self.height)];
     [self.textField setFrame:CGRectMake(self.height/2, 0, self.width - self.height, self.height)];
-    self.bgView.layer.cornerRadius = self.height/2;
+    self.layer.cornerRadius = self.height/2;
 }
 
 - (void)setPlaceholder:(NSString *)placeholder
@@ -56,8 +58,8 @@
 
 - (void)setTextFieldBgColor:(UIColor *)textFieldBgColor
 {
-    self.bgView.backgroundColor = textFieldBgColor;
-    self.textField.backgroundColor = textFieldBgColor;
+//    self.bgView.backgroundColor = textFieldBgColor;
+//    self.textField.backgroundColor = textFieldBgColor;
 }
 
 #pragma mark - set get

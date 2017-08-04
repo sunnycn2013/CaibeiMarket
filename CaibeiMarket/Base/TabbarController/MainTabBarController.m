@@ -11,7 +11,7 @@
 #import "RootNavigationController.h"
 #import "CMHomeViewController.h"
 #import "PersonListViewController.h"
-#import "MakeFriendsViewController.h"
+#import "CMBorrowViewController.h"
 #import "MsgViewController.h"
 #import "MineViewController.h"
 #import "TabBarItem.h"
@@ -62,7 +62,7 @@
 //    PersonListViewController *homeVC = [[PersonListViewController alloc]init];
     [self setupChildViewController:homeVC title:@"首页" imageName:@"tab_index_normal" seleceImageName:@"tab_index_light"];
     
-    MakeFriendsViewController *makeFriendVC = [[MakeFriendsViewController alloc]init];
+    CMBorrowViewController *makeFriendVC = [[CMBorrowViewController alloc]init];
     [self setupChildViewController:makeFriendVC title:@"贷款" imageName:@"tab_dai_normal" seleceImageName:@"tab_dai_light"];
     
     MsgViewController *msgVC = [[MsgViewController alloc]init];

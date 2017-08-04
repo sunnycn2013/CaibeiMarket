@@ -30,6 +30,8 @@
 #define kRealValue(with) ((with)*(KScreenWidth/375.0f))
 #define kIPhone6Scale(with) ((with)*(KScreenWidth/375.0f))
 
+#define kIPhone6PScale(with) ((with)*(KScreenWidth/414.0f))
+
 //强弱引用
 #define kWeakSelf(type)  __weak typeof(type) weak##type = type;
 #define kStrongSelf(type) __strong typeof(type) type = weak##type;

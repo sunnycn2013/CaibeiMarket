@@ -26,6 +26,18 @@
 		B0D0C96F1F1F9C6900EBA36F /* CaibeiMarketTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D0C96E1F1F9C6900EBA36F /* CaibeiMarketTests.m */; };
 		B0D0C97A1F1F9C6900EBA36F /* CaibeiMarketUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D0C9791F1F9C6900EBA36F /* CaibeiMarketUITests.m */; };
 		B87857BA1FCF538DD25D77B8 /* libPods-CaibeiMarketTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1657DC69D41D6AAC9F81AE5C /* libPods-CaibeiMarketTests.a */; };
+		C305E11C1F344AC300BC10A1 /* CMBorrowDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = C305E1121F344AC300BC10A1 /* CMBorrowDefine.m */; };
+		C305E11D1F344AC300BC10A1 /* CMBorrowConditionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C305E1151F344AC300BC10A1 /* CMBorrowConditionItem.m */; };
+		C305E11E1F344AC300BC10A1 /* CMBorrowConditionView.m in Sources */ = {isa = PBXBuildFile; fileRef = C305E1171F344AC300BC10A1 /* CMBorrowConditionView.m */; };
+		C305E11F1F344AC300BC10A1 /* CMBorrowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C305E1191F344AC300BC10A1 /* CMBorrowViewController.m */; };
+		C305E1201F344AC300BC10A1 /* MakeFriendsLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = C305E11B1F344AC300BC10A1 /* MakeFriendsLogic.m */; };
+		C33E33581F344CF300CB9D3D /* UIColor+CMColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C33E33571F344CF300CB9D3D /* UIColor+CMColor.m */; };
+		C33E335E1F344F4500CB9D3D /* condition_light_high@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C33E335A1F344F4500CB9D3D /* condition_light_high@2x.png */; };
+		C33E335F1F344F4500CB9D3D /* condition_light_low@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C33E335B1F344F4500CB9D3D /* condition_light_low@2x.png */; };
+		C33E33601F344F4500CB9D3D /* condition_normal_high@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C33E335C1F344F4500CB9D3D /* condition_normal_high@2x.png */; };
+		C33E33611F344F4500CB9D3D /* condition_normal_low@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C33E335D1F344F4500CB9D3D /* condition_normal_low@2x.png */; };
+		C33E33641F344F6B00CB9D3D /* condition_light_select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C33E33621F344F6B00CB9D3D /* condition_light_select@2x.png */; };
+		C33E33651F344F6B00CB9D3D /* condition_normal_select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C33E33631F344F6B00CB9D3D /* condition_normal_select@2x.png */; };
 		C35220201F243523002707E8 /* CMHomeBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C352201E1F243523002707E8 /* CMHomeBannerCell.m */; };
 		C35220261F243809002707E8 /* CMHomeBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = C35220251F243809002707E8 /* CMHomeBanner.m */; };
 		C35220291F243814002707E8 /* CMHomeApp.m in Sources */ = {isa = PBXBuildFile; fileRef = C35220281F243814002707E8 /* CMHomeApp.m */; };
@@ -79,8 +91,6 @@
 		C3B3BBDA1F21AEC9000C9DC8 /* WaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B3BB3F1F21AEC8000C9DC8 /* WaterFlowLayout.m */; };
 		C3B3BBDB1F21AEC9000C9DC8 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B3BB431F21AEC8000C9DC8 /* LoginViewController.m */; };
 		C3B3BBDC1F21AEC9000C9DC8 /* LoginLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B3BB461F21AEC8000C9DC8 /* LoginLogic.m */; };
-		C3B3BBDD1F21AEC9000C9DC8 /* MakeFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B3BB4A1F21AEC8000C9DC8 /* MakeFriendsViewController.m */; };
-		C3B3BBDE1F21AEC9000C9DC8 /* MakeFriendsLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B3BB4D1F21AEC8000C9DC8 /* MakeFriendsLogic.m */; };
 		C3B3BBDF1F21AEC9000C9DC8 /* MsgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B3BB511F21AEC8000C9DC8 /* MsgViewController.m */; };
 		C3B3BBE01F21AEC9000C9DC8 /* MsgLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B3BB541F21AEC8000C9DC8 /* MsgLogic.m */; };
 		C3B3BBE11F21AEC9000C9DC8 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B3BB581F21AEC8000C9DC8 /* MineViewController.m */; };
@@ -210,6 +220,24 @@
 		B0D0C97B1F1F9C6900EBA36F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B638DE5B7D50090D9D04D095 /* libPods-CaibeiMarket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CaibeiMarket.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C012453212F1B5FC71806B9D /* libPods-CaibeiMarketUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CaibeiMarketUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C305E1111F344AC300BC10A1 /* CMBorrowDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMBorrowDefine.h; path = CaibeiMarket/Modules/Borrow/CMBorrowDefine.h; sourceTree = SOURCE_ROOT; };
+		C305E1121F344AC300BC10A1 /* CMBorrowDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMBorrowDefine.m; path = CaibeiMarket/Modules/Borrow/CMBorrowDefine.m; sourceTree = SOURCE_ROOT; };
+		C305E1141F344AC300BC10A1 /* CMBorrowConditionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMBorrowConditionItem.h; sourceTree = "<group>"; };
+		C305E1151F344AC300BC10A1 /* CMBorrowConditionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMBorrowConditionItem.m; sourceTree = "<group>"; };
+		C305E1161F344AC300BC10A1 /* CMBorrowConditionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMBorrowConditionView.h; sourceTree = "<group>"; };
+		C305E1171F344AC300BC10A1 /* CMBorrowConditionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMBorrowConditionView.m; sourceTree = "<group>"; };
+		C305E1181F344AC300BC10A1 /* CMBorrowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMBorrowViewController.h; sourceTree = "<group>"; };
+		C305E1191F344AC300BC10A1 /* CMBorrowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMBorrowViewController.m; sourceTree = "<group>"; };
+		C305E11A1F344AC300BC10A1 /* MakeFriendsLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MakeFriendsLogic.h; path = CaibeiMarket/Modules/Borrow/MakeFriendsLogic.h; sourceTree = SOURCE_ROOT; };
+		C305E11B1F344AC300BC10A1 /* MakeFriendsLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MakeFriendsLogic.m; path = CaibeiMarket/Modules/Borrow/MakeFriendsLogic.m; sourceTree = SOURCE_ROOT; };
+		C33E33561F344CF300CB9D3D /* UIColor+CMColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CMColor.h"; sourceTree = "<group>"; };
+		C33E33571F344CF300CB9D3D /* UIColor+CMColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CMColor.m"; sourceTree = "<group>"; };
+		C33E335A1F344F4500CB9D3D /* condition_light_high@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "condition_light_high@2x.png"; sourceTree = "<group>"; };
+		C33E335B1F344F4500CB9D3D /* condition_light_low@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "condition_light_low@2x.png"; sourceTree = "<group>"; };
+		C33E335C1F344F4500CB9D3D /* condition_normal_high@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "condition_normal_high@2x.png"; sourceTree = "<group>"; };
+		C33E335D1F344F4500CB9D3D /* condition_normal_low@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "condition_normal_low@2x.png"; sourceTree = "<group>"; };
+		C33E33621F344F6B00CB9D3D /* condition_light_select@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "condition_light_select@2x.png"; sourceTree = "<group>"; };
+		C33E33631F344F6B00CB9D3D /* condition_normal_select@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "condition_normal_select@2x.png"; sourceTree = "<group>"; };
 		C352201E1F243523002707E8 /* CMHomeBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMHomeBannerCell.m; sourceTree = "<group>"; };
 		C352201F1F243523002707E8 /* CMHomeBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMHomeBannerCell.h; sourceTree = "<group>"; };
 		C35220221F2437A3002707E8 /* CMHomeDataProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMHomeDataProtocol.h; sourceTree = "<group>"; };
@@ -311,10 +339,6 @@
 		C3B3BB431F21AEC8000C9DC8 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		C3B3BB451F21AEC8000C9DC8 /* LoginLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginLogic.h; sourceTree = "<group>"; };
 		C3B3BB461F21AEC8000C9DC8 /* LoginLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginLogic.m; sourceTree = "<group>"; };
-		C3B3BB491F21AEC8000C9DC8 /* MakeFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeFriendsViewController.h; sourceTree = "<group>"; };
-		C3B3BB4A1F21AEC8000C9DC8 /* MakeFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeFriendsViewController.m; sourceTree = "<group>"; };
-		C3B3BB4C1F21AEC8000C9DC8 /* MakeFriendsLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeFriendsLogic.h; sourceTree = "<group>"; };
-		C3B3BB4D1F21AEC8000C9DC8 /* MakeFriendsLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeFriendsLogic.m; sourceTree = "<group>"; };
 		C3B3BB501F21AEC8000C9DC8 /* MsgViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgViewController.h; sourceTree = "<group>"; };
 		C3B3BB511F21AEC8000C9DC8 /* MsgViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgViewController.m; sourceTree = "<group>"; };
 		C3B3BB531F21AEC8000C9DC8 /* MsgLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgLogic.h; sourceTree = "<group>"; };
@@ -508,6 +532,8 @@
 			children = (
 				B074CF001F336836001022F8 /* CMTextFieldView.h */,
 				B074CF011F336836001022F8 /* CMTextFieldView.m */,
+				C33E33561F344CF300CB9D3D /* UIColor+CMColor.h */,
+				C33E33571F344CF300CB9D3D /* UIColor+CMColor.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -600,6 +626,42 @@
 				B0D0C97B1F1F9C6900EBA36F /* Info.plist */,
 			);
 			path = CaibeiMarketUITests;
+			sourceTree = "<group>";
+		};
+		C305E1131F344AC300BC10A1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C33E33591F344F3B00CB9D3D /* images */,
+				C305E1211F344ACB00BC10A1 /* View */,
+				C305E1181F344AC300BC10A1 /* CMBorrowViewController.h */,
+				C305E1191F344AC300BC10A1 /* CMBorrowViewController.m */,
+			);
+			name = Controller;
+			path = CaibeiMarket/Modules/Borrow/Controller;
+			sourceTree = SOURCE_ROOT;
+		};
+		C305E1211F344ACB00BC10A1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C305E1141F344AC300BC10A1 /* CMBorrowConditionItem.h */,
+				C305E1151F344AC300BC10A1 /* CMBorrowConditionItem.m */,
+				C305E1161F344AC300BC10A1 /* CMBorrowConditionView.h */,
+				C305E1171F344AC300BC10A1 /* CMBorrowConditionView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C33E33591F344F3B00CB9D3D /* images */ = {
+			isa = PBXGroup;
+			children = (
+				C33E33621F344F6B00CB9D3D /* condition_light_select@2x.png */,
+				C33E33631F344F6B00CB9D3D /* condition_normal_select@2x.png */,
+				C33E335A1F344F4500CB9D3D /* condition_light_high@2x.png */,
+				C33E335B1F344F4500CB9D3D /* condition_light_low@2x.png */,
+				C33E335C1F344F4500CB9D3D /* condition_normal_high@2x.png */,
+				C33E335D1F344F4500CB9D3D /* condition_normal_low@2x.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 		C3A4BB591F29A2B60082030A /* View */ = {
@@ -760,7 +822,7 @@
 				C3D2E07C1F21DD7D0037CFF3 /* Index */,
 				C3B3BB131F21AEC8000C9DC8 /* Home */,
 				C3B3BB401F21AEC8000C9DC8 /* Login */,
-				C3B3BB471F21AEC8000C9DC8 /* MakeFriends */,
+				C3B3BB471F21AEC8000C9DC8 /* Borrow */,
 				C3B3BB4E1F21AEC8000C9DC8 /* Message */,
 				C3B3BB551F21AEC8000C9DC8 /* Mine */,
 			);
@@ -890,31 +952,17 @@
 			path = Logic;
 			sourceTree = "<group>";
 		};
-		C3B3BB471F21AEC8000C9DC8 /* MakeFriends */ = {
+		C3B3BB471F21AEC8000C9DC8 /* Borrow */ = {
 			isa = PBXGroup;
 			children = (
-				C3B3BB481F21AEC8000C9DC8 /* Controller */,
-				C3B3BB4B1F21AEC8000C9DC8 /* Logic */,
+				C305E1131F344AC300BC10A1 /* Controller */,
+				C305E1111F344AC300BC10A1 /* CMBorrowDefine.h */,
+				C305E1121F344AC300BC10A1 /* CMBorrowDefine.m */,
+				C305E11A1F344AC300BC10A1 /* MakeFriendsLogic.h */,
+				C305E11B1F344AC300BC10A1 /* MakeFriendsLogic.m */,
 			);
+			name = Borrow;
 			path = MakeFriends;
-			sourceTree = "<group>";
-		};
-		C3B3BB481F21AEC8000C9DC8 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				C3B3BB491F21AEC8000C9DC8 /* MakeFriendsViewController.h */,
-				C3B3BB4A1F21AEC8000C9DC8 /* MakeFriendsViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		C3B3BB4B1F21AEC8000C9DC8 /* Logic */ = {
-			isa = PBXGroup;
-			children = (
-				C3B3BB4C1F21AEC8000C9DC8 /* MakeFriendsLogic.h */,
-				C3B3BB4D1F21AEC8000C9DC8 /* MakeFriendsLogic.m */,
-			);
-			path = Logic;
 			sourceTree = "<group>";
 		};
 		C3B3BB4E1F21AEC8000C9DC8 /* Message */ = {
@@ -1340,10 +1388,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3B3BBF21F21AEC9000C9DC8 /* icon_tabbar_discovery_selected.png in Resources */,
+				C33E33611F344F4500CB9D3D /* condition_normal_low@2x.png in Resources */,
+				C33E335E1F344F4500CB9D3D /* condition_light_high@2x.png in Resources */,
 				C3B3BBF51F21AEC9000C9DC8 /* icon_tabbar_homepage_selected.png in Resources */,
 				C3B3BC031F21AEC9000C9DC8 /* icon_tabbar_nearby.png in Resources */,
 				C3B3BC081F21AEC9000C9DC8 /* LCTabBarBadge@2x.png in Resources */,
 				C3B3BC011F21AEC9000C9DC8 /* icon_tabbar_misc_selected.png in Resources */,
+				C33E33651F344F6B00CB9D3D /* condition_normal_select@2x.png in Resources */,
 				C3B3BBEA1F21AEC9000C9DC8 /* MBHUD_Info@3x.png in Resources */,
 				C3B3BBD31F21AEC9000C9DC8 /* 6.jpg in Resources */,
 				C3B3BC061F21AEC9000C9DC8 /* icon_tabbar_onsite_new@2x.png in Resources */,
@@ -1374,6 +1425,7 @@
 				C3B3BBC91F21AEC9000C9DC8 /* 0.jpg in Resources */,
 				C3B3BBF41F21AEC9000C9DC8 /* icon_tabbar_homepage@2x.png in Resources */,
 				C3B3BC001F21AEC9000C9DC8 /* icon_tabbar_misc@2x.png in Resources */,
+				C33E335F1F344F4500CB9D3D /* condition_light_low@2x.png in Resources */,
 				B0D0C9641F1F9C6900EBA36F /* LaunchScreen.storyboard in Resources */,
 				C3B3BBD21F21AEC9000C9DC8 /* 5.jpg in Resources */,
 				B074CF111F337307001022F8 /* touxiang@2x.png in Resources */,
@@ -1396,6 +1448,7 @@
 				C3E3E18A1F302FCC0021EB09 /* icon_04@3x.png in Resources */,
 				C3B3BBCC1F21AEC9000C9DC8 /* 11.jpg in Resources */,
 				C3B3BBEB1F21AEC9000C9DC8 /* MBHUD_Success@2x.png in Resources */,
+				C33E33601F344F4500CB9D3D /* condition_normal_high@2x.png in Resources */,
 				C3E3E1871F302FCC0021EB09 /* icon_03@2x.png in Resources */,
 				C3E3E1851F302FCC0021EB09 /* icon_01@2x.png in Resources */,
 				C3B3BBF01F21AEC9000C9DC8 /* snow.png in Resources */,
@@ -1406,6 +1459,7 @@
 				C3B3BBCA1F21AEC9000C9DC8 /* 1.jpg in Resources */,
 				C3B3BC041F21AEC9000C9DC8 /* icon_tabbar_nearby_selected.png in Resources */,
 				C3B3BBFB1F21AEC9000C9DC8 /* icon_tabbar_mine.png in Resources */,
+				C33E33641F344F6B00CB9D3D /* condition_light_select@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1586,9 +1640,10 @@
 				C3B3BBD71F21AEC9000C9DC8 /* GetWaterFallListAPI.m in Sources */,
 				C352202C1F243821002707E8 /* CMHomeContent.m in Sources */,
 				C3B3BBE11F21AEC9000C9DC8 /* MineViewController.m in Sources */,
-				C3B3BBDD1F21AEC9000C9DC8 /* MakeFriendsViewController.m in Sources */,
+				C305E11E1F344AC300BC10A1 /* CMBorrowConditionView.m in Sources */,
 				C3B3BBBF1F21AEC9000C9DC8 /* UserManager.m in Sources */,
 				C3B3BBAF1F21AEC9000C9DC8 /* RootNavigationController.m in Sources */,
+				C305E1201F344AC300BC10A1 /* MakeFriendsLogic.m in Sources */,
 				C3B3BBC11F21AEC9000C9DC8 /* EmitterViewController.m in Sources */,
 				C3A4BB641F29A88E0082030A /* CMMineItem.m in Sources */,
 				C3B3BBB71F21AEC9000C9DC8 /* RootWebViewController.m in Sources */,
@@ -1600,11 +1655,14 @@
 				C3B3BC0E1F21AEC9000C9DC8 /* UIViewController+AlertViewAndActionSheet.m in Sources */,
 				C3B3BC131F21AEC9000C9DC8 /* OpenUDID.m in Sources */,
 				C3B3BBDA1F21AEC9000C9DC8 /* WaterFlowLayout.m in Sources */,
+				C305E11C1F344AC300BC10A1 /* CMBorrowDefine.m in Sources */,
+				C305E11F1F344AC300BC10A1 /* CMBorrowViewController.m in Sources */,
 				C3B3BBD81F21AEC9000C9DC8 /* PersonListCollectionViewCell.m in Sources */,
 				C3B3BBC51F21AEC9000C9DC8 /* CMHomeViewController.m in Sources */,
 				C3A4BB6A1F29B9390082030A /* CMMineHeaderCell.m in Sources */,
 				C35220301F245127002707E8 /* CMRegistViewController.m in Sources */,
 				C3B3BC101F21AEC9000C9DC8 /* HeaderModel.m in Sources */,
+				C305E11D1F344AC300BC10A1 /* CMBorrowConditionItem.m in Sources */,
 				C3B3BBB11F21AEC9000C9DC8 /* MainTabBarController.m in Sources */,
 				C3F647031F24C773005952EC /* CMValidationCodeViewController.m in Sources */,
 				C3B3BBC81F21AEC9000C9DC8 /* PersonModel.m in Sources */,
@@ -1638,8 +1696,8 @@
 				C3B3BBBD1F21AEC9000C9DC8 /* GameInfo.m in Sources */,
 				C3B3BBB31F21AEC9000C9DC8 /* TabBarBadge.m in Sources */,
 				C35220261F243809002707E8 /* CMHomeBanner.m in Sources */,
-				C3B3BBDE1F21AEC9000C9DC8 /* MakeFriendsLogic.m in Sources */,
 				B05C5B7B1F28E9AB009E5CC6 /* CMMineCell.m in Sources */,
+				C33E33581F344CF300CB9D3D /* UIColor+CMColor.m in Sources */,
 				C3B3BBBA1F21AEC9000C9DC8 /* AppManager.m in Sources */,
 				C3A4BB671F29B8E50082030A /* CMMineHeader.m in Sources */,
 			);

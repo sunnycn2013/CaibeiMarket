@@ -24,10 +24,11 @@
     [super viewDidLoad];
 
     self.title = @"个人信息";
-    _headerImageView = [UIImageView new];
-    _headerImageView.frame = CGRectMake(0, 64, self.view.width , KScreenWidth/_headerImage.size.width * _headerImage.size.height);
-    [self.view addSubview:_headerImageView];
-    [_headerImageView setImage:_headerImage];
+    self.view.backgroundColor = [UIColor whiteColor];
+//    _headerImageView = [UIImageView new];
+//    _headerImageView.frame = CGRectMake(0, 64, self.view.width , KScreenWidth/_headerImage.size.width * _headerImage.size.height);
+//    [self.view addSubview:_headerImageView];
+//    [_headerImageView setImage:_headerImage];
 }
 
 -(void)viewDidAppear:(BOOL)animated{

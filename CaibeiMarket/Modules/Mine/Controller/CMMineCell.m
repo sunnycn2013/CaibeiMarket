@@ -67,7 +67,7 @@
 - (UIImageView *)settingImageView
 {
     if (!_settingImageView) {
-        _settingImageView = [[UIImageView alloc] initWithFrame:CGRectMake(14, 20, 15, 17)];
+        _settingImageView = [[UIImageView alloc] initWithFrame:CGRectMake(14, 20, kIPhone6PScale(15), kIPhone6PScale(17))];
     }
     return _settingImageView;
 }
