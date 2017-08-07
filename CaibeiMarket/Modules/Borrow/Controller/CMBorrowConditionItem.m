@@ -8,11 +8,16 @@
 
 #import "CMBorrowConditionItem.h"
 
+NSInteger CMBorrowConditionItemTag = 500;
+
 @interface CMBorrowConditionItem ()
 
 @property (nonatomic,strong) UILabel * conditionTextLabel;
 @property (nonatomic,strong) UIImageView * conditionHigh;
 @property (nonatomic,strong) UIImageView * conditionLow;
+
+@property (nonatomic,strong) UITapGestureRecognizer * tapGesture;
+
 
 @end
 
@@ -27,10 +32,12 @@
     return self;
 }
 
-- (void)setUI{
+- (void)setUI
+{
     [self addSubview:self.conditionTextLabel];
     [self addSubview:self.conditionHigh];
     [self addSubview:self.conditionLow];
+    [self addGestureRecognizer:self.tapGesture];
 }
 
 - (void)setConditionText:(NSString *)conditionText
@@ -38,7 +45,23 @@
     _conditionTextLabel.text = conditionText;
 }
 
+- (void)tapGestureAction:(UITapGestureRecognizer *)gesture
+{
+    NSInteger index = gesture.view.tag - CMBorrowConditionItemTag;
+    if ([self.delegate respondsToSelector:@selector(borrowConditionItem:selectedAtIndex:)]) {
+        [self.delegate borrowConditionItem:self selectedAtIndex:index];
+    }
+}
+
 #pragma mark -  set get
+- (UITapGestureRecognizer *)tapGesture
+{
+    if (!_tapGesture) {
+        _tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureAction:)];
+    }
+    return _tapGesture;
+}
+
 - (UILabel *)conditionTextLabel
 {
     if (!_conditionTextLabel) {

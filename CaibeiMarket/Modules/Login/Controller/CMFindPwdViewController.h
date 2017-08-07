@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CMConfirmPwdViewController : UIViewController
+@interface CMFindPwdViewController : UIViewController
 
 @end

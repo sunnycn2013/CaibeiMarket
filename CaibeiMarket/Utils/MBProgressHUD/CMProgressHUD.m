@@ -1,15 +1,16 @@
 //
-//  MBProgressHUD+XY.m
-//  MiAiApp
+//  CMProgressHUD.m
+//  CaibeiMarket
 //
-//  Created by icaibei on 2017/5/19.
-//  Copyright © 2017年 icaibei. All rights reserved.
+//  Created by icaibei on 2017/8/6.
+//  Copyright © 2017年 qianji. All rights reserved.
 //
 
-#import "MBProgressHUD+XY.h"
+#import "CMProgressHUD.h"
+
 const NSInteger hideTime = 2;
 
-@implementation MBProgressHUD (XY)
+@implementation MBProgressHUD (CMProgressHUD)
 
 + (MBProgressHUD*)createMBProgressHUDviewWithMessage:(NSString*)message isWindiw:(BOOL)isWindow
 {
@@ -29,10 +30,9 @@ const NSInteger hideTime = 2;
     hud.bezelView.color = [UIColor colorWithWhite:0 alpha:0.9];
     hud.removeFromSuperViewOnHide = YES;
     [hud setContentColor:KWhiteColor];
-//    hud.backgroundView.style = MBProgressHUDBackgroundStyleSolidColor;
-//    hud.backgroundView.color = [UIColor colorWithWhite:0.f alpha:0.1f];
     return hud;
 }
+
 #pragma mark-------------------- show Tip----------------------------
 
 + (void)showTipMessageInWindow:(NSString*)message
@@ -120,13 +120,14 @@ const NSInteger hideTime = 2;
 
 + (void)hideHUD
 {
-//    UIView  *winView =(UIView*)[UIApplication sharedApplication].delegate.window;
-//    [self hideAllHUDsForView:winView animated:YES];
-//    [self hideAllHUDsForView:[kAppDelegate getCurrentUIVC].view animated:YES];
+    //    UIView  *winView =(UIView*)[UIApplication sharedApplication].delegate.window;
+    //    [self hideAllHUDsForView:winView animated:YES];
+    //    [self hideAllHUDsForView:[kAppDelegate getCurrentUIVC].view animated:YES];
 }
 
 #pragma mark ————— 顶部tip —————
-+ (void)showTopTipMessage:(NSString *)msg {
++ (void)showTopTipMessage:(NSString *)msg
+{
     [self showTopTipMessage:msg isWindow:NO];
 }
 + (void)showTopTipMessage:(NSString *)msg isWindow:(BOOL) isWindow{
@@ -170,8 +171,7 @@ const NSInteger hideTime = 2;
                 [label removeFromSuperview];
             }];
         }];
-
     }
-    
 }
 @end
+

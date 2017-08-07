@@ -32,25 +32,18 @@
     [self addSubview:self.bgView];
     [self addSubview:self.textField];
     self.backgroundColor = [UIColor whiteColor];
+    self.showRoundedCorner = YES;;
     self.clipsToBounds = YES;
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
     [self.bgView setFrame:CGRectMake(0, 0, self.width, self.height)];
     [self.textField setFrame:CGRectMake(self.height/2, 0, self.width - self.height, self.height)];
-    self.layer.cornerRadius = self.height/2;
 }
 
+#pragma mark - public
 - (void)setPlaceholder:(NSString *)placeholder
 {
     _textField.placeholder = placeholder;
@@ -62,6 +55,21 @@
 //    self.textField.backgroundColor = textFieldBgColor;
 }
 
+- (void)setShowRoundedCorner:(BOOL)showRoundedCorner
+{
+    if (showRoundedCorner) {
+        self.layer.cornerRadius = self.height/2;
+    }else{
+        self.layer.cornerRadius = 0;
+    }
+    _showRoundedCorner = showRoundedCorner;
+}
+
+- (void)setFontSize:(CGFloat)fontSize
+{
+    self.textField.font = [UIFont systemFontOfSize:fontSize];
+    _fontSize = fontSize;
+}
 #pragma mark - set get
 - (UIView *)bgView
 {

@@ -7,10 +7,14 @@
 //
 
 #import "CMBorrowConditionView.h"
-#import "CMBorrowConditionItem.h"
-#import "UIColor+CMColor.h"
+#import "CMBorrowChooseView.h"
 
-static NSInteger CMBorrowConditionNum = 4;
+NSInteger CMBorrowConditionNum     = 4;
+
+@interface CMBorrowConditionView ()<CMBorrowConditionItemDeleage>
+
+
+@end
 
 @implementation CMBorrowConditionView
 
@@ -31,23 +35,27 @@ static NSInteger CMBorrowConditionNum = 4;
     for (int i = 0; i< CMBorrowConditionNum; i++) {
         CMBorrowConditionItem * item = [[CMBorrowConditionItem alloc] initWithFrame:CGRectMake(width * i, 0, width, height)];
         [item setConditionText:array[i]];
+        [item setTag:CMBorrowConditionItemTag + i];
+        [item setDelegate:self];
         [self addSubview:item];
     }
 }
 
-- (UIColor *) randomColor
+- (void)borrowConditionItem:(CMBorrowConditionItem *)item selectedAtIndex:(NSInteger)index
 {
-    CGFloat hue = ( arc4random() % 256 / 256.0 );  //0.0 to 1.0
-    CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5;  // 0.5 to 1.0,away from white
-    CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5;  //0.5 to 1.0,away from black
-    return [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
+    NSInteger conditionType = item.tag - CMBorrowConditionItemTag;
+    BOOL isAscending = item.isAscending;
+    if (index < 3) {
+        if ([self.delegate respondsToSelector:@selector(borrowConditionView:conditionType:sortingCondition:)]) {
+            [self.delegate borrowConditionView:self conditionType:conditionType sortingCondition:isAscending];
+        }
+    }else{
+        if ([self.delegate respondsToSelector:@selector(borrowConditionView:selectedChooseView:)]) {
+            [self.delegate borrowConditionView:self selectedChooseView:index];
+        }
+    }
 }
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+
+#pragma mark - set get
 
 @end

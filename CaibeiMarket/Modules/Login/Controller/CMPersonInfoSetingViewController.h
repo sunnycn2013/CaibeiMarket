@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CMValidationCodeViewController : RootViewController
+@interface CMPersonInfoSetingViewController : RootViewController
 
 @end

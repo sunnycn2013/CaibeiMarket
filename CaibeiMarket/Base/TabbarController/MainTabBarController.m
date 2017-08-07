@@ -12,7 +12,7 @@
 #import "CMHomeViewController.h"
 #import "PersonListViewController.h"
 #import "CMBorrowViewController.h"
-#import "MsgViewController.h"
+#import "CMFindViewController.h"
 #import "MineViewController.h"
 #import "TabBarItem.h"
 
@@ -65,7 +65,7 @@
     CMBorrowViewController *makeFriendVC = [[CMBorrowViewController alloc]init];
     [self setupChildViewController:makeFriendVC title:@"贷款" imageName:@"tab_dai_normal" seleceImageName:@"tab_dai_light"];
     
-    MsgViewController *msgVC = [[MsgViewController alloc]init];
+    CMFindViewController *msgVC = [[CMFindViewController alloc]init];
     [self setupChildViewController:msgVC title:@"发现" imageName:@"tab_find_normal" seleceImageName:@"tab_find_light"];
     
     MineViewController *mineVC = [[MineViewController alloc]init];

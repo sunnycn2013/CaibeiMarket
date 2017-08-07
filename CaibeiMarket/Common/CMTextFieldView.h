@@ -14,4 +14,9 @@
 
 @property (nonatomic,strong)UIColor * textFieldBgColor;
 
+@property (nonatomic,assign)BOOL      showRoundedCorner;
+
+@property (nonatomic,assign)CGFloat   placeholderFontSize;
+@property (nonatomic,assign)CGFloat   fontSize;
+
 @end

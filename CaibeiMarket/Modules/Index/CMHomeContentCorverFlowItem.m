@@ -50,6 +50,7 @@
         _numberLabel.layer.cornerRadius = 22.5;
         _numberLabel.layer.masksToBounds = YES;
         _numberLabel.backgroundColor = [UIColor purpleColor];
+        _numberLabel.textAlignment = NSTextAlignmentCenter;
     }
     return _numberLabel;
 }

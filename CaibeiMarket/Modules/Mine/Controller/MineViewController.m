@@ -16,7 +16,7 @@
 #import "CMMineDefine.h"
 
 #import "ProfileViewController.h"
-
+#import "CMSettingViewController.h"
 
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -56,7 +56,7 @@
     CMMineItem * item4 = [[CMMineItem alloc] init];
     item4.title = @"设置";
     item4.imageName = @"setting";
-    item3.navigationType = CMMineJumpSetUp;
+    item4.navigationType = CMMineJumpSetUp;
     
     self.dataArray = @[header,item1,item2,item3,item4];
     
@@ -115,8 +115,21 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ProfileViewController * vc = [[ProfileViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+    CMMineItem * item = [self.dataArray objectAtIndex:indexPath.row];
+    NSString * navigationType = item.navigationType;
+    
+    if ([navigationType isEqualToString:CMMineJumpApply])
+    {
+        ProfileViewController * vc = [[ProfileViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if ([navigationType isEqualToString:CMMineJumpMyData]){
+        
+    }else if ([navigationType isEqualToString:CMMineJumpAboutMe]){
+        
+    }else if ([navigationType isEqualToString:CMMineJumpSetUp]){
+        CMSettingViewController * setting = [[CMSettingViewController alloc] init];
+        [self.navigationController pushViewController:setting animated:YES];
+    }
 }
 #pragma mark - set get
 - (CMMineHeaderView *)headerView

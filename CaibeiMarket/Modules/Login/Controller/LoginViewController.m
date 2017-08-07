@@ -8,13 +8,16 @@
 
 #import "LoginViewController.h"
 #import "CMRegistViewController.h"
+#import "CMFindPwdViewController.h"
+#import "CMTextFieldView.h"
 
 @interface LoginViewController ()
 
 @property(nonatomic,strong) UIImageView  * headerImageView;
 
-@property(nonatomic,strong) UITextField  * telephoneTextFiled;
-@property(nonatomic,strong) UITextField  * pwdTextFiled;
+@property(nonatomic,strong) CMTextFieldView  * telephoneTextFiled;
+@property(nonatomic,strong) CMTextFieldView  * pwdTextFiled;
+@property(nonatomic,strong) UIButton     * forgetPWDButton;
 @property(nonatomic,strong) UIButton     * loginButton;
 @property(nonatomic,strong) UIButton     * registButton;
 
@@ -30,26 +33,35 @@
     [self.view addSubview:self.headerImageView];
     [self.view addSubview:self.telephoneTextFiled];
     [self.view addSubview:self.pwdTextFiled];
-    
+    [self.view addSubview:self.forgetPWDButton];
+
     [self.view addSubview:self.loginButton];
+
     [self.view addSubview:self.registButton];
     
     UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeKeyBoard:)];
     [self.view addGestureRecognizer:tapGesture];
 }
 
-- (void)viewWillAppear:(BOOL)animated{
+- (void)viewWillAppear:(BOOL)animated
+{
     [super viewWillAppear:animated];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     //去掉导航栏底部的黑线
     self.navigationController.navigationBar.shadowImage = [UIImage new];
 }
+
 //如果仅设置当前页导航透明，需加入下面方法
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
     [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:nil];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 -(void)skipAction
@@ -73,9 +85,10 @@
     [self.navigationController pushViewController:regist animated:YES];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)forgetPwdAction:(UIButton *)sender
+{
+    CMFindPwdViewController * findPwd = [[CMFindPwdViewController alloc] init];
+    [self.navigationController pushViewController:findPwd animated:YES];
 }
 
 #pragma mark - set get
@@ -89,13 +102,13 @@
     return _headerImageView;
 }
 
-- (UITextField *)telephoneTextFiled
+- (CMTextFieldView *)telephoneTextFiled
 {
     if (!_telephoneTextFiled) {
         CGFloat width = KScreenWidth - kIPhone6Scale(96);
         CGFloat height = kIPhone6Scale(45);
         CGFloat margin = kIPhone6Scale(96) / 2.0;
-        _telephoneTextFiled = [[UITextField alloc] initWithFrame:CGRectMake(margin, kIPhone6Scale(285), width, height)];
+        _telephoneTextFiled = [[CMTextFieldView alloc] initWithFrame:CGRectMake(margin, kIPhone6Scale(285), width, height)];
         _telephoneTextFiled.placeholder = @"请输入手机号";
         _telephoneTextFiled.layer.cornerRadius = height/2;
         _telephoneTextFiled.backgroundColor = [UIColor whiteColor];
@@ -103,17 +116,33 @@
     return _telephoneTextFiled;
 }
 
-- (UITextField *)pwdTextFiled
+- (CMTextFieldView *)pwdTextFiled
 {
     if (!_pwdTextFiled) {
         CGFloat width = KScreenWidth - kIPhone6Scale(96);
         CGFloat height = kIPhone6Scale(45);
-        _pwdTextFiled = [[UITextField alloc] initWithFrame:CGRectMake(_telephoneTextFiled.left, _telephoneTextFiled.bottom + kIPhone6Scale(23), width, height)];
+        _pwdTextFiled = [[CMTextFieldView alloc] initWithFrame:CGRectMake(_telephoneTextFiled.left, _telephoneTextFiled.bottom + kIPhone6Scale(23), width, height)];
         _pwdTextFiled.placeholder = @"请输入手机号";
         _pwdTextFiled.layer.cornerRadius = height/2;
         _pwdTextFiled.backgroundColor = [UIColor whiteColor];
     }
     return _pwdTextFiled;
+}
+
+- (UIButton *)forgetPWDButton
+{
+    if (!_forgetPWDButton) {
+        CGFloat width = kIPhone6Scale(60);
+        _forgetPWDButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _forgetPWDButton.frame = CGRectMake(_pwdTextFiled.right - width, _pwdTextFiled.bottom +kIPhone6Scale(10) , width, kIPhone6Scale(20));
+        _forgetPWDButton.backgroundColor = [UIColor clearColor];
+        _forgetPWDButton.titleLabel.font = [UIFont systemFontOfSize:14];
+        _forgetPWDButton.titleLabel.textAlignment = NSTextAlignmentRight;
+        [_forgetPWDButton setTitle:@"忘记密码" forState:UIControlStateNormal];
+        [_forgetPWDButton setTitleColor:CMThemeColor forState:UIControlStateNormal];
+        [_forgetPWDButton addTarget:self action:@selector(forgetPwdAction:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _forgetPWDButton;
 }
 
 - (UIButton *)loginButton
@@ -139,11 +168,13 @@
         _registButton.frame = CGRectMake(_loginButton.left, _loginButton.bottom + kIPhone6Scale(22), kIPhone6Scale(38), kIPhone6Scale(20));
         _registButton.backgroundColor = [UIColor clearColor];
         _registButton.centerX = KScreenWidth/2;
+        _registButton.titleLabel.font = [UIFont systemFontOfSize:14];
         [_registButton setTitle:@"注册" forState:UIControlStateNormal];
         [_registButton setTitleColor:CMThemeColor forState:UIControlStateNormal];
         [_registButton addTarget:self action:@selector(registAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _registButton;
 }
+
 
 @end

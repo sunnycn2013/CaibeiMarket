@@ -21,7 +21,7 @@
 #import "AppDelegate+AppService.h"
 #import "RootViewController.h"
 #import "RootNavigationController.h"
-#import "MBProgressHUD+XY.h"
+#import "CMProgressHUD.h"
 #import "PPNetworkHelper.h"
 #import "AppManager.h"
 #import "ShareManager.h"

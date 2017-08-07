@@ -46,8 +46,9 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
     
     self.data = [[CMHomeModel alloc] init];
     
-//    self.edgesForExtendedLayout = UIRectEdgeAll;
     self.automaticallyAdjustsScrollViewInsets = NO;
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapIndexView:)];
+    [self.view addGestureRecognizer:tap];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -74,6 +75,11 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.header endRefreshing];
     });
+}
+
+- (void)tapIndexView:(UITapGestureRecognizer *)gesture
+{
+    [[kAppDelegate window] endEditing:YES];
 }
 #pragma mark - UITableViewDelegate,UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

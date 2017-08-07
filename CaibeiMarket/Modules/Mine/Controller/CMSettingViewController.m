@@ -6,9 +6,9 @@
 //  Copyright © 2017年 qianji. All rights reserved.
 //
 
-#import "CMSetUpViewController.h"
+#import "CMSettingViewController.h"
 
-@implementation CMSetUpViewController
+@implementation CMSettingViewController
 
 - (void)viewDidLoad
 {
