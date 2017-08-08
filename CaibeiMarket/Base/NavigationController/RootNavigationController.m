@@ -81,8 +81,9 @@
 //push时隐藏tabbar
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    if (self.viewControllers.count > 0) {
-        if ([(id<XYTransitionProtocol>)viewController conformsToProtocol:@protocol(XYTransitionProtocol)] && [self isNeedTransition:viewController]) {
+    if (self.viewControllers.count > 0)
+    {
+        if ([viewController conformsToProtocol:@protocol(XYTransitionProtocol)] && [self isNeedTransition:viewController]) {
             viewController.hidesBottomBarWhenPushed = NO;
         }else{
             viewController.hidesBottomBarWhenPushed = YES;

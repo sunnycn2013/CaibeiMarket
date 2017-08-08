@@ -91,7 +91,7 @@
     }else {//登陆失败加载登陆页面控制器
         
         self.mainTabBar = nil;
-        UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         
 //        LoginViewController * login = [board instantiateViewControllerWithIdentifier:@"LoginViewController"];
         LoginViewController * login = [[LoginViewController alloc] init];

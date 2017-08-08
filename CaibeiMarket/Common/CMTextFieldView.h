@@ -11,11 +11,9 @@
 @interface CMTextFieldView : UIView
 
 @property (nonatomic,strong)NSString * placeholder;
-
-@property (nonatomic,strong)UIColor * textFieldBgColor;
-
+@property (nonatomic,strong)NSString * text;
+@property (nonatomic,strong)UIColor  * textFieldBgColor;
 @property (nonatomic,assign)BOOL      showRoundedCorner;
-
 @property (nonatomic,assign)CGFloat   placeholderFontSize;
 @property (nonatomic,assign)CGFloat   fontSize;
 

@@ -11,6 +11,10 @@
 
 @implementation CMMineItem
 
+- (id)dataForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return nil;
+}
 
 - (NSString *)identifierAtIndexPath:(NSIndexPath *)indexPath
 {

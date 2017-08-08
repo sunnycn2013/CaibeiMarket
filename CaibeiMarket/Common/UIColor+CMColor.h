@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface UIColor (CMColor)
+@interface UIColor (Hex)
 
-- (UIColor *)randomColor;
++ (UIColor *)randomColor;
+
++ (UIColor *)colorWithHexString:(NSString *)color;
 
 @end

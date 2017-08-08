@@ -14,6 +14,8 @@
 {
     [super viewDidLoad];
     self.title = @"设置";
+    self.view.backgroundColor = [UIColor whiteColor];
+
 }
 
 @end

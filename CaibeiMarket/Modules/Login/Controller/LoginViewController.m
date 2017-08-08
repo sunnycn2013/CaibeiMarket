@@ -76,7 +76,21 @@
 
 - (void)loginAction:(id)sender
 {
-    KPostNotification(KNotificationLoginStateChange, @YES);
+    NSString * userName = self.telephoneTextFiled.text;
+    NSString * pwd = self.pwdTextFiled.text;
+    
+    NSDictionary * params = @{@"phone":@"111",
+                              @"password":@"2222"};
+    [PPNetworkHelper POST:@"http://localhost:8080/borrow-supermarket/login.json" parameters:params success:^(id responseObject) {
+        //
+        NSLog(@"%@",responseObject);
+        
+    } failure:^(NSError *error) {
+        //
+        NSLog(@"aa");
+
+    }];
+    
 }
 
 - (void)registAction:(id)sender

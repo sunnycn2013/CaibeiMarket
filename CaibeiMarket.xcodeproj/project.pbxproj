@@ -30,6 +30,9 @@
 		C305E11E1F344AC300BC10A1 /* CMBorrowConditionView.m in Sources */ = {isa = PBXBuildFile; fileRef = C305E1171F344AC300BC10A1 /* CMBorrowConditionView.m */; };
 		C305E11F1F344AC300BC10A1 /* CMBorrowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C305E1191F344AC300BC10A1 /* CMBorrowViewController.m */; };
 		C305E1201F344AC300BC10A1 /* MakeFriendsLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = C305E11B1F344AC300BC10A1 /* MakeFriendsLogic.m */; };
+		C327941C1F397B1E00AE02A3 /* CMPortraitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C327941B1F397B1E00AE02A3 /* CMPortraitViewController.m */; };
+		C327941F1F397BB200AE02A3 /* CMSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C327941E1F397BB200AE02A3 /* CMSettingCell.m */; };
+		C32794241F398A7E00AE02A3 /* CMChooseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C32794231F398A7E00AE02A3 /* CMChooseCell.m */; };
 		C33E33581F344CF300CB9D3D /* UIColor+CMColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C33E33571F344CF300CB9D3D /* UIColor+CMColor.m */; };
 		C33E335E1F344F4500CB9D3D /* condition_light_high@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C33E335A1F344F4500CB9D3D /* condition_light_high@2x.png */; };
 		C33E335F1F344F4500CB9D3D /* condition_light_low@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C33E335B1F344F4500CB9D3D /* condition_light_low@2x.png */; };
@@ -233,6 +236,12 @@
 		C305E1191F344AC300BC10A1 /* CMBorrowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMBorrowViewController.m; sourceTree = "<group>"; };
 		C305E11A1F344AC300BC10A1 /* MakeFriendsLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MakeFriendsLogic.h; path = CaibeiMarket/Modules/Borrow/MakeFriendsLogic.h; sourceTree = SOURCE_ROOT; };
 		C305E11B1F344AC300BC10A1 /* MakeFriendsLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MakeFriendsLogic.m; path = CaibeiMarket/Modules/Borrow/MakeFriendsLogic.m; sourceTree = SOURCE_ROOT; };
+		C327941A1F397B1E00AE02A3 /* CMPortraitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMPortraitViewController.h; sourceTree = "<group>"; };
+		C327941B1F397B1E00AE02A3 /* CMPortraitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMPortraitViewController.m; sourceTree = "<group>"; };
+		C327941D1F397BB200AE02A3 /* CMSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMSettingCell.h; sourceTree = "<group>"; };
+		C327941E1F397BB200AE02A3 /* CMSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMSettingCell.m; sourceTree = "<group>"; };
+		C32794221F398A7E00AE02A3 /* CMChooseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMChooseCell.h; sourceTree = "<group>"; };
+		C32794231F398A7E00AE02A3 /* CMChooseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMChooseCell.m; sourceTree = "<group>"; };
 		C33E33561F344CF300CB9D3D /* UIColor+CMColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CMColor.h"; sourceTree = "<group>"; };
 		C33E33571F344CF300CB9D3D /* UIColor+CMColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CMColor.m"; sourceTree = "<group>"; };
 		C33E335A1F344F4500CB9D3D /* condition_light_high@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "condition_light_high@2x.png"; sourceTree = "<group>"; };
@@ -520,6 +529,8 @@
 				C368EEDC1F383943008146D2 /* Cell */,
 				B05C5B801F2B27F2009E5CC6 /* CMSettingViewController.h */,
 				B05C5B811F2B27F2009E5CC6 /* CMSettingViewController.m */,
+				C327941A1F397B1E00AE02A3 /* CMPortraitViewController.h */,
+				C327941B1F397B1E00AE02A3 /* CMPortraitViewController.m */,
 			);
 			name = Setting;
 			path = Controller;
@@ -530,13 +541,6 @@
 			children = (
 			);
 			path = NetWork;
-			sourceTree = "<group>";
-		};
-		B074CEFE1F2F6D81001022F8 /* CMNetWork */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CMNetWork;
 			sourceTree = "<group>";
 		};
 		B074CEFF1F336815001022F8 /* Common */ = {
@@ -590,7 +594,6 @@
 			isa = PBXGroup;
 			children = (
 				B074CEFF1F336815001022F8 /* Common */,
-				B074CEFE1F2F6D81001022F8 /* CMNetWork */,
 				B074CEF71F2F6D42001022F8 /* NetWork */,
 				C3B3BC161F21AEEE000C9DC8 /* AppDelegate+AppService.h */,
 				C3B3BC171F21AEEE000C9DC8 /* AppDelegate+AppService.m */,
@@ -658,14 +661,32 @@
 		C305E1211F344ACB00BC10A1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C32794201F398A5400AE02A3 /* Choose */,
 				C305E1141F344AC300BC10A1 /* CMBorrowConditionItem.h */,
 				C305E1151F344AC300BC10A1 /* CMBorrowConditionItem.m */,
 				C305E1161F344AC300BC10A1 /* CMBorrowConditionView.h */,
 				C305E1171F344AC300BC10A1 /* CMBorrowConditionView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C32794201F398A5400AE02A3 /* Choose */ = {
+			isa = PBXGroup;
+			children = (
+				C32794211F398A5F00AE02A3 /* Cell */,
 				C33E33791F36CE3400CB9D3D /* CMBorrowChooseView.h */,
 				C33E337A1F36CE3400CB9D3D /* CMBorrowChooseView.m */,
 			);
-			name = View;
+			name = Choose;
+			sourceTree = "<group>";
+		};
+		C32794211F398A5F00AE02A3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C32794221F398A7E00AE02A3 /* CMChooseCell.h */,
+				C32794231F398A7E00AE02A3 /* CMChooseCell.m */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		C33E33591F344F3B00CB9D3D /* images */ = {
@@ -702,23 +723,25 @@
 		C368EED71F3834C8008146D2 /* Finder */ = {
 			isa = PBXGroup;
 			children = (
-				C368EEDB1F383570008146D2 /* New Group */,
+				C368EEDB1F383570008146D2 /* Cell */,
 				C368EED81F3834C8008146D2 /* CMFindViewController.h */,
 				C368EED91F3834C8008146D2 /* CMFindViewController.m */,
 			);
 			path = Finder;
 			sourceTree = "<group>";
 		};
-		C368EEDB1F383570008146D2 /* New Group */ = {
+		C368EEDB1F383570008146D2 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = "New Group";
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		C368EEDC1F383943008146D2 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				C327941D1F397BB200AE02A3 /* CMSettingCell.h */,
+				C327941E1F397BB200AE02A3 /* CMSettingCell.m */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -1692,6 +1715,7 @@
 				C352202C1F243821002707E8 /* CMHomeContent.m in Sources */,
 				C3B3BBE11F21AEC9000C9DC8 /* MineViewController.m in Sources */,
 				C305E11E1F344AC300BC10A1 /* CMBorrowConditionView.m in Sources */,
+				C327941C1F397B1E00AE02A3 /* CMPortraitViewController.m in Sources */,
 				C3B3BBBF1F21AEC9000C9DC8 /* UserManager.m in Sources */,
 				C3B3BBAF1F21AEC9000C9DC8 /* RootNavigationController.m in Sources */,
 				C305E1201F344AC300BC10A1 /* MakeFriendsLogic.m in Sources */,
@@ -1705,6 +1729,8 @@
 				C3B3BC0E1F21AEC9000C9DC8 /* UIViewController+AlertViewAndActionSheet.m in Sources */,
 				C33E336F1F34C4EC00CB9D3D /* CMBorrow.m in Sources */,
 				C3B3BC131F21AEC9000C9DC8 /* OpenUDID.m in Sources */,
+				C327941F1F397BB200AE02A3 /* CMSettingCell.m in Sources */,
+				C32794241F398A7E00AE02A3 /* CMChooseCell.m in Sources */,
 				C3B3BBDA1F21AEC9000C9DC8 /* WaterFlowLayout.m in Sources */,
 				C368EEDA1F3834C8008146D2 /* CMFindViewController.m in Sources */,
 				C305E11C1F344AC300BC10A1 /* CMBorrowDefine.m in Sources */,

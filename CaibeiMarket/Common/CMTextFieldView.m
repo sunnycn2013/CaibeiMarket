@@ -70,6 +70,11 @@
     self.textField.font = [UIFont systemFontOfSize:fontSize];
     _fontSize = fontSize;
 }
+
+- (NSString *)text
+{
+    return self.textField.text;
+}
 #pragma mark - set get
 - (UIView *)bgView
 {

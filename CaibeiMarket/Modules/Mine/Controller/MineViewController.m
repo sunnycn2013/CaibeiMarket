@@ -17,6 +17,8 @@
 
 #import "ProfileViewController.h"
 #import "CMSettingViewController.h"
+#import "RootWebViewController.h"
+#import "CMPortraitViewController.h"
 
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -33,7 +35,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    self.navigationController.navigationBar.hidden = YES;
     
     [self.view addSubview:self.tableView];
     
@@ -117,19 +118,18 @@
 {
     CMMineItem * item = [self.dataArray objectAtIndex:indexPath.row];
     NSString * navigationType = item.navigationType;
-    
+    UIViewController * viewController = nil;
     if ([navigationType isEqualToString:CMMineJumpApply])
     {
-        ProfileViewController * vc = [[ProfileViewController alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
+        viewController = [[ProfileViewController alloc] init];
     }else if ([navigationType isEqualToString:CMMineJumpMyData]){
-        
+        viewController = [[CMPortraitViewController alloc] init];
     }else if ([navigationType isEqualToString:CMMineJumpAboutMe]){
-        
+        viewController = [[RootWebViewController alloc] initWithUrl:@"http://www.icaibei.com/about.html"];
     }else if ([navigationType isEqualToString:CMMineJumpSetUp]){
-        CMSettingViewController * setting = [[CMSettingViewController alloc] init];
-        [self.navigationController pushViewController:setting animated:YES];
+        viewController = [[CMSettingViewController alloc] init];
     }
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 #pragma mark - set get
 - (CMMineHeaderView *)headerView
