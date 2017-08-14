@@ -11,17 +11,30 @@
 
 @interface CMFindPwdViewController ()
 
-@property (nonatomic, strong) UIView * pwdBgView;
-@property (nonatomic, strong) CMTextFieldView  * pwdTextFiled;
-@property (nonatomic, strong) UIButton *verificationButton;
-@property (nonatomic, strong) UIView * conformPwdBgView;
-@property (nonatomic, strong) CMTextFieldView  * conformPwdTextFiled;
+@property (nonatomic, strong) NSString * userName;
 
-@property (nonatomic, strong) UIButton *nextButton;
+@property (nonatomic, strong) UIView           *pwdBgView;
+@property (nonatomic, strong) CMTextFieldView  *veriCodeTextField;
+@property (nonatomic, strong) UIButton         *verificationButton;
+@property (nonatomic, strong) UIView           *conformPwdBgView;
+@property (nonatomic, strong) CMTextFieldView  *pwdTextFiled;
+@property (nonatomic, strong) UIButton         *nextButton;
 
+@property(nonatomic, strong) UAHTTPSessionManager * veriRequest;
+@property(nonatomic, strong) UAHTTPSessionManager * resetPwdRequest;
+@property(nonatomic, strong) UAHTTPSessionManager * sendVerfiCoderequest;
 @end
 
 @implementation CMFindPwdViewController
+
+- (instancetype)initWithUserName:(NSString *)userName
+{
+    self = [super init];
+    if (self) {
+        self.userName = userName;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,10 +42,10 @@
     self.view.backgroundColor = [UIColor colorWithHexString:@"#F6F6F6"];
     
     [self.view addSubview:self.pwdBgView];
-    [self.view addSubview:self.pwdTextFiled];
+    [self.view addSubview:self.veriCodeTextField];
     [self.view addSubview:self.verificationButton];
     [self.view addSubview:self.conformPwdBgView];
-    [self.view addSubview:self.conformPwdTextFiled];
+    [self.view addSubview:self.pwdTextFiled];
     [self.view addSubview:self.nextButton];
     
     // Do any additional setup after loading the view.
@@ -43,15 +56,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 - (void)reSetPassWordAction:(id)sender
 {
     [MBProgressHUD showSuccessMessage:@"注册成功!!"];
@@ -59,9 +63,61 @@
 
 - (void)nextAction:(UIButton *)sender
 {
-    KPostNotification(KNotificationLoginStateChange, @YES);
+    NSCharacterSet * character = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    NSString * verfiCode = [self.veriCodeTextField.text stringByTrimmingCharactersInSet:character];
+    
+    NSDictionary * params = @{
+                              @"phone":self.userName ? : @"",
+                              @"code":verfiCode ? : @"",
+                              @"type": @"2",
+                              };
+    __weak typeof(self) weakSelf = self;
+    self.veriRequest = [UAHTTPSessionManager manager];
+    [self.veriRequest POST:@"veriCodes/verifyCode.json" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
+        NSString * resultCode = [responseObject objectForKey:@"resultCode"];
+        NSString * message = [responseObject objectForKey:@"message"];
+        NSArray * propertys = [responseObject objectForKey:@"properties"];
+        if ([resultCode isEqualToString:@"0000"]) {
+            NSDictionary * dic = [propertys objectAtIndex:0];
+            [weakSelf resetPasswordToken:dic[@"token"]];
+        }else{
+            [MBProgressHUD showErrorMessage:message];
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nullable error) {
+        [MBProgressHUD showErrorMessage:@"服务异常"];
+    }];
 }
 
+- (void)sendVerificationCodeAction:(UIButton *)button
+{
+    
+}
+
+- (void)resetPasswordToken:(NSString *)token
+{
+    NSCharacterSet * character = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    NSString * password = [self.pwdTextFiled.text stringByTrimmingCharactersInSet:character];
+    NSDictionary * params = @{
+                              @"password":password ? : @"",
+                              @"token":token ? : @"",
+                              };
+    __weak typeof(self) weakSelf = self;
+    self.veriRequest = [UAHTTPSessionManager manager];
+    [self.veriRequest POST:@"resetPassword.json" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
+        NSString * resultCode = [responseObject objectForKey:@"resultCode"];
+        NSString * message = [responseObject objectForKey:@"message"];
+        NSArray * propertys = [responseObject objectForKey:@"properties"];
+        if ([resultCode isEqualToString:@"0000"]) {
+            NSDictionary * dic = [propertys objectAtIndex:0];
+            [weakSelf resetPasswordToken:dic[@"token"]];
+        }else{
+            [MBProgressHUD showErrorMessage:message];
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nullable error) {
+        [MBProgressHUD showErrorMessage:@"服务异常"];
+    }];
+
+}
 #pragma mark -  set get
 
 - (UIView *)pwdBgView
@@ -73,16 +129,16 @@
     return _pwdBgView;
 }
 
-- (CMTextFieldView *)pwdTextFiled
+- (CMTextFieldView *)veriCodeTextField
 {
-    if (!_pwdTextFiled) {
-        _pwdTextFiled = [[CMTextFieldView alloc] initWithFrame:CGRectMake(20, _pwdBgView.top, KScreenWidth-120, 35)];
-        _pwdTextFiled.placeholder = @"请输入手机号";
-        _pwdTextFiled.textFieldBgColor = [UIColor lightGrayColor];
-        _pwdTextFiled.showRoundedCorner = NO;
-        _pwdTextFiled.fontSize = 14;
+    if (!_veriCodeTextField) {
+        _veriCodeTextField = [[CMTextFieldView alloc] initWithFrame:CGRectMake(20, _pwdBgView.top, KScreenWidth-120, 35)];
+        _veriCodeTextField.placeholder = @"请输入手机号";
+        _veriCodeTextField.textFieldBgColor = [UIColor lightGrayColor];
+        _veriCodeTextField.showRoundedCorner = NO;
+        _veriCodeTextField.fontSize = 14;
     }
-    return _pwdTextFiled;
+    return _veriCodeTextField;
 }
 
 - (UIButton *)verificationButton
@@ -94,7 +150,7 @@
         _verificationButton.backgroundColor = CMThemeColor;
         _verificationButton.titleLabel.font = [UIFont systemFontOfSize:10];
         [_verificationButton setTitle:@"获取验证码(60秒)" forState:UIControlStateNormal];
-        [_verificationButton addTarget:self action:@selector(nextAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_verificationButton addTarget:self action:@selector(sendVerificationCodeAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _verificationButton;
 }
@@ -108,22 +164,22 @@
     return _conformPwdBgView;
 }
 
-- (CMTextFieldView *)conformPwdTextFiled
+- (CMTextFieldView *)pwdTextFiled
 {
-    if (!_conformPwdTextFiled) {
-        _conformPwdTextFiled = [[CMTextFieldView alloc] initWithFrame:CGRectMake(20,_conformPwdBgView.top, KScreenWidth-120, 35)];
-        _conformPwdTextFiled.placeholder = @"请确认密码";
-        _conformPwdTextFiled.showRoundedCorner = NO;
-        _conformPwdTextFiled.fontSize = 14;
+    if (!_pwdTextFiled) {
+        _pwdTextFiled = [[CMTextFieldView alloc] initWithFrame:CGRectMake(20,_conformPwdBgView.top, KScreenWidth-120, 35)];
+        _pwdTextFiled.placeholder = @"请确认密码";
+        _pwdTextFiled.showRoundedCorner = NO;
+        _pwdTextFiled.fontSize = 14;
     }
-    return _conformPwdTextFiled;
+    return _pwdTextFiled;
 }
 
 - (UIButton *)nextButton
 {
     if (!_nextButton) {
         CGFloat margin = kIPhone6Scale(96) / 2.0;
-        CGFloat marginTop = _conformPwdTextFiled.bottom + 20;
+        CGFloat marginTop = _pwdTextFiled.bottom + 20;
         _nextButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _nextButton.frame = CGRectMake(margin, marginTop, KScreenWidth-90, 45);
         _nextButton.backgroundColor = CMThemeColor;

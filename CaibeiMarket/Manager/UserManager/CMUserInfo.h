@@ -15,10 +15,10 @@ typedef NS_ENUM(NSInteger,UserGender){
     UserGenderFemale //女
 };
 
-@interface UserInfo : NSObject
+@interface CMUserInfo : NSObject
 
-@property(nonatomic,assign)long long userid;//用户ID
-@property (nonatomic,copy) NSString * idcard;//展示用的用户ID
+@property (nonatomic,copy) NSString * userName;//展示用的用户ID
+@property (nonatomic,copy) NSString * passWord;//展示用的用户ID
 @property (nonatomic,copy) NSString * photo;//头像
 @property (nonatomic,copy) NSString * nickname;//昵称
 @property (nonatomic, assign) UserGender sex;//性别
@@ -27,6 +27,5 @@ typedef NS_ENUM(NSInteger,UserGender){
 @property (nonatomic,assign) NSInteger  degreeId;//用户等级
 @property (nonatomic,copy) NSString * signature;//个性签名
 @property (nonatomic,copy) NSString * token;//用户登录后分配的登录Token
-@property (nonatomic, strong) GameInfo *info;//游戏数据
 
 @end

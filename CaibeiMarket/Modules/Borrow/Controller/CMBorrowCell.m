@@ -7,6 +7,7 @@
 //
 
 #import "CMBorrowCell.h"
+#import "CMBorrow.h"
 
 @interface CMBorrowCell ()
 
@@ -29,6 +30,8 @@
 @property (nonatomic,strong) UILabel * descriptionInfoLabel;
 
 @property (nonatomic,strong) UILabel * borrowLinesLabel;
+
+@property (nonatomic,strong) CMBorrowCrads * data;
 
 @end
 
@@ -71,6 +74,22 @@
     self.clipsToBounds = YES;
 
 }
+
+- (void)fillData:(id)model
+{
+    if ([model isKindOfClass:[CMBorrowCrads  class]]) {
+        self.data = (CMBorrowCrads *)model;
+    }
+    //http://47.94.220.244:8080/screen/20170813_716.png
+    NSString * imageURL = [NSString stringWithFormat:@"%@%@",URL_main,self.data.lendPicUrl];
+    [self.iconImageView setImageURL:[NSURL URLWithString:imageURL]];
+    [self.companyNameLabel setText:self.data.lendName];
+    NSString * extend = @"%";
+    [self.applyInterestabelLabel setText:[NSString stringWithFormat:@"%@%@",self.data.monthlyInterestRate,extend]];
+    [self.applyNumLabel setText:[NSString stringWithFormat:@"%@",self.data.totalApply]];
+//    [self.descriptionInfoLabel setText:self.data.];
+}
+
 
 #pragma mark - set get
 

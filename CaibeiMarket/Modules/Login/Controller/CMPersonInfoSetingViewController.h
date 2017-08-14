@@ -10,4 +10,6 @@
 
 @interface CMPersonInfoSetingViewController : RootViewController
 
+- (instancetype)initWithUserName:(NSString *)userName;
+
 @end

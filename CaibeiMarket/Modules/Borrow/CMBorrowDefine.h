@@ -9,3 +9,21 @@
 #import <Foundation/Foundation.h>
 
 extern CGFloat CMBorrowConditionViewHeight;
+
+
+
+
+#pragma mark - CMBorrowDetail
+
+extern CGFloat CMBorrowDetailContentHeight;
+extern CGFloat CMBorrowDetailNoteHeight;
+extern CGFloat CMBorrowDetailDesHeight;
+extern CGFloat CMBorrowDetailSpaceHeight;
+
+extern NSString * CMBorrowDetailCellTypeContent;
+extern NSString * CMBorrowDetailCellTypeNote;
+extern NSString * CMBorrowDetailCellTypeDes;
+extern NSString * CMBorrowDetailCellTypeSpace;
+
+
+

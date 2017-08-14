@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "UserInfo.h"
+#import "CMUserInfo.h"
 
 typedef NS_ENUM(NSInteger, UserLoginType){
     kUserLoginTypeUnKnow = 0,//未知
@@ -18,18 +18,18 @@ typedef NS_ENUM(NSInteger, UserLoginType){
 
 typedef void (^loginBlock)(BOOL success, NSString * des);
 
-#define isLogin [UserManager sharedUserManager].isLogined
-#define curUser [UserManager sharedUserManager].curUserInfo
-#define userManager [UserManager sharedUserManager]
+#define isLogin [CMUserManager sharedCMUserManager].isLogined
+#define curUser [CMUserManager sharedCMUserManager].curUserInfo
+#define userManager [CMUserManager sharedCMUserManager]
 /**
  包含用户相关服务
  */
-@interface UserManager : NSObject
+@interface CMUserManager : NSObject
 //单例
-SINGLETON_FOR_HEADER(UserManager)
+SINGLETON_FOR_HEADER(CMUserManager)
 
 //当前用户
-@property (nonatomic, strong) UserInfo *curUserInfo;
+@property (nonatomic, strong) CMUserInfo *curUserInfo;
 @property (nonatomic, assign) UserLoginType loginType;
 @property (nonatomic, assign) BOOL isLogined;
 
@@ -51,6 +51,8 @@ SINGLETON_FOR_HEADER(UserManager)
  @param completion 回调
  */
 -(void)login:(UserLoginType )loginType params:(NSDictionary *)params completion:(loginBlock)completion;
+
+-(void)saveLoginInfo:(NSDictionary *)params completion:(loginBlock)completion;
 
 /**
  自动登录

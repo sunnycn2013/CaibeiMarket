@@ -42,12 +42,11 @@
 #pragma mark ————— 初始化用户系统 —————
 -(void)initUserManager{
     DLog(@"设备IMEI ：%@",[OpenUDID value]);
-    if([userManager loadUserInfo]){
-        
+    if([userManager loadUserInfo])
+    {
         //如果有本地数据，先展示TabBar 随后异步自动登录
         self.mainTabBar = [MainTabBarController new];
         self.window.rootViewController = self.mainTabBar;
-        
         //自动登录
         [userManager autoLoginToServer:^(BOOL success, NSString *des) {
             if (success) {
@@ -62,7 +61,6 @@
     }else{
         //没有登录过，展示登录页面
         KPostNotification(KNotificationLoginStateChange, @NO)
-//        [MBProgressHUD showErrorMessage:@"需要登录"];
     }
 }
 
@@ -70,7 +68,6 @@
 - (void)loginStateChange:(NSNotification *)notification
 {
     BOOL loginSuccess = [notification.object boolValue];
-    
     if (loginSuccess) {//登陆成功加载主窗口控制器
         
         //为避免自动登录成功刷新tabbar
@@ -91,9 +88,6 @@
     }else {//登陆失败加载登陆页面控制器
         
         self.mainTabBar = nil;
-//        UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        
-//        LoginViewController * login = [board instantiateViewControllerWithIdentifier:@"LoginViewController"];
         LoginViewController * login = [[LoginViewController alloc] init];
 
         RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:login];

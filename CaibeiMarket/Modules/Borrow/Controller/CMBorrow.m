@@ -8,6 +8,16 @@
 
 #import "CMBorrow.h"
 
+@implementation CMBorrowCrads
+
+@end
+
 @implementation CMBorrow
 
++ (NSDictionary *)mj_objectClassInArray
+{
+    return @{
+             @"listData" : @"CMBorrowCrads"
+             };
+}
 @end

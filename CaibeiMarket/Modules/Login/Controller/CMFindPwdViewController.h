@@ -10,4 +10,6 @@
 
 @interface CMFindPwdViewController : UIViewController
 
+- (instancetype)initWithUserName:(NSString *)userName;
+
 @end

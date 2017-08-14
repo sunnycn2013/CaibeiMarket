@@ -6,9 +6,9 @@
 //  Copyright © 2017年 icaibei. All rights reserved.
 //
 
-#import "UserInfo.h"
+#import "CMUserInfo.h"
 
-@implementation UserInfo
+@implementation CMUserInfo
 
 
 @end

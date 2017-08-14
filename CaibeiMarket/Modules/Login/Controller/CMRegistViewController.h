@@ -8,6 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSInteger,CMRegistActionType) {
+    CMRegistActionTypeRegist = 2,
+    CMRegistActionTypeResetPwd = 3
+};
+
 @interface CMRegistViewController : RootViewController
+
+@property (nonatomic ,assign)CMRegistActionType registType;
+
+- (instancetype)initWithActionType:(CMRegistActionType)type;
 
 @end

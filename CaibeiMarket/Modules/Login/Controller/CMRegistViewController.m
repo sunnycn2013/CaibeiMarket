@@ -9,6 +9,8 @@
 #import "CMRegistViewController.h"
 #import "CMTextFieldView.h"
 #import "CMPersonInfoSetingViewController.h"
+#import "CMFoundation.h"
+#import "CMFindPwdViewController.h"
 
 @interface CMRegistViewController ()
 
@@ -16,10 +18,20 @@
 @property (nonatomic, strong) CMTextFieldView *phoneNumTextField;
 @property (nonatomic, strong) UIButton *verificationButton;
 @property (nonatomic, strong) UIButton *nextButton;
+@property(nonatomic,strong) UAHTTPSessionManager * request;
 
 @end
 
 @implementation CMRegistViewController
+
+- (instancetype)initWithActionType:(CMRegistActionType)type
+{
+    self = [super init];
+    if (self) {
+        self.registType = type;
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
@@ -28,14 +40,46 @@
     self.view.backgroundColor = [UIColor colorWithHexString:@"#F6F6F6"];
     [self.view addSubview:self.pwdBgView];
     [self.view addSubview:self.phoneNumTextField];
-//    [self.view addSubview:self.verificationButton];
     [self.view addSubview:self.nextButton];
 }
 
 - (void)nextAction:(UIButton *)sender
 {
-    CMPersonInfoSetingViewController * viewController = [[CMPersonInfoSetingViewController alloc] init];
-    [self.navigationController pushViewController:viewController animated:YES];
+    NSCharacterSet * character = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    NSString * phone = [self.phoneNumTextField.text stringByTrimmingCharactersInSet:character];
+    if (![CMFoundation valiMobile:phone]) {
+        [MBProgressHUD showErrorMessage:@"手机号码格式错误"];
+        return;
+    }
+
+    NSDictionary * params = @{@"phone":phone ? : @"", @"type" : @(2)};
+    self.request = [UAHTTPSessionManager manager];
+    __weak typeof(self) weakself = self;
+    [self.request POST:@"veriCodes/send.json" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
+        NSString * resultCode = [responseObject objectForKey:@"resultCode"];
+        NSString * message = [responseObject objectForKey:@"message"];
+        if ([resultCode isEqualToString:@"0000"]) {
+            [weakself jumpToNext];
+        }else{
+            [MBProgressHUD showErrorMessage:message];
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nullable error) {
+        [MBProgressHUD showErrorMessage:@"服务异常"];
+    }];
+}
+
+- (void)jumpToNext
+{
+    if (self.registType == CMRegistActionTypeRegist) {
+        NSCharacterSet * character = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+        NSString * phone = [self.phoneNumTextField.text stringByTrimmingCharactersInSet:character];
+        CMPersonInfoSetingViewController * viewController = [[CMPersonInfoSetingViewController alloc] initWithUserName:phone];
+        [self.navigationController pushViewController:viewController animated:YES];
+    }else
+    {
+//        CMFindPwdViewController * viewController = [[CMFindPwdViewController alloc] init];
+//        [self.navigationController pushViewController:viewController animated:YES];
+    }
 }
 
 #pragma mark - set get

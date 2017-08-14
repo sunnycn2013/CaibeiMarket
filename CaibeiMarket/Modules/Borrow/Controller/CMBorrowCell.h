@@ -10,4 +10,6 @@
 
 @interface CMBorrowCell : UITableViewCell
 
+- (void)fillData:(id)model;
+
 @end

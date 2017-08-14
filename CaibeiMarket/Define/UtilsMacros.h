@@ -102,6 +102,8 @@
 #define ValidClass(f,cls) (f!=nil && [f isKindOfClass:[cls class]])
 #define ValidData(f) (f!=nil && [f isKindOfClass:[NSData class]])
 
+#define CMParise(obj,class) (([obj isKindOfClass:class]) ? : nil)
+
 //获取一段时间间隔
 #define kStartTime CFAbsoluteTime start = CFAbsoluteTimeGetCurrent();
 #define kEndTime  NSLog(@"Time: %f", CFAbsoluteTimeGetCurrent() - start)

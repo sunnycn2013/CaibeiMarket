@@ -20,6 +20,13 @@
 #import "RootWebViewController.h"
 #import "CMPortraitViewController.h"
 
+
+#import "XBConst.h"
+#import "XBSettingCell.h"
+#import "XBSettingItemModel.h"
+#import "XBSettingSectionModel.h"
+
+
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     UILabel * lbl;
@@ -27,6 +34,7 @@
 
 @property (nonatomic,strong)NSArray          * dataArray;
 @property (nonatomic,strong)CMMineHeaderView * headerView;
+@property (nonatomic,strong) NSArray  *sectionArray; /**< section模型数组*/
 
 @end
 

@@ -8,7 +8,6 @@
 
 #import "LoginViewController.h"
 #import "CMRegistViewController.h"
-#import "CMFindPwdViewController.h"
 #import "CMTextFieldView.h"
 
 @interface LoginViewController ()
@@ -20,7 +19,7 @@
 @property(nonatomic,strong) UIButton     * forgetPWDButton;
 @property(nonatomic,strong) UIButton     * loginButton;
 @property(nonatomic,strong) UIButton     * registButton;
-
+@property(nonatomic,strong) UAHTTPSessionManager * request;
 @end
 
 @implementation LoginViewController
@@ -76,33 +75,38 @@
 
 - (void)loginAction:(id)sender
 {
-    NSString * userName = self.telephoneTextFiled.text;
-    NSString * pwd = self.pwdTextFiled.text;
+    NSCharacterSet * character = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    NSString * userName = [self.telephoneTextFiled.text stringByTrimmingCharactersInSet:character];
+    NSString * pwd = [self.pwdTextFiled.text stringByTrimmingCharactersInSet:character];
     
-    NSDictionary * params = @{@"phone":@"111",
-                              @"password":@"2222"};
-    [PPNetworkHelper POST:@"http://localhost:8080/borrow-supermarket/login.json" parameters:params success:^(id responseObject) {
-        //
-        NSLog(@"%@",responseObject);
-        
-    } failure:^(NSError *error) {
-        //
-        NSLog(@"aa");
-
+    NSDictionary * params = @{@"phone":userName ? : @"",
+                              @"password": pwd ? : @""};
+    
+    self.request = [UAHTTPSessionManager manager];
+    [self.request POST:@"login.json" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
+        NSString * resultCode = [responseObject objectForKey:@"resultCode"];
+        NSString * message = [responseObject objectForKey:@"message"];
+        if ([resultCode isEqualToString:@"0000"]) {
+            [[CMUserManager sharedCMUserManager] saveLoginInfo:params completion:nil];
+            KPostNotification(KNotificationLoginStateChange, @YES);
+        }else{
+            [MBProgressHUD showErrorMessage:message];
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nullable error) {
+        [MBProgressHUD showErrorMessage:@"服务异常"];
     }];
-    
 }
 
 - (void)registAction:(id)sender
 {
-    CMRegistViewController * regist = [[CMRegistViewController alloc] init];
+    CMRegistViewController * regist = [[CMRegistViewController alloc] initWithActionType:CMRegistActionTypeRegist];
     [self.navigationController pushViewController:regist animated:YES];
 }
 
 - (void)forgetPwdAction:(UIButton *)sender
 {
-    CMFindPwdViewController * findPwd = [[CMFindPwdViewController alloc] init];
-    [self.navigationController pushViewController:findPwd animated:YES];
+    CMRegistViewController * regist = [[CMRegistViewController alloc] initWithActionType:CMRegistActionTypeResetPwd];
+    [self.navigationController pushViewController:regist animated:YES];
 }
 
 #pragma mark - set get
