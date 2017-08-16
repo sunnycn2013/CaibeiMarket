@@ -18,9 +18,9 @@ typedef NS_ENUM(NSInteger, UserLoginType){
 
 typedef void (^loginBlock)(BOOL success, NSString * des);
 
-#define isLogin [CMUserManager sharedCMUserManager].isLogined
-#define curUser [CMUserManager sharedCMUserManager].curUserInfo
-#define userManager [CMUserManager sharedCMUserManager]
+#define isLogin [CMUserManager sharedInstance].isLogined
+#define curUser [CMUserManager sharedInstance].curUserInfo
+#define userManager [CMUserManager sharedInstance]
 /**
  包含用户相关服务
  */

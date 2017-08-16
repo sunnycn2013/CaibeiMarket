@@ -36,8 +36,14 @@
  */
 -(instancetype)initWithUrl:(NSString *)url;
 
+/**
+ 初始化webview
+
+ @param parameters webview参数 @{@"url" : @"http://www.baidu.com"}
+ @return instance
+ */
+- (instancetype)initWithParams:(NSDictionary *)parameters;
 
 -(void)reloadWebView;
-
 
 @end

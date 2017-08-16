@@ -24,17 +24,7 @@
     
     //UMeng初始化
 //    [self initUMeng];
-//    UIImage *normalImage = [UIImage imageNamed:@"caibei_back_arrow"];
-//        UIImage *selectedImage = [UIImage imageNamed:@"caibei_back_arrowclick"];
-    UIImage *normalImage = [UIImage imageNamed:@"top_back_white"];
-    UIImage *selectedImage = [UIImage imageNamed:@"top_back_white_pressed"];
-        UIImage *normalBackImage = [normalImage resizableImageWithCapInsets:UIEdgeInsetsMake(0, normalImage.size.width, 0, 0)];
-        UIImage *selectedBackImage = [selectedImage resizableImageWithCapInsets:UIEdgeInsetsMake(0, selectedImage.size.width, 0, 0)];
-    
-        [[UIBarButtonItem appearance] setBackButtonBackgroundImage:normalBackImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-        [[UIBarButtonItem appearance] setBackButtonBackgroundImage:selectedBackImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    
-        [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(-233, 0) forBarMetrics:UIBarMetricsDefault];
+
     //初始化app服务
     [self initService];
     

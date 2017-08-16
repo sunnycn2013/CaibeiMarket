@@ -7,12 +7,10 @@
 //
 
 #import "AppDelegate+AppService.h"
-//#import <UMSocialCore/UMSocialCore.h>
 #import "LoginViewController.h"
 #import "OpenUDID.h"
 
 @implementation AppDelegate (AppService)
-
 
 #pragma mark ————— 初始化服务 —————
 -(void)initService{
@@ -36,6 +34,14 @@
     [self.window makeKeyAndVisible];
     [[UIButton appearance] setExclusiveTouch:YES];
     [UIActivityIndicatorView appearanceWhenContainedIn:[MBProgressHUD class], nil].color = KWhiteColor;
+    UIImage *normalImage = [UIImage imageNamed:@"top_back_white"];
+    UIImage *selectedImage = [UIImage imageNamed:@"top_back_white_pressed"];
+    UIImage *normalBackImage = [normalImage resizableImageWithCapInsets:UIEdgeInsetsMake(0, normalImage.size.width, 0, 0)];
+    UIImage *selectedBackImage = [selectedImage resizableImageWithCapInsets:UIEdgeInsetsMake(0, selectedImage.size.width, 0, 0)];
+    
+    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:normalBackImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:selectedBackImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(-233, 0) forBarMetrics:UIBarMetricsDefault];
 }
 
 

@@ -26,6 +26,15 @@
     [self setNeedsStatusBarAppearanceUpdate];
 }
 
+- (instancetype)initWithParams:(NSDictionary *)parameters
+{
+    self = [super init];
+    if (self) {
+        
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor =KWhiteColor;

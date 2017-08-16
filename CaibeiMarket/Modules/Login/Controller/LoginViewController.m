@@ -24,7 +24,8 @@
 
 @implementation LoginViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
 
     self.view.backgroundColor = [UIColor colorWithHexString:@"#F6F6F6"];
@@ -87,7 +88,7 @@
         NSString * resultCode = [responseObject objectForKey:@"resultCode"];
         NSString * message = [responseObject objectForKey:@"message"];
         if ([resultCode isEqualToString:@"0000"]) {
-            [[CMUserManager sharedCMUserManager] saveLoginInfo:params completion:nil];
+            [[CMUserManager sharedInstance] saveLoginInfo:params completion:nil];
             KPostNotification(KNotificationLoginStateChange, @YES);
         }else{
             [MBProgressHUD showErrorMessage:message];

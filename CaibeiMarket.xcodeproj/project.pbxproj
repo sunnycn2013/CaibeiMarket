@@ -186,6 +186,8 @@
 		C3C295ED1F43F391005F65B8 /* CMFindCredit.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C295EA1F43F391005F65B8 /* CMFindCredit.m */; };
 		C3C295EE1F43F391005F65B8 /* CMFindInsurance.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C295EC1F43F391005F65B8 /* CMFindInsurance.m */; };
 		C3C295F81F445C3B005F65B8 /* CMChooseItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C295F71F445C3B005F65B8 /* CMChooseItemView.m */; };
+		C3C295FB1F447811005F65B8 /* CMUniversalJump.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C295FA1F447811005F65B8 /* CMUniversalJump.m */; };
+		C3C295FE1F447A3B005F65B8 /* CMUniversalJumpDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C295FD1F447A3B005F65B8 /* CMUniversalJumpDefine.m */; };
 		C3D2E0811F21DDC90037CFF3 /* CMHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D2E0801F21DDC90037CFF3 /* CMHomeModel.m */; };
 		C3D2E0871F21DFE30037CFF3 /* CMHomeAppCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D2E0861F21DFE30037CFF3 /* CMHomeAppCell.m */; };
 		C3D2E08A1F21DFFB0037CFF3 /* CMHomeContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D2E0891F21DFFB0037CFF3 /* CMHomeContentCell.m */; };
@@ -536,6 +538,10 @@
 		C3C295EC1F43F391005F65B8 /* CMFindInsurance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMFindInsurance.m; sourceTree = "<group>"; };
 		C3C295F61F445C3B005F65B8 /* CMChooseItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMChooseItemView.h; sourceTree = "<group>"; };
 		C3C295F71F445C3B005F65B8 /* CMChooseItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMChooseItemView.m; sourceTree = "<group>"; };
+		C3C295F91F447811005F65B8 /* CMUniversalJump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMUniversalJump.h; sourceTree = "<group>"; };
+		C3C295FA1F447811005F65B8 /* CMUniversalJump.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMUniversalJump.m; sourceTree = "<group>"; };
+		C3C295FC1F447A3B005F65B8 /* CMUniversalJumpDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMUniversalJumpDefine.h; sourceTree = "<group>"; };
+		C3C295FD1F447A3B005F65B8 /* CMUniversalJumpDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMUniversalJumpDefine.m; sourceTree = "<group>"; };
 		C3D2E07F1F21DDC90037CFF3 /* CMHomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMHomeModel.h; sourceTree = "<group>"; };
 		C3D2E0801F21DDC90037CFF3 /* CMHomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMHomeModel.m; sourceTree = "<group>"; };
 		C3D2E0851F21DFE30037CFF3 /* CMHomeAppCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMHomeAppCell.h; sourceTree = "<group>"; };
@@ -1333,6 +1339,10 @@
 		C3B6B1DD1F42B41C00916C7F /* UniversalJump */ = {
 			isa = PBXGroup;
 			children = (
+				C3C295F91F447811005F65B8 /* CMUniversalJump.h */,
+				C3C295FA1F447811005F65B8 /* CMUniversalJump.m */,
+				C3C295FC1F447A3B005F65B8 /* CMUniversalJumpDefine.h */,
+				C3C295FD1F447A3B005F65B8 /* CMUniversalJumpDefine.m */,
 			);
 			path = UniversalJump;
 			sourceTree = "<group>";
@@ -2063,6 +2073,7 @@
 				C3B3BBBC1F21AEC9000C9DC8 /* ShareManager.m in Sources */,
 				C3B7886C1F4086630024737A /* CMBorrowDetailContentCell.m in Sources */,
 				C3B3BBDC1F21AEC9000C9DC8 /* LoginLogic.m in Sources */,
+				C3C295FB1F447811005F65B8 /* CMUniversalJump.m in Sources */,
 				B074CF021F336836001022F8 /* CMTextFieldView.m in Sources */,
 				C3B3BBAE1F21AEC9000C9DC8 /* XYButton.m in Sources */,
 				C3B6B1C01F41AEE700916C7F /* UIView+XBExtension.m in Sources */,
@@ -2089,6 +2100,7 @@
 				C3A4BB5C1F29A2DE0082030A /* CMMineHeaderView.m in Sources */,
 				C3B3BC1A1F21AEEE000C9DC8 /* AppDelegate+AppService.m in Sources */,
 				C3B3BBBD1F21AEC9000C9DC8 /* GameInfo.m in Sources */,
+				C3C295FE1F447A3B005F65B8 /* CMUniversalJumpDefine.m in Sources */,
 				C3B3BBB31F21AEC9000C9DC8 /* TabBarBadge.m in Sources */,
 				C35220261F243809002707E8 /* CMHomeBanner.m in Sources */,
 				B05C5B7B1F28E9AB009E5CC6 /* CMMineCell.m in Sources */,

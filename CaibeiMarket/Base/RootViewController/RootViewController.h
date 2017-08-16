@@ -22,6 +22,8 @@
 @property (nonatomic, strong) UITableView * tableView;
 @property (nonatomic, strong) UICollectionView * collectionView;
 @property (nonatomic, strong) MJRefreshNormalHeader *header;
+
+- (instancetype)initWithParams:(NSDictionary *)parameters;
 /**
  跳转登录
  */

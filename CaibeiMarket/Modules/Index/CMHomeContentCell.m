@@ -39,7 +39,6 @@
 - (void)setUI
 {
     self.backgroundColor = [UIColor colorWithHexString:@"#F6F6F6"];
-//    [self addSubview:self.textFiledBgView];
     [self addSubview:self.borrowTextFiled];
 
     [self addSubview:self.corverFlow];
@@ -49,25 +48,13 @@
     [self addSubview:self.borrowDes02Label];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated             
+- (void)applyOrder:(UIButton *)button
 {
-    
+    if (self.tapBlock) {
+        self.tapBlock(self.model);
+    }
 }
-
 #pragma mark - set get
-
-//- (UIView *)textFiledBgView
-//{
-//    if (!_textFiledBgView)
-//    {
-//        CGFloat width = (KScreenWidth - kIPhone6Scale(108));
-//        _textFiledBgView = [[UIView alloc] initWithFrame:CGRectMake(kIPhone6Scale(108)/2, kIPhone6Scale(33), width, kIPhone6Scale(45))];
-//        _textFiledBgView.layer.cornerRadius = 22.0;
-//        _textFiledBgView.backgroundColor = [UIColor whiteColor];
-//    }
-//    return _textFiledBgView;
-//}
-
 - (CMTextFieldView *)borrowTextFiled
 {
     if (!_borrowTextFiled)
@@ -84,7 +71,6 @@
 {
     if (!_corverFlow) {
         _corverFlow = [[CMHomeContentCorverFlowView alloc] initWithFrame:CGRectMake(0, _borrowTextFiled.bottom+24, KScreenWidth, kIPhone6Scale(58))];
-//        _corverFlow.backgroundColor = [UIColor lightGrayColor];
     }
     return _corverFlow;
 }
@@ -109,6 +95,7 @@
         _borrowButton.layer.cornerRadius = kIPhone6Scale(45)/2;
         [_borrowButton setTitle:@"申请借款" forState:UIControlStateNormal];
         [_borrowButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_borrowButton addTarget:self action:@selector(applyOrder:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _borrowButton;
 }

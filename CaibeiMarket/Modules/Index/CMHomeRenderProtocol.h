@@ -10,5 +10,8 @@
 
 @protocol CMHomeRenderProtocol <NSObject>
 
+@property (nonatomic ,copy)void(^tapBlock)(id obj);
+
+@property (nonatomic ,strong)id model;
 
 @end

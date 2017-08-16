@@ -122,11 +122,11 @@
 //单例化一个类
 #define SINGLETON_FOR_HEADER(className) \
 \
-+ (className *)shared##className;
++ (className *)sharedInstance;
 
 #define SINGLETON_FOR_CLASS(className) \
 \
-+ (className *)shared##className { \
++ (className *)sharedInstance { \
 static className *shared##className = nil; \
 static dispatch_once_t onceToken; \
 dispatch_once(&onceToken, ^{ \
@@ -134,5 +134,22 @@ shared##className = [[self alloc] init]; \
 }); \
 return shared##className; \
 }
+
+
+////单例化一个类
+//#define SINGLETON_FOR_HEADER(className) \
+//\
+//+ (className *)shared##className;
+//
+//#define SINGLETON_FOR_CLASS(className) \
+//\
+//+ (className *)shared##className { \
+//static className *shared##className = nil; \
+//static dispatch_once_t onceToken; \
+//dispatch_once(&onceToken, ^{ \
+//shared##className = [[self alloc] init]; \
+//}); \
+//return shared##className; \
+//}
 
 #endif /* define_h */

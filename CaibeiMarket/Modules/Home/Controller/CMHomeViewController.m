@@ -14,6 +14,7 @@
 #import "CMHomeModel.h"
 
 #import "CMHomeDataProtocol.h"
+#import "CMHomeRenderProtocol.h"
 
 #define itemWidthHeight ((kScreenWidth-10)/2)
 
@@ -95,7 +96,7 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString * cellIndetifier = [self.dataArray objectAtIndex:indexPath.row];
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIndetifier];
+    UITableViewCell<CMHomeRenderProtocol> * cell = [tableView dequeueReusableCellWithIdentifier:cellIndetifier];
     if (!cell) {
         if ([cellIndetifier isEqualToString:kCMHomeBannerCellIdentifier]) {
             cell = [[CMHomeBannerCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndetifier];
@@ -104,8 +105,11 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
         }else if ([cellIndetifier isEqualToString:kCMHomeContentCellIdentifier]){
             cell = [[CMHomeContentCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndetifier];
         }
-        
     }
+    kWeakSelf(self)
+    [cell setTapBlock:^(id obj){
+        [weakself processWithModel:obj];
+    }];
     return cell;
 }
 
@@ -115,6 +119,14 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
     return [model heightForRowCell];
 }
 
+- (void)processWithModel:(id)model
+{
+    if (![[CMUserManager sharedInstance] isLogined]) {
+        [[CMUserManager sharedInstance] login:kUserLoginTypePwd completion:^(BOOL success, NSString *des) {
+            //
+        }];
+    }
+}
 #pragma mark - set get
 
 @end

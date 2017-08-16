@@ -30,6 +30,8 @@
 
 #import "UAHTTPSessionManager.h"
 
+#import "CMUniversalJump.h"
+
 //第三方
 #import <YYKit.h>
 #import <MBProgressHUD.h>

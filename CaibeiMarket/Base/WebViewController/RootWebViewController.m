@@ -20,6 +20,12 @@
 
 @implementation RootWebViewController
 
+- (instancetype)initWithParams:(NSDictionary *)parameters
+{
+    NSString * url = parameters[@"url"];
+    return [self initWithUrl:url];
+}
+
 -(instancetype)initWithUrl:(NSString *)url{
     self = [super init];
     if (self) {
