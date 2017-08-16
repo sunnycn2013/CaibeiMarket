@@ -34,13 +34,6 @@
     [super layoutSubviews];
     self.numberLabel.centerX = self.centerX;
 }
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 - (UILabel *)numberLabel
 {
@@ -49,7 +42,7 @@
         _numberLabel.text = @"28";
         _numberLabel.layer.cornerRadius = 22.5;
         _numberLabel.layer.masksToBounds = YES;
-        _numberLabel.backgroundColor = [UIColor purpleColor];
+        _numberLabel.backgroundColor = [UIColor whiteColor];
         _numberLabel.textAlignment = NSTextAlignmentCenter;
     }
     return _numberLabel;

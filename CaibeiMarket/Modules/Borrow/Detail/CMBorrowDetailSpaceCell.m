@@ -20,6 +20,7 @@
 
 - (void)setUI
 {
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.backgroundColor = [UIColor colorWithHexString:@"#F6F6F6"];
 }
 
@@ -33,4 +34,7 @@
     return 6.0;
 }
 
+- (void)fillData:(id)model
+{
+}
 @end

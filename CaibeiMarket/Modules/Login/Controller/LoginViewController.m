@@ -143,6 +143,7 @@
         _pwdTextFiled.placeholder = @"请输入手机号";
         _pwdTextFiled.layer.cornerRadius = height/2;
         _pwdTextFiled.backgroundColor = [UIColor whiteColor];
+        _pwdTextFiled.secureTextEntry = YES;
     }
     return _pwdTextFiled;
 }

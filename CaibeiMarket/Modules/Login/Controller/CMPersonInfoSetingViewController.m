@@ -199,6 +199,7 @@
         _pwdTextFiled.placeholder = @"请确认密码";
         _pwdTextFiled.showRoundedCorner = NO;
         _pwdTextFiled.fontSize = 14;
+        _pwdTextFiled.secureTextEntry = YES;
     }
     return _pwdTextFiled;
 }

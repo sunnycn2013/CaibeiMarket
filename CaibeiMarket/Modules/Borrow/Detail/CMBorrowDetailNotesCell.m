@@ -7,6 +7,7 @@
 //
 
 #import "CMBorrowDetailNotesCell.h"
+#import "CMBorrowDetail.h"
 
 @interface CMBorrowDetailNotesCell ()
 @property (nonatomic,strong)UIImageView * notesImageView;
@@ -16,6 +17,7 @@
 
 @property (nonatomic,strong)UILabel * cashBacklabel;
 @property (nonatomic,strong)UILabel * cashBackDeslabel;
+@property (nonatomic,strong)CMBorrowProduct * model;
 
 @end
 
@@ -32,6 +34,8 @@
 
 - (void)setUI
 {
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+
     [self addSubview:self.notesImageView];
     [self addSubview:self.totalMoneylabel];
     [self addSubview:self.totalMoneyDeslabel];
@@ -47,6 +51,15 @@
 - (CGFloat)heightForCell
 {
     return 67.0;
+}
+
+- (void)fillData:(id)model
+{
+    if ([model isKindOfClass:[CMBorrowProduct  class]]) {
+        self.model = (CMBorrowProduct *)model;
+    }
+    [self.totalMoneylabel setText:[NSString stringWithFormat:@"%@",self.model.totalApply]];
+    [self.cashBacklabel setText:[NSString stringWithFormat:@"%@天",self.model.loanTime]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

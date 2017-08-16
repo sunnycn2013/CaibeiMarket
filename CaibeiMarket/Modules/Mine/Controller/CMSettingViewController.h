@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CMSettingViewController : UIViewController
+@interface CMSettingViewController : RootViewController
 
 @end

@@ -12,10 +12,10 @@
 @interface CMBorrowCrads : NSObject
 
 @property (nonatomic,strong)NSNumber * hasActivity;
-@property (nonatomic,strong)NSNumber * identifier;
 @property (nonatomic,strong)NSNumber * lendMoney;
 @property (nonatomic,strong)NSString * lendName;
 
+@property (nonatomic,strong)NSString * identifier;
 @property (nonatomic,strong)NSString * lendPicUrl; //额度
 @property (nonatomic,strong)NSString * lendSpecial;
 @property (nonatomic,strong)NSString * monthlyInterestRate;

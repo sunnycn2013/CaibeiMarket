@@ -8,6 +8,9 @@
 
 #import "CMChooseCell.h"
 #import "CMBorrowChoose.h"
+#import "CMChooseItemView.h"
+
+#define CMChooseItemTag  5000
 
 @interface CMChooseCell ()
 @property (nonatomic,strong)CMBorrowChoose * choose;
@@ -26,7 +29,7 @@
 - (void)setUI
 {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    self.backgroundColor = [UIColor orangeColor];
+    self.backgroundColor = [UIColor colorWithHexString:@"#F6F6F6"];
 }
 
 - (void)awakeFromNib {
@@ -46,17 +49,35 @@
         return;
     }
     self.choose = (CMBorrowChoose *)data;
-    
+    self.backgroundColor = [UIColor whiteColor];
     NSArray * array = [self.choose conditions];
-    
     CGFloat width = KScreenWidth / array.count;
     
     for (int i=0 ; i<array.count; i++) {
         CMBorrowChooseItem * item = [array objectAtIndex:i];
-        UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
-        button.frame = CGRectMake(width * i, 0, width, 44);
-        [button setTitle:item.title forState:UIControlStateNormal];
-        [self addSubview:button];
+        CMChooseItemView * itemView = [[CMChooseItemView alloc] initWithFrame:CGRectMake(width * i, 0, width, 44)];
+        itemView.userInteractionEnabled = YES;
+        itemView.tag = CMChooseItemTag + i;
+        itemView.titleLabel.font = [UIFont systemFontOfSize:14];
+        [itemView setTitle:item.title forState:UIControlStateNormal];
+        [itemView setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        [itemView setTitleColor:[UIColor purpleColor] forState:UIControlStateSelected];
+        [itemView addTarget:self action:@selector(conditionSelected:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:itemView];
+    }
+}
+
+- (void)conditionSelected:(UIButton *)button
+{
+    NSArray * array = [self subviews];
+    for (CMChooseItemView *item in array) {
+        if ([item isKindOfClass:[CMChooseItemView class]]) {
+            if (item != button) {
+                [item setStyle:CMChooseItemViewStyleSelected];
+            }else{
+                [item setStyle:CMChooseItemViewStyleNormal];
+            }
+        }
     }
 }
 

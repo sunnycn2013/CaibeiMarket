@@ -149,6 +149,13 @@
 		C3B6B1C31F41AEE700916C7F /* XBMeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B6B1BC1F41AEE700916C7F /* XBMeHeaderView.m */; };
 		C3B6B1C41F41AEE700916C7F /* XBMeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3B6B1BD1F41AEE700916C7F /* XBMeHeaderView.xib */; };
 		C3B6B1C51F41AEE700916C7F /* XBSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B6B1BF1F41AEE700916C7F /* XBSettingCell.m */; };
+		C3B6B1C81F42883400916C7F /* CMFindHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B6B1C71F42883400916C7F /* CMFindHeadView.m */; };
+		C3B6B1CA1F42890600916C7F /* find_head_note@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3B6B1C91F42890600916C7F /* find_head_note@2x.png */; };
+		C3B6B1CD1F428B1700916C7F /* CMFindCreditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B6B1CC1F428B1700916C7F /* CMFindCreditCell.m */; };
+		C3B6B1D01F428E0200916C7F /* CMFindInsuranceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B6B1CF1F428E0200916C7F /* CMFindInsuranceCell.m */; };
+		C3B6B1D21F42962F00916C7F /* find_inssurance_next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3B6B1D11F42962F00916C7F /* find_inssurance_next@2x.png */; };
+		C3B6B1E01F42CF7600916C7F /* CMBorrowChooseHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B6B1DF1F42CF7600916C7F /* CMBorrowChooseHeadView.m */; };
+		C3B6B20E1F4312C000916C7F /* CMBorrowDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B6B20D1F4312C000916C7F /* CMBorrowDetail.m */; };
 		C3B7883B1F3D6BA10024737A /* AdPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B788191F3D6BA10024737A /* AdPageView.m */; };
 		C3B7883C1F3D6BA10024737A /* AESCipher.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B7881C1F3D6BA10024737A /* AESCipher.m */; };
 		C3B7883D1F3D6BA10024737A /* BaseRequestAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B7881F1F3D6BA10024737A /* BaseRequestAPI.m */; };
@@ -176,6 +183,9 @@
 		C3BB83621F3C9EDB008C8EA7 /* UAHttpRequestModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BB835C1F3C9EDB008C8EA7 /* UAHttpRequestModelManager.m */; };
 		C3BB83651F3CA3CB008C8EA7 /* UAUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BB83641F3CA3CB008C8EA7 /* UAUtil.m */; };
 		C3BB83681F3CA63F008C8EA7 /* UAHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BB83671F3CA63F008C8EA7 /* UAHTTPSessionManager.m */; };
+		C3C295ED1F43F391005F65B8 /* CMFindCredit.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C295EA1F43F391005F65B8 /* CMFindCredit.m */; };
+		C3C295EE1F43F391005F65B8 /* CMFindInsurance.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C295EC1F43F391005F65B8 /* CMFindInsurance.m */; };
+		C3C295F81F445C3B005F65B8 /* CMChooseItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C295F71F445C3B005F65B8 /* CMChooseItemView.m */; };
 		C3D2E0811F21DDC90037CFF3 /* CMHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D2E0801F21DDC90037CFF3 /* CMHomeModel.m */; };
 		C3D2E0871F21DFE30037CFF3 /* CMHomeAppCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D2E0861F21DFE30037CFF3 /* CMHomeAppCell.m */; };
 		C3D2E08A1F21DFFB0037CFF3 /* CMHomeContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D2E0891F21DFFB0037CFF3 /* CMHomeContentCell.m */; };
@@ -450,6 +460,20 @@
 		C3B6B1BD1F41AEE700916C7F /* XBMeHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XBMeHeaderView.xib; sourceTree = "<group>"; };
 		C3B6B1BE1F41AEE700916C7F /* XBSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBSettingCell.h; sourceTree = "<group>"; };
 		C3B6B1BF1F41AEE700916C7F /* XBSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBSettingCell.m; sourceTree = "<group>"; };
+		C3B6B1C61F42883400916C7F /* CMFindHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMFindHeadView.h; sourceTree = "<group>"; };
+		C3B6B1C71F42883400916C7F /* CMFindHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMFindHeadView.m; sourceTree = "<group>"; };
+		C3B6B1C91F42890600916C7F /* find_head_note@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "find_head_note@2x.png"; sourceTree = "<group>"; };
+		C3B6B1CB1F428B1700916C7F /* CMFindCreditCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMFindCreditCell.h; sourceTree = "<group>"; };
+		C3B6B1CC1F428B1700916C7F /* CMFindCreditCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMFindCreditCell.m; sourceTree = "<group>"; };
+		C3B6B1CE1F428E0200916C7F /* CMFindInsuranceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMFindInsuranceCell.h; sourceTree = "<group>"; };
+		C3B6B1CF1F428E0200916C7F /* CMFindInsuranceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMFindInsuranceCell.m; sourceTree = "<group>"; };
+		C3B6B1D11F42962F00916C7F /* find_inssurance_next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "find_inssurance_next@2x.png"; sourceTree = "<group>"; };
+		C3B6B1DE1F42CF7600916C7F /* CMBorrowChooseHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMBorrowChooseHeadView.h; sourceTree = "<group>"; };
+		C3B6B1DF1F42CF7600916C7F /* CMBorrowChooseHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMBorrowChooseHeadView.m; sourceTree = "<group>"; };
+		C3B6B20C1F4312C000916C7F /* CMBorrowDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMBorrowDetail.h; sourceTree = "<group>"; };
+		C3B6B20D1F4312C000916C7F /* CMBorrowDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMBorrowDetail.m; sourceTree = "<group>"; };
+		C3B6B20F1F431C2300916C7F /* CMBorrowProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMBorrowProtocol.h; sourceTree = "<group>"; };
+		C3B6B2101F431FA500916C7F /* CMFindProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMFindProtocol.h; sourceTree = "<group>"; };
 		C3B788181F3D6BA10024737A /* AdPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdPageView.h; sourceTree = "<group>"; };
 		C3B788191F3D6BA10024737A /* AdPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdPageView.m; sourceTree = "<group>"; };
 		C3B7881B1F3D6BA10024737A /* AESCipher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCipher.h; sourceTree = "<group>"; };
@@ -506,6 +530,12 @@
 		C3BB83641F3CA3CB008C8EA7 /* UAUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAUtil.m; sourceTree = "<group>"; };
 		C3BB83661F3CA63F008C8EA7 /* UAHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAHTTPSessionManager.h; sourceTree = "<group>"; };
 		C3BB83671F3CA63F008C8EA7 /* UAHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAHTTPSessionManager.m; sourceTree = "<group>"; };
+		C3C295E91F43F391005F65B8 /* CMFindCredit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMFindCredit.h; sourceTree = "<group>"; };
+		C3C295EA1F43F391005F65B8 /* CMFindCredit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMFindCredit.m; sourceTree = "<group>"; };
+		C3C295EB1F43F391005F65B8 /* CMFindInsurance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMFindInsurance.h; sourceTree = "<group>"; };
+		C3C295EC1F43F391005F65B8 /* CMFindInsurance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMFindInsurance.m; sourceTree = "<group>"; };
+		C3C295F61F445C3B005F65B8 /* CMChooseItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMChooseItemView.h; sourceTree = "<group>"; };
+		C3C295F71F445C3B005F65B8 /* CMChooseItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMChooseItemView.m; sourceTree = "<group>"; };
 		C3D2E07F1F21DDC90037CFF3 /* CMHomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMHomeModel.h; sourceTree = "<group>"; };
 		C3D2E0801F21DDC90037CFF3 /* CMHomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMHomeModel.m; sourceTree = "<group>"; };
 		C3D2E0851F21DFE30037CFF3 /* CMHomeAppCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMHomeAppCell.h; sourceTree = "<group>"; };
@@ -753,6 +783,10 @@
 			children = (
 				C32794221F398A7E00AE02A3 /* CMChooseCell.h */,
 				C32794231F398A7E00AE02A3 /* CMChooseCell.m */,
+				C3B6B1DE1F42CF7600916C7F /* CMBorrowChooseHeadView.h */,
+				C3B6B1DF1F42CF7600916C7F /* CMBorrowChooseHeadView.m */,
+				C3C295F61F445C3B005F65B8 /* CMChooseItemView.h */,
+				C3C295F71F445C3B005F65B8 /* CMChooseItemView.m */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -791,9 +825,13 @@
 		C368EED71F3834C8008146D2 /* Finder */ = {
 			isa = PBXGroup;
 			children = (
+				C3B6B1D31F42994A00916C7F /* Model */,
+				C3B6B1C91F42890600916C7F /* find_head_note@2x.png */,
+				C3B6B1D11F42962F00916C7F /* find_inssurance_next@2x.png */,
 				C368EEDB1F383570008146D2 /* Cell */,
 				C368EED81F3834C8008146D2 /* CMFindViewController.h */,
 				C368EED91F3834C8008146D2 /* CMFindViewController.m */,
+				C3B6B2101F431FA500916C7F /* CMFindProtocol.h */,
 			);
 			path = Finder;
 			sourceTree = "<group>";
@@ -801,6 +839,12 @@
 		C368EEDB1F383570008146D2 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				C3B6B1C61F42883400916C7F /* CMFindHeadView.h */,
+				C3B6B1C71F42883400916C7F /* CMFindHeadView.m */,
+				C3B6B1CB1F428B1700916C7F /* CMFindCreditCell.h */,
+				C3B6B1CC1F428B1700916C7F /* CMFindCreditCell.m */,
+				C3B6B1CE1F428E0200916C7F /* CMFindInsuranceCell.h */,
+				C3B6B1CF1F428E0200916C7F /* CMFindInsuranceCell.m */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -853,6 +897,7 @@
 		C3B3BADD1F21AEC8000C9DC8 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				C3B6B1DD1F42B41C00916C7F /* UniversalJump */,
 				C3B3BADE1F21AEC8000C9DC8 /* Button */,
 				C3B3BAE11F21AEC8000C9DC8 /* NavigationController */,
 				C3B3BAE41F21AEC8000C9DC8 /* RootViewController */,
@@ -1274,6 +1319,33 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		C3B6B1D31F42994A00916C7F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C3C295E91F43F391005F65B8 /* CMFindCredit.h */,
+				C3C295EA1F43F391005F65B8 /* CMFindCredit.m */,
+				C3C295EB1F43F391005F65B8 /* CMFindInsurance.h */,
+				C3C295EC1F43F391005F65B8 /* CMFindInsurance.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C3B6B1DD1F42B41C00916C7F /* UniversalJump */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UniversalJump;
+			sourceTree = "<group>";
+		};
+		C3B6B20B1F4312AD00916C7F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C3B6B20C1F4312C000916C7F /* CMBorrowDetail.h */,
+				C3B6B20D1F4312C000916C7F /* CMBorrowDetail.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		C3B788161F3D6BA10024737A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -1394,6 +1466,7 @@
 		C3B788521F3FF24E0024737A /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				C3B6B20B1F4312AD00916C7F /* Model */,
 				C394219D1F4148FC00D5BB7C /* borrow_detail_head_note@2x.png */,
 				C394219B1F413DE100D5BB7C /* borrow_note_icon@2x.png */,
 				C3B788571F3FF37C0024737A /* Cell */,
@@ -1426,6 +1499,7 @@
 				C39421991F413C4900D5BB7C /* CMBorrowDetailDesCell.m */,
 				C3FA53261F41530E008B222B /* CMBorrowDetailSpaceCell.h */,
 				C3FA53271F41530E008B222B /* CMBorrowDetailSpaceCell.m */,
+				C3B6B20F1F431C2300916C7F /* CMBorrowProtocol.h */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -1673,6 +1747,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3B3BBF21F21AEC9000C9DC8 /* icon_tabbar_discovery_selected.png in Resources */,
+				C3B6B1D21F42962F00916C7F /* find_inssurance_next@2x.png in Resources */,
 				C33E33611F344F4500CB9D3D /* condition_normal_low@2x.png in Resources */,
 				C33E335E1F344F4500CB9D3D /* condition_light_high@2x.png in Resources */,
 				C3B6B1C41F41AEE700916C7F /* XBMeHeaderView.xib in Resources */,
@@ -1702,6 +1777,7 @@
 				C3B3BBE61F21AEC9000C9DC8 /* DazFire.png in Resources */,
 				C3B3BBED1F21AEC9000C9DC8 /* MBHUD_Warn@2x.png in Resources */,
 				C33E33711F369BCE00CB9D3D /* icon-50@2x.png in Resources */,
+				C3B6B1CA1F42890600916C7F /* find_head_note@2x.png in Resources */,
 				C3B3BBF91F21AEC9000C9DC8 /* icon_tabbar_merchant_selected.png in Resources */,
 				C3B3BBCD1F21AEC9000C9DC8 /* 12.jpg in Resources */,
 				C394219E1F4148FC00D5BB7C /* borrow_detail_head_note@2x.png in Resources */,
@@ -1915,7 +1991,9 @@
 				B05C5B7E1F2B2485009E5CC6 /* CMMineDefine.m in Sources */,
 				C3B3BBC41F21AEC9000C9DC8 /* SecondViewController.m in Sources */,
 				C3F647001F24AAD5005952EC /* CMHomeAppIcon.m in Sources */,
+				C3B6B1C81F42883400916C7F /* CMFindHeadView.m in Sources */,
 				C3F647061F24D229005952EC /* CMFindPwdViewController.m in Sources */,
+				C3C295EE1F43F391005F65B8 /* CMFindInsurance.m in Sources */,
 				C3B7883B1F3D6BA10024737A /* AdPageView.m in Sources */,
 				C3B788471F3D6BA10024737A /* XYTransition.m in Sources */,
 				C3E3E1911F304B700021EB09 /* CMHomeContentCorverFlowItem.m in Sources */,
@@ -1944,11 +2022,14 @@
 				C3A4BB641F29A88E0082030A /* CMMineItem.m in Sources */,
 				C3B3BBB71F21AEC9000C9DC8 /* RootWebViewController.m in Sources */,
 				C3B7884A1F3D6F4F0024737A /* CMFoundation.m in Sources */,
+				C3B6B1CD1F428B1700916C7F /* CMFindCreditCell.m in Sources */,
+				C3C295ED1F43F391005F65B8 /* CMFindCredit.m in Sources */,
 				C3B788411F3D6BA10024737A /* CMProgressHUD.m in Sources */,
 				C3B3BBC31F21AEC9000C9DC8 /* PersonListViewController.m in Sources */,
 				C3B7883E1F3D6BA10024737A /* UIButton+XYButton.m in Sources */,
 				C3B3BBB61F21AEC9000C9DC8 /* NJKWebViewProgressView.m in Sources */,
 				C3B3BBBE1F21AEC9000C9DC8 /* CMUserInfo.m in Sources */,
+				C3C295F81F445C3B005F65B8 /* CMChooseItemView.m in Sources */,
 				C33E336F1F34C4EC00CB9D3D /* CMBorrow.m in Sources */,
 				C3B7884E1F3D79510024737A /* CMBorrowChoose.m in Sources */,
 				C3B788421F3D6BA10024737A /* HeaderModel.m in Sources */,
@@ -1960,6 +2041,7 @@
 				C3B3BBDA1F21AEC9000C9DC8 /* WaterFlowLayout.m in Sources */,
 				C368EEDA1F3834C8008146D2 /* CMFindViewController.m in Sources */,
 				C305E11C1F344AC300BC10A1 /* CMBorrowDefine.m in Sources */,
+				C3B6B20E1F4312C000916C7F /* CMBorrowDetail.m in Sources */,
 				C305E11F1F344AC300BC10A1 /* CMBorrowViewController.m in Sources */,
 				C3B788431F3D6BA10024737A /* PPNetworkCache.m in Sources */,
 				C3B3BBD81F21AEC9000C9DC8 /* PersonListCollectionViewCell.m in Sources */,
@@ -1971,6 +2053,7 @@
 				C305E11D1F344AC300BC10A1 /* CMBorrowConditionItem.m in Sources */,
 				C3B788551F3FF2650024737A /* CMBorrowDetailViewController.m in Sources */,
 				C3B3BBB11F21AEC9000C9DC8 /* MainTabBarController.m in Sources */,
+				C3B6B1D01F428E0200916C7F /* CMFindInsuranceCell.m in Sources */,
 				C3F647031F24C773005952EC /* CMPersonInfoSetingViewController.m in Sources */,
 				C3B3BBC81F21AEC9000C9DC8 /* PersonModel.m in Sources */,
 				C3B788451F3D6BA10024737A /* OpenUDID.m in Sources */,
@@ -1983,6 +2066,7 @@
 				B074CF021F336836001022F8 /* CMTextFieldView.m in Sources */,
 				C3B3BBAE1F21AEC9000C9DC8 /* XYButton.m in Sources */,
 				C3B6B1C01F41AEE700916C7F /* UIView+XBExtension.m in Sources */,
+				C3B6B1E01F42CF7600916C7F /* CMBorrowChooseHeadView.m in Sources */,
 				C3B3BBB81F21AEC9000C9DC8 /* RxWebViewController.m in Sources */,
 				C3FA53281F41530E008B222B /* CMBorrowDetailSpaceCell.m in Sources */,
 				C3B6B1C21F41AEE700916C7F /* XBSettingSectionModel.m in Sources */,

@@ -56,7 +56,16 @@
                                failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError * _Nullable error))failure
 {
     NSString * urlstring = [self rebuildRequestUrlByAPIMethod:URLString];
-    return [self.httpSessionManager GET:urlstring parameters:parameters progress:downloadProgress success:success failure:failure];
+    return [self.httpSessionManager GET:urlstring parameters:parameters progress:downloadProgress
+                                success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                                        if (success) {
+                                            success(task,[UAUtil objectFromData:responseObject]);
+                                        }
+                              } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                                    if (failure) {
+                                        failure(task,error);
+                                }
+                            }];
 }
 
 - (nullable NSURLSessionDataTask *)POST:(NSString *_Nullable)URLString

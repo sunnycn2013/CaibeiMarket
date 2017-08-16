@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CMBorrowConditionItem.h"
+#import "CMBorrowChooseView.h"
 
 typedef NS_ENUM(NSInteger, CMBorrowConditionType){
     CMBorrowConditionTypeAmount = 0,   //金额
@@ -29,4 +30,5 @@ typedef NS_ENUM(NSInteger, CMBorrowConditionType){
 
 @property (nonatomic,  weak)id   delegate;
 
+- (void)setConditionSwitchStyle:(CMBorrowConditionSwitchType)style;
 @end

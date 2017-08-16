@@ -7,12 +7,12 @@
 //
 
 #import "CMBorrowConditionView.h"
-#import "CMBorrowChooseView.h"
 
 NSInteger CMBorrowConditionNum     = 4;
 
 @interface CMBorrowConditionView ()<CMBorrowConditionItemDeleage>
 
+@property (nonatomic,strong) UIView * conditionLine;
 
 @end
 
@@ -39,6 +39,16 @@ NSInteger CMBorrowConditionNum     = 4;
         [item setDelegate:self];
         [self addSubview:item];
     }
+    [self addSubview:self.conditionLine];
+}
+
+- (void)setConditionSwitchStyle:(CMBorrowConditionSwitchType)style
+{
+    CMBorrowConditionItem * item = [self viewWithTag:CMBorrowConditionItemTag + 3];
+    if ([item isKindOfClass:[CMBorrowConditionItem class]]) {
+        [item setConditionType:CMBorrowConditionItemSwitch];
+        [item setSwitchType:style];
+    }
 }
 
 - (void)borrowConditionItem:(CMBorrowConditionItem *)item selectedAtIndex:(NSInteger)index
@@ -58,4 +68,13 @@ NSInteger CMBorrowConditionNum     = 4;
 
 #pragma mark - set get
 
+- (UIView *)conditionLine
+{
+    if (!_conditionLine) {
+        _conditionLine = [[UIView alloc] initWithFrame:CGRectMake(0, 45, KScreenWidth, 0.5)];
+        _conditionLine.backgroundColor = [UIColor lightGrayColor];
+        _conditionLine.alpha = 0.6;
+    }
+    return _conditionLine;
+}
 @end

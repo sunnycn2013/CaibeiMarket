@@ -75,6 +75,11 @@
 {
     return self.textField.text;
 }
+
+- (void)setSecureTextEntry:(BOOL)secureTextEntry
+{
+    _textField.secureTextEntry = secureTextEntry;
+}
 #pragma mark - set get
 - (UIView *)bgView
 {

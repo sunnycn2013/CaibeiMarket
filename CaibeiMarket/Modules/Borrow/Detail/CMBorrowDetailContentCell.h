@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CMBorrowProtocol.h"
 
-@interface CMBorrowDetailContentCell : UITableViewCell
+@interface CMBorrowDetailContentCell : UITableViewCell<CMBorrowProtocol>
 
 @end

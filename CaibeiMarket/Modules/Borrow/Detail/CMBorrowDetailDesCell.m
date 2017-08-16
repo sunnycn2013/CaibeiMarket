@@ -7,6 +7,7 @@
 //
 
 #import "CMBorrowDetailDesCell.h"
+#import "CMBorrowDetail.h"
 
 @interface CMBorrowDetailDesCell ()
 @property (nonatomic,strong)UIView * bgView;
@@ -30,8 +31,7 @@
 @property (nonatomic,strong)UILabel * punishmentLabel;
 
 @property (nonatomic,strong)UIButton * applyButton;
-
-
+@property (nonatomic,strong)CMBorrowProduct * model;
 @end
 
 @implementation CMBorrowDetailDesCell
@@ -47,6 +47,7 @@
 
 - (void)setUI
 {
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.backgroundColor = [UIColor colorWithHexString:@"#F6F6F6"];
     self.bgView.backgroundColor = [UIColor whiteColor];
     [self addSubview:self.bgView];
@@ -79,6 +80,17 @@
 - (CGFloat)heightForCell
 {
     return 470.0;
+}
+
+- (void)fillData:(id)model
+{
+    if ([model isKindOfClass:[CMBorrowProduct  class]]) {
+        self.model = (CMBorrowProduct *)model;
+    }
+    [self.applyCondition01Label setText:self.model.requirements];
+    [self.cerConditionLabel setText:self.model.certificationMaterials];
+    [self.applyAdviceLabel setText:self.model.applyForAdvice];
+    [self.punishmentLabel setText:self.model.overduePunishment];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

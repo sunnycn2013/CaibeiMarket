@@ -14,18 +14,33 @@
 #import "CMBorrowDetailSpaceCell.h"
 #import "CMBorrowDefine.h"
 
+#import "CMBorrowDetail.h"
+#import "CMBorrowProtocol.h"
+
 @interface CMBorrowDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong)CMBorrowDetailNoteView * noteView;
 @property (nonatomic,strong)NSArray * templateArray;
+@property (nonatomic,strong)NSDictionary * parameters;
+@property(nonatomic,strong) UAHTTPSessionManager * request;
 
+@property(nonatomic,strong) CMBorrowDetail *detail;
 @end
 
 @implementation CMBorrowDetailViewController
+- (instancetype)initWithParams:(NSDictionary *)params
+{
+    self = [super init];
+    if (self) {
+        //
+        self.parameters = params;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.title = @"喵贷贷款";
+    self.title = self.parameters[@"title"] ? : @"";
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -41,11 +56,32 @@
     [self.tableView registerClass:[CMBorrowDetailDesCell class] forCellReuseIdentifier:@"CMBorrowDetailDesCell"];
     [self.tableView registerClass:[CMBorrowDetailSpaceCell class] forCellReuseIdentifier:@"CMBorrowDetailSpaceCell"];
 
+    [self loadData];
     self.automaticallyAdjustsScrollViewInsets = YES;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)loadData
+{
+    __weak typeof(self) weakSelf = self;
+    self.request = [UAHTTPSessionManager manager];
+    [self.request GET:@"lend/lendDetail.json" parameters:self.parameters progress:nil success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
+        weakSelf.detail = [CMBorrowDetail mj_objectWithKeyValues:responseObject] ;
+        NSString * resultCode = [responseObject objectForKey:@"resultCode"];
+        NSString * message = [responseObject objectForKey:@"message"];
+        
+        if ([resultCode isEqualToString:@"0000"]) {
+            [weakSelf.tableView reloadData];
+        }else{
+            [MBProgressHUD showErrorMessage:message];
+        }
+        [weakSelf.tableView.mj_header endRefreshing];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nullable error) {
+        [MBProgressHUD showErrorMessage:@"服务异常"];
+    }];
 }
 
 #pragma mark - UITableViewDelegate,UITableViewDataSource
@@ -62,15 +98,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString * cellIdentifier = [self.templateArray objectAtIndex:indexPath.row];
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
-//    static NSString * cellIdentifier = @"cellIdentifier";
-//    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-//    if (cell == nil) {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-//    }
-//    cell.textLabel.text = @"111";
-    
+    UITableViewCell<CMBorrowProtocol> * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    [cell fillData:self.detail];
     return cell;
 }
 

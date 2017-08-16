@@ -12,7 +12,13 @@ extern NSInteger CMBorrowConditionItemTag;
 
 typedef NS_ENUM(NSInteger, CMBorrowConditionItemType){
     CMBorrowConditionItemAscending = 0,
-    CMBorrowConditionItemDescending
+    CMBorrowConditionItemDescending,
+    CMBorrowConditionItemSwitch
+};
+
+typedef NS_ENUM(NSInteger, CMBorrowConditionSwitchType){
+    CMBorrowConditionSwitchTypeOpen = 0,
+    CMBorrowConditionSwitchTypeclose,
 };
 
 @class CMBorrowConditionItem;
@@ -27,6 +33,9 @@ typedef NS_ENUM(NSInteger, CMBorrowConditionItemType){
 @property (nonatomic, strong)NSString * conditionText;
 @property (nonatomic,   weak)id         delegate;
 @property (nonatomic, assign)BOOL       isAscending;
+@property (nonatomic, assign)CMBorrowConditionItemType       conditionType;
+@property (nonatomic, assign)CMBorrowConditionSwitchType     switchType;
+
 @property (nonatomic, copy)void(^TapAction)(NSInteger index, BOOL isAscending);
 
 @end

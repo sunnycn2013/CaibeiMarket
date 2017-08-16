@@ -38,8 +38,8 @@
     [self addSubview:self.scrollView];
     [self.scrollView reloadData];
     
-    self.backgroundColor = [UIColor lightGrayColor];
-    self.scrollView.backgroundColor = [UIColor whiteColor];
+    self.backgroundColor = [UIColor colorWithHexString:@"#F6F6F6"];
+    self.scrollView.backgroundColor = [UIColor colorWithHexString:@"#F6F6F6"];
     [self.scrollView scrollToItemAtIndex:3 animated:YES];
 }
 
@@ -60,7 +60,7 @@
     CMHomeContentCorverFlowItem * reuseView = (CMHomeContentCorverFlowItem *)view;
     if (!reuseView) {
         reuseView = [[CMHomeContentCorverFlowItem alloc] initWithFrame:CGRectMake(0, 1, 65, 45)];
-        reuseView.backgroundColor = [self randomColor];
+        reuseView.backgroundColor = [UIColor clearColor];
     }
     return reuseView;
 }
@@ -70,7 +70,7 @@
     CMHomeContentCorverFlowItem * reuseView = (CMHomeContentCorverFlowItem *)view;
     if (!reuseView) {
         reuseView = [[CMHomeContentCorverFlowItem alloc] initWithFrame:CGRectMake(0, 1, 65, 45)];
-        reuseView.backgroundColor = [self randomColor];
+        reuseView.backgroundColor = [UIColor clearColor];
     }
     return reuseView;
 }

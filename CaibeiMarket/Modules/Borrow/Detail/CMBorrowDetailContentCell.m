@@ -8,6 +8,7 @@
 
 #import "CMBorrowDetailContentCell.h"
 #import "ZZCACircleProgress.h"
+#import "CMBorrowDetail.h"
 
 @interface CMBorrowDetailContentCell ()
 
@@ -29,6 +30,9 @@
 
 @property (nonatomic,strong)UILabel * approveDesLabel;  //审核通过率
 @property (nonatomic,strong)UILabel * approveLabel;
+
+@property (nonatomic,strong)CMBorrowProduct * model;
+
 @end
 
 @implementation CMBorrowDetailContentCell
@@ -44,6 +48,8 @@
 
 - (void)setUI
 {
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+
     [self addSubview:self.totalMoneylabel];
     [self addSubview:self.totalMoneyPricelabel];
     [self addSubview:self.progressView];
@@ -69,7 +75,20 @@
     return 175.0;
 }
 
+- (void)fillData:(id)model
+{
+    if ([model isKindOfClass:[CMBorrowProduct  class]]) {
+        self.model = (CMBorrowProduct *)model;
+    }
+    [self.supplyNameLabel setText:self.model.lendName];
+    [self.lendingTimeLabel setText:[NSString stringWithFormat:@"放款时间: %@小时放款",self.model.loanTime]];
+    [self.totalMoneylabel setText:[NSString stringWithFormat:@"%@",self.model.totalApply]];
+    [self.totalApplyNumberLabel setText:[NSString stringWithFormat:@"放款时间: %@小时放款",self.model.totalApply]];
 
+    [self.interestDesLabel setText:self.model.monthlyInterestRate];
+    [self.approveLabel setText:[NSString stringWithFormat:@"%@",self.model.throughputRate]];
+    
+}
 #pragma mark -  set get
 - (UILabel *)totalMoneylabel
 {

@@ -9,6 +9,7 @@
 #import "CMBorrowChooseView.h"
 #import "CMChooseCell.h"
 #import "CMBorrowChoose.h"
+#import "CMBorrowChooseHeadView.h"
 
 @interface CMBorrowChooseView ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -76,9 +77,9 @@
 #pragma mark -  tableView  header
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, 200, 30)];
-    label.text = @"放款速度";
-    return label;
+    CMBorrowChooseHeadView * headView = [[CMBorrowChooseHeadView alloc] initWithFrame:CGRectMake(20, 10, 200, 30)];
+    headView.showTitle = @"放款速度";
+    return headView;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

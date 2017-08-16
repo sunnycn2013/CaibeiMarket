@@ -10,4 +10,6 @@
 
 @interface CMBorrowDetailViewController : RootViewController
 
+- (instancetype)initWithParams:(NSDictionary *)params;
+
 @end

@@ -149,6 +149,6 @@ SINGLETON_FOR_CLASS(CMUserManager);
         }
     }];
     
-    KPostNotification(KNotificationLoginStateChange, @NO);
+//    KPostNotification(KNotificationLoginStateChange, @NO);
 }
 @end

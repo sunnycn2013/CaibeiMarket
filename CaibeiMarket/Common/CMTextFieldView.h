@@ -16,5 +16,6 @@
 @property (nonatomic,assign)BOOL      showRoundedCorner;
 @property (nonatomic,assign)CGFloat   placeholderFontSize;
 @property (nonatomic,assign)CGFloat   fontSize;
+@property (nonatomic,assign)BOOL      secureTextEntry;
 
 @end

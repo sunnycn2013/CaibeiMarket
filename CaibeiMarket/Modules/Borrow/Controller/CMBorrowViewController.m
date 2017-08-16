@@ -21,10 +21,8 @@
 @property (nonatomic, strong)CMBorrowChooseView *chooseView;
 @property (nonatomic, strong)UIView *chooseBgView;
 
-@property (nonatomic,assign)BOOL  showChooseView;
-@property(nonatomic,strong) UAHTTPSessionManager * request;
-
-
+@property (nonatomic, assign)BOOL  showChooseView;
+@property(nonatomic,  strong)UAHTTPSessionManager * request;
 @property (nonatomic, strong)CMBorrow *borrow;
 
 @end
@@ -115,28 +113,34 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CMBorrowDetailViewController * detail = [[CMBorrowDetailViewController alloc] init];
+    CMBorrowCrads * model = [self.borrow.listData objectAtIndex:indexPath.row];
+    NSDictionary * params = @{
+                                @"identifier" : model.identifier ? : @"",
+                                @"title" : model.lendName ? : @"",
+                              };
+    CMBorrowDetailViewController * detail = [[CMBorrowDetailViewController alloc] initWithParams:params];
     [self.navigationController pushViewController:detail animated:YES];
 }
 
 #pragma mark - CMBorrowConditionViewDelegate
 - (void)borrowConditionView:(CMBorrowConditionView *)conditionView conditionType:(CMBorrowConditionType)type sortingCondition:(CMBorrowConditionItemType)sort
 {
-    [MBProgressHUD showTipMessageInWindow:@"刷新数据"];
 }
 
 - (void)borrowConditionView:(CMBorrowConditionView *)conditionView selectedChooseView:(NSInteger)index
 {
     if (!self.showChooseView) {
+        [self.conditionView setConditionSwitchStyle:CMBorrowConditionSwitchTypeOpen];
+        self.chooseBgView.frame  = CGRectMake(0, 110, KScreenWidth, KScreenHeight);
         [UIView animateWithDuration:0.2 animations:^{
             self.showChooseView = YES;
-            self.chooseBgView.frame  = CGRectMake(0, 104, KScreenWidth, KScreenHeight);
             self.chooseView.frame = CGRectMake(0, _conditionView.bottom, KScreenWidth, 424);
         }];
     }else{
+        [self.conditionView setConditionSwitchStyle:CMBorrowConditionSwitchTypeclose];
+        self.chooseBgView.frame  = CGRectMake(0, 110, KScreenWidth, 0);
         [UIView animateWithDuration:0.2 animations:^{
             self.showChooseView = NO;
-            self.chooseBgView.frame  = CGRectMake(0, 104, KScreenWidth, 0);
             self.chooseView.frame = CGRectMake(0, _conditionView.bottom, KScreenWidth, 0);
         }];
     }
@@ -150,6 +154,7 @@
         _conditionView = [[CMBorrowConditionView alloc] initWithFrame:CGRectMake(0, 64, KScreenWidth, CMBorrowConditionViewHeight)];
         _conditionView.backgroundColor = [UIColor whiteColor];
         _conditionView.delegate = self;
+        [_conditionView setConditionSwitchStyle:CMBorrowConditionSwitchTypeclose];
     }
     return _conditionView;
 }
@@ -159,7 +164,7 @@
     if (!_chooseView) {
         _chooseView = [[CMBorrowChooseView alloc] initWithFrame:CGRectMake(0, _conditionView.bottom, KScreenWidth, 0)];
         _chooseView.backgroundColor = [UIColor colorWithHexString:@"#F6F6F6"];
-//        _chooseView.backgroundColor = [UIColor purpleColor];
+        _chooseView.backgroundColor = [UIColor purpleColor];
         _chooseView.clipsToBounds = YES;
 
     }

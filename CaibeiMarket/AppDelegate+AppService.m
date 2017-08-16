@@ -42,26 +42,29 @@
 #pragma mark ————— 初始化用户系统 —————
 -(void)initUserManager{
     DLog(@"设备IMEI ：%@",[OpenUDID value]);
-    if([userManager loadUserInfo])
-    {
-        //如果有本地数据，先展示TabBar 随后异步自动登录
-        self.mainTabBar = [MainTabBarController new];
-        self.window.rootViewController = self.mainTabBar;
-        //自动登录
-        [userManager autoLoginToServer:^(BOOL success, NSString *des) {
-            if (success) {
-                DLog(@"自动登录成功");
-                //                    [MBProgressHUD showSuccessMessage:@"自动登录成功"];
-                KPostNotification(KNotificationAutoLoginSuccess, nil);
-            }else{
-                [MBProgressHUD showErrorMessage:NSStringFormat(@"自动登录失败：%@",des)];
-            }
-        }];
-        
-    }else{
-        //没有登录过，展示登录页面
-        KPostNotification(KNotificationLoginStateChange, @NO)
-    }
+//    if([userManager loadUserInfo])
+//    {
+//        //如果有本地数据，先展示TabBar 随后异步自动登录
+//        self.mainTabBar = [MainTabBarController new];
+//        self.window.rootViewController = self.mainTabBar;
+//        //自动登录
+//        [userManager autoLoginToServer:^(BOOL success, NSString *des) {
+//            if (success) {
+//                DLog(@"自动登录成功");
+//                //                    [MBProgressHUD showSuccessMessage:@"自动登录成功"];
+//                KPostNotification(KNotificationAutoLoginSuccess, nil);
+//            }else{
+//                [MBProgressHUD showErrorMessage:NSStringFormat(@"自动登录失败：%@",des)];
+//            }
+//        }];
+//        
+//    }else{
+//        //没有登录过，展示登录页面
+//        KPostNotification(KNotificationLoginStateChange, @NO)
+//    }
+    
+    self.mainTabBar = [MainTabBarController new];
+    self.window.rootViewController = self.mainTabBar;
 }
 
 #pragma mark ————— 登录状态处理 —————

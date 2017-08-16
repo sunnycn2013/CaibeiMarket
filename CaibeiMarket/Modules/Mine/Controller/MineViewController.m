@@ -20,12 +20,11 @@
 #import "RootWebViewController.h"
 #import "CMPortraitViewController.h"
 
-
+#import "XBMeHeaderView.h"
 #import "XBConst.h"
 #import "XBSettingCell.h"
 #import "XBSettingItemModel.h"
 #import "XBSettingSectionModel.h"
-
 
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -44,40 +43,77 @@
 {
     [super viewDidLoad];
     
-    [self.view addSubview:self.tableView];
-    
-    CMMineHeader * header = [[CMMineHeader alloc] init];
-    CMMineItem * item1 = [[CMMineItem alloc] init];
-    item1.title = @"申请记录";
-    item1.imageName = @"apply";
-    item1.navigationType = CMMineJumpApply;
-    
-    CMMineItem * item2 = [[CMMineItem alloc] init];
-    item2.title = @"我的资料";
-    item2.imageName = @"mydata";
-    item2.navigationType = CMMineJumpMyData;
-    
-    CMMineItem * item3 = [[CMMineItem alloc] init];
-    item3.title = @"关于我们";
-    item3.imageName = @"about";
-    item3.navigationType = CMMineJumpAboutMe;
-    
-    CMMineItem * item4 = [[CMMineItem alloc] init];
-    item4.title = @"设置";
-    item4.imageName = @"setting";
-    item4.navigationType = CMMineJumpSetUp;
-    
-    self.dataArray = @[header,item1,item2,item3,item4];
-    
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    [self.tableView registerClass:[CMMineCell class] forCellReuseIdentifier:@"CMMineCell"];
-    [self.tableView registerClass:[CMMineHeaderCell class] forCellReuseIdentifier:@"CMMineHeaderCell"];
+    [self setupSections];
     
+//    XBMeHeaderView *header = [[[NSBundle mainBundle]loadNibNamed:@"XBMeHeaderView" owner:nil options:nil] firstObject];
+//    self.header = header;
+    self.tableView.tableHeaderView = self.headerView;
+    [self.view addSubview:self.tableView];
     [self.tableView reloadData];
+
     self.automaticallyAdjustsScrollViewInsets = NO;
 }
+
+- (void)setupSections
+{
+    __weak typeof(self) weakself = self;
+    //************************************section1
+    XBSettingItemModel *item1 = [[XBSettingItemModel alloc]init];
+    item1.funcName = @"申请记录";
+    item1.executeCode = ^{
+        NSLog(@"我的任务1");
+    };
+    item1.img = [UIImage imageNamed:@"apply"];
+    item1.detailText = @"我的资料";
+    item1.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
+    
+    
+    XBSettingItemModel *item2 = [[XBSettingItemModel alloc]init];
+    item2.funcName = @"我的资料";
+    item2.img = [UIImage imageNamed:@"mydata"];
+    item2.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
+    
+    XBSettingItemModel *item3 = [[XBSettingItemModel alloc]init];
+    item3.funcName = @"关于采贝";
+    item3.img = [UIImage imageNamed:@"about"];
+    item3.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
+    
+    XBSettingItemModel *item4 = [[XBSettingItemModel alloc]init];
+    item4.funcName = @"我的任务4";
+    item4.img = [UIImage imageNamed:@"icon-list01"];
+    item4.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
+    
+    XBSettingSectionModel *section1 = [[XBSettingSectionModel alloc]init];
+    section1.sectionHeaderHeight = 18;
+    section1.itemArray = @[item1,item2,item3,item4];
+    
+    XBSettingItemModel *item5 = [[XBSettingItemModel alloc]init];
+    item5.funcName = @"充值中心";
+    item5.img = [UIImage imageNamed:@"icon-list01"];
+    item5.executeCode = ^{
+        NSLog(@"充值中心");
+    };
+    item5.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
+    
+    XBSettingItemModel *item6 = [[XBSettingItemModel alloc]init];
+    item6.funcName = @"设置";
+    item6.img = [UIImage imageNamed:@"setting"];
+    item6.executeCode = ^{
+        CMSettingViewController * viewController = [[CMSettingViewController alloc] init];
+        [weakself.navigationController pushViewController:viewController animated:YES];
+    };
+    item6.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
+    
+    XBSettingSectionModel *section2 = [[XBSettingSectionModel alloc]init];
+    section2.sectionHeaderHeight = 18;
+    section2.itemArray = @[item5,item6];
+    
+    self.sectionArray = @[section1,section2];
+}
+
 
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -97,54 +133,64 @@
     [super didReceiveMemoryWarning];
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    return self.sectionArray.count;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return self.dataArray.count;
-}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    XBSettingSectionModel *sectionModel = self.sectionArray[section];
+    return sectionModel.itemArray.count;}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    id<CMRubikDataProtocol> model = [self.dataArray objectAtIndex:indexPath.row];
-    NSString * cellIndetifier  = [model identifierAtIndexPath:indexPath];
-    UITableViewCell <CMRubikCellProtocol> * cell = [tableView dequeueReusableCellWithIdentifier:cellIndetifier];
-    [cell fillData:model];
+    static NSString *identifier = @"setting";
+    XBSettingSectionModel *sectionModel = self.sectionArray[indexPath.section];
+    XBSettingItemModel *itemModel = sectionModel.itemArray[indexPath.row];
+    
+    XBSettingCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (!cell) {
+        cell = [[XBSettingCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    cell.item = itemModel;
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+#pragma mark - Table view delegate
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    id<CMRubikDataProtocol> model = [self.dataArray objectAtIndex:indexPath.row];
-    return [model heightForRowAtIndexPath:indexPath];
+    XBSettingSectionModel *sectionModel = self.sectionArray[section];
+    return sectionModel.sectionHeaderHeight;
 }
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CMMineItem * item = [self.dataArray objectAtIndex:indexPath.row];
-    NSString * navigationType = item.navigationType;
-    UIViewController * viewController = nil;
-    if ([navigationType isEqualToString:CMMineJumpApply])
-    {
-        viewController = [[ProfileViewController alloc] init];
-    }else if ([navigationType isEqualToString:CMMineJumpMyData]){
-        viewController = [[CMPortraitViewController alloc] init];
-    }else if ([navigationType isEqualToString:CMMineJumpAboutMe]){
-        viewController = [[RootWebViewController alloc] initWithUrl:@"http://www.icaibei.com/about.html"];
-    }else if ([navigationType isEqualToString:CMMineJumpSetUp]){
-        viewController = [[CMSettingViewController alloc] init];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    XBSettingSectionModel *sectionModel = self.sectionArray[indexPath.section];
+    XBSettingItemModel *itemModel = sectionModel.itemArray[indexPath.row];
+    if (itemModel.executeCode) {
+        itemModel.executeCode();
     }
-    [self.navigationController pushViewController:viewController animated:YES];
 }
+//uitableview处理section的不悬浮，禁止section停留的方法，主要是这段代码
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    XBSettingSectionModel *sectionModel = [self.sectionArray firstObject];
+    CGFloat sectionHeaderHeight = sectionModel.sectionHeaderHeight;
+    
+    if (scrollView.contentOffset.y<=sectionHeaderHeight&&scrollView.contentOffset.y>=0) {
+        scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
+    } else if (scrollView.contentOffset.y>=sectionHeaderHeight) {
+        scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
+    }
+}
+
 #pragma mark - set get
 - (CMMineHeaderView *)headerView
 {
     if (!_headerView) {
         _headerView = [[CMMineHeaderView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, kIPhone6Scale(233))];
-        
     }
     return _headerView;
 }

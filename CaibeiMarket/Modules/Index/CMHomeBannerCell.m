@@ -71,20 +71,10 @@
     if (!reuseView) {
         reuseView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, width, height)];
         [reuseView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"index_banner"]]];
-//        [reuseView setContentMode:UIViewContentModeScaleAspectFill];
         reuseView.backgroundColor = [self randomColor];
     }
     return reuseView;
 }
-
-//- (CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value
-//{
-//    if (option == iCarouselOptionWrap)
-//    {
-//        return NO;
-//    }
-//    return value;
-//}
 
 - (void)carouselDidEndScrollingAnimation:(iCarousel *)carousel
 {
