@@ -51,6 +51,13 @@ SINGLETON_FOR_CLASS(CMUniversalJump);
     [self.currentController presentViewController:viewController animated:YES completion:nil];
 }
 
+- (void)dismissViewController
+{
+    self.currentController = [self currentViewController];
+    
+    [self.currentController dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (UINavigationController *)navigationController
 {
     AppDelegate * appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;

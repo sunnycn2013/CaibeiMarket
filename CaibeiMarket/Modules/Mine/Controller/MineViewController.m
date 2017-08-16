@@ -82,7 +82,7 @@
     item3.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
     
     XBSettingItemModel *item4 = [[XBSettingItemModel alloc]init];
-    item4.funcName = @"我的任务4";
+    item4.funcName = @"意见反馈";
     item4.img = [UIImage imageNamed:@"icon-list01"];
     item4.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
     
@@ -91,10 +91,10 @@
     section1.itemArray = @[item1,item2,item3,item4];
     
     XBSettingItemModel *item5 = [[XBSettingItemModel alloc]init];
-    item5.funcName = @"充值中心";
+    item5.funcName = @"给我评价";
     item5.img = [UIImage imageNamed:@"icon-list01"];
     item5.executeCode = ^{
-        NSLog(@"充值中心");
+        NSLog(@"给我评价");
     };
     item5.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
     

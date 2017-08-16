@@ -19,6 +19,8 @@ SINGLETON_FOR_HEADER(CMUniversalJump)
 
 - (void)presentTo:(NSString *)url params:(NSDictionary *)parameters;
 
+- (void)dismissViewController;
+
 - (UINavigationController *)navigationController;
 
 - (UIViewController *)currentViewController;

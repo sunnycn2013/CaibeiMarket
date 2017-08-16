@@ -78,37 +78,37 @@
 {
     BOOL loginSuccess = [notification.object boolValue];
     if (loginSuccess) {//登陆成功加载主窗口控制器
-        
+        [[CMUniversalJump sharedInstance] dismissViewController];
         //为避免自动登录成功刷新tabbar
-        if (!self.mainTabBar || ![self.window.rootViewController isKindOfClass:[MainTabBarController class]]) {
-            self.mainTabBar = [MainTabBarController new];
-
-            CATransition *anima = [CATransition animation];
-            anima.type = @"cube";//设置动画的类型
-            anima.subtype = kCATransitionFromRight; //设置动画的方向
-            anima.duration = 0.3f;
-            
-            self.window.rootViewController = self.mainTabBar;
-            
-            [kAppWindow.layer addAnimation:anima forKey:@"revealAnimation"];
-            
-        }
+//        if (!self.mainTabBar || ![self.window.rootViewController isKindOfClass:[MainTabBarController class]]) {
+//            self.mainTabBar = [MainTabBarController new];
+//
+//            CATransition *anima = [CATransition animation];
+//            anima.type = @"cube";//设置动画的类型
+//            anima.subtype = kCATransitionFromRight; //设置动画的方向
+//            anima.duration = 0.3f;
+//            
+//            self.window.rootViewController = self.mainTabBar;
+//            
+//            [kAppWindow.layer addAnimation:anima forKey:@"revealAnimation"];
+//            
+//        }
         
     }else {//登陆失败加载登陆页面控制器
-        
-        self.mainTabBar = nil;
-        LoginViewController * login = [[LoginViewController alloc] init];
-
-        RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:login];
-        
-        CATransition *anima = [CATransition animation];
-        anima.type = @"fade";//设置动画的类型
-        anima.subtype = kCATransitionFromRight; //设置动画的方向
-        anima.duration = 0.3f;
-        
-        self.window.rootViewController = loginNavi;
-        
-        [kAppWindow.layer addAnimation:anima forKey:@"revealAnimation"];
+        [[CMUserManager sharedInstance] login:kUserLoginTypePwd completion:nil];
+//        self.mainTabBar = nil;
+//        LoginViewController * login = [[LoginViewController alloc] init];
+//
+//        RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:login];
+//        
+//        CATransition *anima = [CATransition animation];
+//        anima.type = @"fade";//设置动画的类型
+//        anima.subtype = kCATransitionFromRight; //设置动画的方向
+//        anima.duration = 0.3f;
+//        
+//        self.window.rootViewController = loginNavi;
+//        
+//        [kAppWindow.layer addAnimation:anima forKey:@"revealAnimation"];
         
     }
     //展示FPS
