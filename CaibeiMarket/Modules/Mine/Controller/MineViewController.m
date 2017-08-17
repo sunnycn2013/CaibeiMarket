@@ -48,8 +48,6 @@
     self.tableView.dataSource = self;
     [self setupSections];
     
-//    XBMeHeaderView *header = [[[NSBundle mainBundle]loadNibNamed:@"XBMeHeaderView" owner:nil options:nil] firstObject];
-//    self.header = header;
     self.tableView.tableHeaderView = self.headerView;
     [self.view addSubview:self.tableView];
     [self.tableView reloadData];
@@ -87,7 +85,7 @@
     item4.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
     
     XBSettingSectionModel *section1 = [[XBSettingSectionModel alloc]init];
-    section1.sectionHeaderHeight = 18;
+    section1.sectionHeaderHeight = kIPhone6PScale(14);
     section1.itemArray = @[item1,item2,item3,item4];
     
     XBSettingItemModel *item5 = [[XBSettingItemModel alloc]init];
@@ -108,7 +106,7 @@
     item6.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
     
     XBSettingSectionModel *section2 = [[XBSettingSectionModel alloc]init];
-    section2.sectionHeaderHeight = 18;
+    section2.sectionHeaderHeight = kIPhone6PScale(14);
     section2.itemArray = @[item5,item6];
     
     self.sectionArray = @[section1,section2];
@@ -165,6 +163,12 @@
     XBSettingSectionModel *sectionModel = self.sectionArray[section];
     return sectionModel.sectionHeaderHeight;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 62.0;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -190,7 +194,7 @@
 - (CMMineHeaderView *)headerView
 {
     if (!_headerView) {
-        _headerView = [[CMMineHeaderView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, kIPhone6Scale(233))];
+        _headerView = [[CMMineHeaderView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, kIPhone6PScale(180))];
     }
     return _headerView;
 }

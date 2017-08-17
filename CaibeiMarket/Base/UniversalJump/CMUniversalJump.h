@@ -15,7 +15,9 @@ SINGLETON_FOR_HEADER(CMUniversalJump)
 
 + (void)openURL:(NSString *)url;
 
-- (void)natvigationTo:(NSString *)url params:(NSDictionary *)parameters;
+- (void)pushViewController:(NSString *)url params:(NSDictionary *)parameters;
+
+- (void)popViewControllerAnimated:(BOOL)animated;
 
 - (void)presentTo:(NSString *)url params:(NSDictionary *)parameters;
 

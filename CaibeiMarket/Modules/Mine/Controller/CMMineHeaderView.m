@@ -42,9 +42,9 @@
 #pragma mark -  set get
 - (UIView *)picBgView
 {
-    if (!_picBgView) {//79
-        _picBgView = [[UIView alloc] initWithFrame:CGRectMake(29, 65, 79, 79)];
-        _picBgView.layer.cornerRadius = 79.0/2;
+    if (!_picBgView) {
+        _picBgView = [[UIView alloc] initWithFrame:CGRectMake(kIPhone6PScale(29), kIPhone6PScale(65), kIPhone6PScale(77), kIPhone6PScale(77))];
+        _picBgView.layer.cornerRadius = kIPhone6PScale(77)/2;
         _picBgView.layer.masksToBounds = YES;
         _picBgView.backgroundColor = [UIColor whiteColor];
         _picBgView.alpha = 0.5;
@@ -55,7 +55,7 @@
 - (UIImageView *)picImageView
 {
     if (!_picImageView) {//79
-        _picImageView = [[UIImageView alloc] initWithFrame:CGRectMake(36, 71, 66, 66)];
+        _picImageView = [[UIImageView alloc] initWithFrame:CGRectMake(kIPhone6PScale(31), kIPhone6PScale(67), kIPhone6PScale(73), kIPhone6PScale(73))];
         _picImageView.image = [UIImage imageNamed:@"touxiang"];
         _picImageView.layer.cornerRadius = 33.0;
         _picImageView.layer.masksToBounds = YES;
@@ -66,7 +66,7 @@
 - (UILabel *)phoneNumLabel
 {
     if (!_phoneNumLabel) {
-        _phoneNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(_picImageView.right+27, 100, 300, 24)];
+        _phoneNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(_picImageView.right+16, 80, kIPhone6PScale(300), kIPhone6PScale(28))];
         _phoneNumLabel.text = @"1312782572";
         _phoneNumLabel.font = [UIFont systemFontOfSize:18];
         _phoneNumLabel.textColor = [UIColor whiteColor];
@@ -77,7 +77,7 @@
 - (UILabel *)desprictionLabel
 {
     if (!_desprictionLabel) {
-        _desprictionLabel = [[UILabel alloc] initWithFrame:CGRectMake(_phoneNumLabel.left, _phoneNumLabel.bottom +5, _phoneNumLabel.width, 30)];
+        _desprictionLabel = [[UILabel alloc] initWithFrame:CGRectMake(_phoneNumLabel.left, _phoneNumLabel.bottom +5, _phoneNumLabel.width, kIPhone6PScale(25))];
         _desprictionLabel.text = @"资料未设置";
         _desprictionLabel.font = [UIFont systemFontOfSize:13];
         _desprictionLabel.textColor = [UIColor whiteColor];
@@ -88,7 +88,7 @@
 - (UIImageView *)nextImageView
 {
     if (!_nextImageView) {
-        _nextImageView = [[UIImageView alloc] initWithFrame:CGRectMake(KScreenWidth - 42, _phoneNumLabel.top, 8, 16)];
+        _nextImageView = [[UIImageView alloc] initWithFrame:CGRectMake(KScreenWidth - 42, _phoneNumLabel.top + 5, kIPhone6PScale(8), kIPhone6PScale(16))];
         _nextImageView.image = [UIImage imageNamed:@"next_light"];
     }
     return _nextImageView;

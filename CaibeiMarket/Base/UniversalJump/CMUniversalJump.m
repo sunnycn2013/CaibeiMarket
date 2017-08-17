@@ -29,15 +29,21 @@ SINGLETON_FOR_CLASS(CMUniversalJump);
 }
 
 
-- (void)natvigationTo:(NSString *)url params:(NSDictionary *)parameters
+- (void)pushViewController:(NSString *)url params:(NSDictionary *)parameters
 {
     UIViewController * viewController = nil;
     self.navigationController = [self navigationController];
     if ([url isEqualToString:CMUJmupLogin]) {
-        viewController = [[RootViewController alloc] initWithParams:parameters];
+        viewController = [[LoginViewController alloc] initWithParams:parameters];
     }
     
     [self.navigationController pushViewController:viewController animated:YES];
+}
+
+- (void)popViewControllerAnimated:(BOOL)animated
+{
+    self.navigationController = [self navigationController];
+    [self.navigationController popViewControllerAnimated:animated];
 }
 
 - (void)presentTo:(NSString *)url params:(NSDictionary *)parameters
@@ -54,7 +60,6 @@ SINGLETON_FOR_CLASS(CMUniversalJump);
 - (void)dismissViewController
 {
     self.currentController = [self currentViewController];
-    
     [self.currentController dismissViewControllerAnimated:YES completion:nil];
 }
 

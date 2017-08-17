@@ -22,7 +22,7 @@
 
 @property (nonatomic,strong) UIImageView *detailImageView;
 
-
+@property (nonatomic,strong) UIView *line;
 
 @end
 @implementation XBSettingCell
@@ -60,10 +60,18 @@
     }
 
     //bottomLine
-    UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, self.height - 1, XBScreenWidth, 1)];
-    line.backgroundColor = XBMakeColorWithRGB(234, 234, 234, 1);
-    [self.contentView addSubview:line];
+    self.line = [[UIView alloc]initWithFrame:CGRectMake(0, self.height - 1, XBScreenWidth, 1)];
+    _line.backgroundColor = XBMakeColorWithRGB(234, 234, 234, 1);
+    [self.contentView addSubview:_line];
     
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    _line.frame = CGRectMake(0, self.height - 1, XBScreenWidth, 1);
+    self.funcNameLabel.centerY = self.contentView.centerY;
+    self.imgView.centerY = self.contentView.centerY;
 }
 
 -(void)setupDetailImage
