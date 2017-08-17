@@ -82,7 +82,8 @@
     }
     //http://47.94.220.244:8080/screen/20170813_716.png
     NSString * imageURL = [NSString stringWithFormat:@"%@%@",URL_main,self.data.lendPicUrl];
-    [self.iconImageView setImageURL:[NSURL URLWithString:imageURL]];
+    [self.iconImageView setImageWithURL:[NSURL URLWithString:imageURL] placeholder:[UIImage imageNamed:@"icaibei_placeholder"]];
+//    [self.iconImageView setImageURL:[NSURL URLWithString:imageURL]];
     [self.companyNameLabel setText:self.data.lendName];
     NSString * extend = @"%";
     [self.applyInterestabelLabel setText:[NSString stringWithFormat:@"%@%@",self.data.monthlyInterestRate,extend]];

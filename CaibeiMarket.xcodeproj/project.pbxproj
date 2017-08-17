@@ -20,7 +20,6 @@
 		B074CF111F337307001022F8 /* touxiang@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B074CF0A1F337307001022F8 /* touxiang@2x.png */; };
 		B0D0C9531F1F9C6900EBA36F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D0C9521F1F9C6900EBA36F /* main.m */; };
 		B0D0C9561F1F9C6900EBA36F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D0C9551F1F9C6900EBA36F /* AppDelegate.m */; };
-		B0D0C95F1F1F9C6900EBA36F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0D0C95D1F1F9C6900EBA36F /* Main.storyboard */; };
 		B0D0C9611F1F9C6900EBA36F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0D0C9601F1F9C6900EBA36F /* Assets.xcassets */; };
 		B0D0C96F1F1F9C6900EBA36F /* CaibeiMarketTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D0C96E1F1F9C6900EBA36F /* CaibeiMarketTests.m */; };
 		B0D0C97A1F1F9C6900EBA36F /* CaibeiMarketUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D0C9791F1F9C6900EBA36F /* CaibeiMarketUITests.m */; };
@@ -252,7 +251,6 @@
 		B0D0C9521F1F9C6900EBA36F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B0D0C9541F1F9C6900EBA36F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B0D0C9551F1F9C6900EBA36F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B0D0C95E1F1F9C6900EBA36F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B0D0C9601F1F9C6900EBA36F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0D0C9651F1F9C6900EBA36F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0D0C96A1F1F9C6900EBA36F /* CaibeiMarketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CaibeiMarketTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -710,7 +708,6 @@
 				C3B3BB631F21AEC8000C9DC8 /* Resource */,
 				B0D0C9541F1F9C6900EBA36F /* AppDelegate.h */,
 				B0D0C9551F1F9C6900EBA36F /* AppDelegate.m */,
-				B0D0C95D1F1F9C6900EBA36F /* Main.storyboard */,
 				C33E337C1F37161000CB9D3D /* LaunchScreen.storyboard */,
 				B0D0C9601F1F9C6900EBA36F /* Assets.xcassets */,
 				B0D0C9651F1F9C6900EBA36F /* Info.plist */,
@@ -1811,7 +1808,6 @@
 				C3B3BBFC1F21AEC9000C9DC8 /* icon_tabbar_mine@2x.png in Resources */,
 				C3E3E1881F302FCC0021EB09 /* icon_03@3x.png in Resources */,
 				B074CF0F1F337307001022F8 /* about@2x.png in Resources */,
-				B0D0C95F1F1F9C6900EBA36F /* Main.storyboard in Resources */,
 				C3B3BBCB1F21AEC9000C9DC8 /* 10.jpg in Resources */,
 				C3B3BBD61F21AEC9000C9DC8 /* 9.jpg in Resources */,
 				C3B3BBD51F21AEC9000C9DC8 /* 8.jpg in Resources */,
@@ -1907,13 +1903,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CaibeiMarket-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		93811D4FC84ABE1680159276 /* [CP] Copy Pods Resources */ = {
@@ -1922,9 +1921,17 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CaibeiMarket/Pods-CaibeiMarket-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/Required/ShareSDK.bundle",
+				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/Optional/ShareSDKConfigFile.bundle",
+				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/QQSDK/TencentOpenApi_IOS_Bundle.bundle",
+				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle",
+				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/Optional/ShareSDKUI.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1952,13 +1959,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CaibeiMarketTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E5FA6D3DD2C6275037981B55 /* [CP] Check Pods Manifest.lock */ = {
@@ -1967,13 +1977,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CaibeiMarketUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E9F646FBEB880A27D299986E /* [CP] Copy Pods Resources */ = {
@@ -2148,14 +2161,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B0D0C95D1F1F9C6900EBA36F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B0D0C95E1F1F9C6900EBA36F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C33E337C1F37161000CB9D3D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -2271,7 +2276,7 @@
 				INFOPLIST_FILE = CaibeiMarket/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.icaibei.CaibeiMarket9;
+				PRODUCT_BUNDLE_IDENTIFIER = com.icaibei.CaibeiMarket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "44f35dd4-d0d2-4fa8-9b82-27c9e043b230";
 				PROVISIONING_PROFILE_SPECIFIER = "XC: *";
@@ -2290,7 +2295,7 @@
 				INFOPLIST_FILE = CaibeiMarket/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.icaibei.CaibeiMarket9;
+				PRODUCT_BUNDLE_IDENTIFIER = com.icaibei.CaibeiMarket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "44f35dd4-d0d2-4fa8-9b82-27c9e043b230";
 				PROVISIONING_PROFILE_SPECIFIER = "XC: *";

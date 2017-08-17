@@ -23,6 +23,8 @@
 - (instancetype)initWithParams:(NSDictionary *)parameters
 {
     NSString * url = parameters[@"url"];
+    NSString * title = parameters[@"title"];
+    self.title = title;
     return [self initWithUrl:url];
 }
 

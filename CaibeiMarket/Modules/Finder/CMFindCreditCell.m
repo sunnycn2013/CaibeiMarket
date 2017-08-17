@@ -55,7 +55,7 @@
         self.model = (CMFindCreditCard *)model;
     }
     NSString * imageURL = [NSString stringWithFormat:@"%@%@",URL_main,self.model.criditPicUrl];
-    [self.cardImageView setImageURL:[NSURL URLWithString:imageURL]];
+    [self.cardImageView setImageWithURL:[NSURL URLWithString:imageURL] placeholder:[UIImage imageNamed:@"icaibei_placeholder"]];
     [self.cardTitleLabel setText:self.model.criditName];
     [self.cardDesLabel setText:self.model.criditSpecial];
 }

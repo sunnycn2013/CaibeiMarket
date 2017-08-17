@@ -121,7 +121,7 @@ NSInteger CMBorrowConditionItemTag = 500;
 - (UIImageView *)conditionHigh
 {
     if (!_conditionHigh) {
-        _conditionHigh = [[UIImageView alloc] initWithFrame:CGRectMake(_conditionTextLabel.right, _conditionTextLabel.top+10, 6, 4)];
+        _conditionHigh = [[UIImageView alloc] initWithFrame:CGRectMake(_conditionTextLabel.right+5, _conditionTextLabel.top+10, 6, 4)];
         _conditionHigh.image = [UIImage imageNamed:@"condition_light_high"];
     }
     return _conditionHigh;
@@ -130,7 +130,7 @@ NSInteger CMBorrowConditionItemTag = 500;
 - (UIImageView *)conditionLow
 {
     if (!_conditionLow) {
-        _conditionLow = [[UIImageView alloc] initWithFrame:CGRectMake(_conditionTextLabel.right, _conditionHigh.bottom + 3, 6, 4)];
+        _conditionLow = [[UIImageView alloc] initWithFrame:CGRectMake(_conditionTextLabel.right+5, _conditionHigh.bottom + 3, 6, 4)];
         _conditionLow.image = [UIImage imageNamed:@"condition_light_low"];
     }
     return _conditionLow;

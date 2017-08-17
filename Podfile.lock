@@ -19,9 +19,27 @@ PODS:
   - MBProgressHUD (1.0.0)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
+  - MOBFoundation (3.0.2)
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
+  - ShareSDK3 (4.0.1):
+    - MOBFoundation
+    - ShareSDK3/ShareSDK (= 4.0.1)
+  - ShareSDK3/ShareSDK (4.0.1):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKConfigurationFile (4.0.1):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKExtension (4.0.1):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKPlatforms/QQ (4.0.1):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKPlatforms/SinaWeibo (4.0.1):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKPlatforms/WeChat (4.0.1):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKUI (4.0.1):
+    - MOBFoundation
   - YTKNetwork (2.0.3):
     - AFNetworking (~> 3.0)
   - YYKit (1.0.9):
@@ -35,7 +53,15 @@ DEPENDENCIES:
   - MBProgressHUD (~> 1.0.0)
   - MJExtension (~> 3.0.13)
   - MJRefresh (~> 3.1.12)
+  - MOBFoundation
   - SDWebImage (~> 4.0.0)
+  - ShareSDK3
+  - ShareSDK3/ShareSDKConfigurationFile
+  - ShareSDK3/ShareSDKExtension
+  - ShareSDK3/ShareSDKPlatforms/QQ
+  - ShareSDK3/ShareSDKPlatforms/SinaWeibo
+  - ShareSDK3/ShareSDKPlatforms/WeChat
+  - ShareSDK3/ShareSDKUI
   - YTKNetwork (~> 2.0.3)
   - YYKit (~> 1.0.9)
 
@@ -46,10 +72,12 @@ SPEC CHECKSUMS:
   MBProgressHUD: 797fffbdf83b36406236328cc560949edd850dcf
   MJExtension: d9fbee1fb9025889dae7d7096e6ecb9d0ff36121
   MJRefresh: 11e1c9d86f2093ddcdbda7836bc2da477ddf568d
+  MOBFoundation: f01498422cf5a707c6fbb89b3b4a804c1bc97dcc
   SDWebImage: 6b64a5725896e9de8afbf4ed67d8e1ed331fd11c
+  ShareSDK3: 0f8a2585a1f412018d7d9ddef896c476aa8dab02
   YTKNetwork: 98a278da5b3dd99b20c25a5e1cbb6fa9153d0f5b
   YYKit: c6f89a5e8008fa83a13f9b89fda1ff6ce191eb08
 
-PODFILE CHECKSUM: 373b0d8993ce947edf4176a8cc9e3e506cf20128
+PODFILE CHECKSUM: 04ad64a9d98f5f3a752f88f9d3b4a7d57a5a70cf
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.3.1

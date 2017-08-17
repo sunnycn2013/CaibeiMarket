@@ -23,6 +23,7 @@
 
 @property (nonatomic,strong) CMFindInsuranceCard * model;
 
+@property (nonatomic,strong) CALayer * lineView;
 
 @end
 
@@ -46,6 +47,7 @@
     [self addSubview:self.totoalMoneyLabel];
     [self addSubview:self.totoalNumPeopleLabel];
     [self addSubview:self.nextImageView];
+    [self.layer addSublayer:self.lineView];
     
     kWeakSelf(self)
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithActionBlock:^(id  _Nonnull sender) {
@@ -63,7 +65,7 @@
         self.model = (CMFindInsuranceCard *)model;
     }
     NSString * imageURL = [NSString stringWithFormat:@"%@%@",URL_main,self.model.safePicUrl];
-    [self.iconImageView setImageURL:[NSURL URLWithString:imageURL]];
+    [self.iconImageView setImageWithURL:[NSURL URLWithString:imageURL] placeholder:[UIImage imageNamed:@"icaibei_placeholder"]];
     [self.insuranceTitleLabel setText:self.model.safeName];
     [self.totoalMoneyLabel setText:self.model.safeSpecial];
 }
@@ -134,5 +136,13 @@
     return _nextImageView;
 }
 
-
+- (CALayer *)lineView
+{
+    if (!_lineView) {
+        _lineView = [[CALayer alloc] init];
+        _lineView.frame = CGRectMake(0, 0, KScreenWidth,0.4);
+        _lineView.backgroundColor = [UIColor lightGrayColor].CGColor;
+    }
+    return _lineView;
+}
 @end

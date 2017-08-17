@@ -57,6 +57,9 @@
     [self.tableView registerClass:[CMBorrowDetailSpaceCell class] forCellReuseIdentifier:@"CMBorrowDetailSpaceCell"];
 
     [self loadData];
+    
+    UIButton * shareButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIBarButtonItem * rightBarButton = [UIBarButtonItem alloc]
     self.automaticallyAdjustsScrollViewInsets = YES;
 }
 

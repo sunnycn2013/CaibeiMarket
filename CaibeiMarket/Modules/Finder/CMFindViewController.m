@@ -134,7 +134,11 @@
         [cell setTapBlock:^(id obj){
             if ([obj isKindOfClass:[CMFindCreditCard class]]) {
                 CMFindCreditCard * model = (CMFindCreditCard *)obj;
-                RootWebViewController * vc = [[RootWebViewController alloc] initWithUrl:model.criditUrl];
+                NSDictionary * params = @{
+                                          @"url" : model.criditUrl ? : @"",
+                                          @"title" : model.criditName ? : @"",
+                                          };
+                RootWebViewController * vc = [[RootWebViewController alloc] initWithParams:params];
                 [weakself.navigationController pushViewController:vc animated:YES];
             }
         }];
@@ -143,7 +147,11 @@
         [cell setTapBlock:^(id obj){
             if ([obj isKindOfClass:[CMFindInsuranceCard class]]) {
                 CMFindInsuranceCard * model = (CMFindInsuranceCard *)obj;
-                RootWebViewController * vc = [[RootWebViewController alloc] initWithUrl:model.safeUrl];
+                NSDictionary * params = @{
+                                          @"url" : model.safeUrl ? : @"",
+                                          @"title" : model.safeName ? : @"",
+                                          };
+                RootWebViewController * vc = [[RootWebViewController alloc] initWithParams:params];
                 [weakself.navigationController pushViewController:vc animated:YES];
             }
         }];
@@ -177,4 +185,5 @@
     }
     return headerView;
 }
+
 @end
