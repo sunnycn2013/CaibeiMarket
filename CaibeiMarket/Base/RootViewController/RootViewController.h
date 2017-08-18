@@ -65,6 +65,8 @@
  */
 @property (nonatomic, assign) BOOL isHidenNaviBar;
 
+- (void)setShareButton;
+
 /**
  导航栏添加文本按钮
 

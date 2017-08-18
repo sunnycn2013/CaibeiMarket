@@ -54,6 +54,16 @@
     [[UIApplication sharedApplication].keyWindow endEditing:YES];
 }
 
+- (void)setShareButton
+{
+    UIButton * shareButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    shareButton.frame = CGRectMake(0, 0, 25, 21);
+    [shareButton setImage:[UIImage imageNamed:@"caibei_rightbtn_share"] forState:UIControlStateNormal];
+    [shareButton setImage:[UIImage imageNamed:@"caibei_rightbtn_shareClick"] forState:UIControlStateSelected];
+    
+    UIBarButtonItem * rightBarButton = [[UIBarButtonItem alloc] initWithCustomView:shareButton];
+    self.navigationItem.rightBarButtonItem = rightBarButton;
+}
 #pragma mark ————— 跳转登录界面 —————
 - (void)goLogin
 {
