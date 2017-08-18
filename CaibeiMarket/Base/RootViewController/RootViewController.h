@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MJRefresh.h>
 #import "UIViewController+AlertViewAndActionSheet.h"
+#import "CMShareManager.h"
 /**
  VC 基类
  */

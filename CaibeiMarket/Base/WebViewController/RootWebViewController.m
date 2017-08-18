@@ -39,7 +39,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self setShareButton];
     [self initWKWebView];
 }
 -(void)viewWillAppear:(BOOL)animated{

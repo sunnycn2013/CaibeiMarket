@@ -187,6 +187,8 @@
 		C3C295F81F445C3B005F65B8 /* CMChooseItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C295F71F445C3B005F65B8 /* CMChooseItemView.m */; };
 		C3C295FB1F447811005F65B8 /* CMUniversalJump.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C295FA1F447811005F65B8 /* CMUniversalJump.m */; };
 		C3C295FE1F447A3B005F65B8 /* CMUniversalJumpDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C295FD1F447A3B005F65B8 /* CMUniversalJumpDefine.m */; };
+		C3C8160A1F46A3DF0027115F /* CMShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C816091F46A3DF0027115F /* CMShareManager.m */; };
+		C3C8160D1F46A8F50027115F /* MOBShareSDKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C8160C1F46A8F50027115F /* MOBShareSDKHelper.m */; };
 		C3D2E0811F21DDC90037CFF3 /* CMHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D2E0801F21DDC90037CFF3 /* CMHomeModel.m */; };
 		C3D2E0871F21DFE30037CFF3 /* CMHomeAppCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D2E0861F21DFE30037CFF3 /* CMHomeAppCell.m */; };
 		C3D2E08A1F21DFFB0037CFF3 /* CMHomeContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D2E0891F21DFFB0037CFF3 /* CMHomeContentCell.m */; };
@@ -540,6 +542,10 @@
 		C3C295FA1F447811005F65B8 /* CMUniversalJump.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMUniversalJump.m; sourceTree = "<group>"; };
 		C3C295FC1F447A3B005F65B8 /* CMUniversalJumpDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMUniversalJumpDefine.h; sourceTree = "<group>"; };
 		C3C295FD1F447A3B005F65B8 /* CMUniversalJumpDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMUniversalJumpDefine.m; sourceTree = "<group>"; };
+		C3C816081F46A3DF0027115F /* CMShareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMShareManager.h; sourceTree = "<group>"; };
+		C3C816091F46A3DF0027115F /* CMShareManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMShareManager.m; sourceTree = "<group>"; };
+		C3C8160B1F46A8F50027115F /* MOBShareSDKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBShareSDKHelper.h; sourceTree = "<group>"; };
+		C3C8160C1F46A8F50027115F /* MOBShareSDKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBShareSDKHelper.m; sourceTree = "<group>"; };
 		C3D2E07F1F21DDC90037CFF3 /* CMHomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMHomeModel.h; sourceTree = "<group>"; };
 		C3D2E0801F21DDC90037CFF3 /* CMHomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMHomeModel.m; sourceTree = "<group>"; };
 		C3D2E0851F21DFE30037CFF3 /* CMHomeAppCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMHomeAppCell.h; sourceTree = "<group>"; };
@@ -900,6 +906,7 @@
 		C3B3BADD1F21AEC8000C9DC8 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				C3C816071F46A3CA0027115F /* CMShare */,
 				C3B6B1DD1F42B41C00916C7F /* UniversalJump */,
 				C3B3BADE1F21AEC8000C9DC8 /* Button */,
 				C3B3BAE11F21AEC8000C9DC8 /* NavigationController */,
@@ -1551,6 +1558,17 @@
 			path = UANetWork;
 			sourceTree = "<group>";
 		};
+		C3C816071F46A3CA0027115F /* CMShare */ = {
+			isa = PBXGroup;
+			children = (
+				C3C8160B1F46A8F50027115F /* MOBShareSDKHelper.h */,
+				C3C8160C1F46A8F50027115F /* MOBShareSDKHelper.m */,
+				C3C816081F46A3DF0027115F /* CMShareManager.h */,
+				C3C816091F46A3DF0027115F /* CMShareManager.m */,
+			);
+			path = CMShare;
+			sourceTree = "<group>";
+		};
 		C3D2E07C1F21DD7D0037CFF3 /* Index */ = {
 			isa = PBXGroup;
 			children = (
@@ -1912,7 +1930,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		93811D4FC84ABE1680159276 /* [CP] Copy Pods Resources */ = {
@@ -1968,7 +1986,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		E5FA6D3DD2C6275037981B55 /* [CP] Check Pods Manifest.lock */ = {
@@ -1986,7 +2004,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		E9F646FBEB880A27D299986E /* [CP] Copy Pods Resources */ = {
@@ -2052,6 +2070,7 @@
 				C3B7883E1F3D6BA10024737A /* UIButton+XYButton.m in Sources */,
 				C3B3BBB61F21AEC9000C9DC8 /* NJKWebViewProgressView.m in Sources */,
 				C3B3BBBE1F21AEC9000C9DC8 /* CMUserInfo.m in Sources */,
+				C3C8160A1F46A3DF0027115F /* CMShareManager.m in Sources */,
 				C3C295F81F445C3B005F65B8 /* CMChooseItemView.m in Sources */,
 				C33E336F1F34C4EC00CB9D3D /* CMBorrow.m in Sources */,
 				C3B7884E1F3D79510024737A /* CMBorrowChoose.m in Sources */,
@@ -2067,6 +2086,7 @@
 				C3B6B20E1F4312C000916C7F /* CMBorrowDetail.m in Sources */,
 				C305E11F1F344AC300BC10A1 /* CMBorrowViewController.m in Sources */,
 				C3B788431F3D6BA10024737A /* PPNetworkCache.m in Sources */,
+				C3C8160D1F46A8F50027115F /* MOBShareSDKHelper.m in Sources */,
 				C3B3BBD81F21AEC9000C9DC8 /* PersonListCollectionViewCell.m in Sources */,
 				C3B3BBC51F21AEC9000C9DC8 /* CMHomeViewController.m in Sources */,
 				C3A4BB6A1F29B9390082030A /* CMMineHeaderCell.m in Sources */,

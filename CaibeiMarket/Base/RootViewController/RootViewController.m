@@ -60,9 +60,14 @@
     shareButton.frame = CGRectMake(0, 0, 25, 21);
     [shareButton setImage:[UIImage imageNamed:@"caibei_rightbtn_share"] forState:UIControlStateNormal];
     [shareButton setImage:[UIImage imageNamed:@"caibei_rightbtn_shareClick"] forState:UIControlStateSelected];
-    
+    [shareButton addTarget:self action:@selector(shareAction:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem * rightBarButton = [[UIBarButtonItem alloc] initWithCustomView:shareButton];
     self.navigationItem.rightBarButtonItem = rightBarButton;
+}
+
+- (void)shareAction:(UIButton *)sender
+{
+    [CMShareManager shareView:self.view info:nil];
 }
 #pragma mark ————— 跳转登录界面 —————
 - (void)goLogin
