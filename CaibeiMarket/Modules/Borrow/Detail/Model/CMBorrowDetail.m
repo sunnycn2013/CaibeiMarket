@@ -13,13 +13,20 @@
 - (NSString *)monthlyInterestRate
 {
     NSString * des = @"%";
-    NSString * content = [NSString stringWithFormat:@"%@月",_monthlyInterestRate];
-    NSString * string = [NSString stringWithFormat:@"%@%@",content,des];
+    NSString * content = [NSString stringWithFormat:@"%@",_monthlyInterestRate];
+    NSString * string = [NSString stringWithFormat:@"%@%@/月",content,des];
     return string;
 }
 
 @end
 
 @implementation CMBorrowDetail
++ (NSDictionary *)mj_objectClassInArray
+{
+    return @{
+             @"properties" : @"CMBorrowProduct"
+             };
+}
+
 
 @end

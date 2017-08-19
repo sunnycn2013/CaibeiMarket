@@ -33,6 +33,7 @@
     if (self) {
         self.url = url;
         _progressViewColor = [UIColor colorWithRed:119.0/255 green:228.0/255 blue:115.0/255 alpha:1];
+        _showSingleBackButtom = NO;
     }
     return self;
 }
@@ -41,6 +42,9 @@
     [super viewDidLoad];
     [self setShareButton];
     [self initWKWebView];
+    if (self.showSingleBackButtom) {
+        [self setCloseButton];
+    }
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -80,10 +84,10 @@
     _wkwebView.navigationDelegate = self;
     [_wkwebView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];//注册observer 拿到加载进度
     
+    NSDictionary * params = @{@"url" : _url ? : @""};
+    [MTAManager trackCustomKeyValueEventBegin:App_webView_load_time props:params];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:_url]];
     [_wkwebView loadRequest:request];
-    
-    
 }
 
 #pragma mark --这个就是设置的上面的那个加载的进度
@@ -119,22 +123,29 @@
 
 #pragma mark - ——————— WKNavigationDelegate ————————
 // 页面开始加载时调用
--(void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation{
+-(void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation
+{
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
 }
 // 当内容开始返回时调用
--(void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation{
+-(void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation
+{
     
 }
 // 页面加载完成之后调用
--(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
+-(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation
+{
     self.title = webView.title;
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     [self updateNavigationItems];
+    NSDictionary * params = @{@"url" : webView.URL.absoluteString ? : @""};
+    [MTAManager trackCustomKeyValueEventEnd:App_webView_load_time props:params];
 }
 // 页面加载失败时调用
--(void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation{
-    
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error
+{
+    NSDictionary * params = @{@"url" : error.description ? : @""};
+    [MTAManager trackCustomKeyValueEventEnd:App_webView_load_time props:params];
 }
 
 #pragma mark - update nav items
@@ -180,6 +191,11 @@
 -(void)dealloc{
     [self clean];
 }
+
+- (void)closeWebView:(UIButton *)button
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 #pragma mark ————— 清理 —————
 -(void)clean{
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
@@ -191,6 +207,17 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)setCloseButton
+{
+    UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setImage:[UIImage imageNamed:@"alertview_btn_close_highlight"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"alertview_btn_close_normal"] forState:UIControlStateSelected];
+    [button addTarget:self action:@selector(closeWebView:) forControlEvents:UIControlEventTouchUpInside];
+    [button setFrame:CGRectMake(0, 0, 30, 30)];
+    UIBarButtonItem * leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.leftBarButtonItem = leftBarButtonItem;
 }
 
 @end

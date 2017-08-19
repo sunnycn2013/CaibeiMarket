@@ -19,6 +19,7 @@
 @property(nonatomic,strong) UIButton     * forgetPWDButton;
 @property(nonatomic,strong) UIButton     * loginButton;
 @property(nonatomic,strong) UIButton     * registButton;
+@property(nonatomic,strong) UIButton     * cancelButton;
 @property(nonatomic,strong) UAHTTPSessionManager * request;
 @end
 
@@ -36,8 +37,8 @@
     [self.view addSubview:self.forgetPWDButton];
 
     [self.view addSubview:self.loginButton];
-
     [self.view addSubview:self.registButton];
+    [self.view addSubview:self.cancelButton];
     
     UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeKeyBoard:)];
     [self.view addGestureRecognizer:tapGesture];
@@ -110,6 +111,10 @@
     [self.navigationController pushViewController:regist animated:YES];
 }
 
+- (void)cancelAction:(UIButton *)button
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 #pragma mark - set get
 - (UIImageView *)headerImageView
 {
@@ -196,5 +201,16 @@
     return _registButton;
 }
 
+- (UIButton *)cancelButton
+{
+    if (!_cancelButton) {
+        _cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _cancelButton.frame = CGRectMake(KScreenWidth - kIPhone6Scale(65), kIPhone6Scale(30), kIPhone6Scale(45), kIPhone6Scale(45));
+        [_cancelButton setImage:[UIImage imageNamed:@"alertview_btn_close_highlight"] forState:UIControlStateSelected];
+        [_cancelButton setImage:[UIImage imageNamed:@"alertview_btn_close_normal"] forState:UIControlStateNormal];
+        [_cancelButton addTarget:self action:@selector(cancelAction:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _cancelButton;
+}
 
 @end

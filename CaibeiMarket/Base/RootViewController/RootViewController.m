@@ -35,7 +35,8 @@
     return self;
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     self.view.backgroundColor =KWhiteColor;
     
@@ -43,15 +44,23 @@
     self.isShowLiftBack = YES;
     self.StatusBarStyle = UIStatusBarStyleLightContent;
 }
--(void)viewWillAppear:(BOOL)animated{
+
+-(void)viewWillAppear:(BOOL)animated
+{
     [super viewWillAppear:animated];
 }
--(void)viewDidAppear:(BOOL)animated{
+
+-(void)viewDidAppear:(BOOL)animated
+{
     [super viewDidAppear:animated];
+    [MTAManager trackPageViewBegin:NSStringFromClass([self class])];
 }
--(void)viewWillDisappear:(BOOL)animated{
+
+-(void)viewWillDisappear:(BOOL)animated
+{
     [super viewWillDisappear:animated];
     [[UIApplication sharedApplication].keyWindow endEditing:YES];
+    [MTAManager trackPageViewEnd:NSStringFromClass([self class])];
 }
 
 - (void)setShareButton
@@ -80,7 +89,8 @@
     [self.navigationController pushViewController:[LoginViewController new] animated:YES];
 }
 
-- (void)showShouldLoginPoint{
+- (void)showShouldLoginPoint
+{
     
 }
 

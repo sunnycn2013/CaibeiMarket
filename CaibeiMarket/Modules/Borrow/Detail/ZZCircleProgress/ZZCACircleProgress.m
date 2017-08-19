@@ -106,7 +106,7 @@
         _progressLayer.lineWidth = _strokeWidth;
         _progressLayer.strokeColor = _pathFillColor.CGColor;
         _progressLayer.lineCap = @"square";
-        
+
         UIBezierPath *circlePath = [UIBezierPath bezierPathWithArcCenter:CGPointMake(_realWidth/2.0, _realWidth/2.0) radius:_realWidth/2.0 startAngle:_startAngle endAngle:(2*M_PI-_reduceAngle+_startAngle) clockwise:YES];
         _progressLayer.path = circlePath.CGPath;
         _progressLayer.strokeEnd = 0.0;

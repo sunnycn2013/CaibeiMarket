@@ -37,6 +37,16 @@
     [self addSubview:self.phoneNumLabel];
     [self addSubview:self.desprictionLabel];
     [self addSubview:self.nextImageView];
+    
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(taped:)];
+    [self addGestureRecognizer:tap];
+}
+
+- (void)taped:(UITapGestureRecognizer *)gesture
+{
+    if ([self.delegate respondsToSelector:@selector(headerView:didTaped:)]) {
+        [self.delegate headerView:self didTaped:nil];
+    }
 }
 
 #pragma mark -  set get

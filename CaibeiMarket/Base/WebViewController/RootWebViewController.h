@@ -27,6 +27,8 @@
  */
 @property (nonatomic)UIColor* progressViewColor;
 
+@property (nonatomic)BOOL showSingleBackButtom;
+
 /**
  *  get instance with url
  *

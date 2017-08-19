@@ -40,6 +40,7 @@
     self.tableView.mj_header = self.header;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerClass:[CMBorrowCell class] forCellReuseIdentifier:@"CMBorrowCell"];
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.chooseBgView];

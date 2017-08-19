@@ -72,6 +72,7 @@
     _line.frame = CGRectMake(0, self.height - 1, XBScreenWidth, 1);
     self.funcNameLabel.centerY = self.contentView.centerY;
     self.imgView.centerY = self.contentView.centerY;
+    self.detailLabel.centerY = self.contentView.centerY;
 }
 
 -(void)setupDetailImage
@@ -102,7 +103,8 @@
     self.detailLabel.font = [UIFont systemFontOfSize:XBDetailLabelFont];
     self.detailLabel.size = [self sizeForTitle:self.item.detailText withFont:self.detailLabel.font];
     self.detailLabel.centerY = self.contentView.centerY;
-    
+    self.detailLabel.backgroundColor = CMThemeColor;
+
     switch (self.item.accessoryType) {
         case XBSettingAccessoryTypeNone:
             self.detailLabel.x = XBScreenWidth - self.detailLabel.width - XBDetailViewToIndicatorGap - 2;

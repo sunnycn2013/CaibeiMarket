@@ -55,9 +55,11 @@
 
 - (void)fillData:(id)model
 {
-    if ([model isKindOfClass:[CMBorrowProduct  class]]) {
-        self.model = (CMBorrowProduct *)model;
+    if (![model isKindOfClass:[CMBorrowProduct class]]) {
+        return;
     }
+    self.model = (CMBorrowProduct *)model;
+
     [self.totalMoneylabel setText:[NSString stringWithFormat:@"%@",self.model.totalApply]];
     [self.cashBacklabel setText:[NSString stringWithFormat:@"%@天",self.model.loanTime]];
 }
@@ -72,7 +74,7 @@
 - (UIImageView *)notesImageView
 {
     if (!_notesImageView) {
-        _notesImageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 0, 26, 25)];
+        _notesImageView = [[UIImageView alloc] initWithFrame:CGRectMake(kIPhone6PScale(20), 0, kIPhone6PScale(26), kIPhone6PScale(25))];
         _notesImageView.image = [UIImage imageNamed:@"borrow_note_icon"];
     }
     return _notesImageView;
@@ -81,10 +83,10 @@
 - (UILabel *)totalMoneylabel
 {
     if (!_totalMoneylabel) {
-        _totalMoneylabel = [[UILabel alloc] initWithFrame:CGRectMake(110, 12, 34, 23)];
+        _totalMoneylabel = [[UILabel alloc] initWithFrame:CGRectMake(kIPhone6PScale(110), kIPhone6PScale(12), kIPhone6PScale(34), kIPhone6PScale(23))];
         _totalMoneylabel.text = @"5元";
         _totalMoneylabel.textColor = [UIColor redColor];
-        _totalMoneylabel.font = [UIFont systemFontOfSize:16];
+        _totalMoneylabel.font = [UIFont systemFontOfSize:kIPhone6PScale(18)];
     }
     return _totalMoneylabel;
 }
@@ -92,9 +94,10 @@
 - (UILabel *)totalMoneyDeslabel
 {
     if (!_totalMoneyDeslabel) {
-        _totalMoneyDeslabel = [[UILabel alloc] initWithFrame:CGRectMake(58, 37, 132, 15)];
+        _totalMoneyDeslabel = [[UILabel alloc] initWithFrame:CGRectMake(kIPhone6PScale(58), kIPhone6PScale(37), kIPhone6PScale(152), kIPhone6PScale(15))];
         _totalMoneyDeslabel.text = @"上传带宽截图成功送话费";
-        _totalMoneyDeslabel.font = [UIFont systemFontOfSize:12];
+        _totalMoneyDeslabel.textColor = [UIColor grayColor];
+        _totalMoneyDeslabel.font = [UIFont systemFontOfSize:kIPhone6PScale(12)];
     }
     return _totalMoneyDeslabel;
 }
@@ -102,9 +105,10 @@
 - (UILabel *)cashBacklabel
 {
     if (!_cashBacklabel) {
-        _cashBacklabel = [[UILabel alloc] initWithFrame:CGRectMake(KScreenWidth - 128, 16, 28, 16)];
+        _cashBacklabel = [[UILabel alloc] initWithFrame:CGRectMake(KScreenWidth - kIPhone6PScale(128), kIPhone6PScale(14), kIPhone6PScale(28), kIPhone6PScale(16))];
         _cashBacklabel.text = @"3天";
-        _cashBacklabel.font = [UIFont systemFontOfSize:12];
+        _cashBacklabel.textColor = [UIColor grayColor];
+        _cashBacklabel.font = [UIFont systemFontOfSize:kIPhone6PScale(12)];
     }
     return _cashBacklabel;
 }
@@ -112,9 +116,10 @@
 - (UILabel *)cashBackDeslabel
 {
     if (!_cashBackDeslabel) {
-        _cashBackDeslabel = [[UILabel alloc] initWithFrame:CGRectMake(KScreenWidth - 136, 37, 55, 16)];
+        _cashBackDeslabel = [[UILabel alloc] initWithFrame:CGRectMake(KScreenWidth - kIPhone6PScale(136), kIPhone6PScale(37), kIPhone6PScale(55), kIPhone6PScale(16))];
         _cashBackDeslabel.text = @"审核时间";
-        _cashBackDeslabel.font = [UIFont systemFontOfSize:12];
+        _cashBackDeslabel.textColor = [UIColor grayColor];
+        _cashBackDeslabel.font = [UIFont systemFontOfSize:kIPhone6PScale(12)];
     }
     return _cashBackDeslabel;
 }

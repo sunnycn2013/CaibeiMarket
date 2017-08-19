@@ -77,25 +77,35 @@
 
 - (void)fillData:(id)model
 {
-    if ([model isKindOfClass:[CMBorrowProduct  class]]) {
-        self.model = (CMBorrowProduct *)model;
+    if (![model isKindOfClass:[CMBorrowProduct class]]) {
+        return;
     }
-    [self.supplyNameLabel setText:self.model.lendName];
+    self.model = (CMBorrowProduct *)model;
+
+    [self.totalMoneylabel setText:[NSString stringWithFormat:@"%@元",self.model.lendMoney?:@"0"]];
+    [self.supplyNameLabel setText:self.model.lendName ? : @"喵贷贷款"];
     [self.lendingTimeLabel setText:[NSString stringWithFormat:@"放款时间: %@小时放款",self.model.loanTime]];
-    [self.totalMoneylabel setText:[NSString stringWithFormat:@"%@",self.model.totalApply]];
     [self.totalApplyNumberLabel setText:[NSString stringWithFormat:@"放款时间: %@小时放款",self.model.totalApply]];
 
     [self.interestDesLabel setText:self.model.monthlyInterestRate];
     [self.approveLabel setText:[NSString stringWithFormat:@"%@",self.model.throughputRate]];
-    
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    self.totalMoneylabel.center = self.progressView.center;
 }
 #pragma mark -  set get
 - (UILabel *)totalMoneylabel
 {
     if (!_totalMoneylabel) {
-        _totalMoneylabel = [[UILabel alloc] initWithFrame:CGRectMake(71, 71, 77, 19)];
+        _totalMoneylabel = [[UILabel alloc] initWithFrame:CGRectMake(kIPhone6PScale(71), kIPhone6PScale(71), kIPhone6PScale(52), (19))];
         _totalMoneylabel.text = @"1024元";
-        _totalMoneylabel.font = [UIFont systemFontOfSize:16];
+        _totalMoneylabel.font = [UIFont systemFontOfSize:kIPhone6PScale(18)];
+        _totalMoneylabel.textColor = CMThemeColor;
+//        _totalMoneylabel.backgroundColor = CMThemeColor;
+        _totalMoneylabel.textAlignment = NSTextAlignmentCenter;
     }
     return _totalMoneylabel;
 }
@@ -103,10 +113,9 @@
 - (ZZCACircleProgress *)progressView
 {
     if (!_progressView) {
-        _progressView = [[ZZCACircleProgress alloc] initWithFrame:CGRectMake(40, 22, 111, 111) pathBackColor:[UIColor yellowColor] pathFillColor:CMThemeColor startAngle:0 strokeWidth:15];
+        _progressView = [[ZZCACircleProgress alloc] initWithFrame:CGRectMake(kIPhone6PScale(40), kIPhone6PScale(22), kIPhone6PScale(108),kIPhone6PScale(111)) pathBackColor:[UIColor yellowColor] pathFillColor:CMThemeColor startAngle:0 strokeWidth:15];
         _progressView.showProgressText = NO;
         _progressView.duration = 1.0;//动画时长
-        
         _progressView.prepareToShow = YES;//设置好属性，准备好显示了，显示之前必须调用一次
         _progressView.progress = 0.9;
         _progressView.showPoint = NO;
@@ -117,9 +126,9 @@
 - (UILabel *)totalMoneyPricelabel
 {
     if (!_totalMoneyPricelabel) {
-        _totalMoneyPricelabel = [[UILabel alloc] initWithFrame:CGRectMake(57, 142, 96, 18)];
+        _totalMoneyPricelabel = [[UILabel alloc] initWithFrame:CGRectMake(kIPhone6PScale(57), kIPhone6PScale(142),kIPhone6PScale(96),kIPhone6PScale(18))];
         _totalMoneyPricelabel.text = @"每日手续费4元";
-        _totalMoneyPricelabel.font = [UIFont systemFontOfSize:12];
+        _totalMoneyPricelabel.font = [UIFont systemFontOfSize:kIPhone6PScale(12)];
     }
     return _totalMoneyPricelabel;
 }
@@ -127,9 +136,10 @@
 - (UILabel *)supplyNameLabel
 {
     if (!_supplyNameLabel) {
-        _supplyNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(184, 18, 143, 24)];
+        _supplyNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(kIPhone6PScale(184), kIPhone6PScale(22), kIPhone6PScale(143), kIPhone6PScale(24))];
         _supplyNameLabel.text = @"喵贷贷款";
         _supplyNameLabel.font = [UIFont systemFontOfSize:14];
+//        _supplyNameLabel.backgroundColor = [UIColor redColor];
     }
     return _supplyNameLabel;
 }
@@ -137,9 +147,10 @@
 - (UILabel *)interestLabel
 {
     if (!_interestLabel) {
-        _interestLabel = [[UILabel alloc] initWithFrame:CGRectMake(184, 49, 47, 17)];
-        _interestLabel.text = @"月利率";
-        _interestLabel.font = [UIFont systemFontOfSize:12];
+        _interestLabel = [[UILabel alloc] initWithFrame:CGRectMake(_supplyNameLabel.left, kIPhone6PScale(49), kIPhone6PScale(44), kIPhone6PScale(17))];
+        _interestLabel.text = @"月利率:";
+        _interestLabel.backgroundColor = [UIColor clearColor];
+        _interestLabel.font = [UIFont systemFontOfSize:kIPhone6PScale(12)];
     }
     return _interestLabel;
 }
@@ -147,9 +158,9 @@
 - (UILabel *)interestDesLabel
 {
     if (!_interestDesLabel) {
-        _interestDesLabel = [[UILabel alloc] initWithFrame:CGRectMake(_interestLabel.right, 49, 57, 17)];
+        _interestDesLabel = [[UILabel alloc] initWithFrame:CGRectMake(_interestLabel.right, kIPhone6PScale(49), kIPhone6PScale(57), kIPhone6PScale(17))];
         _interestDesLabel.text = @"0.25%月";
-        _interestDesLabel.font = [UIFont systemFontOfSize:12];
+        _interestDesLabel.font = [UIFont systemFontOfSize:kIPhone6PScale(12)];
     }
     return _interestDesLabel;
 }
@@ -157,18 +168,19 @@
 - (UILabel *)lendingTimeLabel
 {
     if (!_lendingTimeLabel) {
-        _lendingTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(184, 72, 160, 17)];
+        _lendingTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(_supplyNameLabel.left, kIPhone6PScale(72), kIPhone6PScale(200), kIPhone6PScale(17))];
         _lendingTimeLabel.text = @"放款时间:1小时放款";
-        _lendingTimeLabel.font = [UIFont systemFontOfSize:12];
+        _lendingTimeLabel.font = [UIFont systemFontOfSize:kIPhone6PScale(12)];
+//        _lendingTimeLabel.backgroundColor = [UIColor redColor];
     }
     return _lendingTimeLabel;
 }
 - (UILabel *)totalApplyDesLabel
 {
     if (!_totalApplyDesLabel) {
-        _totalApplyDesLabel = [[UILabel alloc] initWithFrame:CGRectMake(184, 93, 69, 17)];
+        _totalApplyDesLabel = [[UILabel alloc] initWithFrame:CGRectMake(_supplyNameLabel.left, kIPhone6PScale(93), kIPhone6PScale(69), kIPhone6PScale(17))];
         _totalApplyDesLabel.text = @"总申请人数:";
-        _totalApplyDesLabel.font = [UIFont systemFontOfSize:12];
+        _totalApplyDesLabel.font = [UIFont systemFontOfSize:kIPhone6PScale(12)];
     }
     return _totalApplyDesLabel;
 }
@@ -176,9 +188,9 @@
 - (UILabel *)totalApplyNumberLabel
 {
     if (!_totalApplyNumberLabel) {
-        _totalApplyNumberLabel = [[UILabel alloc] initWithFrame:CGRectMake(_totalApplyDesLabel.right, 93, 70, 17)];
+        _totalApplyNumberLabel = [[UILabel alloc] initWithFrame:CGRectMake(_totalApplyDesLabel.right, kIPhone6PScale(93), kIPhone6PScale(170), kIPhone6PScale(17))];
         _totalApplyNumberLabel.text = @"12345";
-        _totalApplyNumberLabel.font = [UIFont systemFontOfSize:12];
+        _totalApplyNumberLabel.font = [UIFont systemFontOfSize:kIPhone6PScale(12)];
     }
     return _totalApplyNumberLabel;
 }
@@ -188,19 +200,19 @@
 - (UILabel *)todayApplyDesLabel
 {
     if (!_todayApplyDesLabel) {
-        _todayApplyDesLabel = [[UILabel alloc] initWithFrame:CGRectMake(184, 113, 80, 17)];
+        _todayApplyDesLabel = [[UILabel alloc] initWithFrame:CGRectMake(_supplyNameLabel.left, kIPhone6PScale(113), kIPhone6PScale(80), kIPhone6PScale(17))];
         _todayApplyDesLabel.text = @"今日申请人数:";
-        _todayApplyDesLabel.font = [UIFont systemFontOfSize:12];
+        _todayApplyDesLabel.font = [UIFont systemFontOfSize:kIPhone6PScale(12)];
     }
     return _todayApplyDesLabel;
 }
 - (UILabel *)todayApplyNumberLabel
 {
     if (!_todayApplyNumberLabel) {
-        _todayApplyNumberLabel = [[UILabel alloc] initWithFrame:CGRectMake(_todayApplyDesLabel.right, 113, 54, 17)];
+        _todayApplyNumberLabel = [[UILabel alloc] initWithFrame:CGRectMake(_todayApplyDesLabel.right,kIPhone6PScale(113), kIPhone6PScale(54), kIPhone6PScale(17))];
         _todayApplyNumberLabel.text = @"251";
         _todayApplyNumberLabel.textColor = CMThemeColor;
-        _todayApplyNumberLabel.font = [UIFont systemFontOfSize:12];
+        _todayApplyNumberLabel.font = [UIFont systemFontOfSize:kIPhone6PScale(12)];
     }
     return _todayApplyNumberLabel;
 }
@@ -208,9 +220,9 @@
 - (UILabel *)approveDesLabel
 {
     if (!_approveDesLabel) {
-        _approveDesLabel = [[UILabel alloc] initWithFrame:CGRectMake(184, 134, 58, 17)];
+        _approveDesLabel = [[UILabel alloc] initWithFrame:CGRectMake(_supplyNameLabel.left, kIPhone6PScale(134), kIPhone6PScale(44), kIPhone6PScale(17))];
         _approveDesLabel.text = @"通过率:";
-        _approveDesLabel.font = [UIFont systemFontOfSize:12];
+        _approveDesLabel.font = [UIFont systemFontOfSize:kIPhone6PScale(12)];
     }
     return _approveDesLabel;
 }
@@ -218,14 +230,11 @@
 - (UILabel *)approveLabel
 {
     if (!_approveLabel) {
-        _approveLabel = [[UILabel alloc] initWithFrame:CGRectMake(_approveDesLabel.right, 134, 57, 17)];
+        _approveLabel = [[UILabel alloc] initWithFrame:CGRectMake(_approveDesLabel.right, kIPhone6PScale(134), kIPhone6PScale(57), kIPhone6PScale(17))];
         _approveLabel.text = @"50%";
         _approveLabel.textColor = CMThemeColor;
-        _approveLabel.font = [UIFont systemFontOfSize:12];
+        _approveLabel.font = [UIFont systemFontOfSize:kIPhone6PScale(12)];
     }
     return _approveLabel;
 }
-
-//@property (nonatomic,strong)UILabel * approveDesLabel;  //审核通过率
-//@property (nonatomic,strong)UILabel * approveLabel;
 @end

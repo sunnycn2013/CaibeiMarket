@@ -162,9 +162,9 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {
-        return 135.0;
+        return kIPhone6Scale(135.0);
     }else{
-        return 70.0;
+        return kIPhone6Scale(70.0);
     }
     return 0;
 }

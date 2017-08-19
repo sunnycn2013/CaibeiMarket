@@ -77,7 +77,7 @@
     if (!_cardTitleLabel) {
         _cardTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(_cardImageView.left, _cardImageView.bottom+kIPhone6Scale(4), kIPhone6Scale(130), kIPhone6Scale(16))];
         _cardTitleLabel.textColor = [UIColor blackColor];
-        _cardTitleLabel.font = [UIFont systemFontOfSize:12];
+        _cardTitleLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(12)];
         _cardTitleLabel.text = @"中信白条信用卡";
         _cardTitleLabel.textAlignment = NSTextAlignmentCenter;
     }
@@ -89,7 +89,7 @@
     if (!_cardDesLabel) {
         _cardDesLabel = [[UILabel alloc] initWithFrame:CGRectMake(_cardImageView.left, _cardTitleLabel.bottom, kIPhone6Scale(130), kIPhone6Scale(11))];
         _cardDesLabel.textColor = [UIColor grayColor];
-        _cardDesLabel.font = [UIFont systemFontOfSize:12];
+        _cardDesLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(12)];
         _cardDesLabel.text = @"最火免年费白金卡";
         _cardDesLabel.textAlignment = NSTextAlignmentCenter;
     }
@@ -105,8 +105,6 @@
 @property (nonatomic,strong) CMFindCreditCardView * rightCreditCards;
 
 @property (nonatomic,strong) CMFindCreditItem * model;
-
-@property (nonatomic,assign) CGFloat  padding;
 
 @end
 
@@ -131,9 +129,9 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    self.padding = (KScreenWidth - 130*2 - 48)/2.0;
-    _leftCreditCards.frame = CGRectMake(self.padding, 10, kIPhone6Scale(130), self.height-10);
-    _rightCreditCards.frame = CGRectMake(_leftCreditCards.right + kIPhone6Scale(48), 10, kIPhone6Scale(130), _leftCreditCards.height);
+    CGFloat padding = (KScreenWidth - kIPhone6Scale(130)*2 - kIPhone6Scale(48))/2.0;
+    _leftCreditCards.frame = CGRectMake(padding, 10, kIPhone6Scale(130), self.height-10);
+    _rightCreditCards.frame = CGRectMake(_leftCreditCards.right + kIPhone6Scale(48), kIPhone6Scale(10), kIPhone6Scale(130), _leftCreditCards.height);
 }
 
 - (void)fillData:(id)model
@@ -165,8 +163,10 @@
 - (CMFindCreditCardView *)leftCreditCards
 {
     if (!_leftCreditCards) {
-        _leftCreditCards = [[CMFindCreditCardView alloc] initWithFrame:CGRectMake(self.padding, 10, kIPhone6Scale(124), kIPhone6Scale(11))];
+        CGFloat padding = (KScreenWidth - 130*2 - 48)/2.0;
+        _leftCreditCards = [[CMFindCreditCardView alloc] initWithFrame:CGRectMake(padding, 10, kIPhone6Scale(124), kIPhone6Scale(11))];
         _leftCreditCards.TapBlock = self.TapBlock;
+//        _leftCreditCards.backgroundColor = [UIColor redColor];
     }
     return _leftCreditCards;
 }

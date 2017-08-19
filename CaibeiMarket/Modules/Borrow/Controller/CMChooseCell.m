@@ -30,7 +30,7 @@
 {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.backgroundColor = [UIColor colorWithHexString:@"#F6F6F6"];
-    self.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.layer.borderColor = [UIColor colorWithHexString:@"#F6F6F6"].CGColor;
     self.layer.borderWidth = 0.4;
 
 }

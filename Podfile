@@ -3,6 +3,7 @@
 require 'cocoapods-multithread-installpod'
 
 source 'https://github.com/CocoaPods/Specs.git'
+#ali_source 'icaibei-specs-mirror'
 ali_source 'icaibei-specs-mirror'
 platform :ios, '8.0'
 
@@ -20,7 +21,11 @@ target 'CaibeiMarket' do
   pod 'MJExtension', '~> 3.0.13'
 
   pod 'iCarousel', '~> 1.8.3'
-
+  
+  #腾讯bugly
+  pod 'Bugly', '~> 2.4.8'
+#  腾讯信鸽（XG Push）
+  pod 'QQ_XGPush', '~> 2.5.0'
 
 # 主模块(必须)
 pod 'ShareSDK3'
@@ -40,9 +45,9 @@ pod 'ShareSDK3/ShareSDKPlatforms/WeChat'
 #pod 'ShareSDK3/ShareSDKPlatforms/DingTalk'
 
 # 使用配置文件分享模块（非必需）
-#pod 'ShareSDK3/ShareSDKConfigurationFile'
+pod 'ShareSDK3/ShareSDKConfigurationFile'
 # 扩展模块（在调用可以弹出我们UI分享方法的时候是必需的）
-#pod 'ShareSDK3/ShareSDKExtension'
+pod 'ShareSDK3/ShareSDKExtension'
   # Pods for CaibeiMarket
 
   target 'CaibeiMarketTests' do

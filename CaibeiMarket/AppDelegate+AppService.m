@@ -167,9 +167,8 @@
 
 
 #pragma mark ————— 友盟 初始化 —————
--(void)initUMeng{
-    
-
+-(void)initUMeng
+{
 //    /* 打开调试日志 */
     NSArray * platforms = @[@(SSDKPlatformTypeSinaWeibo),@(SSDKPlatformTypeWechat),@(SSDKPlatformTypeQQ)];
     [ShareSDK registerActivePlatforms:platforms
@@ -195,9 +194,9 @@
          {
              case SSDKPlatformTypeSinaWeibo:
                  //设置新浪微博应用信息,其中authType设置为使用SSO＋Web形式授权
-                 [appInfo SSDKSetupSinaWeiboByAppKey:@"568898243"
-                                           appSecret:@"38a4f8204cc784f81f9f0daaf31e02e3"
-                                         redirectUri:@"http://www.sharesdk.cn"
+                 [appInfo SSDKSetupSinaWeiboByAppKey:@"559250566"
+                                           appSecret:@"311bcc329398368d05f7b1e1c1a86e11"
+                                         redirectUri:@"https://www.baidu.com/"
                                             authType:SSDKAuthTypeBoth];
                  break;
              case SSDKPlatformTypeWechat:
@@ -205,8 +204,8 @@
                                        appSecret:@"64020361b8ec4c99936c0e3999a9f249"];
                  break;
              case SSDKPlatformTypeQQ:
-                 [appInfo SSDKSetupQQByAppId:@"100371282"
-                                      appKey:@"aed9b0303e3ed1e27bae87c33761161d"
+                 [appInfo SSDKSetupQQByAppId:@"1106360170"
+                                      appKey:@"1qHLGLy0I6epQd9Q"
                                     authType:SSDKAuthTypeBoth];
                  break;
             

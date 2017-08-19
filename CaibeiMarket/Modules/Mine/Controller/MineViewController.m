@@ -26,7 +26,7 @@
 #import "XBSettingItemModel.h"
 #import "XBSettingSectionModel.h"
 
-@interface MineViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface MineViewController ()<UITableViewDelegate,UITableViewDataSource,CMMineHeaderViewDelegate>
 {
     UILabel * lbl;
 }
@@ -190,11 +190,24 @@
     }
 }
 
+#pragma mark - CMMineHeaderViewDelegate
+- (void)headerView:(CMMineHeaderView *)view didTaped:(id)obj
+{
+    if (![[CMUserManager sharedInstance] isLogined]) {
+        [[CMUserManager sharedInstance] login:kUserLoginTypePwd completion:^(BOOL success, NSString *des) {
+            //
+        }];
+    }else{
+        
+    }
+}
+
 #pragma mark - set get
 - (CMMineHeaderView *)headerView
 {
     if (!_headerView) {
         _headerView = [[CMMineHeaderView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, kIPhone6PScale(180))];
+        _headerView.delegate = self;
     }
     return _headerView;
 }

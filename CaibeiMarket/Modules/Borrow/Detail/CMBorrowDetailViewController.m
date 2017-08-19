@@ -23,6 +23,7 @@
 @property (nonatomic,strong)NSArray * templateArray;
 @property (nonatomic,strong)NSDictionary * parameters;
 @property(nonatomic,strong) UAHTTPSessionManager * request;
+@property (nonatomic,strong)UIButton * applyButton;
 
 @property(nonatomic,strong) CMBorrowDetail *detail;
 @end
@@ -48,6 +49,7 @@
     
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.noteView];
+    [self.view addSubview:self.applyButton];
     
     self.templateArray = @[@"CMBorrowDetailContentCell",@"CMBorrowDetailSpaceCell",@"CMBorrowDetailNotesCell",@"CMBorrowDetailSpaceCell",@"CMBorrowDetailDesCell"];
     [self.tableView registerClass:[CMBorrowDetailContentCell class] forCellReuseIdentifier:@"CMBorrowDetailContentCell"];
@@ -81,6 +83,7 @@
             [MBProgressHUD showErrorMessage:message];
         }
         [weakSelf.tableView.mj_header endRefreshing];
+        [weakSelf.tableView reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nullable error) {
         [MBProgressHUD showErrorMessage:@"服务异常"];
     }];
@@ -101,7 +104,7 @@
 {
     NSString * cellIdentifier = [self.templateArray objectAtIndex:indexPath.row];
     UITableViewCell<CMBorrowProtocol> * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    [cell fillData:self.detail];
+    [cell fillData:[self.detail.properties firstObject]];
     return cell;
 }
 
@@ -109,23 +112,27 @@
 {
     NSString * cellIdentifier = [self.templateArray objectAtIndex:indexPath.row];
     if ([cellIdentifier isEqualToString:CMBorrowDetailCellTypeContent]) {
-        return CMBorrowDetailContentHeight;
+        return kIPhone6PScale(CMBorrowDetailContentHeight);
     }else if ([cellIdentifier isEqualToString:CMBorrowDetailCellTypeNote]){
-        return CMBorrowDetailNoteHeight;
+        return kIPhone6PScale(CMBorrowDetailNoteHeight);
     }else if ([cellIdentifier isEqualToString:CMBorrowDetailCellTypeDes]){
-        return CMBorrowDetailDesHeight;
+        return kIPhone6PScale(CMBorrowDetailDesHeight);
     }else if ([cellIdentifier isEqualToString:CMBorrowDetailCellTypeSpace]){
-        return CMBorrowDetailSpaceHeight;
+        return kIPhone6PScale(CMBorrowDetailSpaceHeight);
     }
     return kIPhone6PScale(89);
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)applyForLend:(UIButton *)button
 {
-    CMBorrowDetailViewController * detail = [[CMBorrowDetailViewController alloc] init];
+    CMBorrowProduct * product = [self.detail.properties firstObject];
+    NSDictionary * params = @{
+                              @"title" : product.lendName ? : @"",
+                              @"url" : product.lendUrl ? : @"",
+                              };
+    RootWebViewController * detail = [[RootWebViewController alloc] initWithParams:params];
     [self.navigationController pushViewController:detail animated:YES];
 }
-
 #pragma mark - set get
 - (CMBorrowDetailNoteView *)noteView
 {
@@ -136,4 +143,16 @@
     return _noteView;
 }
 
+- (UIButton *)applyButton
+{
+    if (!_applyButton) {
+        CGFloat height = 44;
+        _applyButton = [[UIButton alloc] initWithFrame:CGRectMake(0, kScreenHeight - height,KScreenWidth, height)];
+        _applyButton.backgroundColor = CMThemeColor;
+        [_applyButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_applyButton setTitle:@"申请贷款" forState:UIControlStateNormal];
+        [_applyButton addTarget:self action:@selector(applyForLend:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _applyButton;
+}
 @end

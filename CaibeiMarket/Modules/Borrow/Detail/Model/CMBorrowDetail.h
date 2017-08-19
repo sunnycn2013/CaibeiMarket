@@ -40,7 +40,7 @@
 @property (nonatomic,strong)NSString        * requirements;
 @property (nonatomic,strong)NSNumber        * returnCycle;
 @property (nonatomic,strong)NSNumber        * status;
-@property (nonatomic,strong)NSNumber        * throughputRate;
+@property (nonatomic,strong)NSString        * throughputRate;
 @property (nonatomic,strong)NSNumber        * totalApply;
 @property (nonatomic,strong)NSString        * updateDate;
 
@@ -49,7 +49,7 @@
 @interface CMBorrowDetail : NSObject
 
 @property (nonatomic,strong)NSString        * message;
-@property (nonatomic,strong)CMBorrowProduct * properties;
+@property (nonatomic,strong)NSArray         * properties;
 @property (nonatomic,strong)NSString        * resultCode;
 
 @end
