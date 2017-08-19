@@ -9,29 +9,29 @@
 #import "AppDelegate+AppService.h"
 #import "LoginViewController.h"
 //#import "OpenUDID.h"
-
-#import <ShareSDK/ShareSDK.h>
-#import <ShareSDKConnector/ShareSDKConnector.h>
-#import <TencentOpenAPI/TencentOAuth.h>
-#import <TencentOpenAPI/QQApiInterface.h>
-#import <SinaWeiboConnector/SinaWeiboConnector.h>
-#import <WechatConnector/WechatConnector.h>
-#import <WXApi.h>
-#import <WeiboSDK.h>
-
-
-#import <ShareSDK/ShareSDK.h>
-#import <ShareSDKConnector/ShareSDKConnector.h>
-
-//腾讯开放平台（对应QQ和QQ空间）SDK头文件
-#import <TencentOpenAPI/TencentOAuth.h>
-#import <TencentOpenAPI/QQApiInterface.h>
-
-//微信SDK头文件
-#import "WXApi.h"
-
-//新浪微博SDK头文件
-#import "WeiboSDK.h"
+//
+//#import <ShareSDK/ShareSDK.h>
+//#import <ShareSDKConnector/ShareSDKConnector.h>
+//#import <TencentOpenAPI/TencentOAuth.h>
+//#import <TencentOpenAPI/QQApiInterface.h>
+//#import <SinaWeiboConnector/SinaWeiboConnector.h>
+//#import <WechatConnector/WechatConnector.h>
+//#import <WXApi.h>
+//#import <WeiboSDK.h>
+//
+//
+//#import <ShareSDK/ShareSDK.h>
+//#import <ShareSDKConnector/ShareSDKConnector.h>
+//
+////腾讯开放平台（对应QQ和QQ空间）SDK头文件
+//#import <TencentOpenAPI/TencentOAuth.h>
+//#import <TencentOpenAPI/QQApiInterface.h>
+//
+////微信SDK头文件
+//#import "WXApi.h"
+//
+////新浪微博SDK头文件
+//#import "WeiboSDK.h"
 //新浪微博SDK需要在项目Build Settings中的Other Linker Flags添加"-ObjC"
 
 @implementation AppDelegate (AppService)
@@ -170,50 +170,50 @@
 -(void)initUMeng
 {
 //    /* 打开调试日志 */
-    NSArray * platforms = @[@(SSDKPlatformTypeSinaWeibo),@(SSDKPlatformTypeWechat),@(SSDKPlatformTypeQQ)];
-    [ShareSDK registerActivePlatforms:platforms
-                             onImport:^(SSDKPlatformType platformType){
-         switch (platformType)
-         {
-             case SSDKPlatformTypeWechat:
-                 [ShareSDKConnector connectWeChat:[WXApi class]];
-                 break;
-             case SSDKPlatformTypeQQ:
-                 [ShareSDKConnector connectQQ:[QQApiInterface class] tencentOAuthClass:[TencentOAuth class]];
-                 break;
-             case SSDKPlatformTypeSinaWeibo:
-                 [ShareSDKConnector connectWeibo:[WeiboSDK class]];
-                 break;
-             default:
-                 break;
-         }
-     }
-                      onConfiguration:^(SSDKPlatformType platformType, NSMutableDictionary *appInfo)
-     {
-         switch (platformType)
-         {
-             case SSDKPlatformTypeSinaWeibo:
-                 //设置新浪微博应用信息,其中authType设置为使用SSO＋Web形式授权
-                 [appInfo SSDKSetupSinaWeiboByAppKey:@"559250566"
-                                           appSecret:@"311bcc329398368d05f7b1e1c1a86e11"
-                                         redirectUri:@"https://www.baidu.com/"
-                                            authType:SSDKAuthTypeBoth];
-                 break;
-             case SSDKPlatformTypeWechat:
-                 [appInfo SSDKSetupWeChatByAppId:@"wx4868b35061f87885"
-                                       appSecret:@"64020361b8ec4c99936c0e3999a9f249"];
-                 break;
-             case SSDKPlatformTypeQQ:
-                 [appInfo SSDKSetupQQByAppId:@"1106360170"
-                                      appKey:@"1qHLGLy0I6epQd9Q"
-                                    authType:SSDKAuthTypeBoth];
-                 break;
-            
-                    default:
-                   break;
-                   }
-                   }];
-    [self configUSharePlatforms];
+//    NSArray * platforms = @[@(SSDKPlatformTypeSinaWeibo),@(SSDKPlatformTypeWechat),@(SSDKPlatformTypeQQ)];
+//    [ShareSDK registerActivePlatforms:platforms
+//                             onImport:^(SSDKPlatformType platformType){
+//         switch (platformType)
+//         {
+//             case SSDKPlatformTypeWechat:
+//                 [ShareSDKConnector connectWeChat:[WXApi class]];
+//                 break;
+//             case SSDKPlatformTypeQQ:
+//                 [ShareSDKConnector connectQQ:[QQApiInterface class] tencentOAuthClass:[TencentOAuth class]];
+//                 break;
+//             case SSDKPlatformTypeSinaWeibo:
+//                 [ShareSDKConnector connectWeibo:[WeiboSDK class]];
+//                 break;
+//             default:
+//                 break;
+//         }
+//     }
+//                      onConfiguration:^(SSDKPlatformType platformType, NSMutableDictionary *appInfo)
+//     {
+//         switch (platformType)
+//         {
+//             case SSDKPlatformTypeSinaWeibo:
+//                 //设置新浪微博应用信息,其中authType设置为使用SSO＋Web形式授权
+//                 [appInfo SSDKSetupSinaWeiboByAppKey:@"559250566"
+//                                           appSecret:@"311bcc329398368d05f7b1e1c1a86e11"
+//                                         redirectUri:@"https://www.baidu.com/"
+//                                            authType:SSDKAuthTypeBoth];
+//                 break;
+//             case SSDKPlatformTypeWechat:
+//                 [appInfo SSDKSetupWeChatByAppId:@"wx4868b35061f87885"
+//                                       appSecret:@"64020361b8ec4c99936c0e3999a9f249"];
+//                 break;
+//             case SSDKPlatformTypeQQ:
+//                 [appInfo SSDKSetupQQByAppId:@"1106360170"
+//                                      appKey:@"1qHLGLy0I6epQd9Q"
+//                                    authType:SSDKAuthTypeBoth];
+//                 break;
+//            
+//                    default:
+//                   break;
+//                   }
+//                   }];
+//    [self configUSharePlatforms];
 }
 #pragma mark ————— 配置第三方 —————
 -(void)configUSharePlatforms{

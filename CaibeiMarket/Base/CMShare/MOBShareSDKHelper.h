@@ -95,11 +95,11 @@
 */
 #ifdef IMPORT_SINA_WEIBO
     //AppKey
-    #define MOBSSDKSinaWeiboAppKey @"568898243"
+    #define MOBSSDKSinaWeiboAppKey @"559250566"
     //AppSecret
-    #define MOBSSDKSinaWeiboAppSecret @"38a4f8204cc784f81f9f0daaf31e02e3"
+    #define MOBSSDKSinaWeiboAppSecret @"311bcc329398368d05f7b1e1c1a86e11"
     //RedirectUri
-    #define MOBSSDKSinaWeiboRedirectUri @"http://www.sharesdk.cn"
+    #define MOBSSDKSinaWeiboRedirectUri @"http://www.icaibei.com/"
     //AuthType 授权优先类型 web sso both
     #define MOBSSDKSinaWeiboAuthType SSDKAuthTypeBoth
 #endif
@@ -159,9 +159,9 @@
 */
 #if (defined IMPORT_SUB_QQFriend) || (defined IMPORT_SUB_QZone)
     //AppID
-    #define MOBSSDKQQAppID @"100371282"
+    #define MOBSSDKQQAppID @"1106360170"
     //AppKey
-    #define MOBSSDKQQAppKey @"aed9b0303e3ed1e27bae87c33761161d"
+    #define MOBSSDKQQAppKey @"1qHLGLy0I6epQd9Q"
     //AuthType
     #define MOBSSDKQQAuthType SSDKAuthTypeBoth
     //useTIM 是否优先使用TIM客户端
