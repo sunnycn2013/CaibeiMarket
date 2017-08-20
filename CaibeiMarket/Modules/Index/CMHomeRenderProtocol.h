@@ -14,4 +14,5 @@
 
 @property (nonatomic ,strong)id model;
 
+- (void)fillData:(id)model;
 @end

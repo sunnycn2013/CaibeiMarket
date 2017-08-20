@@ -26,6 +26,8 @@
 #import "XBSettingItemModel.h"
 #import "XBSettingSectionModel.h"
 
+#import "CMPortraitViewController.h"
+
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource,CMMineHeaderViewDelegate>
 {
     UILabel * lbl;
@@ -67,34 +69,29 @@
     item1.img = [UIImage imageNamed:@"apply"];
     item1.detailText = @"我的资料";
     item1.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
+    item1.executeCode = ^{
+        CMPortraitViewController * portrait = [[CMPortraitViewController alloc] init];
+        [weakself.navigationController pushViewController:portrait animated:YES];
+    };
     
     
     XBSettingItemModel *item2 = [[XBSettingItemModel alloc]init];
     item2.funcName = @"我的资料";
     item2.img = [UIImage imageNamed:@"mydata"];
     item2.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
+    item2.executeCode = ^{
+        CMPortraitViewController * portrait = [[CMPortraitViewController alloc] init];
+        [weakself.navigationController pushViewController:portrait animated:YES];
+    };
     
     XBSettingItemModel *item3 = [[XBSettingItemModel alloc]init];
     item3.funcName = @"关于采贝";
     item3.img = [UIImage imageNamed:@"about"];
     item3.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
-    
-    XBSettingItemModel *item4 = [[XBSettingItemModel alloc]init];
-    item4.funcName = @"意见反馈";
-    item4.img = [UIImage imageNamed:@"icon-list01"];
-    item4.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
-    
-    XBSettingSectionModel *section1 = [[XBSettingSectionModel alloc]init];
-    section1.sectionHeaderHeight = kIPhone6PScale(14);
-    section1.itemArray = @[item1,item2,item3,item4];
-    
-    XBSettingItemModel *item5 = [[XBSettingItemModel alloc]init];
-    item5.funcName = @"给我评价";
-    item5.img = [UIImage imageNamed:@"icon-list01"];
-    item5.executeCode = ^{
-        NSLog(@"给我评价");
+    item3.executeCode = ^{
+        RootWebViewController * portrait = [[RootWebViewController alloc] initWithUrl:@"http://www.icaibei.com/about.html"];
+        [weakself.navigationController pushViewController:portrait animated:YES];
     };
-    item5.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
     
     XBSettingItemModel *item6 = [[XBSettingItemModel alloc]init];
     item6.funcName = @"设置";
@@ -105,11 +102,15 @@
     };
     item6.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
     
-    XBSettingSectionModel *section2 = [[XBSettingSectionModel alloc]init];
-    section2.sectionHeaderHeight = kIPhone6PScale(14);
-    section2.itemArray = @[item5,item6];
+//    XBSettingSectionModel *section2 = [[XBSettingSectionModel alloc]init];
+//    section2.sectionHeaderHeight = kIPhone6PScale(14);
+//    section2.itemArray = @[item5,item6];
     
-    self.sectionArray = @[section1,section2];
+    XBSettingSectionModel *section1 = [[XBSettingSectionModel alloc]init];
+    section1.sectionHeaderHeight = kIPhone6PScale(14);
+    section1.itemArray = @[item1,item2,item3,item6];
+    
+    self.sectionArray = @[section1];
 }
 
 
@@ -198,7 +199,8 @@
             //
         }];
     }else{
-        
+        CMPortraitViewController * portrait = [[CMPortraitViewController alloc] init];
+        [self.navigationController pushViewController:portrait animated:YES];
     }
 }
 

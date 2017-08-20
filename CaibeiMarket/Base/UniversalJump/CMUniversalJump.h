@@ -19,6 +19,8 @@ SINGLETON_FOR_HEADER(CMUniversalJump)
 
 - (void)popViewControllerAnimated:(BOOL)animated;
 
+- (void)popToRootViewControllerAnimated:(BOOL)animated;
+
 - (void)presentTo:(NSString *)url params:(NSDictionary *)parameters;
 
 - (void)dismissViewController;

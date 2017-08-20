@@ -46,6 +46,12 @@ SINGLETON_FOR_CLASS(CMUniversalJump);
     [self.navigationController popViewControllerAnimated:animated];
 }
 
+- (void)popToRootViewControllerAnimated:(BOOL)animated
+{
+    self.navigationController = [self navigationController];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 - (void)presentTo:(NSString *)url params:(NSDictionary *)parameters
 {
     UIViewController * viewController = nil;

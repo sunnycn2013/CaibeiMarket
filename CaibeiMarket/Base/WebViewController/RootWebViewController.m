@@ -33,7 +33,6 @@
     if (self) {
         self.url = url;
         _progressViewColor = [UIColor colorWithRed:119.0/255 green:228.0/255 blue:115.0/255 alpha:1];
-        _showSingleBackButtom = NO;
     }
     return self;
 }
@@ -42,9 +41,9 @@
     [super viewDidLoad];
     [self setShareButton];
     [self initWKWebView];
-    if (self.showSingleBackButtom) {
-        [self setCloseButton];
-    }
+//    if (self.showSingleBackButtom) {
+//        [self setCloseButton];
+//    }
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -150,13 +149,13 @@
 
 #pragma mark - update nav items
 
--(void)updateNavigationItems{
-    if (self.wkwebView.canGoBack) {
+-(void)updateNavigationItems
+{
+    if (self.wkwebView.canGoBack)
+    {
         UIBarButtonItem *spaceButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
         spaceButtonItem.width = -6.5;
-        
         self.navigationController.interactivePopGestureRecognizer.enabled = NO;
-        
         [self addNavigationItemWithTitles:@[@"返回",@"关闭"] isLeft:YES target:self action:@selector(leftBtnClick:) tags:@[@2000,@2001]];
         
     }else{
@@ -175,7 +174,11 @@
 -(void)leftBtnClick:(UIButton *)btn{
     switch (btn.tag) {
         case 2000:
-            [self.wkwebView goBack];
+            if ([self.wkwebView canGoBack]) {
+                [self.wkwebView goBack];
+            }else{
+                [self.navigationController popViewControllerAnimated:YES];
+            }
             break;
         case 2001:
             [self backBtnClicked];
@@ -209,15 +212,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)setCloseButton
-{
-    UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setImage:[UIImage imageNamed:@"alertview_btn_close_highlight"] forState:UIControlStateNormal];
-    [button setImage:[UIImage imageNamed:@"alertview_btn_close_normal"] forState:UIControlStateSelected];
-    [button addTarget:self action:@selector(closeWebView:) forControlEvents:UIControlEventTouchUpInside];
-    [button setFrame:CGRectMake(0, 0, 30, 30)];
-    UIBarButtonItem * leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
-    self.navigationItem.leftBarButtonItem = leftBarButtonItem;
-}
+//- (void)setCloseButton
+//{
+//    UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [button setImage:[UIImage imageNamed:@"alertview_btn_close_highlight"] forState:UIControlStateNormal];
+//    [button setImage:[UIImage imageNamed:@"alertview_btn_close_normal"] forState:UIControlStateSelected];
+//    [button addTarget:self action:@selector(closeWebView:) forControlEvents:UIControlEventTouchUpInside];
+//    [button setFrame:CGRectMake(0, 0, 30, 30)];
+//    UIBarButtonItem * leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+//    self.navigationItem.leftBarButtonItem = leftBarButtonItem;
+//}
 
 @end

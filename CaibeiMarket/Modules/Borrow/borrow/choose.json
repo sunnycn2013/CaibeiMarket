@@ -1,0 +1,82 @@
+{
+    "version": "1.0",
+    "data": [
+        {
+            "title": "额度",
+            "lendMoney": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7"
+            ]
+        },
+        {
+            "title": "范围",
+            "lendPerid": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+            ]
+        },
+        {
+            "title": "月利率",
+            "monthlyInterestRate": [
+                "1",
+                "2"
+            ]
+        },
+        {
+            "title": "上线时间",
+            "onlineTime": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+            ]
+        },
+        {
+            "title": "信用",
+            "creditStanding": [
+                "1",
+                "2",
+                "3",
+                "4"
+            ]
+        },
+        {
+            "title": "有无信用卡",
+            "hasCredit": [
+                "1",
+                "2"
+            ]
+        },
+        {
+            "title": "额度",
+            "lendTotalMoney": [
+                "1",
+                "2",
+                "3"
+            ]
+        },
+        {
+            "lendTotalPerid": [
+                "1",
+                "2",
+                "3"
+            ]
+        },
+        {
+            "title": "通过率",
+            "throughputRate": [
+                "1",
+                "2"
+            ]
+        }
+    ]
+}

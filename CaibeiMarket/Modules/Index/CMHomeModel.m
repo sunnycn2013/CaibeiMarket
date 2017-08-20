@@ -11,6 +11,11 @@
 #import "CMHomeApp.h"
 #import "CMHomeContent.h"
 
+@implementation CMHomeInfo
+
+
+@end
+
 @implementation CMHomeModel
 
 - (instancetype)init
@@ -33,5 +38,17 @@
     [self.homeModels addObject:app];
     [self.homeModels addObject:content];
 
+}
+
++ (NSDictionary *)mj_objectClassInArray
+{
+    return @{
+             @"properties" : @"CMHomeInfo"
+             };
+}
+
+- (void)mj_keyValuesDidFinishConvertingToObject
+{
+    self.homeInfo = self.properties.firstObject;
 }
 @end

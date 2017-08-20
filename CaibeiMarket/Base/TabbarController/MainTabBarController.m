@@ -29,7 +29,7 @@
     [super viewDidLoad];
     //初始化tabbar
     [self setUpTabBar];
-    
+
     //添加子控制器
     [self setUpAllChildViewController];
 
@@ -57,9 +57,7 @@
 #pragma mark - ——————— 初始化VC ————————
 -(void)setUpAllChildViewController{
     _VCS = @[].mutableCopy;
-//    HomeViewController *homeVC = [[HomeViewController alloc]init];
     CMHomeViewController *homeVC = [CMHomeViewController new];
-//    PersonListViewController *homeVC = [[PersonListViewController alloc]init];
     [self setupChildViewController:homeVC title:@"首页" imageName:@"tab_index_normal" seleceImageName:@"tab_index_light"];
     
     CMBorrowViewController *makeFriendVC = [[CMBorrowViewController alloc]init];
@@ -92,9 +90,10 @@
 - (void)setViewControllers:(NSArray *)viewControllers {
     
     self.TabBar.badgeTitleFont         = SYSTEMFONT(11.0f);
-    self.TabBar.itemTitleFont          = SYSTEMFONT(10.0f);
+    self.TabBar.itemTitleFont          = SYSTEMFONT(9.0f);
     self.TabBar.itemImageRatio         = self.itemImageRatio == 0 ? 0.7 : self.itemImageRatio;
-    self.TabBar.itemTitleColor         = KBlackColor;
+//    self.TabBar.itemTitleColor         = KBlackColor;
+    self.TabBar.itemTitleColor         = [UIColor colorWithHexString:@"#999999"];
     self.TabBar.selectedItemTitleColor = CNavBgColor;
     
     self.TabBar.tabBarItemCount = viewControllers.count;

@@ -17,7 +17,10 @@
 + (void)initMTA
 {
 //    [MTA startWithAppkey:MTAKey];
+//    [[CMUserManager sharedInstance] loadUserInfo];
+//    NSString * appid = [CMUserManager sharedInstance].curUserInfo.userName ? : @"";
     [MTA startWithAppkey:MTA_App_Key checkedSdkVersion:MTA_SDK_VERSION];
+//    [MTA setAccount:appid type:AT_OTH];
     [[MTAConfig getInstance] setReportStrategy:MTA_STRATEGY_INSTANT];
     [[MTAConfig getInstance] setSessionTimeoutSecs:60];
     [[MTAConfig getInstance] setAutoExceptionCaught:FALSE];

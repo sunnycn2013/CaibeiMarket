@@ -89,6 +89,7 @@
         case XBSettingAccessoryTypeSwitch:
             self.detailImageView.x = self.aswitch.x - self.detailImageView.width - XBDetailViewToIndicatorGap;
             break;
+
         default:
             break;
     }
@@ -103,7 +104,6 @@
     self.detailLabel.font = [UIFont systemFontOfSize:XBDetailLabelFont];
     self.detailLabel.size = [self sizeForTitle:self.item.detailText withFont:self.detailLabel.font];
     self.detailLabel.centerY = self.contentView.centerY;
-    self.detailLabel.backgroundColor = CMThemeColor;
 
     switch (self.item.accessoryType) {
         case XBSettingAccessoryTypeNone:
@@ -115,13 +115,18 @@
         case XBSettingAccessoryTypeSwitch:
             self.detailLabel.x = self.aswitch.x - self.detailLabel.width - XBDetailViewToIndicatorGap;
             break;
+        case XBSettingAccessoryTypeCenter:
+            self.funcNameLabel.height = 44;
+            self.funcNameLabel.width = 88;
+            self.funcNameLabel.textAlignment = NSTextAlignmentCenter;
+            self.funcNameLabel.centerX = KScreenWidth/2.0;
+            break;
         default:
             break;
     }
     
     [self.contentView addSubview:self.detailLabel];
 }
-
 
 - (void)setupAccessoryType
 {
@@ -133,6 +138,9 @@
             break;
         case XBSettingAccessoryTypeSwitch:
             [self setupSwitch];
+            break;
+        case XBSettingAccessoryTypeCenter:
+            [self setupDetailText];
             break;
         default:
             break;

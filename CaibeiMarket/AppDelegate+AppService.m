@@ -102,8 +102,7 @@
 {
     BOOL loginSuccess = [notification.object boolValue];
     if (loginSuccess) {//登陆成功加载主窗口控制器
-        [[CMUniversalJump sharedInstance] dismissViewController];
-
+        [[CMUniversalJump sharedInstance] popToRootViewControllerAnimated:YES];
 //        [[CMUniversalJump sharedInstance] popViewControllerAnimated:YES];
         //为避免自动登录成功刷新tabbar
 //        if (!self.mainTabBar || ![self.window.rootViewController isKindOfClass:[MainTabBarController class]]) {

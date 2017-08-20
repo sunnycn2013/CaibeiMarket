@@ -15,6 +15,9 @@
 
 #import "CMHomeDataProtocol.h"
 #import "CMHomeRenderProtocol.h"
+#import "LoginViewController.h"
+
+#import "CMBorrowViewController.h"
 
 #define itemWidthHeight ((kScreenWidth-10)/2)
 
@@ -27,7 +30,8 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
 
 @property (nonatomic,strong) NSArray * dataArray;
 @property (nonatomic,strong) CMHomeModel * data;
-
+@property(nonatomic,  strong)UAHTTPSessionManager * request;
+@property (nonatomic,strong) CMHomeModel * homeModel;
 @end
 
 @implementation CMHomeViewController
@@ -47,6 +51,7 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
     
     self.data = [[CMHomeModel alloc] init];
     
+    [self loadData];
     self.automaticallyAdjustsScrollViewInsets = NO;
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapIndexView:)];
     [self.view addGestureRecognizer:tap];
@@ -68,14 +73,39 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
     [super didReceiveMemoryWarning];
 }
 
+
 -(void)setupUI
 {
 }
 
+
 -(void)headerRereshing{
+    kWeakSelf(self)
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.header endRefreshing];
+        [weakself loadData];
     });
+}
+
+- (void)loadData{
+    NSDictionary * params = @{@"number" : @"1"};
+    
+    __weak typeof(self) weakSelf = self;
+    self.request = [UAHTTPSessionManager manager];
+    [self.request POST:@"order/newOrderInfo.json" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
+        weakSelf.homeModel = [CMHomeModel mj_objectWithKeyValues:responseObject] ;
+        NSString * resultCode = [responseObject objectForKey:@"resultCode"];
+        NSString * message = [responseObject objectForKey:@"message"];
+        
+        if ([resultCode isEqualToString:@"0000"]) {
+            [weakSelf.tableView reloadData];
+        }else{
+            [MBProgressHUD showErrorMessage:message];
+        }
+        [weakSelf.tableView.mj_header endRefreshing];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nullable error) {
+        [MBProgressHUD showErrorMessage:@"服务异常"];
+        [weakSelf.tableView.mj_header endRefreshing];
+    }];
 }
 
 - (void)tapIndexView:(UITapGestureRecognizer *)gesture
@@ -106,6 +136,7 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
             cell = [[CMHomeContentCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndetifier];
         }
     }
+    [cell fillData:self.homeModel.homeInfo];
     kWeakSelf(self)
     [cell setTapBlock:^(id obj){
         [weakself processWithModel:obj];
@@ -122,10 +153,13 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
 - (void)processWithModel:(id)model
 {
     if (![[CMUserManager sharedInstance] isLogined]) {
-        [[CMUserManager sharedInstance] login:kUserLoginTypePwd completion:^(BOOL success, NSString *des) {
-            //
-        }];
+        LoginViewController * viewController = [[LoginViewController alloc] init];
+        [self.navigationController pushViewController:viewController animated:YES];
+        return;
     }
+    
+    CMBorrowViewController * borrow = [[CMBorrowViewController alloc] initWithParams:nil];
+    [self.navigationController pushViewController:borrow animated:YES];
 }
 #pragma mark - set get
 

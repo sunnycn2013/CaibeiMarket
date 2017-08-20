@@ -9,6 +9,7 @@
 #import "CMHomeContentCell.h"
 #import "CMHomeContentCorverFlowView.h"
 #import "CMTextFieldView.h"
+#import "CMHomeModel.h"
 
 @interface CMHomeContentCell ()
 
@@ -21,7 +22,7 @@
 @property (nonatomic,strong) UIButton * borrowButton;
 @property (nonatomic,strong) UILabel * borrowDes01Label; //已经服务多少人
 @property (nonatomic,strong) UILabel * borrowDes02Label; //累计服务多少额度
-
+@property (nonatomic,strong) CMHomeInfo * homeInfo;
 @end
 
 @implementation CMHomeContentCell
@@ -54,6 +55,24 @@
         self.tapBlock(self.model);
     }
 }
+
+- (void)fillData:(id)model
+{
+    if (![model isKindOfClass:[CMHomeInfo class]]) {
+        return;
+    }
+    self.homeInfo = model;
+    //07-07 12:12 137*****000的用户借款成功1000元
+    NSDate * date = [NSDate dateWithTimeIntervalSince1970:[self.homeInfo.createDate doubleValue]/1000];
+    NSString * dateStr = [date description];
+    if ([dateStr length] > 10) {
+        NSString * subDatestr = [dateStr substringWithRange:NSMakeRange(0, 10)];
+        NSString * lengingText = [NSString stringWithFormat:@"%@ %@的用户借款成功 %@ 元",subDatestr,self.homeInfo.phone,self.homeInfo.totalLendMoney];
+        [self.recentLendingLabel setText:lengingText];
+    }
+   
+}
+
 #pragma mark - set get
 - (CMTextFieldView *)borrowTextFiled
 {

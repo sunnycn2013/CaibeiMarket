@@ -41,8 +41,9 @@ SINGLETON_FOR_CLASS(CMUserManager);
 #pragma mark ————— 带参数登录 —————
 -(void)login:(UserLoginType )loginType params:(NSDictionary *)params completion:(loginBlock)completion
 {
-//    [[CMUniversalJump sharedInstance] pushViewController:CMUJmupLogin params:nil];
-    [[CMUniversalJump sharedInstance] presentTo:CMUJmupLogin params:nil];
+    [[CMUniversalJump sharedInstance] pushViewController:CMUJmupLogin params:nil];
+//    [[CMUniversalJump sharedInstance] presentTo:CMUJmupLogin params:nil];
+
 }
 
 
@@ -124,6 +125,7 @@ SINGLETON_FOR_CLASS(CMUserManager);
     NSDictionary * userDic = (NSDictionary *)[cache objectForKey:KUserModelCache];
     if (userDic) {
         self.curUserInfo = [CMUserInfo modelWithJSON:userDic];
+        self.isLogined = YES;
         return YES;
     }
     return NO;
@@ -137,7 +139,6 @@ SINGLETON_FOR_CLASS(CMUserManager);
 - (void)logout:(void (^)(BOOL, NSString *))completion
 {
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
-    
     [[UIApplication sharedApplication] unregisterForRemoteNotifications];
     
     self.curUserInfo = nil;

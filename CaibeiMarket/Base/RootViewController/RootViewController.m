@@ -195,7 +195,7 @@
 /**
  *  是否显示返回按钮
  */
-- (void) setIsShowLiftBack:(BOOL)isShowLiftBack
+- (void)setIsShowLiftBack:(BOOL)isShowLiftBack
 {
     _isShowLiftBack = isShowLiftBack;
     NSInteger VCCount = self.navigationController.viewControllers.count;
@@ -223,65 +223,68 @@
 
 - (void)addNavigationItemWithImageNames:(NSArray *)imageNames isLeft:(BOOL)isLeft target:(id)target action:(SEL)action tags:(NSArray *)tags
 {
-//    NSMutableArray * items = [[NSMutableArray alloc] init];
-//    NSInteger i = 0;
-//    for (NSString * imageName in imageNames) {
-//        //        UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
-//        //        backView.backgroundColor=RedColor;
-//        //        backView.userInteractionEnabled=YES;
-//        UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
-//        //        [backView addSubview:btn];
-//        [btn setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
-//        btn.frame = CGRectMake(0, 0, 30, 30);
-//        if(isLeft){
-//            [btn setImageEdgeInsets:UIEdgeInsetsMake(0, -10, 0, 10)];
-//        }else{
-//            [btn setImageEdgeInsets:UIEdgeInsetsMake(0, 10, 0, -10)];
-//            
-//        }
-//        [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
-//        
-//        btn.tag = [tags[i++] integerValue];
-//        UIBarButtonItem * item = [[UIBarButtonItem alloc] initWithCustomView:btn];
-//        [items addObject:item];
-//        
-//    }
-//    if (isLeft) {
-//        self.navigationItem.leftBarButtonItems = items;
-//    } else {
-//        self.navigationItem.rightBarButtonItems = items;
-//    }
+    NSMutableArray * items = [[NSMutableArray alloc] init];
+    NSInteger i = 0;
+    for (NSString * imageName in imageNames) {
+        //        UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+        //        backView.backgroundColor=RedColor;
+        //        backView.userInteractionEnabled=YES;
+        UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        //        [backView addSubview:btn];
+        [btn setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+        btn.frame = CGRectMake(0, 0, 30, 30);
+        if(isLeft){
+            [btn setImageEdgeInsets:UIEdgeInsetsMake(0, -10, 0, 10)];
+        }else{
+            [btn setImageEdgeInsets:UIEdgeInsetsMake(0, 10, 0, -10)];
+            
+        }
+        [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+        
+        btn.tag = [tags[i++] integerValue];
+        UIBarButtonItem * item = [[UIBarButtonItem alloc] initWithCustomView:btn];
+        [items addObject:item];
+        
+    }
+    if (isLeft) {
+        self.navigationItem.leftBarButtonItems = items;
+    } else {
+        self.navigationItem.rightBarButtonItems = items;
+    }
 }
 
 - (void)addNavigationItemWithTitles:(NSArray *)titles isLeft:(BOOL)isLeft target:(id)target action:(SEL)action tags:(NSArray *)tags
 {
+    NSMutableArray * items = [[NSMutableArray alloc] init];
+    //调整按钮位置
+    UIBarButtonItem* spaceItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    //将宽度设为负值
+    spaceItem.width= -10;
     
-//    NSMutableArray * items = [[NSMutableArray alloc] init];
-//    
-//    //调整按钮位置
-//    UIBarButtonItem* spaceItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-//    //将宽度设为负值
-//    spaceItem.width= -10;
-//    
-//    [items addObject:spaceItem];
-//    NSInteger i = 0;
-//    for (NSString * title in titles) {
-//        UIButton * btn = [UIButton buttonWithType:UIButtonTypeSystem];
-//        btn.frame = CGRectMake(0, 0, 30, 20);
-//        [btn setTitle:title forState:UIControlStateNormal];
-//        [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
-//        btn.titleLabel.font = SYSTEMFONT(16);
-//        [btn setTitleColor:KWhiteColor forState:UIControlStateNormal];
-//        btn.tag = [tags[i++] integerValue];
-//        [btn sizeToFit];
-//        UIBarButtonItem * item = [[UIBarButtonItem alloc] initWithCustomView:btn];
-//        [items addObject:item];
-//    }
-//    if (isLeft) {
-//        self.navigationItem.leftBarButtonItems = items;
-//    } else {
-//        self.navigationItem.rightBarButtonItems = items;
-//    }
+    [items addObject:spaceItem];
+    for (int i = 0; i < titles.count; i++)
+    {
+        UIButton * btn = [UIButton buttonWithType:UIButtonTypeSystem];
+        btn.frame = CGRectMake(0, 0, 30, 20);
+        btn.titleLabel.font = SYSTEMFONT(16);
+        btn.tag = [tags[i] integerValue];
+        if (i == 0) {
+            [btn setImage:[UIImage imageNamed:@"top_back_white"] forState:UIControlStateNormal];
+            [btn setImage:[UIImage imageNamed:@"top_back_white_pressed"] forState:UIControlStateSelected];
+        }else if (i == 1){
+            btn.frame = CGRectMake(0, 0, 24, 15);
+            [btn setImage:[UIImage imageNamed:@"nav_close"] forState:UIControlStateNormal];
+        }
+        
+        [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+        UIBarButtonItem * item = [[UIBarButtonItem alloc] initWithCustomView:btn];
+        [items addObject:item];
+    }
+    if (isLeft) {
+        self.navigationItem.leftBarButtonItems = items;
+    } else {
+        self.navigationItem.rightBarButtonItems = items;
+    }
 }
 
 //取消请求

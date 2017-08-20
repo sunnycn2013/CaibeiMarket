@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CMPortraitViewController : UIViewController
+@interface CMPortraitViewController : RootViewController
 
 @end

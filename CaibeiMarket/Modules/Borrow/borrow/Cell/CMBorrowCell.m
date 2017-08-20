@@ -8,12 +8,15 @@
 
 #import "CMBorrowCell.h"
 #import "CMBorrow.h"
+#import "CMBorrwoStarView.h"
 
 @interface CMBorrowCell ()
 
 @property (nonatomic,strong) UIImageView * iconImageView;
 
 @property (nonatomic,strong) UILabel * companyNameLabel;
+
+@property (nonatomic,strong) CMBorrwoStarView * starImageView;
 
 @property (nonatomic,strong) UILabel * isCashLabel;
 
@@ -65,6 +68,7 @@
     
     [self addSubview:self.iconImageView];
     [self addSubview:self.companyNameLabel];
+    [self addSubview:self.starImageView];
     [self addSubview:self.isCashLabel];
 //    [self addSubview:self.isCreditLabel];
 //    [self addSubview:self.isPromationLabel];
@@ -86,12 +90,11 @@
     //http://47.94.220.244:8080/screen/20170813_716.png
     NSString * imageURL = [NSString stringWithFormat:@"%@%@",URL_main,self.data.lendPicUrl];
     [self.iconImageView setImageWithURL:[NSURL URLWithString:imageURL] placeholder:[UIImage imageNamed:@"icaibei_placeholder"]];
-//    [self.iconImageView setImageURL:[NSURL URLWithString:imageURL]];
     [self.companyNameLabel setText:self.data.lendName];
     NSString * extend = @"%";
     [self.applyInterestabelLabel setText:[NSString stringWithFormat:@"%@%@",self.data.monthlyInterestRate,extend]];
     [self.applyNumLabel setText:[NSString stringWithFormat:@"%@",self.data.totalApply]];
-//    [self.descriptionInfoLabel setText:self.data.];
+    [self.starImageView setHidden:(!self.data.showStar)];
 }
 
 
@@ -111,11 +114,18 @@
 {
     if (!_companyNameLabel) {
         _companyNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(_iconImageView.right + kIPhone6PScale(17), _iconImageView.top, kIPhone6PScale(100), kIPhone6PScale(17))];
-        _companyNameLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(16)];
+        _companyNameLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(15)];
         _companyNameLabel.text = @"秒贷小额贷";
-//        _companyNameLabel.backgroundColor = [UIColor redColor];
     }
     return _companyNameLabel;
+}
+
+- (CMBorrwoStarView *)starImageView
+{
+    if (!_starImageView) {
+        _starImageView = [[CMBorrwoStarView alloc] initWithFrame:CGRectMake(KScreenWidth - kIPhone6PScale(35), 0, kIPhone6PScale(16), kIPhone6PScale(17))];
+    }
+    return _starImageView;
 }
 
 - (UILabel *)isCashLabel
@@ -191,7 +201,7 @@
 {
     if (!_descriptionInfoLabel) {
         _descriptionInfoLabel = [[UILabel alloc] initWithFrame:CGRectMake(_companyNameLabel.left, _applyLabel.bottom + kIPhone6PScale(4), kIPhone6PScale(151), kIPhone6PScale(15))];
-        _descriptionInfoLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(9)];
+        _descriptionInfoLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(10)];
         _descriptionInfoLabel.text = @"全新平台,活动推广中,秒批";
         _descriptionInfoLabel.textColor = [UIColor lightGrayColor];
 //        _descriptionInfoLabel.backgroundColor = [UIColor greenColor];

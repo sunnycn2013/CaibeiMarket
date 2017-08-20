@@ -49,82 +49,90 @@
     __weak typeof(self) weakSelf = self;
     //************************************section1
     XBSettingItemModel *item1 = [[XBSettingItemModel alloc]init];
-    item1.funcName = @"我的余额";
+    item1.funcName = @"修改密码";
     item1.executeCode = ^{
-        NSLog(@"我的余额");
-        [self showAlert:@"我的余额"];
+        NSLog(@"修改密码");
+        [self showAlert:@"修改密码"];
     };
     item1.detailText = @"做任务赢大奖";
     item1.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
     
     XBSettingItemModel *item2 = [[XBSettingItemModel alloc]init];
-    item2.funcName = @"修改密码";
-    item2.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
+    item2.funcName = @"推送提醒";
+    item2.accessoryType = XBSettingAccessoryTypeSwitch;
+    item2.switchValueChanged = ^(BOOL isOn)
+    {
+        NSLog(@"推送提醒开关状态===%@",isOn?@"open":@"close");
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"推送提醒" message:isOn?@"open":@"close" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
+        [alert show];
+    };
+
     
     XBSettingSectionModel *section1 = [[XBSettingSectionModel alloc]init];
     section1.sectionHeaderHeight = 18;
     section1.itemArray = @[item1,item2];
     
     //************************************section2
-    XBSettingItemModel *item3 = [[XBSettingItemModel alloc]init];
-    item3.funcName = @"推送提醒";
-    item3.accessoryType = XBSettingAccessoryTypeSwitch;
-    item3.switchValueChanged = ^(BOOL isOn)
-    {
-        NSLog(@"推送提醒开关状态===%@",isOn?@"open":@"close");
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"推送提醒" message:isOn?@"open":@"close" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
-        [alert show];
-    };
-    
     XBSettingItemModel *item4 = [[XBSettingItemModel alloc]init];
-    item4.funcName = @"给我们打分";
+    item4.funcName = @"给个好评";
     item4.detailImage = [UIImage imageNamed:@"icon-new"];
-    item4.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
+    item4.accessoryType = XBSettingAccessoryTypeNone;
     
     XBSettingItemModel *item5 = [[XBSettingItemModel alloc]init];
     item5.funcName = @"意见反馈";
-    item5.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
+    item5.detailImage = [UIImage imageNamed:@"next_normal"];
+    item5.accessoryType = XBSettingAccessoryTypeNone;
+    
+    XBSettingItemModel *item6 = [[XBSettingItemModel alloc]init];
+    item6.funcName = @"帮助中心";
+    item6.detailImage = [UIImage imageNamed:@"next_normal"];
+    item6.accessoryType = XBSettingAccessoryTypeNone;
     
     XBSettingSectionModel *section2 = [[XBSettingSectionModel alloc]init];
     section2.sectionHeaderHeight = 18;
-    section2.itemArray = @[item3,item4,item5];
+    section2.itemArray = @[item4,item5,item6];
     
     
     //************************************section3
-    XBSettingItemModel *item6 = [[XBSettingItemModel alloc]init];
-    item6.funcName = @"关于我们";
-    item6.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
-    item6.executeCode = ^{
+    XBSettingItemModel *item7 = [[XBSettingItemModel alloc]init];
+    item7.funcName = @"关于我们";
+    item7.accessoryType = XBSettingAccessoryTypeNone;
+    item7.detailImage = [UIImage imageNamed:@"next_normal"];
+    item7.executeCode = ^{
         RootWebViewController * viewController = [[RootWebViewController alloc] initWithUrl:@"https://www.baidu.com"];
         [weakSelf.navigationController pushViewController:viewController animated:YES];
     };
     
-    XBSettingItemModel *item7 = [[XBSettingItemModel alloc]init];
-    item7.funcName = @"帮助中心";
-    item7.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
-    
     XBSettingItemModel *item8 = [[XBSettingItemModel alloc]init];
-    item8.funcName = @"清除缓存";
-    item8.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
+    item8.funcName = @"分享到好友";
+    item8.accessoryType = XBSettingAccessoryTypeNone;
+    item8.executeCode = ^{
+        [CMShareManager shareView:weakSelf.view info:nil];
+    };
     
-   
+    NSString * version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    NSString * versionStr = [NSString stringWithFormat:@"V%@",version];
+    XBSettingItemModel *item9 = [[XBSettingItemModel alloc]init];
+    item9.funcName = @"版本号";
+    item9.accessoryType = XBSettingAccessoryTypeNone;
+    item9.detailText = versionStr;
     
     XBSettingSectionModel *section3 = [[XBSettingSectionModel alloc]init];
     section3.sectionHeaderHeight = 18;
-    section3.itemArray = @[item6,item7,item8];
+    section3.itemArray = @[item7,item8,item9];
     
     //************************************section4
     
-    XBSettingItemModel *item9 = [[XBSettingItemModel alloc]init];
-    item9.funcName = @"退出";
-    item9.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
-    item9.executeCode = ^{
+    XBSettingItemModel *item10 = [[XBSettingItemModel alloc]init];
+    item10.funcName = @"退出";
+    item10.accessoryType = XBSettingAccessoryTypeCenter;
+    item10.executeCode = ^{
         [weakSelf loginOut];
     };
     
     XBSettingSectionModel *section4 = [[XBSettingSectionModel alloc]init];
     section4.sectionHeaderHeight = 18;
-    section4.itemArray = @[item9];
+    section4.itemArray = @[item10];
     
     self.sectionArray = @[section1,section2,section3,section4];
 }
@@ -133,7 +141,7 @@
 {
     kWeakSelf(self)
     [[CMUserManager sharedInstance] logout:^(BOOL success, NSString *des) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [weakself.navigationController popToRootViewControllerAnimated:YES];
         });
         NSLog(@"log out");

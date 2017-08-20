@@ -20,4 +20,13 @@
              @"listData" : @"CMBorrowCrads"
              };
 }
+
+- (void)mj_keyValuesDidFinishConvertingToObject
+{
+    NSInteger count = (self.listData.count > 3) ? 3 : self.listData.count;
+    for (int i = 0; i< count; i++) {
+        CMBorrowCrads * card = [self.listData objectAtIndex:i];
+        card.showStar = YES;
+    }
+}
 @end

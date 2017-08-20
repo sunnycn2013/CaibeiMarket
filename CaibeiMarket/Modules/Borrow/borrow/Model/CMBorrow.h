@@ -21,6 +21,7 @@
 @property (nonatomic,strong)NSString * monthlyInterestRate;
 @property (nonatomic,strong)NSNumber * platformNature;
 @property (nonatomic,strong)NSNumber * totalApply;
+@property (nonatomic,assign)BOOL       showStar;
 
 @end
 

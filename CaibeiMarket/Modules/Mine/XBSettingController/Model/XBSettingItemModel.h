@@ -12,6 +12,7 @@ typedef NS_ENUM(NSInteger, XBSettingAccessoryType) {
     XBSettingAccessoryTypeNone,                   // don't show any accessory view
     XBSettingAccessoryTypeDisclosureIndicator,    // the same with system DisclosureIndicator
     XBSettingAccessoryTypeSwitch,                 //  swithch
+    XBSettingAccessoryTypeCenter
 };
 
 

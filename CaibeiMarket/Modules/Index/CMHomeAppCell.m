@@ -36,7 +36,7 @@
     
     CMHomeApp * app2 = [[CMHomeApp alloc] init];
     app2.title = @"关于我们";
-    app2.imageName = @"icon_01";
+    app2.imageName = @"caibei_about";
     
     CMHomeApp * app3 = [[CMHomeApp alloc] init];
     app3.title = @"新开平台";
@@ -69,5 +69,9 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated                    // animate between regular and selected state
 {
 
+}
+
+- (void)fillData:(id)model
+{
 }
 @end

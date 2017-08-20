@@ -130,7 +130,7 @@
 {
     if (!_telephoneTextFiled) {
         CGFloat width = KScreenWidth - kIPhone6Scale(96);
-        CGFloat height = kIPhone6Scale(45);
+        CGFloat height = kIPhone6Scale(40);
         CGFloat margin = kIPhone6Scale(96) / 2.0;
         _telephoneTextFiled = [[CMTextFieldView alloc] initWithFrame:CGRectMake(margin, kIPhone6Scale(285), width, height)];
         _telephoneTextFiled.placeholder = @"请输入手机号";
@@ -144,7 +144,7 @@
 {
     if (!_pwdTextFiled) {
         CGFloat width = KScreenWidth - kIPhone6Scale(96);
-        CGFloat height = kIPhone6Scale(45);
+        CGFloat height = kIPhone6Scale(40);
         _pwdTextFiled = [[CMTextFieldView alloc] initWithFrame:CGRectMake(_telephoneTextFiled.left, _telephoneTextFiled.bottom + kIPhone6Scale(23), width, height)];
         _pwdTextFiled.placeholder = @"请输入手机号";
         _pwdTextFiled.layer.cornerRadius = height/2;

@@ -39,8 +39,11 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    [self.bgView setFrame:CGRectMake(0, 0, self.width, self.height)];
-    [self.textField setFrame:CGRectMake(self.height/2, 0, self.width - self.height, self.height)];
+    CGFloat top = kIPhone6Scale(5);
+    CGFloat height = self.height - kIPhone6Scale(10);
+
+    [self.bgView setFrame:CGRectMake(0, top, self.width, height)];
+    [self.textField setFrame:CGRectMake(self.height/2, top, self.width - height, height)];
 }
 
 #pragma mark - public
@@ -84,7 +87,6 @@
 - (UIView *)bgView
 {
     if (!_bgView) {
-//        _bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.width, self.height)];
         _bgView = [[UIView alloc] init];
         _bgView.backgroundColor = [UIColor whiteColor];
     }
@@ -94,9 +96,10 @@
 - (UITextField *)textField
 {
     if (!_textField) {
-//        _textField = [[UITextField alloc] initWithFrame:CGRectMake(self.height/2, 0, self.width, self.height)];
         _textField = [[UITextField alloc] init];
         _textField.backgroundColor = [UIColor whiteColor];
+        _textField.font = [UIFont systemFontOfSize:kIPhone6Scale(14)];
+//        _textField.backgroundColor = [UIColor redColor];
     }
     return _textField;
 }

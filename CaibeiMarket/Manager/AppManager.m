@@ -19,9 +19,10 @@
     //加载广告
     AdPageView *adView = [[AdPageView alloc] initWithFrame:kScreen_Bounds withTapBlock:^{
         RootWebViewController * viewController = [[RootWebViewController alloc] initWithUrl:@"http://www.hao123.com"];
-        viewController.showSingleBackButtom = YES;
-        RootNavigationController *loginNavi =[[RootNavigationController alloc] initWithRootViewController:viewController];
-        [kRootViewController presentViewController:loginNavi animated:YES completion:nil];
+        UITabBarController * tabBarViewController = (UITabBarController *)[UIApplication sharedApplication].delegate.window.rootViewController;
+        if ([tabBarViewController isKindOfClass:[UITabBarController class]]) {
+            [(UINavigationController *)tabBarViewController.selectedViewController pushViewController:viewController animated:YES];
+        }
     }];
     adView = adView;
 }

@@ -56,6 +56,10 @@
     self.contentView.backgroundColor = [UIColor purpleColor];
 }
 
+- (void)fillData:(id)model
+{
+}
+
 #pragma iCarousel
 
 - (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel

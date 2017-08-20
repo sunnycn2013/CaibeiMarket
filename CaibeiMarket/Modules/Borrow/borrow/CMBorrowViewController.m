@@ -47,12 +47,14 @@
     [self.view addSubview:self.chooseView];
     [self.tableView reloadData];
     [self loadData];
+    
+    UITapGestureRecognizer * gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeConditionAction:)];
+    [self.chooseBgView addGestureRecognizer:gesture];
 }
 
 -(void)naviBtnClick:(UIButton *)btn{
     
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -62,7 +64,6 @@
 -(void)headerRereshing
 {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//         [self.tableView.mj_header endRefreshing];
         [self loadData];
     });
     
@@ -87,6 +88,11 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nullable error) {
         [MBProgressHUD showErrorMessage:@"服务异常"];
     }];
+}
+
+- (void)closeConditionAction:(UITapGestureRecognizer *)ges
+{
+    [self borrowConditionView:nil selectedChooseView:3];
 }
 #pragma mark - UITableViewDelegate,UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -126,6 +132,7 @@
 #pragma mark - CMBorrowConditionViewDelegate
 - (void)borrowConditionView:(CMBorrowConditionView *)conditionView conditionType:(CMBorrowConditionType)type sortingCondition:(CMBorrowConditionItemType)sort
 {
+    NSLog(@"aa");
 }
 
 - (void)borrowConditionView:(CMBorrowConditionView *)conditionView selectedChooseView:(NSInteger)index
