@@ -22,7 +22,9 @@
 
 @property (nonatomic, strong) UITableView * tableView;
 @property (nonatomic, strong) UICollectionView * collectionView;
-@property (nonatomic, strong) MJRefreshNormalHeader *header;
+//@property (nonatomic, strong) MJRefreshNormalHeader *header;
+@property (nonatomic, strong) MJRefreshGifHeader *header;
+
 
 - (instancetype)initWithParams:(NSDictionary *)parameters;
 /**

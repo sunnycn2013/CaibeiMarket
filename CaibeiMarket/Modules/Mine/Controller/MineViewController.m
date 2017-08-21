@@ -89,7 +89,7 @@
     item3.img = [UIImage imageNamed:@"about"];
     item3.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
     item3.executeCode = ^{
-        RootWebViewController * portrait = [[RootWebViewController alloc] initWithUrl:@"http://www.icaibei.com/about.html"];
+        RootWebViewController * portrait = [[RootWebViewController alloc] initWithUrl:URL_icaibei_about_url];
         [weakself.navigationController pushViewController:portrait animated:YES];
     };
     

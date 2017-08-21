@@ -70,7 +70,10 @@
 }
 
 - (void)loadData{
-    NSDictionary * params = @{@"number" : @"1"};
+    NSMutableDictionary * params = [NSMutableDictionary dictionary];
+    NSDictionary * pages = @{@"number" : @"1"};
+    [params addEntriesFromDictionary:pages];
+    [params addEntriesFromDictionary:[self.borrow searchConditions]];
     
     __weak typeof(self) weakSelf = self;
     self.request = [UAHTTPSessionManager manager];
@@ -81,6 +84,8 @@
         
         if ([resultCode isEqualToString:@"0000"]) {
             [weakSelf.tableView reloadData];
+            [weakSelf.conditionView fillData:weakSelf.borrow];
+            [weakSelf.chooseView fillData:weakSelf.borrow];
         }else{
             [MBProgressHUD showErrorMessage:message];
         }
@@ -154,6 +159,17 @@
     }
 }
 
+#pragma mark - CMBorrowChooseViewDelegate
+
+- (void)chooseView:(CMBorrowChooseView *)view shouldRefreashPage:(id)model
+{
+    [self borrowConditionView:nil selectedChooseView:3];
+    kWeakSelf(self)
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [weakself loadData];
+    });
+    DLog(@"refreash view");
+}
 
 #pragma mark - set get
 - (CMBorrowConditionView *)conditionView
@@ -174,6 +190,7 @@
         _chooseView.backgroundColor = [UIColor colorWithHexString:@"#F6F6F6"];
         _chooseView.backgroundColor = [UIColor purpleColor];
         _chooseView.clipsToBounds = YES;
+        _chooseView.delegate = self;
 
     }
     return _chooseView;

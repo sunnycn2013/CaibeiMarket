@@ -1,82 +1,94 @@
 {
     "version": "1.0",
     "data": [
-        {
-            "title": "额度",
-            "lendMoney": [
-                "1",
-                "2",
-                "3",
-                "4",
-                "5",
-                "6",
-                "7"
-            ]
-        },
-        {
-            "title": "范围",
-            "lendPerid": [
-                "1",
-                "2",
-                "3",
-                "4",
-                "5"
-            ]
-        },
-        {
-            "title": "月利率",
-            "monthlyInterestRate": [
-                "1",
-                "2"
-            ]
-        },
-        {
-            "title": "上线时间",
-            "onlineTime": [
-                "1",
-                "2",
-                "3",
-                "4",
-                "5"
-            ]
-        },
-        {
-            "title": "信用",
-            "creditStanding": [
-                "1",
-                "2",
-                "3",
-                "4"
-            ]
-        },
-        {
-            "title": "有无信用卡",
-            "hasCredit": [
-                "1",
-                "2"
-            ]
-        },
-        {
-            "title": "额度",
-            "lendTotalMoney": [
-                "1",
-                "2",
-                "3"
-            ]
-        },
-        {
-            "lendTotalPerid": [
-                "1",
-                "2",
-                "3"
-            ]
-        },
-        {
-            "title": "通过率",
-            "throughputRate": [
-                "1",
-                "2"
-            ]
-        }
-    ]
+             {
+             "title": "额度",
+             "style": 0,
+             "lendMoney": [
+                           "1",
+                           "2",
+                           "3",
+                           "4",
+                           "5",
+                           "6",
+                           "7"
+                           ]
+             },
+             {
+             "title": "时间",
+             "style": 1,
+             "lendPerid": [
+                           "1",
+                           "2",
+                           "3",
+                           "4",
+                           "5"
+                           ]
+             },
+             {
+             "title": "上线时间",
+             "style": 2,
+             "onlineTime": [
+                            "1",
+                            "2",
+                            "3",
+                            "4",
+                            "5"
+                            ]
+             },
+             {
+             "title": "信用情况",
+             "style": 3,
+             "creditStanding": [
+                                "1",
+                                "2",
+                                "3",
+                                "4"
+                                ]
+             },
+             {
+             "title": "放贷总额",
+             "style": 4,
+             "lendTotalMoney": [
+                                "1",
+                                "2",
+                                "3"
+                                ]
+             },
+             {
+             "title": "时间",
+             "style": 5,
+             "lendTotalPerid": [
+                                "1",
+                                "2",
+                                "3"
+                                ]
+             }
+             ],
+    "conditions": [
+                   {
+                   "title": "放款速度",
+                   "style": 6,
+                   "throughputRate": [
+                                      "1",
+                                      "2"
+                                      ]
+                   },
+                   {
+                   "title": "月利率",
+                   "style": 7,
+                   "monthlyInterestRate": [
+                                           "1",
+                                           "2"
+                                           ]
+                   },
+                   {
+                   "title": "有无信用卡",
+                   "style": 8,
+                   "hasCredit": [
+                                 "1",
+                                 "2"
+                                 ]
+                   }
+                   ]
 }

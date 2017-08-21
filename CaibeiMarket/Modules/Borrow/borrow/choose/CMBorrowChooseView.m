@@ -10,12 +10,17 @@
 #import "CMChooseCell.h"
 #import "CMBorrowChoose.h"
 #import "CMBorrowChooseHeadView.h"
+#import "CMBorrow.h"
+#import "CMBorrowChoose.h"
+#import "CMBorrowChooseFooterView.h"
 
-@interface CMBorrowChooseView ()<UITableViewDataSource,UITableViewDelegate>
+@interface CMBorrowChooseView ()<UITableViewDataSource,UITableViewDelegate,CMBorrowChooseFooterViewDelegate>
 
 @property (nonatomic,strong)UITableView * tableView;
 @property (nonatomic,strong)NSArray * data;
 
+@property (nonatomic, strong)CMBorrow *borrow;
+@property (nonatomic, strong)CMBorrowChooseFooterView  *footView;
 
 @end
 
@@ -35,25 +40,21 @@
     self.tableView.userInteractionEnabled = YES;
     [self.tableView registerClass:[CMChooseCell class] forCellReuseIdentifier:@"CMChooseCell"];
     [self addSubview:self.tableView];
-    
-    CMBorrowChoose * choose01 = [[CMBorrowChoose alloc] init];
-    choose01.category = @"上线时间";
-    
-    CMBorrowChoose * choose02 = [[CMBorrowChoose alloc] init];
-    choose01.category = @"利率";
-    
-    CMBorrowChoose * choose03 = [[CMBorrowChoose alloc] init];
-    choose01.category = @"信用";
-    
-    CMBorrowChoose * choose04 = [[CMBorrowChoose alloc] init];
-    choose01.category = @"放款速度";
-    self.data = @[choose01,choose02,choose03,choose04];
-    [self.tableView reloadData];
+    [self addSubview:self.footView];
 }
 
+- (void)fillData:(id)model
+{
+    if (![model isKindOfClass:[CMBorrow class]]) {
+        return;
+    }
+    self.borrow = (CMBorrow *)model;
+    [self.tableView reloadData];
+}
+#pragma mark - UITableViewDataSource,UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return self.data.count;
+    return self.borrow.borrowChoose.data.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -65,7 +66,7 @@
 {
     static NSString * cellIdentifier = @"CMChooseCell";
     CMChooseCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    [cell fillData:[self.data objectAtIndex:indexPath.row]];
+    [cell fillData:[self.borrow.borrowChoose.data objectAtIndex:indexPath.section]];
     return cell;
 }
 
@@ -77,8 +78,9 @@
 #pragma mark -  tableView  header
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
+    CMBorrowChooseItem * item = [self.borrow.borrowChoose.data objectAtIndex:section];
     CMBorrowChooseHeadView * headView = [[CMBorrowChooseHeadView alloc] initWithFrame:CGRectMake(20, 10, 200, 30)];
-    headView.showTitle = @"放款速度";
+    headView.showTitle = item.title ? : @"放款速度";
     return headView;
 }
 
@@ -87,15 +89,40 @@
     return 44;
 }
 
+#pragma mark - CMBorrowChooseFooterViewDelegate
+
+- (void)footView:(CMBorrowChooseFooterView *)footer didResetCondition:(NSString *)actionType
+{
+    [self.borrow resetSearchConditions];
+    if([self.delegate respondsToSelector:@selector(chooseView:shouldRefreashPage:)]){
+        [self.delegate chooseView:self shouldRefreashPage:self.borrow];
+    }
+}
+
+- (void)footView:(CMBorrowChooseFooterView *)footer didCommitCondition:(NSString *)actionType
+{
+    if([self.delegate respondsToSelector:@selector(chooseView:shouldRefreashPage:)]){
+        [self.delegate chooseView:self shouldRefreashPage:self.borrow];
+    }
+}
 #pragma mark -  set get
 - (UITableView *)tableView
 {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, 424)];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, 384)];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return _tableView;
+}
+
+- (CMBorrowChooseFooterView *)footView
+{
+    if (!_footView) {
+        _footView = [[CMBorrowChooseFooterView alloc] initWithFrame:CGRectMake(0, _tableView.height, KScreenWidth, 44)];
+        _footView.delegate = self;
+    }
+    return _footView;
 }
 @end

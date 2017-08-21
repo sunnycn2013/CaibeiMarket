@@ -99,7 +99,7 @@
     item7.accessoryType = XBSettingAccessoryTypeNone;
     item7.detailImage = [UIImage imageNamed:@"next_normal"];
     item7.executeCode = ^{
-        RootWebViewController * viewController = [[RootWebViewController alloc] initWithUrl:@"https://www.baidu.com"];
+        RootWebViewController * viewController = [[RootWebViewController alloc] initWithUrl:URL_icaibei_about_url];
         [weakSelf.navigationController pushViewController:viewController animated:YES];
     };
     

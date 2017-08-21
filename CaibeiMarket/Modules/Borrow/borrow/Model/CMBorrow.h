@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "CMBorrowChoose.h"
 
 @interface CMBorrowCrads : NSObject
 
@@ -34,5 +34,11 @@
 @property (nonatomic,strong)NSString * resultCode;
 @property (nonatomic,strong)NSString * message;
 @property (nonatomic,strong)NSArray  * listData;
+
+@property (nonatomic,strong)CMBorrowChoose * borrowChoose;
+
+- (void)resetSearchConditions;
+
+- (NSDictionary *)searchConditions;
 
 @end

@@ -175,6 +175,40 @@
     return _collectionView;
 }
 
+//- (MJRefreshGifHeader *)header
+//{
+//    if (!_header) {
+//        _header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRereshing)];
+////        _header.automaticallyChangeAlpha = YES;
+////        _header.lastUpdatedTimeLabel.hidden = NO;
+//
+//        // 设置普通状态的动画图片
+//        NSMutableArray *idleImages = [NSMutableArray array];
+//        for (NSUInteger i = 1; i<=13; i++) {
+//            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"fish_0%zd", i]];
+//            [idleImages addObject:image];
+//        }
+//        [_header setImages:idleImages forState:MJRefreshStateIdle];
+//        
+//        // 设置即将刷新状态的动画图片（一松开就会刷新的状态）
+//        NSMutableArray *refreshingImages = [NSMutableArray array];
+//        for (NSUInteger i = 1; i<=3; i++) {
+//            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"fish_0%zd", i]];
+//            [refreshingImages addObject:image];
+//        }
+//        [_header setImages:refreshingImages forState:MJRefreshStatePulling];
+//        
+//        // 设置正在刷新状态的动画图片
+//        [_header setImages:refreshingImages forState:MJRefreshStateRefreshing];
+//        
+////        NSMutableArray *refreshingImages = [NSMutableArray array];
+////        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"finish1.gif"]];
+////        [refreshingImages addObject:image];
+////        [_header setImages:refreshingImages forState:MJRefreshStateRefreshing];
+//    }
+//    return _header;
+//}
+
 - (MJRefreshNormalHeader *)header
 {
     if (!_header) {

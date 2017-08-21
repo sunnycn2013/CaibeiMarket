@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CMBorrowProtocol.h"
 
-@interface CMBorrowCell : UITableViewCell
+@interface CMBorrowCell : UITableViewCell<CMBorrowProtocol>
 
 - (void)fillData:(id)model;
 

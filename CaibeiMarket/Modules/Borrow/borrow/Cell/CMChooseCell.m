@@ -10,10 +10,10 @@
 #import "CMBorrowChoose.h"
 #import "CMChooseItemView.h"
 
-#define CMChooseItemTag  5000
+#define CMChooseItemTag  5001
 
 @interface CMChooseCell ()
-@property (nonatomic,strong)CMBorrowChoose * choose;
+@property (nonatomic,strong)CMBorrowChooseItem * choose;
 @end
 
 @implementation CMChooseCell
@@ -48,21 +48,21 @@
 
 - (void)fillData:(id)data
 {
-    if (![data isKindOfClass:[CMBorrowChoose class]]) {
+    if (![data isKindOfClass:[CMBorrowChooseItem class]]) {
         return;
     }
-    self.choose = (CMBorrowChoose *)data;
+    self.choose = (CMBorrowChooseItem *)data;
     self.backgroundColor = [UIColor whiteColor];
-    NSArray * array = [self.choose conditions];
+    NSArray * array = @[@"1",@"2",@"3",@"5"];
     CGFloat width = KScreenWidth / array.count;
-    
-    for (int i=0 ; i<array.count; i++) {
-        CMBorrowChooseItem * item = [array objectAtIndex:i];
+    NSInteger count = [self.choose numCount];
+    for (int i=0 ; i<count; i++) {
+        NSString * itemTitle = [self.choose titleAtIndex:i];
         CMChooseItemView * itemView = [[CMChooseItemView alloc] initWithFrame:CGRectMake(width * i, 0, width, 44)];
         itemView.userInteractionEnabled = YES;
         itemView.tag = CMChooseItemTag + i;
         itemView.titleLabel.font = [UIFont systemFontOfSize:14];
-        [itemView setTitle:item.title forState:UIControlStateNormal];
+        [itemView setTitle:itemTitle forState:UIControlStateNormal];
         [itemView setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [itemView setTitleColor:[UIColor purpleColor] forState:UIControlStateSelected];
         [itemView addTarget:self action:@selector(conditionSelected:) forControlEvents:UIControlEventTouchUpInside];
@@ -70,18 +70,20 @@
     }
 }
 
-- (void)conditionSelected:(UIButton *)button
+- (void)conditionSelected:(CMChooseItemView *)view
 {
     NSArray * array = [self subviews];
     for (CMChooseItemView *item in array) {
         if ([item isKindOfClass:[CMChooseItemView class]]) {
-            if (item != button) {
+            if (item != view) {
                 [item setStyle:CMChooseItemViewStyleSelected];
             }else{
                 [item setStyle:CMChooseItemViewStyleNormal];
             }
         }
     }
+    NSInteger selectIndex = view.tag - CMChooseItemTag;
+    self.choose.selectValue = (selectIndex > 0) ? [NSString stringWithFormat:@"%ld",selectIndex] : @"";
 }
 
 @end

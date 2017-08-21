@@ -7,12 +7,13 @@
 //
 
 #import "CMBorrowConditionView.h"
-
+#import "CMBorrow.h"
 NSInteger CMBorrowConditionNum     = 4;
 
 @interface CMBorrowConditionView ()<CMBorrowConditionItemDeleage>
 
 @property (nonatomic,strong) UIView * conditionLine;
+@property (nonatomic, strong)CMBorrow *borrow;
 
 @end
 
@@ -64,6 +65,15 @@ NSInteger CMBorrowConditionNum     = 4;
             [self.delegate borrowConditionView:self selectedChooseView:index];
         }
     }
+}
+
+- (void)fillData:(id)model
+{
+    if (![model isKindOfClass:[CMBorrow class]]) {
+        return;
+    }
+    //    self.borrow = (CMBorrow *)model;}
+
 }
 
 #pragma mark - set get

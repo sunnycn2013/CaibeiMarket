@@ -33,12 +33,6 @@ NSInteger CMBorrowConditionItemTag = 500;
     return self;
 }
 
-//- (void)layoutSubviews
-//{
-//    [super layoutSubviews];
-////    _switchImageView.frame = CGRectMake(_conditionTextLabe, _conditionHigh.bottom + 3, 13, 13);
-//}
-
 - (void)setUI
 {
     self.isAscending = YES;
@@ -48,6 +42,7 @@ NSInteger CMBorrowConditionItemTag = 500;
     [self addSubview:self.conditionLow];
     [self addSubview:self.switchImageView];
     [self addGestureRecognizer:self.tapGesture];
+    [self setConditionType:CMBorrowConditionItemDescending];
 }
 
 - (void)setConditionType:(CMBorrowConditionItemType)conditionType
@@ -113,7 +108,6 @@ NSInteger CMBorrowConditionItemTag = 500;
         _conditionTextLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(12.5)];
         _conditionTextLabel.textColor = [UIColor lightGrayColor];
         _conditionTextLabel.textAlignment = NSTextAlignmentRight;
-//        _conditionTextLabel.backgroundColor = [UIColor purpleColor];
     }
     return _conditionTextLabel;
 }

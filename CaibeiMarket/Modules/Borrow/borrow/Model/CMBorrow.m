@@ -10,6 +10,11 @@
 
 @implementation CMBorrowCrads
 
+- (void)mj_keyValuesDidFinishConvertingToObject
+{
+    
+}
+
 @end
 
 @implementation CMBorrow
@@ -28,5 +33,24 @@
         CMBorrowCrads * card = [self.listData objectAtIndex:i];
         card.showStar = YES;
     }
+    
+    NSString * path = [[NSBundle mainBundle] pathForResource:@"choose.json" ofType:nil];
+    NSString * string = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    if (string) {
+        NSDictionary * dict = [NSJSONSerialization JSONObjectWithData:[string dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
+        self.borrowChoose = [CMBorrowChoose mj_objectWithKeyValues:dict];
+        DLog(@"parise succes");
+    }
 }
+
+- (void)resetSearchConditions
+{
+    [self.borrowChoose resetSearchConditions];
+}
+
+- (NSDictionary *)searchConditions
+{
+    return [self.borrowChoose searchConditions];
+}
+
 @end
