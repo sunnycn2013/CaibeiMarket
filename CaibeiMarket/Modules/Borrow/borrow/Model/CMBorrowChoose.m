@@ -145,7 +145,7 @@
         default:
             break;
     }
-    if (self.selectValue) {
+    if (self.selectValue && [self.selectValue length]>0) {
         dict = @{key : self.selectValue};
     }
     return dict;
@@ -183,7 +183,8 @@
 + (NSDictionary *)mj_objectClassInArray
 {
     return @{
-             @"data" : @"CMBorrowChooseItem"
+             @"data" : @"CMBorrowChooseItem",
+             @"conditions" : @"CMBorrowChooseItem"
              };
 }
 

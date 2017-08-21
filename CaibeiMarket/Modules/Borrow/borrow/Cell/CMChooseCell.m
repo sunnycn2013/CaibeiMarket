@@ -53,9 +53,8 @@
     }
     self.choose = (CMBorrowChooseItem *)data;
     self.backgroundColor = [UIColor whiteColor];
-    NSArray * array = @[@"1",@"2",@"3",@"5"];
-    CGFloat width = KScreenWidth / array.count;
     NSInteger count = [self.choose numCount];
+    CGFloat width = KScreenWidth / count;
     for (int i=0 ; i<count; i++) {
         NSString * itemTitle = [self.choose titleAtIndex:i];
         CMChooseItemView * itemView = [[CMChooseItemView alloc] initWithFrame:CGRectMake(width * i, 0, width, 44)];

@@ -97,6 +97,10 @@
     if([self.delegate respondsToSelector:@selector(chooseView:shouldRefreashPage:)]){
         [self.delegate chooseView:self shouldRefreashPage:self.borrow];
     }
+    kWeakSelf(self);
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [weakself.tableView reloadData];
+    });
 }
 
 - (void)footView:(CMBorrowChooseFooterView *)footer didCommitCondition:(NSString *)actionType

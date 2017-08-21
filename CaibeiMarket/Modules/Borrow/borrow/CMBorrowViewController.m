@@ -63,8 +63,11 @@
 
 -(void)headerRereshing
 {
+    kWeakSelf(self)
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self loadData];
+        [weakself.borrow resetSearchConditions];
+        NSLog(@"AAA: %@",[self.borrow searchConditions]);
+        [weakself loadData];
     });
     
 }
@@ -166,7 +169,8 @@
     [self borrowConditionView:nil selectedChooseView:3];
     kWeakSelf(self)
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [weakself loadData];
+//        [weakself loadData];
+        NSLog(@"AAA: %@",[self.borrow searchConditions]);
     });
     DLog(@"refreash view");
 }
