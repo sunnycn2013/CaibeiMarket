@@ -141,11 +141,13 @@
 - (void)borrowConditionView:(CMBorrowConditionView *)conditionView conditionType:(CMBorrowConditionType)type sortingCondition:(CMBorrowConditionItemType)sort
 {
     NSLog(@"aa");
+    [self hideChooseView];
 }
 
 - (void)borrowConditionView:(CMBorrowConditionView *)conditionView selectedChooseView:(NSInteger)index
 {
-    if (!self.showChooseView) {
+    if (!self.showChooseView)
+    {
         [self.conditionView setConditionSwitchStyle:CMBorrowConditionSwitchTypeOpen];
         self.chooseBgView.frame  = CGRectMake(0, 110, KScreenWidth, KScreenHeight);
         [UIView animateWithDuration:0.2 animations:^{
@@ -160,6 +162,27 @@
             self.chooseView.frame = CGRectMake(0, _conditionView.bottom, KScreenWidth, 0);
         }];
     }
+}
+
+- (void)showChooseView1
+{
+    [self.conditionView setConditionSwitchStyle:CMBorrowConditionSwitchTypeOpen];
+    self.chooseBgView.frame  = CGRectMake(0, 110, KScreenWidth, KScreenHeight);
+    [UIView animateWithDuration:0.2 animations:^{
+        self.showChooseView = YES;
+        self.chooseView.frame = CGRectMake(0, _conditionView.bottom, KScreenWidth, 424);
+    }];
+    
+}
+
+- (void)hideChooseView
+{
+    [self.conditionView setConditionSwitchStyle:CMBorrowConditionSwitchTypeclose];
+    self.chooseBgView.frame  = CGRectMake(0, 110, KScreenWidth, 0);
+    [UIView animateWithDuration:0.2 animations:^{
+        self.showChooseView = NO;
+        self.chooseView.frame = CGRectMake(0, _conditionView.bottom, KScreenWidth, 0);
+    }];
 }
 
 #pragma mark - CMBorrowChooseViewDelegate

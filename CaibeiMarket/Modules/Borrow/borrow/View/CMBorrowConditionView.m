@@ -14,6 +14,7 @@ NSInteger CMBorrowConditionNum     = 4;
 
 @property (nonatomic,strong) UIView * conditionLine;
 @property (nonatomic, strong)CMBorrow *borrow;
+@property (nonatomic, assign)BOOL isShowCondition;
 
 @end
 
@@ -23,6 +24,7 @@ NSInteger CMBorrowConditionNum     = 4;
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.isShowCondition = NO;
         [self setUI];
     }
     return self;
@@ -41,6 +43,7 @@ NSInteger CMBorrowConditionNum     = 4;
         [self addSubview:item];
     }
     [self addSubview:self.conditionLine];
+    [self updateConditionItem:nil index:0];
 }
 
 - (void)setConditionSwitchStyle:(CMBorrowConditionSwitchType)style
@@ -52,15 +55,37 @@ NSInteger CMBorrowConditionNum     = 4;
     }
 }
 
-- (void)updateItemWithIndex:(NSInteger)index
+- (void)updateConditionItem:(CMBorrowConditionItem *)item index:(NSInteger)index
 {
-    
+    if (index < 3) {
+        NSArray * array = [self subviews];
+        for (int i = 0; i<array.count; i++) {
+            CMBorrowConditionItem * item = [array objectAtIndex:i];
+            if ([item isKindOfClass:[CMBorrowConditionItem class]]) {
+                if (i==index) {
+                    [item setStatus:CMBorrowConditionItemStatusSelected];
+                }else{
+                    [item setStatus:CMBorrowConditionItemStatusUnSelected];
+                }
+            }
+        }
+    }else{
+        if (self.isShowCondition) {
+            self.isShowCondition = NO;
+            [item setStatus:CMBorrowConditionItemStatusUnSelected];
+        }else{
+            self.isShowCondition = YES;
+            [item setStatus:CMBorrowConditionItemStatusSelected];
+        }
+    }
+   
 }
 #pragma mark - CMBorrowConditionItemDeleage
 - (void)borrowConditionItem:(CMBorrowConditionItem *)item selectedAtIndex:(NSInteger)index
 {
     NSInteger conditionType = item.tag - CMBorrowConditionItemTag;
     BOOL isAscending = item.isAscending;
+    [self updateConditionItem:item index:index];
     if (index < 3) {
         if ([self.delegate respondsToSelector:@selector(borrowConditionView:conditionType:sortingCondition:)]) {
             [self.delegate borrowConditionView:self conditionType:conditionType sortingCondition:isAscending];
