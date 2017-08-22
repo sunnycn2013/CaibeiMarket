@@ -114,7 +114,7 @@
 {
     if (!_companyNameLabel) {
         _companyNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(_iconImageView.right + kIPhone6PScale(17), _iconImageView.top, kIPhone6PScale(100), kIPhone6PScale(17))];
-        _companyNameLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(15)];
+        _companyNameLabel.font = [UIFont boldSystemFontOfSize:kIPhone6Scale(15)];
         _companyNameLabel.text = @"秒贷小额贷";
     }
     return _companyNameLabel;
@@ -161,7 +161,7 @@
 {
     if (!_applyLabel) {
         _applyLabel = [[UILabel alloc] initWithFrame:CGRectMake(_companyNameLabel.left, _companyNameLabel.bottom + kIPhone6PScale(7), kIPhone6PScale(62), kIPhone6PScale(14))];
-        _applyLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(9)];
+        _applyLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(10)];
         _applyLabel.text = @"申请人数:";
         _applyLabel.font = [UIFont systemFontOfSize:10];
         _applyLabel.textColor = [UIColor lightGrayColor];
@@ -174,7 +174,7 @@
 {
     if (!_applyNumLabel) {
         _applyNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(_applyLabel.right, _applyLabel.top, kIPhone6PScale(70), _applyLabel.height)];
-        _applyNumLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(9)];
+        _applyNumLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(10)];
         _applyNumLabel.text = @"14028:";
         _applyNumLabel.textColor = [UIColor lightGrayColor];
     }
@@ -189,7 +189,7 @@
         
         CGFloat originX = KScreenWidth- marginRight -labelWidth;
         _applyInterestabelLabel = [[UILabel alloc] initWithFrame:CGRectMake(originX, _applyNumLabel.top, labelWidth, kIPhone6PScale(15))];
-        _applyInterestabelLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(9)];
+        _applyInterestabelLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(10)];
         _applyInterestabelLabel.textColor = [UIColor redColor];
         _applyInterestabelLabel.text = @"0.5元/月";
         _applyInterestabelLabel.textAlignment = NSTextAlignmentRight;
@@ -201,7 +201,7 @@
 {
     if (!_descriptionInfoLabel) {
         _descriptionInfoLabel = [[UILabel alloc] initWithFrame:CGRectMake(_companyNameLabel.left, _applyLabel.bottom + kIPhone6PScale(4), kIPhone6PScale(151), kIPhone6PScale(15))];
-        _descriptionInfoLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(10)];
+        _descriptionInfoLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(9)];
         _descriptionInfoLabel.text = @"全新平台,活动推广中,秒批";
         _descriptionInfoLabel.textColor = [UIColor lightGrayColor];
 //        _descriptionInfoLabel.backgroundColor = [UIColor greenColor];
@@ -217,7 +217,7 @@
         
         CGFloat originX = KScreenWidth- marginRight -labelWidth;
         _borrowLinesLabel = [[UILabel alloc] initWithFrame:CGRectMake(originX, _descriptionInfoLabel.top, labelWidth, 12)];
-        _borrowLinesLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(9)];
+        _borrowLinesLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(11)];
         _borrowLinesLabel.textColor = [UIColor lightGrayColor];
         _borrowLinesLabel.text = @"额度: 500-5000元";
         _borrowLinesLabel.textAlignment = NSTextAlignmentRight;

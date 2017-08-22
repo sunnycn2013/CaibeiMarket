@@ -52,6 +52,11 @@ NSInteger CMBorrowConditionNum     = 4;
     }
 }
 
+- (void)updateItemWithIndex:(NSInteger)index
+{
+    
+}
+#pragma mark - CMBorrowConditionItemDeleage
 - (void)borrowConditionItem:(CMBorrowConditionItem *)item selectedAtIndex:(NSInteger)index
 {
     NSInteger conditionType = item.tag - CMBorrowConditionItemTag;

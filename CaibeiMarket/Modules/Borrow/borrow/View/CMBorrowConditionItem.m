@@ -70,6 +70,17 @@ NSInteger CMBorrowConditionItemTag = 500;
         _switchImageView.image = [UIImage imageNamed:@"condition_normal_select"];
     }
 }
+
+- (void)setStatus:(CMBorrowConditionItemStatus)status
+{
+    _status = status;
+    if (status == CMBorrowConditionItemStatusSelected) {
+        self.conditionTextLabel.textColor = CMThemeColor;;
+    }else{
+        self.conditionTextLabel.textColor =  [UIColor lightGrayColor];
+    }
+}
+
 - (void)setConditionText:(NSString *)conditionText
 {
     _conditionTextLabel.text = conditionText;

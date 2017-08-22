@@ -4,7 +4,7 @@ require 'cocoapods-multithread-installpod'
 
 source 'https://github.com/CocoaPods/Specs.git'
 #ali_source 'icaibei-specs-mirror'
-ali_source 'icaibei-specs-mirror'
+ali_source 'alibaba-specs-mirror'
 platform :ios, '8.0'
 
 target 'CaibeiMarket' do

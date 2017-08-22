@@ -21,6 +21,10 @@ typedef NS_ENUM(NSInteger, CMBorrowConditionSwitchType){
     CMBorrowConditionSwitchTypeclose,
 };
 
+typedef NS_ENUM(NSInteger, CMBorrowConditionItemStatus){
+    CMBorrowConditionItemStatusSelected = 0,
+    CMBorrowConditionItemStatusUnSelected,
+};
 @class CMBorrowConditionItem;
 @protocol CMBorrowConditionItemDeleage <NSObject>
 
@@ -35,6 +39,7 @@ typedef NS_ENUM(NSInteger, CMBorrowConditionSwitchType){
 @property (nonatomic, assign)BOOL       isAscending;
 @property (nonatomic, assign)CMBorrowConditionItemType       conditionType;
 @property (nonatomic, assign)CMBorrowConditionSwitchType     switchType;
+@property (nonatomic, assign)CMBorrowConditionItemStatus     status;
 
 @property (nonatomic, copy)void(^TapAction)(NSInteger index, BOOL isAscending);
 
