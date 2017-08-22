@@ -13,4 +13,8 @@
 @property (nonatomic,strong)NSString * title;
 @property (nonatomic,strong)NSString * imageName;
 
+@property (nonatomic,strong)NSString * jumUrl;
+
+@property (nonatomic,strong)NSString * actionType;
+
 @end

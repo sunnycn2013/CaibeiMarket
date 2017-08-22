@@ -13,6 +13,8 @@
 
 - (CGFloat)heightForRowCell;
 
+@property (nonatomic,strong)NSString * actionType;
+
 @end
 
 #endif /* CMHomeDataProtocol_h */

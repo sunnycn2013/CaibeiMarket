@@ -28,7 +28,6 @@
 
 - (void)setUI
 {
-    
     self.backgroundColor = [UIColor colorWithHexString:@"#FFFFFF"];
     CGFloat iconWith = kIPhone6Scale(94/2.0);
     CGFloat marginLeft = (self.width - iconWith) / 2.0;

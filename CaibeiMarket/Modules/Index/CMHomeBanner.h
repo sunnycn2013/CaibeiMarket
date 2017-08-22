@@ -11,4 +11,6 @@
 
 @interface CMHomeBanner : NSObject<CMHomeDataProtocol>
 
+@property (nonatomic,strong)NSString * actionType;
+
 @end

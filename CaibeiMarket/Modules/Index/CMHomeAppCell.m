@@ -32,12 +32,14 @@
     CMHomeApp * app1 = [[CMHomeApp alloc] init];
     app1.title = @"常见问题";
     app1.imageName = @"icon_01";
+    app1.jumUrl = @"http://www.icaibei.com/about/help.html";
 
     
     CMHomeApp * app2 = [[CMHomeApp alloc] init];
     app2.title = @"关于我们";
     app2.imageName = @"caibei_about";
-    
+    app2.jumUrl = @"http://www.icaibei.com/about/index.html";
+
     CMHomeApp * app3 = [[CMHomeApp alloc] init];
     app3.title = @"新开平台";
     app3.imageName = @"icon_03";

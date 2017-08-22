@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "CMHomeDataProtocol.h"
 
+
+extern NSString * CMHomeActionTypeBanner;
+extern NSString * CMHomeActionTypeApp;
+extern NSString * CMHomeActionTypeContent;
+
 @interface CMHomeInfo : NSObject
 
 @property (nonatomic,strong)NSString * createDate;

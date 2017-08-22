@@ -11,6 +11,10 @@
 #import "CMHomeApp.h"
 #import "CMHomeContent.h"
 
+NSString * CMHomeActionTypeBanner = @"home_banner";
+NSString * CMHomeActionTypeApp = @"home_app";
+NSString * CMHomeActionTypeContent = @"home_content";
+
 @implementation CMHomeInfo
 
 
@@ -30,8 +34,12 @@
 - (void)initData
 {
     CMHomeBanner * banner = [CMHomeBanner new];
+    banner.actionType = CMHomeActionTypeBanner;
+    
     CMHomeApp * app = [CMHomeApp new];
+    app.actionType = CMHomeActionTypeApp;
     CMHomeContent  * content = [CMHomeContent new];
+    content.actionType = CMHomeActionTypeContent;
     
     self.homeModels = [NSMutableArray array];
     [self.homeModels addObject:banner];
