@@ -42,8 +42,11 @@
         _numberLabel.text = @"28";
         _numberLabel.layer.cornerRadius = 22.5;
         _numberLabel.layer.masksToBounds = YES;
+        _numberLabel.layer.borderWidth = 0.5;
+        _numberLabel.layer.borderColor = CMThemeColor.CGColor;
         _numberLabel.backgroundColor = [UIColor whiteColor];
         _numberLabel.textAlignment = NSTextAlignmentCenter;
+        _numberLabel.textColor = CMThemeColor;
     }
     return _numberLabel;
 }

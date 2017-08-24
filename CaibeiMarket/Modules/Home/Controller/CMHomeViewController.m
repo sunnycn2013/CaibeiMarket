@@ -136,11 +136,11 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
             cell = [[CMHomeContentCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndetifier];
         }
     }
-    [cell fillData:self.homeModel.homeInfo];
     kWeakSelf(self)
     [cell setTapBlock:^(id obj){
         [weakself processWithModel:obj];
     }];
+    [cell fillData:self.homeModel.homeInfo];
     return cell;
 }
 
@@ -158,8 +158,22 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
         return;
     }
     
-    CMBorrowViewController * borrow = [[CMBorrowViewController alloc] initWithParams:nil];
-    [self.navigationController pushViewController:borrow animated:YES];
+    if([model conformsToProtocol:@protocol(CMHomeDataProtocol)])
+    {
+        NSString * actionType = [(id<CMHomeDataProtocol>)model actionType];
+        if ([actionType isEqualToString:CMHomeActionTypeBanner])
+        {
+           
+        }else if ([actionType isEqualToString:CMHomeActionTypeApp]){
+            NSString * title = [(id<CMHomeDataProtocol>)model title] ? : @"";
+            NSString * jumpUrl = [(id<CMHomeDataProtocol>)model jumUrl] ? : @"";
+            RootWebViewController * webview = [[RootWebViewController alloc] initWithParams:@{@"title" : title,@"url" : jumpUrl}];
+            [self.navigationController pushViewController:webview animated:YES];
+        }else if ([actionType isEqualToString:CMHomeActionTypeApp]){
+            CMBorrowViewController * borrow = [[CMBorrowViewController alloc] initWithParams:nil];
+            [self.navigationController pushViewController:borrow animated:YES];
+        }
+    }
 }
 #pragma mark - set get
 

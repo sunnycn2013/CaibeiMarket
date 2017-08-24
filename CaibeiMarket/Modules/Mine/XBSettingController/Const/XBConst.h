@@ -21,7 +21,7 @@
 #define XBFuncImgToLeftGap 15
 
 //功能名称字体
-#define XBFuncLabelFont 14
+#define XBFuncLabelFont 15
 
 //功能名称到功能图片的距离,当功能图片funcImg不存在时,等于到左边界的距离
 #define XBFuncLabelToFuncImgGap 15

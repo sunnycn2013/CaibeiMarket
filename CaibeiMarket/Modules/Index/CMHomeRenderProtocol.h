@@ -12,7 +12,5 @@
 
 @property (nonatomic ,copy)void(^tapBlock)(id obj);
 
-@property (nonatomic ,strong)id model;
-
 - (void)fillData:(id)model;
 @end

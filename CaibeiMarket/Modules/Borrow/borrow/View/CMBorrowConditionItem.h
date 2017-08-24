@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CMBorrowChoose.h"
+#import "CMBorrowProtocol.h"
 
 extern NSInteger CMBorrowConditionItemTag;
 
@@ -32,7 +34,7 @@ typedef NS_ENUM(NSInteger, CMBorrowConditionItemStatus){
 
 @end
 
-@interface CMBorrowConditionItem : UIView
+@interface CMBorrowConditionItem : UIView<CMBorrowProtocol>
 
 @property (nonatomic, strong)NSString * conditionText;
 @property (nonatomic,   weak)id         delegate;
@@ -40,6 +42,8 @@ typedef NS_ENUM(NSInteger, CMBorrowConditionItemStatus){
 @property (nonatomic, assign)CMBorrowConditionItemType       conditionType;
 @property (nonatomic, assign)CMBorrowConditionSwitchType     switchType;
 @property (nonatomic, assign)CMBorrowConditionItemStatus     status;
+
+@property (nonatomic, strong)CMBorrowChooseItem * conditionModel;
 
 @property (nonatomic, copy)void(^TapAction)(NSInteger index, BOOL isAscending);
 

@@ -24,7 +24,7 @@
     switch (_style) {
         case CMBorrowChooseItemTypeLendMoney:
         {
-            NSArray * array = @[@"500-1000",@"1000-2000",@"2000-3000",@"3000-5000",@"5000-8000",@"8000-10000",@"10000以上"];
+            NSArray * array = @[@"500-1千",@"1千-2千",@"2千-3千",@"3千-5千",@"5千-8千",@"8千-1W",@"1W以上"];
             BOOL isval = [array count] > index;
             return isval ? [array objectAtIndex:index] : @"";
         }
@@ -71,7 +71,7 @@
     switch (_style) {
         case CMBorrowChooseItemTypeLendMoney:
         {
-            array = @[@"500-1000",@"1000-2000",@"2000-3000",@"3000-5000",@"5000-8000",@"8000-10000",@"10000以上"];
+            array = @[@"500-1千",@"1千-2千",@"2千-3千",@"3千-5千",@"5千-8千",@"8千-1W",@"1W以上"];
         }
             break;
         case CMBorrowChooseItemTypeLendPerid:
@@ -165,19 +165,19 @@
 
 - (void)initData
 {
-    CMBorrowChooseItem * item1 = [CMBorrowChooseItem new];
-    item1.title = @"3个月";
-    
-    CMBorrowChooseItem * item2 = [CMBorrowChooseItem new];
-    item2.title = @"6个月";
-    
-    CMBorrowChooseItem * item3 = [CMBorrowChooseItem new];
-    item3.title = @"12个月";
-    
-    CMBorrowChooseItem * item4 = [CMBorrowChooseItem new];
-    item4.title = @"24个月";
-    
-    self.conditions = @[item1,item2,item3,item4];
+//    CMBorrowChooseItem * item1 = [CMBorrowChooseItem new];
+//    item1.title = @"3个月";
+//    
+//    CMBorrowChooseItem * item2 = [CMBorrowChooseItem new];
+//    item2.title = @"6个月";
+//    
+//    CMBorrowChooseItem * item3 = [CMBorrowChooseItem new];
+//    item3.title = @"12个月";
+//    
+//    CMBorrowChooseItem * item4 = [CMBorrowChooseItem new];
+//    item4.title = @"24个月";
+//    
+//    self.conditions = @[item1,item2,item3,item4];
 }
 
 + (NSDictionary *)mj_objectClassInArray

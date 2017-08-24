@@ -35,7 +35,6 @@ NSString * CMHomeActionTypeContent = @"home_content";
 {
     CMHomeBanner * banner = [CMHomeBanner new];
     banner.actionType = CMHomeActionTypeBanner;
-    
     CMHomeApp * app = [CMHomeApp new];
     app.actionType = CMHomeActionTypeApp;
     CMHomeContent  * content = [CMHomeContent new];
@@ -45,7 +44,6 @@ NSString * CMHomeActionTypeContent = @"home_content";
     [self.homeModels addObject:banner];
     [self.homeModels addObject:app];
     [self.homeModels addObject:content];
-
 }
 
 + (NSDictionary *)mj_objectClassInArray
@@ -58,5 +56,7 @@ NSString * CMHomeActionTypeContent = @"home_content";
 - (void)mj_keyValuesDidFinishConvertingToObject
 {
     self.homeInfo = self.properties.firstObject;
+    [self.homeModels addObject:_homeInfo];
+
 }
 @end

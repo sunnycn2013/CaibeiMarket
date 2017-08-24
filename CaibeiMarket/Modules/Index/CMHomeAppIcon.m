@@ -42,6 +42,9 @@
     [_titleLabel setFont:[UIFont systemFontOfSize:11.0]];
     [_titleLabel setTextAlignment:NSTextAlignmentCenter];
     [self addSubview:_titleLabel];
+    
+    UITapGestureRecognizer * gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
+    [self addGestureRecognizer:gesture];
 }
 
 - (void)setData:(CMHomeApp *)data
@@ -50,5 +53,12 @@
     
     [_imageView setImage:[UIImage imageNamed:data.imageName]];
     [_titleLabel setText:data.title];
+}
+
+- (void)tapAction:(UITapGestureRecognizer *)tap
+{
+    if (self.tapBlock) {
+        self.tapBlock(self.data);
+    }
 }
 @end

@@ -45,6 +45,14 @@ NSInteger CMBorrowConditionItemTag = 500;
     [self setConditionType:CMBorrowConditionItemDescending];
 }
 
+- (void)fillData:(id)model
+{
+    if (![model isKindOfClass:[CMBorrowChooseItem class]]) {
+        return;
+    }
+    self.conditionModel = (CMBorrowChooseItem *)model;
+}
+
 - (void)setConditionType:(CMBorrowConditionItemType)conditionType
 {
     if (conditionType == CMBorrowConditionItemAscending) {
@@ -90,9 +98,11 @@ NSInteger CMBorrowConditionItemTag = 500;
 {
     if (self.isAscending) {
         self.isAscending = NO;
+        self.conditionModel.selectValue = @"2";
         [self setConditionType:CMBorrowConditionItemAscending];
     }else{
         self.isAscending = YES;
+        self.conditionModel.selectValue = @"1";
         [self setConditionType:CMBorrowConditionItemDescending];
     }
     NSInteger index = gesture.view.tag - CMBorrowConditionItemTag;

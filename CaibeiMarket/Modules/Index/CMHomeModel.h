@@ -14,7 +14,7 @@ extern NSString * CMHomeActionTypeBanner;
 extern NSString * CMHomeActionTypeApp;
 extern NSString * CMHomeActionTypeContent;
 
-@interface CMHomeInfo : NSObject
+@interface CMHomeInfo : NSObject<CMHomeDataProtocol>
 
 @property (nonatomic,strong)NSString * createDate;
 @property (nonatomic,strong)NSString * lendMoney;

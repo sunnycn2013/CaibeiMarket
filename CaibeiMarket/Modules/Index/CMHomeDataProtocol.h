@@ -14,6 +14,8 @@
 - (CGFloat)heightForRowCell;
 
 @property (nonatomic,strong)NSString * actionType;
+@property (nonatomic,strong)NSString * title;
+@property (nonatomic,strong)NSString * jumUrl;
 
 @end
 

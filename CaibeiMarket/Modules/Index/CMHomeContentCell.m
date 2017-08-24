@@ -66,9 +66,21 @@
     NSDate * date = [NSDate dateWithTimeIntervalSince1970:[self.homeInfo.createDate doubleValue]/1000];
     NSString * dateStr = [date description];
     if ([dateStr length] > 10) {
-        NSString * subDatestr = [dateStr substringWithRange:NSMakeRange(0, 10)];
-        NSString * lengingText = [NSString stringWithFormat:@"%@ %@的用户借款成功 %@ 元",subDatestr,self.homeInfo.phone,self.homeInfo.totalLendMoney];
-        [self.recentLendingLabel setText:lengingText];
+        NSString * placeholder = @"的用户借款成功";
+        NSString * subDatestr = [NSString stringWithFormat:@"%@  ",[dateStr substringWithRange:NSMakeRange(0, 10)]];
+        NSString * lengingText = [NSString stringWithFormat:@"%@%@%@%@元",subDatestr,self.homeInfo.phone,placeholder,self.homeInfo.totalLendMoney];
+        NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:lengingText];
+        NSInteger phoneStartIndex = subDatestr.length;
+        NSInteger phoneLength = self.homeInfo.phone.length;
+        NSInteger lendMoneyStartIndex = subDatestr.length + placeholder.length + self.homeInfo.phone.length;
+        NSInteger lendMoneyLength = self.homeInfo.totalLendMoney.length;
+
+        if(subDatestr.length > 0 && self.homeInfo.phone.length > 0 && self.homeInfo.totalLendMoney.length >0)
+        {
+            [attrStr addAttribute:NSForegroundColorAttributeName value:CMThemeColor range:NSMakeRange(phoneStartIndex,phoneLength)];
+            [attrStr addAttribute:NSForegroundColorAttributeName value:CMThemeColor range:NSMakeRange(lendMoneyStartIndex,lendMoneyLength)];
+            [self.recentLendingLabel setAttributedText:attrStr];
+        }
     }
    
 }
