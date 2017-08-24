@@ -32,6 +32,11 @@
     [self addSubview:self.numLabel];
 }
 
+- (void)updateTitle:(NSString *)title
+{
+    _numLabel.text = title;
+}
+
 
 - (UIImageView *)starImageView
 {

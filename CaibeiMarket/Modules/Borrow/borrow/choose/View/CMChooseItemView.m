@@ -42,13 +42,14 @@
 {
     self.titleLabel.textColor = [UIColor grayColor];
     self.backgroundColor = [UIColor whiteColor];
-
 }
 
 - (void)setSelectedStyle
 {
     self.titleLabel.textColor = CMThemeColor;
     self.backgroundColor = [UIColor colorWithHexString:@"#EFEDFF"];
+
+//    self.backgroundColor = [UIColor colorWithHexString:@"#EFEDFF"];
 }
 
 @end

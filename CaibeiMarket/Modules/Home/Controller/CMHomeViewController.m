@@ -152,12 +152,6 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
 
 - (void)processWithModel:(id)model
 {
-    if (![[CMUserManager sharedInstance] isLogined]) {
-        LoginViewController * viewController = [[LoginViewController alloc] init];
-        [self.navigationController pushViewController:viewController animated:YES];
-        return;
-    }
-    
     if([model conformsToProtocol:@protocol(CMHomeDataProtocol)])
     {
         NSString * actionType = [(id<CMHomeDataProtocol>)model actionType];
@@ -170,6 +164,11 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
             RootWebViewController * webview = [[RootWebViewController alloc] initWithParams:@{@"title" : title,@"url" : jumpUrl}];
             [self.navigationController pushViewController:webview animated:YES];
         }else if ([actionType isEqualToString:CMHomeActionTypeApp]){
+            if (![[CMUserManager sharedInstance] isLogined]) {
+                LoginViewController * viewController = [[LoginViewController alloc] init];
+                [self.navigationController pushViewController:viewController animated:YES];
+                return;
+            }
             CMBorrowViewController * borrow = [[CMBorrowViewController alloc] initWithParams:nil];
             [self.navigationController pushViewController:borrow animated:YES];
         }

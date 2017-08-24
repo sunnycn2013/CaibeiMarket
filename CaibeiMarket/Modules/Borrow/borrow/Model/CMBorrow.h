@@ -22,6 +22,7 @@
 @property (nonatomic,strong)NSNumber * platformNature;
 @property (nonatomic,strong)NSNumber * totalApply;
 @property (nonatomic,assign)BOOL       showStar;
+@property (nonatomic,assign)NSInteger  index;
 
 @end
 

@@ -32,6 +32,7 @@
     for (int i = 0; i< count; i++) {
         CMBorrowCrads * card = [self.listData objectAtIndex:i];
         card.showStar = YES;
+        card.index = i;
     }
     
     NSString * path = [[NSBundle mainBundle] pathForResource:@"choose.json" ofType:nil];
