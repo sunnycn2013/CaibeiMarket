@@ -87,6 +87,13 @@
     item6.funcName = @"帮助中心";
     item6.detailImage = [UIImage imageNamed:@"next_normal"];
     item6.accessoryType = XBSettingAccessoryTypeNone;
+    item6.executeCode = ^{
+        NSString * url = @"http://www.icaibei.com/about/help.html";
+        NSString * title = @"帮助中心";
+        RootWebViewController * webview = [[RootWebViewController alloc] initWithParams:@{@"title" : title,@"url" : url}];
+        [self.navigationController pushViewController:webview animated:YES];
+
+    };
     
     XBSettingSectionModel *section2 = [[XBSettingSectionModel alloc]init];
     section2.sectionHeaderHeight = 18;

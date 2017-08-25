@@ -95,6 +95,7 @@
     [self.applyInterestabelLabel setText:[NSString stringWithFormat:@"%@%@",self.data.monthlyInterestRate,extend]];
     [self.applyNumLabel setText:[NSString stringWithFormat:@"%@",self.data.totalApply]];
     [self.starImageView setHidden:(!self.data.showStar)];
+    [self.starImageView updateTitle:[NSString stringWithFormat:@"%ld",self.data.index + 1]];
 }
 
 

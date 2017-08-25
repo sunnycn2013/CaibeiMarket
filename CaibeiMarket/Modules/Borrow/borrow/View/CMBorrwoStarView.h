@@ -10,4 +10,5 @@
 
 @interface CMBorrwoStarView : UIView
 
+- (void)updateTitle:(NSString *)title;
 @end
