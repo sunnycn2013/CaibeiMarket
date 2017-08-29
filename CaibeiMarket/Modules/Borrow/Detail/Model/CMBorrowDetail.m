@@ -14,10 +14,16 @@
 {
     NSString * des = @"%";
     NSString * content = [NSString stringWithFormat:@"%@",_monthlyInterestRate];
-    NSString * string = [NSString stringWithFormat:@"%@%@/月",content,des];
+    NSString * string = [NSString stringWithFormat:@"%@/月",content];
     return string;
 }
 
+- (NSString *)throughputRate
+{
+    NSString * des = @"%";
+    NSString * string = [NSString stringWithFormat:@"%@%@",_throughputRate,des];
+    return string;
+}
 @end
 
 @implementation CMBorrowDetail

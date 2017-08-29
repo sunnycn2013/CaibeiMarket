@@ -159,7 +159,7 @@
 {
     if (!_interestDesLabel) {
         _interestDesLabel = [[UILabel alloc] initWithFrame:CGRectMake(_interestLabel.right, kIPhone6PScale(49), kIPhone6PScale(57), kIPhone6PScale(17))];
-        _interestDesLabel.text = @"0.25%月";
+//        _interestDesLabel.text = @"0.25%月";
         _interestDesLabel.font = [UIFont systemFontOfSize:kIPhone6PScale(12)];
     }
     return _interestDesLabel;

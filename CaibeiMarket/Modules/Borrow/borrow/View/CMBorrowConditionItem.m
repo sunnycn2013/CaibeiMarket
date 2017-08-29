@@ -19,7 +19,6 @@ NSInteger CMBorrowConditionItemTag = 500;
 
 @property (nonatomic,strong) UITapGestureRecognizer * tapGesture;
 
-
 @end
 
 @implementation CMBorrowConditionItem
@@ -156,7 +155,6 @@ NSInteger CMBorrowConditionItemTag = 500;
     if (!_switchImageView) {
         _switchImageView = [[UIImageView alloc] initWithFrame:CGRectMake(_conditionTextLabel.right, _conditionTextLabel.top, 13, 13)];
         _switchImageView.image = [UIImage imageNamed:@"condition_normal_select"];
-//        _switchImageView.backgroundColor = [UIColor redColor];
     }
     return _switchImageView;
 }

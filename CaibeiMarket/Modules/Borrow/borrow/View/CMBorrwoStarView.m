@@ -37,7 +37,6 @@
     _numLabel.text = title;
 }
 
-
 - (UIImageView *)starImageView
 {
     if (!_starImageView) {
