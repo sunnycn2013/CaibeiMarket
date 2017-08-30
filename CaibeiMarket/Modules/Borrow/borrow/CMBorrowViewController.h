@@ -7,4 +7,18 @@
 
 @interface CMBorrowViewController : RootViewController
 
+/*
+ //lendMoney
+ //lendPerid
+ //monthlyInterestRate
+ //onlineTime
+ //creditStanding
+ //hasCredit///
+ //lendTotalMoney
+ //lendTotalPerid
+ //throughputRate//
+ */
+@property (nonatomic,strong) NSDictionary * parameters;
+
+- (instancetype)initWithMoney:(NSString *)money time:(NSString *)time;
 @end

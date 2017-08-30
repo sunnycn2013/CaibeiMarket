@@ -63,7 +63,6 @@
     CMHomeContent  * content = [CMHomeContent new];
     content.actionType = CMHomeActionTypeContent;
     self.model = content;
-    
     //07-07 12:12 137*****000的用户借款成功1000元
     NSDate * date = [NSDate dateWithTimeIntervalSince1970:[self.homeInfo.createDate doubleValue]/1000];
     NSString * dateStr = [date description];

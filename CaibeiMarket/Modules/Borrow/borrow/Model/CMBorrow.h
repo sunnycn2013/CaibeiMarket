@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "CMBorrowChoose.h"
 
+//列表数据对象
 @interface CMBorrowCrads : NSObject
 
 @property (nonatomic,strong)NSNumber * hasActivity;
@@ -42,4 +43,5 @@
 
 - (NSDictionary *)searchConditions;
 
+- (void)updateCondition:(NSString *)value style:(CMBorrowChooseItemType)style;
 @end

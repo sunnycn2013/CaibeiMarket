@@ -29,7 +29,16 @@
 
 @implementation CMBorrowViewController
 
-- (void)viewDidLoad {
+- (instancetype)initWithMoney:(NSString *)money time:(NSString *)time
+{
+    self.borrow = [[CMBorrow alloc] init];
+    [self.borrow updateCondition:money style:CMBorrowChooseItemTypeLendMoney];
+    [self.borrow updateCondition:time style:CMBorrowChooseItemTypeOnlineTime];
+    return [super initWithParams:nil];
+}
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     self.navigationController.title = @"贷款";
     self.showChooseView = NO;

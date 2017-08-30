@@ -62,4 +62,6 @@ typedef NS_ENUM(NSInteger, CMBorrowChooseItemType) {
 
 - (NSDictionary *)searchConditions;
 
+- (void)updateCondition:(NSString *)value style:(CMBorrowChooseItemType)style;
+
 @end

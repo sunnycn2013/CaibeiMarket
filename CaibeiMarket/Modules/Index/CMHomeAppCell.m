@@ -35,8 +35,7 @@
     app1.title = @"常见问题";
     app1.imageName = @"icon_01";
     app1.actionType = @"home_app";
-//    app1.jumUrl = @"http://www.icaibei.com/about/help.html";
-    app1.jumUrl =@"http://www.btc38.com/news/2017/8/15150.html";
+    app1.jumUrl = @"http://www.icaibei.com/about/help.html";
     
     CMHomeApp * app2 = [[CMHomeApp alloc] init];
     app2.title = @"关于我们";

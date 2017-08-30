@@ -223,6 +223,23 @@
     return params;
 }
 
+- (void)updateCondition:(NSString *)value style:(CMBorrowChooseItemType)style
+{
+    for (int i = 0; i<self.data.count; i++) {
+        CMBorrowChooseItem * item = [self.data objectAtIndex:i];
+        if (item.style == style) {
+            item.selectValue = value;
+        }
+    }
+    
+    for (int j = 0; j<self.conditions.count; j++) {
+        CMBorrowChooseItem * item = [self.conditions objectAtIndex:j];
+        if (item.style == style) {
+            item.selectValue = value;
+        }
+    }
+
+}
 
 
 @end
