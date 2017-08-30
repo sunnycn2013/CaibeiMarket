@@ -83,6 +83,30 @@
 {
     _textField.secureTextEntry = secureTextEntry;
 }
+
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    if ([self.delegate respondsToSelector:@selector(textFieldShouldBeginEditing:)]) {
+        return [self.delegate textFieldShouldBeginEditing:textField];
+    }
+    return YES;
+
+}
+//- (BOOL)textFieldShouldEndEditing:(UITextField *)textField;
+//- (void)textFieldDidEndEditing:(UITextField *)textField;
+//- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [[AppDelegate shareAppDelegate].window endEditing:YES];
+    if ([self.delegate respondsToSelector:@selector(textFieldShouldReturn:)]) {
+        return [self.delegate textFieldShouldReturn:textField];
+    }
+    return YES;
+}
+
 #pragma mark - set get
 - (UIView *)bgView
 {

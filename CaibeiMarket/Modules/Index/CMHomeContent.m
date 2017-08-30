@@ -12,7 +12,7 @@
 
 - (CGFloat)heightForRowCell
 {
-    return kIPhone6Scale(500.0);
+    return kIPhone6Scale(550.0);
 }
 
 @end

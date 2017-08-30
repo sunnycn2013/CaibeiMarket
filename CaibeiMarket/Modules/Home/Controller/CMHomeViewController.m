@@ -134,6 +134,7 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
             cell = [[CMHomeAppCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndetifier];
         }else if ([cellIndetifier isEqualToString:kCMHomeContentCellIdentifier]){
             cell = [[CMHomeContentCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndetifier];
+            [(CMHomeContentCell *)cell setDelegate:self];
         }
     }
     kWeakSelf(self)
@@ -163,7 +164,7 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
             NSString * jumpUrl = [(id<CMHomeDataProtocol>)model jumUrl] ? : @"";
             RootWebViewController * webview = [[RootWebViewController alloc] initWithParams:@{@"title" : title,@"url" : jumpUrl}];
             [self.navigationController pushViewController:webview animated:YES];
-        }else if ([actionType isEqualToString:CMHomeActionTypeApp]){
+        }else if ([actionType isEqualToString:CMHomeActionTypeContent]){
             if (![[CMUserManager sharedInstance] isLogined]) {
                 LoginViewController * viewController = [[LoginViewController alloc] init];
                 [self.navigationController pushViewController:viewController animated:YES];
@@ -174,6 +175,13 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
         }
     }
 }
+
+- (void)contentDidBeginEditing:(CMHomeContentCell *)cell description:(NSString *)des
+{
+    [self.tableView setContentOffset:CGPointMake(0, 100)];
+//    [self.tableView scrollToRow:3 inSection:0 atScrollPosition:0 animated:YES];
+}
+
 #pragma mark - set get
 
 @end

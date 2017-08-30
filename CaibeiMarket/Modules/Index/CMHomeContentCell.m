@@ -10,6 +10,7 @@
 #import "CMHomeContentCorverFlowView.h"
 #import "CMTextFieldView.h"
 #import "CMHomeModel.h"
+#import "CMHomeContent.h"
 
 @interface CMHomeContentCell ()
 
@@ -58,10 +59,11 @@
 
 - (void)fillData:(id)model
 {
-    if (![model isKindOfClass:[CMHomeInfo class]]) {
-        return;
-    }
     self.homeInfo = model;
+    CMHomeContent  * content = [CMHomeContent new];
+    content.actionType = CMHomeActionTypeContent;
+    self.model = content;
+    
     //07-07 12:12 137*****000的用户借款成功1000元
     NSDate * date = [NSDate dateWithTimeIntervalSince1970:[self.homeInfo.createDate doubleValue]/1000];
     NSString * dateStr = [date description];
@@ -86,6 +88,16 @@
 }
 
 #pragma mark - set get
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    if ([self.delegate respondsToSelector:@selector(contentDidBeginEditing:description:)]) {
+        [self.delegate contentDidBeginEditing:self description:nil];
+    }
+    return YES;
+}
+
+#pragma mark - set get
 - (CMTextFieldView *)borrowTextFiled
 {
     if (!_borrowTextFiled)
@@ -94,6 +106,7 @@
         _borrowTextFiled = [[CMTextFieldView alloc] initWithFrame:CGRectMake(kIPhone6Scale(148)/2, kIPhone6Scale(33), width, kIPhone6Scale(45))];
         _borrowTextFiled.backgroundColor = [UIColor whiteColor];
         _borrowTextFiled.placeholder = @"输入借款额度";
+        _borrowTextFiled.delegate = self;
     }
     return _borrowTextFiled;
 }

@@ -37,6 +37,7 @@ NSString * CMHomeActionTypeContent = @"home_content";
     banner.actionType = CMHomeActionTypeBanner;
     CMHomeApp * app = [CMHomeApp new];
     app.actionType = CMHomeActionTypeApp;
+    
     CMHomeContent  * content = [CMHomeContent new];
     content.actionType = CMHomeActionTypeContent;
     

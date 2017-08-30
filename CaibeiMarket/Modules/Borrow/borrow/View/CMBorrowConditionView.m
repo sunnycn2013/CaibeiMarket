@@ -33,7 +33,7 @@ NSInteger CMBorrowConditionNum     = 4;
 - (void)setUI{
     CGFloat width  = KScreenWidth/CMBorrowConditionNum;
     CGFloat height = 46.0;
-    NSArray * array = @[@"额度",@"放宽速度",@"月利率",@"筛选"];
+    NSArray * array = @[@"额度高低",@"期限",@"月利率",@"筛选"];
     
     for (int i = 0; i< CMBorrowConditionNum; i++) {
         CMBorrowConditionItem * item = [[CMBorrowConditionItem alloc] initWithFrame:CGRectMake(width * i, 0, width, height)];
