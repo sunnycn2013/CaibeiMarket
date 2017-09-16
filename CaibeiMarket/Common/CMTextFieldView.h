@@ -26,5 +26,6 @@
 @property (nonatomic,assign)CGFloat   fontSize;
 @property (nonatomic,assign)BOOL      secureTextEntry;
 @property (nonatomic,assign)id        delegate;
+@property (nonatomic,assign)UIKeyboardType keyboardType;
 
 @end

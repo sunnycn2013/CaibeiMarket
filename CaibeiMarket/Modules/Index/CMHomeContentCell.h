@@ -14,6 +14,8 @@
 
 - (void)contentDidBeginEditing:(CMHomeContentCell *)cell description:(NSString *)des;
 
+- (void)contentShouldReturn:(CMHomeContentCell *)cell value:(NSString *)value;
+
 @end
 
 @interface CMHomeContentCell : UITableViewCell<CMHomeRenderProtocol>

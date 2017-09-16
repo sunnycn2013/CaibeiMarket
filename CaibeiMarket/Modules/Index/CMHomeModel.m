@@ -17,7 +17,27 @@ NSString * CMHomeActionTypeContent = @"home_content";
 
 @implementation CMHomeInfo
 
+- (void)mj_keyValuesDidFinishConvertingToObject
+{
+    self.servicePersonTime = [self formattingByString:self.servicePersonTime];
+    self.totalLendMoney = [self formattingByString:self.totalLendMoney];
 
+}
+
+- (NSString *)formattingByString:(NSString *)string
+{
+    NSInteger length = string.length;
+    NSInteger totoalMoneyCount = string.length / 3;
+    NSInteger lastMoneyCount = string.length % 3;
+    
+    NSMutableString * contentStr = [NSMutableString string];
+    for (int i=0; i<totoalMoneyCount; i++) {
+        [contentStr appendString:[string substringWithRange:NSMakeRange(3 * i, 3)]];
+        [contentStr appendString:@","];
+    }
+    [contentStr appendString:[string substringWithRange:NSMakeRange(length - lastMoneyCount, lastMoneyCount)]];
+    return [contentStr copy];
+}
 @end
 
 @implementation CMHomeModel

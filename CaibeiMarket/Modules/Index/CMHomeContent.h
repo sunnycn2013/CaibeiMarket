@@ -13,4 +13,8 @@
 
 @property (nonatomic,strong)NSString * actionType;
 
+@property (nonatomic,strong)NSString * totalMoney;
+
+@property (nonatomic,strong)NSString * time;
+
 @end

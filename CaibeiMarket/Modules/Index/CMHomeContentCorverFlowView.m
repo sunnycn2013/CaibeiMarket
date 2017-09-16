@@ -10,6 +10,8 @@
 #import <iCarousel/iCarousel.h>
 #import "CMHomeContentCorverFlowItem.h"
 
+#define CMHomeContentCorverFlowTag 5000
+
 @interface CMHomeContentCorverFlowView ()<iCarouselDelegate,iCarouselDataSource>
 
 @property (nonatomic,strong)UILabel * desLabel;
@@ -43,16 +45,31 @@
     [self.scrollView scrollToItemAtIndex:3 animated:YES];
 }
 
+- (void)updateItemStyleIndex:(NSInteger)index
+{
+    NSArray * array = [self.scrollView subviews];
+    for (UIView * view in array)
+    {
+        if ([view isKindOfClass:[CMHomeContentCorverFlowItem class]])
+        {
+            if (view.tag == CMHomeContentCorverFlowTag + index) {
+                [(CMHomeContentCorverFlowItem *)view setStyle:CMHomeContentCorverFlowItemTypeSelected];
+            }else{
+                [(CMHomeContentCorverFlowItem *)view setStyle:CMHomeContentCorverFlowItemTypeNormal];
+            }
+        }
+    }
+}
 #pragma iCarousel
 
 - (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel
 {
-    return 21;
+    return 8;
 }
 
 - (NSInteger)numberOfPlaceholdersInCarousel:(iCarousel *)carousel
 {
-    return 5;
+    return 4;
 }
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view
@@ -61,7 +78,10 @@
     if (!reuseView) {
         reuseView = [[CMHomeContentCorverFlowItem alloc] initWithFrame:CGRectMake(0, 1, 65, 45)];
         reuseView.backgroundColor = [UIColor clearColor];
+        reuseView.tag = CMHomeContentCorverFlowTag +index;
     }
+    reuseView.text = [NSString stringWithFormat:@"%ld",(index + 1)* 7];
+    [self updateItemStyleIndex:index];
     return reuseView;
 }
 
@@ -71,6 +91,8 @@
     if (!reuseView) {
         reuseView = [[CMHomeContentCorverFlowItem alloc] initWithFrame:CGRectMake(0, 1, 65, 45)];
         reuseView.backgroundColor = [UIColor clearColor];
+//        reuseView.text = [NSString stringWithFormat:@"%ld",index * 7];
+        reuseView.tag = CMHomeContentCorverFlowTag +index;
     }
     return reuseView;
 }

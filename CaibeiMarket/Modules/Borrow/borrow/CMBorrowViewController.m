@@ -40,7 +40,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationController.title = @"贷款";
+    self.title = @"贷款";
     self.showChooseView = NO;
     
     [self.view addSubview:self.conditionView];

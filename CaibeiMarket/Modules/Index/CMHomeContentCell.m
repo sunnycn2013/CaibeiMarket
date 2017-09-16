@@ -24,6 +24,8 @@
 @property (nonatomic,strong) UILabel * borrowDes01Label; //已经服务多少人
 @property (nonatomic,strong) UILabel * borrowDes02Label; //累计服务多少额度
 @property (nonatomic,strong) CMHomeInfo * homeInfo;
+@property (nonatomic,strong) CMHomeContent * content;
+
 @end
 
 @implementation CMHomeContentCell
@@ -52,8 +54,9 @@
 
 - (void)applyOrder:(UIButton *)button
 {
+    self.content.totalMoney = self.borrowTextFiled.text;
     if (self.tapBlock) {
-        self.tapBlock(self.model);
+        self.tapBlock(self.content);
     }
 }
 
@@ -62,7 +65,7 @@
     self.homeInfo = model;
     CMHomeContent  * content = [CMHomeContent new];
     content.actionType = CMHomeActionTypeContent;
-    self.model = content;
+    self.content = content;
     //07-07 12:12 137*****000的用户借款成功1000元
     NSDate * date = [NSDate dateWithTimeIntervalSince1970:[self.homeInfo.createDate doubleValue]/1000];
     NSString * dateStr = [date description];
@@ -83,7 +86,29 @@
             [self.recentLendingLabel setAttributedText:attrStr];
         }
     }
-   
+    
+    NSString * servicePeople = self.homeInfo.servicePersonTime;
+    NSString * totalLendMoney = self.homeInfo.totalLendMoney;
+    if (servicePeople.length > 0) {
+        NSString * serviceStr = [NSString stringWithFormat:@"已服务%@人完成借款",servicePeople];
+        NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:serviceStr];
+        NSInteger start = 3;
+        NSInteger length = servicePeople.length;
+        [attrStr addAttribute:NSForegroundColorAttributeName value:CMThemeColor range:NSMakeRange(start,length)];
+        [self.borrowDes01Label setAttributedText:attrStr];
+    }
+
+    if (totalLendMoney.length > 0) {
+        NSString * moneyStr = [NSString stringWithFormat:@"累计额度%@",totalLendMoney];
+        NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:moneyStr];
+        NSInteger start = 3;
+        NSInteger length = totalLendMoney.length;
+        [attrStr addAttribute:NSForegroundColorAttributeName value:CMThemeColor range:NSMakeRange(start,length)];
+        [self.borrowDes02Label setAttributedText:attrStr];
+    }
+//   _borrowDes01Label.text = @"已服务2,146人完成借款";
+//    _borrowDes02Label.text = @"累计额度312,480,678";
+
 }
 
 #pragma mark - set get
@@ -96,6 +121,15 @@
     return YES;
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if ([self.delegate respondsToSelector:@selector(contentShouldReturn:value:)]) {
+        [self.delegate contentShouldReturn:self value:nil];
+    }
+    return YES;
+
+}
+
 #pragma mark - set get
 - (CMTextFieldView *)borrowTextFiled
 {
@@ -106,6 +140,7 @@
         _borrowTextFiled.backgroundColor = [UIColor whiteColor];
         _borrowTextFiled.placeholder = @"输入借款额度";
         _borrowTextFiled.delegate = self;
+        _borrowTextFiled.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
     }
     return _borrowTextFiled;
 }

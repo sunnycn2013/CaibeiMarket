@@ -31,13 +31,13 @@
 #if DevelopSever
 
 /**开发服务器*/
-#define URL_main @"http://47.94.220.244:8080/"
-//#define URL_main @"http://192.168.11.122:8090" //展鹏
+#define URL_main @"https://icaibei.cn/"
+#define URL_IMG_main @"https://icaibei.cn/"
 
 #elif TestSever
 
 /**测试服务器*/
-#define URL_main @"http://47.94.220.244:8080/front/"
+#define URL_main @"https://icaibei.cn/front/"
 
 #elif ProductSever
 

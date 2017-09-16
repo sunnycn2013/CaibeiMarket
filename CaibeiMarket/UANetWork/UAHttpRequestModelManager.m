@@ -9,8 +9,7 @@
 #import "UAHttpRequestModelManager.h"
 #import "UAUtil.h"
 
-#define hostUrl               @"http://47.94.220.244:8080/front/"
-///borrow-supermarket/login.json
+#define hostUrl               @"https://icaibei.cn/front/"
 #define promationUrl          @"http://www.baidu.com/"
 #define ccguoHost             @"http://ccguo.github.io/"
 

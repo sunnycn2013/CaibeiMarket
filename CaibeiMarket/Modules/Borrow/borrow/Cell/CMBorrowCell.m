@@ -88,7 +88,7 @@
         self.data = (CMBorrowCrads *)model;
     }
     //http://47.94.220.244:8080/screen/20170813_716.png
-    NSString * imageURL = [NSString stringWithFormat:@"%@%@",URL_main,self.data.lendPicUrl];
+    NSString * imageURL = [NSString stringWithFormat:@"%@%@",URL_IMG_main,self.data.lendPicUrl];
     [self.iconImageView setImageWithURL:[NSURL URLWithString:imageURL] placeholder:[UIImage imageNamed:@"icaibei_placeholder"]];
     [self.companyNameLabel setText:self.data.lendName];
     NSString * extend = @"%";

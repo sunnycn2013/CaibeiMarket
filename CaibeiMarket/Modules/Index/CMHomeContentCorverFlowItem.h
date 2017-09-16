@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, CMHomeContentCorverFlowItemType){
+    CMHomeContentCorverFlowItemTypeNormal = 0,
+    CMHomeContentCorverFlowItemTypeSelected,
+};
+
+//typedef NS_ENUM(NSInteger, CMBorrowChooseItemType) {
+
+
 @interface CMHomeContentCorverFlowItem : UIView
+
+@property (nonatomic,strong)NSString * text;
+
+@property (nonatomic,assign)CMHomeContentCorverFlowItemType style;
 
 @end

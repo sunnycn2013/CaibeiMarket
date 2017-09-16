@@ -22,6 +22,10 @@ extern NSString * CMHomeActionTypeContent;
 @property (nonatomic,strong)NSString * servicePersonTime;
 @property (nonatomic,strong)NSString * totalLendMoney;
 
+@property (nonatomic,strong)NSString * actionType;
+@property (nonatomic,strong)NSString * title;
+@property (nonatomic,strong)NSString * jumUrl;
+
 @end
 
 @interface CMHomeModel : NSObject

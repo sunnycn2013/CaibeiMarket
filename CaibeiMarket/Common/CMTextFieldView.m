@@ -84,6 +84,10 @@
     _textField.secureTextEntry = secureTextEntry;
 }
 
+- (void)setKeyboardType:(UIKeyboardType)keyboardType
+{
+    _textField.keyboardType = keyboardType;
+}
 
 #pragma mark - UITextFieldDelegate
 
@@ -123,6 +127,7 @@
         _textField = [[UITextField alloc] init];
         _textField.backgroundColor = [UIColor whiteColor];
         _textField.font = [UIFont systemFontOfSize:kIPhone6Scale(14)];
+        _textField.delegate = self;
 //        _textField.backgroundColor = [UIColor redColor];
     }
     return _textField;

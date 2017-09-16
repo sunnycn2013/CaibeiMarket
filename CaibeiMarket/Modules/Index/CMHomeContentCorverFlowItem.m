@@ -35,6 +35,22 @@
     self.numberLabel.centerX = self.centerX;
 }
 
+- (void)setText:(NSString *)text
+{
+    self.numberLabel.text = text;
+}
+
+- (void)setStyle:(CMHomeContentCorverFlowItemType)style
+{
+    if (style == CMHomeContentCorverFlowItemTypeNormal) {
+        _numberLabel.layer.borderColor = [UIColor grayColor].CGColor;
+        _numberLabel.textColor = [UIColor grayColor];
+    }else{
+        _numberLabel.layer.borderColor = CMThemeColor.CGColor;
+        _numberLabel.textColor = CMThemeColor;
+    }
+}
+
 - (UILabel *)numberLabel
 {
     if (!_numberLabel) {

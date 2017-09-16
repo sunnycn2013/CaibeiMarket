@@ -25,6 +25,27 @@
     return [[self alloc] initWithBaseURL:nil];
 }
 
+////https证书
+//- (AFSecurityPolicy*)customSecurityPolicy
+//{
+//    // /先导入证书
+//    NSString *cerPath = [[NSBundle mainBundle] pathForResource:@"ico360buy" ofType:@"cer"];//证书的路径
+//    NSData *certData = [NSData dataWithContentsOfFile:cerPath];
+//    
+//    // AFSSLPinningModeCertificate 使用证书验证模式
+//    AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
+//    
+//    // allowInvalidCertificates 是否允许无效证书（也就是自建的证书），默认为NO
+//    // 如果是需要验证自建证书，需要设置为YES
+//    
+//    securityPolicy.allowInvalidCertificates = YES;
+//    securityPolicy.validatesDomainName = YES;
+//    
+//    securityPolicy.pinnedCertificates = [NSSet setWithObject:certData];
+//    
+//    return securityPolicy;
+//}
+
 - (instancetype _Nullable )initWithBaseURL:(nullable NSString *)urlString
 {
     return [self initWithBaseURL:urlString sessionConfiguration:nil];
@@ -43,7 +64,8 @@
         self.httpSessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:url sessionConfiguration:configuration];
         self.httpSessionManager.requestSerializer =  [AFHTTPRequestSerializer serializer];
         self.httpSessionManager.responseSerializer =  [AFHTTPResponseSerializer serializer];
-        self.httpSessionManager.securityPolicy.allowInvalidCertificates =  YES;
+        self.httpSessionManager.securityPolicy = [AFSecurityPolicy defaultPolicy];
+        self.httpSessionManager.securityPolicy.validatesDomainName = YES;
         self.httpSessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"application/json", @"text/json", @"text/javascript",nil];//设置相应内容类型
     }
     return self;
