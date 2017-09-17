@@ -140,7 +140,7 @@
         _borrowTextFiled.backgroundColor = [UIColor whiteColor];
         _borrowTextFiled.placeholder = @"输入借款额度";
         _borrowTextFiled.delegate = self;
-        _borrowTextFiled.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
+        _borrowTextFiled.keyboardType = UIKeyboardTypeNumberPad;
     }
     return _borrowTextFiled;
 }

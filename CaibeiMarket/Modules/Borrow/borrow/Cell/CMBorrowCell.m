@@ -91,8 +91,7 @@
     NSString * imageURL = [NSString stringWithFormat:@"%@%@",URL_IMG_main,self.data.lendPicUrl];
     [self.iconImageView setImageWithURL:[NSURL URLWithString:imageURL] placeholder:[UIImage imageNamed:@"icaibei_placeholder"]];
     [self.companyNameLabel setText:self.data.lendName];
-    NSString * extend = @"%";
-    [self.applyInterestabelLabel setText:[NSString stringWithFormat:@"%@%@",self.data.monthlyInterestRate,extend]];
+    [self.applyInterestabelLabel setText:[NSString stringWithFormat:@"%@",self.data.monthlyInterestRate]];
     [self.applyNumLabel setText:[NSString stringWithFormat:@"%@",self.data.totalApply]];
     [self.starImageView setHidden:(!self.data.showStar)];
     [self.starImageView updateTitle:[NSString stringWithFormat:@"%ld",self.data.index + 1]];
@@ -114,7 +113,7 @@
 - (UILabel *)companyNameLabel
 {
     if (!_companyNameLabel) {
-        _companyNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(_iconImageView.right + kIPhone6PScale(17), _iconImageView.top, kIPhone6PScale(100), kIPhone6PScale(17))];
+        _companyNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(_iconImageView.right + kIPhone6PScale(17), _iconImageView.top, kIPhone6PScale(180), kIPhone6PScale(17))];
         _companyNameLabel.font = [UIFont boldSystemFontOfSize:kIPhone6Scale(15)];
         _companyNameLabel.text = @"秒贷小额贷";
     }
@@ -146,7 +145,6 @@
     }
     return _isCreditLabel;
 }
-
 
 
 - (UILabel *)isPromationLabel
@@ -192,7 +190,7 @@
         _applyInterestabelLabel = [[UILabel alloc] initWithFrame:CGRectMake(originX, _applyNumLabel.top, labelWidth, kIPhone6PScale(15))];
         _applyInterestabelLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(10)];
         _applyInterestabelLabel.textColor = [UIColor redColor];
-        _applyInterestabelLabel.text = @"0.5元/月";
+        _applyInterestabelLabel.text = @"月利率：0.5元/月";
         _applyInterestabelLabel.textAlignment = NSTextAlignmentRight;
     }
     return _applyInterestabelLabel;
@@ -222,6 +220,7 @@
         _borrowLinesLabel.textColor = [UIColor lightGrayColor];
         _borrowLinesLabel.text = @"额度: 500-5000元";
         _borrowLinesLabel.textAlignment = NSTextAlignmentRight;
+        _borrowLinesLabel.adjustsFontSizeToFitWidth = YES;
 //        _borrowLinesLabel.backgroundColor = [UIColor redColor];
     }
     return _borrowLinesLabel;

@@ -12,17 +12,26 @@
 
 - (NSString *)monthlyInterestRate
 {
-    NSString * des = @"%";
+//    NSString * des = @"%";
     NSString * content = [NSString stringWithFormat:@"%@",_monthlyInterestRate];
-    NSString * string = [NSString stringWithFormat:@"%@/月",content];
+    NSString * string = [NSString stringWithFormat:@"%@",content];
     return string;
 }
 
 - (NSString *)throughputRate
 {
-    NSString * des = @"%";
-    NSString * string = [NSString stringWithFormat:@"%@%@",_throughputRate,des];
+    NSString * string = [NSString stringWithFormat:@"%@",_throughputRate];
     return string;
+}
+
+- (NSNumber *)loanTime
+{
+    return _loanTime ? : @(1000);
+}
+    
+- (NSNumber *)totalApply
+{
+    return _totalApply ? : @(1000);
 }
 @end
 

@@ -105,10 +105,11 @@
 - (UILabel *)cashBacklabel
 {
     if (!_cashBacklabel) {
-        _cashBacklabel = [[UILabel alloc] initWithFrame:CGRectMake(KScreenWidth - kIPhone6PScale(128), kIPhone6PScale(14), kIPhone6PScale(28), kIPhone6PScale(16))];
+        _cashBacklabel = [[UILabel alloc] initWithFrame:CGRectMake(KScreenWidth - kIPhone6PScale(128), kIPhone6PScale(14), kIPhone6PScale(58), kIPhone6PScale(16))];
         _cashBacklabel.text = @"3天";
         _cashBacklabel.textColor = [UIColor grayColor];
         _cashBacklabel.font = [UIFont systemFontOfSize:kIPhone6PScale(12)];
+        _cashBacklabel.textAlignment = NSTextAlignmentCenter;
     }
     return _cashBacklabel;
 }
@@ -119,6 +120,7 @@
         _cashBackDeslabel = [[UILabel alloc] initWithFrame:CGRectMake(KScreenWidth - kIPhone6PScale(136), kIPhone6PScale(37), kIPhone6PScale(55), kIPhone6PScale(16))];
         _cashBackDeslabel.text = @"审核时间";
         _cashBackDeslabel.textColor = [UIColor grayColor];
+        _cashBackDeslabel.textAlignment = NSTextAlignmentCenter;
         _cashBackDeslabel.font = [UIFont systemFontOfSize:kIPhone6PScale(12)];
     }
     return _cashBackDeslabel;

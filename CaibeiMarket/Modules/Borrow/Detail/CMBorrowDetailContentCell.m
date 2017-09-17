@@ -85,8 +85,7 @@
     [self.totalMoneylabel setText:[NSString stringWithFormat:@"%@元",self.model.lendMoney?:@"0"]];
     [self.supplyNameLabel setText:self.model.lendName ? : @"喵贷贷款"];
     [self.lendingTimeLabel setText:[NSString stringWithFormat:@"放款时间: %@小时放款",self.model.loanTime]];
-    [self.totalApplyNumberLabel setText:[NSString stringWithFormat:@"放款时间: %@小时放款",self.model.totalApply]];
-
+    [self.totalApplyNumberLabel setText:[NSString stringWithFormat:@"%@人已经申请",self.model.totalApply]];
     [self.interestDesLabel setText:self.model.monthlyInterestRate];
     [self.approveLabel setText:[NSString stringWithFormat:@"%@",self.model.throughputRate]];
 }
@@ -158,8 +157,9 @@
 - (UILabel *)interestDesLabel
 {
     if (!_interestDesLabel) {
-        _interestDesLabel = [[UILabel alloc] initWithFrame:CGRectMake(_interestLabel.right, kIPhone6PScale(49), kIPhone6PScale(57), kIPhone6PScale(17))];
+        _interestDesLabel = [[UILabel alloc] initWithFrame:CGRectMake(_interestLabel.right, kIPhone6PScale(49), kIPhone6PScale(157), kIPhone6PScale(17))];
 //        _interestDesLabel.text = @"0.25%月";
+        _interestDesLabel.textAlignment = NSTextAlignmentLeft;
         _interestDesLabel.font = [UIFont systemFontOfSize:kIPhone6PScale(12)];
     }
     return _interestDesLabel;

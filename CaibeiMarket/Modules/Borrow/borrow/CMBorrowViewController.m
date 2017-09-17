@@ -151,6 +151,7 @@
 {
     NSLog(@"aa");
     [self hideChooseView];
+    [self loadData];
 }
 
 - (void)borrowConditionView:(CMBorrowConditionView *)conditionView selectedChooseView:(NSInteger)index
@@ -171,6 +172,7 @@
             self.chooseView.frame = CGRectMake(0, _conditionView.bottom, KScreenWidth, 0);
         }];
     }
+    [self loadData];
 }
 
 - (void)showChooseView1
@@ -181,7 +183,6 @@
         self.showChooseView = YES;
         self.chooseView.frame = CGRectMake(0, _conditionView.bottom, KScreenWidth, 424);
     }];
-    
 }
 
 - (void)hideChooseView
