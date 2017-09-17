@@ -1,10 +1,10 @@
 # Uncomment the next line to define a global platform for your project
 
-#require 'cocoapods-multithread-installpod'
+require 'cocoapods-multithread-installpod'
 
 #source 'https://github.com/CocoaPods/Specs.git'
 #ali_source 'icaibei-specs-mirror'
-#ali_source 'alibaba-specs-mirror'
+ali_source 'alibaba-specs-mirror'
 inhibit_all_warnings!
 
 platform :ios, '8.0'
