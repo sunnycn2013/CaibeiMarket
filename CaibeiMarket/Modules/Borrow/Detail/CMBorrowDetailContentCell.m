@@ -83,6 +83,7 @@
     self.model = (CMBorrowProduct *)model;
 
     [self.totalMoneylabel setText:[NSString stringWithFormat:@"%@元",self.model.lendMoney?:@"0"]];
+    [self.totalMoneyPricelabel setText:[NSString stringWithFormat:@"每日手续费%@元",self.model.lendPeriod]];
     [self.supplyNameLabel setText:self.model.lendName ? : @"喵贷贷款"];
     [self.lendingTimeLabel setText:[NSString stringWithFormat:@"放款时间: %@小时放款",self.model.loanTime]];
     [self.totalApplyNumberLabel setText:[NSString stringWithFormat:@"%@人已经申请",self.model.totalApply]];

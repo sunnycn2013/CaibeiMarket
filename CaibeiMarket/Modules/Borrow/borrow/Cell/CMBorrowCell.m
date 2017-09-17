@@ -97,7 +97,6 @@
     [self.starImageView updateTitle:[NSString stringWithFormat:@"%ld",self.data.index + 1]];
 }
 
-
 #pragma mark - set get
 
 - (UIImageView *)iconImageView
