@@ -35,13 +35,13 @@
     app1.title = @"常见问题";
     app1.imageName = @"icon_01";
     app1.actionType = @"home_app";
-    app1.jumUrl = @"http://www.icaibei.com/about/help.html";
+    app1.jumUrl = @"https://www.icaibei.cn/admin/about/help.html";
     
     CMHomeApp * app2 = [[CMHomeApp alloc] init];
     app2.title = @"关于我们";
     app2.imageName = @"caibei_about";
     app2.actionType = @"home_app";
-    app2.jumUrl = @"http://www.icaibei.com/about/index.html";
+    app2.jumUrl = @"https://www.icaibei.cn/admin/about/index.html";
     
     CMHomeApp * app3 = [[CMHomeApp alloc] init];
     app3.title = @"新开平台";

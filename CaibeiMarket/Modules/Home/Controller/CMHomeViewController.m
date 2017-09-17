@@ -73,11 +73,9 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
     [super didReceiveMemoryWarning];
 }
 
-
 -(void)setupUI
 {
 }
-
 
 -(void)headerRereshing{
     kWeakSelf(self)
@@ -110,6 +108,7 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
 
 - (void)tapIndexView:(UITapGestureRecognizer *)gesture
 {
+    [self resetTableOffset];
     [[kAppDelegate window] endEditing:YES];
 }
 #pragma mark - UITableViewDelegate,UITableViewDataSource
@@ -153,6 +152,7 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
 
 - (void)processWithModel:(id)model
 {
+    UIViewController * viewController = nil;
     if([model conformsToProtocol:@protocol(CMHomeDataProtocol)])
     {
         NSString * actionType = [(id<CMHomeDataProtocol>)model actionType];
@@ -162,26 +162,44 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
         }else if ([actionType isEqualToString:CMHomeActionTypeApp]){
             NSString * title = [(id<CMHomeDataProtocol>)model title] ? : @"";
             NSString * jumpUrl = [(id<CMHomeDataProtocol>)model jumUrl] ? : @"";
-            RootWebViewController * webview = [[RootWebViewController alloc] initWithParams:@{@"title" : title,@"url" : jumpUrl}];
-            [self.navigationController pushViewController:webview animated:YES];
+            viewController = [[RootWebViewController alloc] initWithParams:@{@"title" : title,@"url" : jumpUrl}];
         }else if ([actionType isEqualToString:CMHomeActionTypeContent]){
             if (![[CMUserManager sharedInstance] isLogined]) {
-                LoginViewController * viewController = [[LoginViewController alloc] init];
-                [self.navigationController pushViewController:viewController animated:YES];
-                return;
+                viewController = [[LoginViewController alloc] init];
+            }else{
+                viewController = [[CMBorrowViewController alloc] initWithParams:nil];
             }
-            CMBorrowViewController * borrow = [[CMBorrowViewController alloc] initWithParams:nil];
-            [self.navigationController pushViewController:borrow animated:YES];
         }
     }
+    
+    [self.navigationController pushViewController:viewController animated:YES];
+
+    [UIView animateWithDuration:0.5 animations:^{
+        [self resetTableOffset];
+    } completion:^(BOOL finished) {
+    }];
 }
 
 - (void)contentDidBeginEditing:(CMHomeContentCell *)cell description:(NSString *)des
 {
-    [self.tableView setContentOffset:CGPointMake(0, 100)];
-//    [self.tableView scrollToRow:3 inSection:0 atScrollPosition:0 animated:YES];
+    [UIView animateWithDuration:0.5 animations:^{
+        [self.tableView setContentOffset:CGPointMake(0, 100)];
+    } completion:^(BOOL finished) {
+    }];
+}
+    
+- (void)contentShouldReturn:(CMHomeContentCell *)cell value:(NSString *)value
+{
+    [self resetTableOffset];
 }
 
+- (void)resetTableOffset
+{
+    [UIView animateWithDuration:0.5 animations:^{
+        [self.tableView setContentOffset:CGPointMake(0, 0)];
+    } completion:^(BOOL finished) {
+    }];
+}
 #pragma mark - set get
 
 @end
