@@ -147,6 +147,16 @@
     return _tableView;
 }
 
+- (MJRefreshBackNormalFooter *)footer
+{
+    if (!_footer) {
+        _footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerRereshing)];
+        _tableView.contentInset = UIEdgeInsetsMake(0, 0, 30, 0);
+        _tableView.mj_footer.ignoredScrollViewContentInsetBottom = 30;
+    }
+    return _footer;
+}
+
 /**
  *  懒加载collectionView
  *

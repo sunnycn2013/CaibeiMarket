@@ -24,6 +24,7 @@
 @property (nonatomic, strong) UICollectionView * collectionView;
 //@property (nonatomic, strong) MJRefreshNormalHeader *header;
 @property (nonatomic, strong) MJRefreshGifHeader *header;
+@property (nonatomic, strong) MJRefreshBackNormalFooter *footer;
 
 
 - (instancetype)initWithParams:(NSDictionary *)parameters;
