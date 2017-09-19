@@ -67,8 +67,6 @@
     [self addSubview:self.punishmentNoteImageView];
     [self addSubview:self.punishmentDesLabel];
     [self addSubview:self.punishmentLabel];
-
-//    [self addSubview:self.applyButton];
 }
 
 - (void)awakeFromNib {

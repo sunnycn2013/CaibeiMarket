@@ -64,7 +64,8 @@
     self.automaticallyAdjustsScrollViewInsets = YES;
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
 }
 
