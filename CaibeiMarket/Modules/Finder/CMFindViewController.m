@@ -34,7 +34,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.mj_header = self.header;
-    self.tableView.mj_footer = self.;
+    self.tableView.mj_footer = self.footer;
 
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerClass:[CMFindCreditCell class] forCellReuseIdentifier:@"CMFindCreditCell"];
