@@ -89,6 +89,7 @@
     [self.totalApplyNumberLabel setText:[NSString stringWithFormat:@"%@人已经申请",self.model.totalApply]];
     [self.interestDesLabel setText:self.model.monthlyInterestRate];
     [self.approveLabel setText:[NSString stringWithFormat:@"%@",self.model.throughputRate]];
+    [self.todayApplyNumberLabel setText:[NSString stringWithFormat:@"%ld",(long)[self.model.applyCount integerValue]]];
 }
 
 - (void)layoutSubviews
@@ -127,7 +128,7 @@
 {
     if (!_totalMoneyPricelabel) {
         _totalMoneyPricelabel = [[UILabel alloc] initWithFrame:CGRectMake(kIPhone6PScale(57), kIPhone6PScale(142),kIPhone6PScale(96),kIPhone6PScale(18))];
-        _totalMoneyPricelabel.text = @"每日手续费4元";
+//        _totalMoneyPricelabel.text = @"每日手续费4元";
         _totalMoneyPricelabel.font = [UIFont systemFontOfSize:kIPhone6PScale(12)];
     }
     return _totalMoneyPricelabel;
@@ -137,7 +138,7 @@
 {
     if (!_supplyNameLabel) {
         _supplyNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(kIPhone6PScale(184), kIPhone6PScale(22), kIPhone6PScale(143), kIPhone6PScale(24))];
-        _supplyNameLabel.text = @"喵贷贷款";
+//        _supplyNameLabel.text = @"喵贷贷款";
         _supplyNameLabel.font = [UIFont systemFontOfSize:14];
 //        _supplyNameLabel.backgroundColor = [UIColor redColor];
     }
@@ -170,7 +171,7 @@
 {
     if (!_lendingTimeLabel) {
         _lendingTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(_supplyNameLabel.left, kIPhone6PScale(72), kIPhone6PScale(200), kIPhone6PScale(17))];
-        _lendingTimeLabel.text = @"放款时间:1小时放款";
+//        _lendingTimeLabel.text = @"放款时间:1小时放款";
         _lendingTimeLabel.font = [UIFont systemFontOfSize:kIPhone6PScale(12)];
 //        _lendingTimeLabel.backgroundColor = [UIColor redColor];
     }
@@ -190,7 +191,7 @@
 {
     if (!_totalApplyNumberLabel) {
         _totalApplyNumberLabel = [[UILabel alloc] initWithFrame:CGRectMake(_totalApplyDesLabel.right, kIPhone6PScale(93), kIPhone6PScale(170), kIPhone6PScale(17))];
-        _totalApplyNumberLabel.text = @"12345";
+//        _totalApplyNumberLabel.text = @"12345";
         _totalApplyNumberLabel.font = [UIFont systemFontOfSize:kIPhone6PScale(12)];
     }
     return _totalApplyNumberLabel;
@@ -211,7 +212,7 @@
 {
     if (!_todayApplyNumberLabel) {
         _todayApplyNumberLabel = [[UILabel alloc] initWithFrame:CGRectMake(_todayApplyDesLabel.right,kIPhone6PScale(113), kIPhone6PScale(54), kIPhone6PScale(17))];
-        _todayApplyNumberLabel.text = @"251";
+//        _todayApplyNumberLabel.text = @"251";
         _todayApplyNumberLabel.textColor = CMThemeColor;
         _todayApplyNumberLabel.font = [UIFont systemFontOfSize:kIPhone6PScale(12)];
     }
@@ -232,7 +233,7 @@
 {
     if (!_approveLabel) {
         _approveLabel = [[UILabel alloc] initWithFrame:CGRectMake(_approveDesLabel.right, kIPhone6PScale(134), kIPhone6PScale(57), kIPhone6PScale(17))];
-        _approveLabel.text = @"50%";
+//        _approveLabel.text = @"50%";
         _approveLabel.textColor = CMThemeColor;
         _approveLabel.font = [UIFont systemFontOfSize:kIPhone6PScale(12)];
     }
