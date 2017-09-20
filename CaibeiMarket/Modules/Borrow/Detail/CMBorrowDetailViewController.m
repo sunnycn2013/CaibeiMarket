@@ -80,6 +80,7 @@
         
         if ([resultCode isEqualToString:@"0000"]) {
             [weakSelf.tableView reloadData];
+            [weakSelf processShareInfo];
         }else{
             [MBProgressHUD showErrorMessage:message];
         }

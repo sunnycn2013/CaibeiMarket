@@ -76,7 +76,7 @@
 
 - (void)shareAction:(UIButton *)sender
 {
-    [CMShareManager shareView:self.view info:nil];
+    [CMShareManager shareView:self.view info:self.shareInfo];
 }
 #pragma mark ————— 跳转登录界面 —————
 - (void)goLogin
