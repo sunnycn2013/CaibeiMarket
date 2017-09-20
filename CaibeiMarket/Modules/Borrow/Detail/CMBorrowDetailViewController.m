@@ -90,6 +90,18 @@
     }];
 }
 
+- (void)processShareInfo
+{
+    CMBorrowProduct * product = [self.detail.properties firstObject];
+    if ([product isKindOfClass:[CMBorrowProduct class]]) {
+        self.shareInfo = @{
+                           @"title" : product.lendName,
+                           @"description" : product.lendSpecial,
+                           @"url" : product.lendUrl,
+                           };
+    }
+}
+
 #pragma mark - UITableViewDelegate,UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
