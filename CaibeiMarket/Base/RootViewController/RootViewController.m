@@ -43,6 +43,11 @@
     //是否显示返回按钮
     self.isShowLiftBack = YES;
     self.StatusBarStyle = UIStatusBarStyleLightContent;
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated

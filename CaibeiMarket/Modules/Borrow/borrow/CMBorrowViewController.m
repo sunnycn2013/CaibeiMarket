@@ -44,7 +44,8 @@
     self.showChooseView = NO;
     
     [self.view addSubview:self.conditionView];
-    CGFloat marginTop =  64 + CMBorrowConditionViewHeight;
+    CGFloat top = [UIApplication sharedApplication].statusBarFrame.size.height;
+    CGFloat marginTop =  top + 44 + CMBorrowConditionViewHeight;
     self.tableView.frame = CGRectMake(0, marginTop, KScreenWidth,KScreenHeight - marginTop -44);
     self.tableView.mj_header = self.header;
     self.tableView.delegate = self;
@@ -211,7 +212,8 @@
 - (CMBorrowConditionView *)conditionView
 {
     if (!_conditionView) {
-        _conditionView = [[CMBorrowConditionView alloc] initWithFrame:CGRectMake(0, 64, KScreenWidth, CMBorrowConditionViewHeight)];
+        CGFloat top = [UIApplication sharedApplication].statusBarFrame.size.height;
+        _conditionView = [[CMBorrowConditionView alloc] initWithFrame:CGRectMake(0, top+44, KScreenWidth, CMBorrowConditionViewHeight)];
         _conditionView.backgroundColor = [UIColor whiteColor];
         _conditionView.delegate = self;
         [_conditionView setConditionSwitchStyle:CMBorrowConditionSwitchTypeclose];

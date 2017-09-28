@@ -53,8 +53,6 @@
     self.tableView.tableHeaderView = self.headerView;
     [self.view addSubview:self.tableView];
     [self.tableView reloadData];
-
-    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 - (void)setupSections
