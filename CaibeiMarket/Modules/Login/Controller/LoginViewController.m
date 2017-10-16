@@ -136,6 +136,7 @@
         _telephoneTextFiled.placeholder = @"请输入手机号";
         _telephoneTextFiled.layer.cornerRadius = height/2;
         _telephoneTextFiled.backgroundColor = [UIColor whiteColor];
+        _telephoneTextFiled.keyboardType = UIKeyboardTypeNumberPad;
     }
     return _telephoneTextFiled;
 }
@@ -146,7 +147,7 @@
         CGFloat width = KScreenWidth - kIPhone6Scale(96);
         CGFloat height = kIPhone6Scale(40);
         _pwdTextFiled = [[CMTextFieldView alloc] initWithFrame:CGRectMake(_telephoneTextFiled.left, _telephoneTextFiled.bottom + kIPhone6Scale(23), width, height)];
-        _pwdTextFiled.placeholder = @"请输入手机号";
+        _pwdTextFiled.placeholder = @"请输入密码";
         _pwdTextFiled.layer.cornerRadius = height/2;
         _pwdTextFiled.backgroundColor = [UIColor whiteColor];
         _pwdTextFiled.secureTextEntry = YES;

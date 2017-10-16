@@ -60,8 +60,8 @@
     }
     self.model = (CMBorrowProduct *)model;
 
-    [self.totalMoneylabel setText:[NSString stringWithFormat:@"%@",self.model.totalApply]];
-    [self.cashBacklabel setText:[NSString stringWithFormat:@"%@天",self.model.loanTime]];
+//    [self.totalMoneylabel setText:[NSString stringWithFormat:@"%@",self.model.totalApply]];
+//    [self.cashBacklabel setText:[NSString stringWithFormat:@"%@天",self.model.loanTime]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -83,10 +83,14 @@
 - (UILabel *)totalMoneylabel
 {
     if (!_totalMoneylabel) {
-        _totalMoneylabel = [[UILabel alloc] initWithFrame:CGRectMake(kIPhone6PScale(110), kIPhone6PScale(12), kIPhone6PScale(34), kIPhone6PScale(23))];
-        _totalMoneylabel.text = @"5元";
+//        _totalMoneylabel = [[UILabel alloc] initWithFrame:CGRectMake(kIPhone6PScale(110), kIPhone6PScale(12), kIPhone6PScale(58), kIPhone6PScale(23))];
+        _totalMoneylabel = [[UILabel alloc] initWithFrame:CGRectMake(kIPhone6PScale(58), kIPhone6PScale(12), kIPhone6PScale(152), kIPhone6PScale(23))];
+        _totalMoneylabel.text = @"暂未开放";
         _totalMoneylabel.textColor = [UIColor redColor];
+        _totalMoneylabel.textAlignment = NSTextAlignmentCenter;
+        _totalMoneylabel.adjustsFontSizeToFitWidth = YES;
         _totalMoneylabel.font = [UIFont systemFontOfSize:kIPhone6PScale(18)];
+//        _totalMoneylabel.backgroundColor = [UIColor purpleColor];
     }
     return _totalMoneylabel;
 }
@@ -97,7 +101,9 @@
         _totalMoneyDeslabel = [[UILabel alloc] initWithFrame:CGRectMake(kIPhone6PScale(58), kIPhone6PScale(37), kIPhone6PScale(152), kIPhone6PScale(15))];
         _totalMoneyDeslabel.text = @"上传带宽截图成功送话费";
         _totalMoneyDeslabel.textColor = [UIColor grayColor];
+        _totalMoneyDeslabel.textAlignment = NSTextAlignmentCenter;
         _totalMoneyDeslabel.font = [UIFont systemFontOfSize:kIPhone6PScale(12)];
+//        _totalMoneyDeslabel.backgroundColor = [UIColor purpleColor];
     }
     return _totalMoneyDeslabel;
 }
@@ -105,8 +111,8 @@
 - (UILabel *)cashBacklabel
 {
     if (!_cashBacklabel) {
-        _cashBacklabel = [[UILabel alloc] initWithFrame:CGRectMake(KScreenWidth - kIPhone6PScale(128), kIPhone6PScale(14), kIPhone6PScale(58), kIPhone6PScale(16))];
-        _cashBacklabel.text = @"3天";
+        _cashBacklabel = [[UILabel alloc] initWithFrame:CGRectMake(KScreenWidth - kIPhone6PScale(136), kIPhone6PScale(14), kIPhone6PScale(58), kIPhone6PScale(16))];
+        _cashBacklabel.text = @"暂未开放";
         _cashBacklabel.textColor = [UIColor grayColor];
         _cashBacklabel.font = [UIFont systemFontOfSize:kIPhone6PScale(12)];
         _cashBacklabel.textAlignment = NSTextAlignmentCenter;

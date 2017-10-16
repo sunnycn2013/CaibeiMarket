@@ -126,7 +126,7 @@
     
     CGFloat titleX = 0.f;
     CGFloat titleW = contentRect.size.width;
-    CGFloat titleY = contentRect.size.height * self.itemImageRatio + (self.itemImageRatio == 1.0f ? 100.0f : -5.0f);
+    CGFloat titleY = contentRect.size.height * self.itemImageRatio + (self.itemImageRatio == 1.0f ? 100.0f : -8.0f);
     CGFloat titleH = contentRect.size.height - titleY;
     
     return CGRectMake(titleX, titleY, titleW, titleH);

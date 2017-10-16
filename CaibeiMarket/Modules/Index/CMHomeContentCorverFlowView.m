@@ -118,7 +118,8 @@
     // 斜截式
     CGFloat y = k * fabs(offset) + b;
     transform = CATransform3DScale(transform, y, y, 1.0);
-    
+    NSInteger index = (NSInteger)(carousel.contentOffset.height / 65);
+    [self updateItemStyleIndex:index];
     return transform;
 }
 

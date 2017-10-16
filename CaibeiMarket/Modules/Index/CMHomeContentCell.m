@@ -141,6 +141,8 @@
         _borrowTextFiled.placeholder = @"输入借款额度";
         _borrowTextFiled.delegate = self;
         _borrowTextFiled.keyboardType = UIKeyboardTypeNumberPad;
+        _borrowTextFiled.layer.borderWidth = 0.5;
+        _borrowTextFiled.layer.borderColor = [UIColor lightGrayColor].CGColor;
     }
     return _borrowTextFiled;
 }
