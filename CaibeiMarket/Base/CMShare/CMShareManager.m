@@ -18,11 +18,17 @@
 + (void)shareView:(UIView *)view info:(NSDictionary *)params
 {
     NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
-    NSArray* imageArray = @[[UIImage imageNamed:@"icon_04"]];
-    [shareParams SSDKSetupShareParamsByText:@"分享内容"
+    
+    NSString * title = params[@"title"] ? : @"采贝";
+    NSString * des = params[@"description"] ? : @"采贝借款";
+    NSString * url = params[@"url"] ? : @"http://www.icaibei.com/";
+    NSString * imageURL = params[@"imageUrl"] ? : @"";;
+    NSArray* imageArray = @[(imageURL ? : @"icon_04")];
+
+    [shareParams SSDKSetupShareParamsByText:des
                                      images:imageArray
-                                        url:[NSURL URLWithString:@"http://mob.com"]
-                                      title:@"分享标题"
+                                        url:[NSURL URLWithString:url]
+                                      title:title
                                        type:SSDKContentTypeWebPage];
     [ShareSDK showShareActionSheet:view
                              items:[MOBShareSDKHelper shareInstance].platforems

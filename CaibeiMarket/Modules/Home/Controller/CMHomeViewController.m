@@ -52,9 +52,10 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
     self.data = [[CMHomeModel alloc] init];
     
     [self loadData];
-    self.automaticallyAdjustsScrollViewInsets = NO;
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapIndexView:)];
     [self.view addGestureRecognizer:tap];
+    
+   
 }
 
 - (void)viewWillAppear:(BOOL)animated

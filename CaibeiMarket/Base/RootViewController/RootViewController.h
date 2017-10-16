@@ -25,6 +25,7 @@
 //@property (nonatomic, strong) MJRefreshNormalHeader *header;
 @property (nonatomic, strong) MJRefreshGifHeader *header;
 @property (nonatomic, strong) MJRefreshBackNormalFooter *footer;
+@property (nonatomic, strong) NSDictionary *shareInfo;
 
 
 - (instancetype)initWithParams:(NSDictionary *)parameters;

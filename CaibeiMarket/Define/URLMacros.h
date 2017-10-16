@@ -67,6 +67,6 @@
 #define URL_user_info_change @"/api/user/info/change"
 
 
-#define URL_icaibei_about_url @"http://www.icaibei.com/about/index.html"
+#define URL_icaibei_about_url @"https://www.icaibei.cn/admin/about/index.html"
 
 #endif /* URLMacros_h */

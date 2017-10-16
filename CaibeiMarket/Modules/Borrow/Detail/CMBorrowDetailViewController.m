@@ -80,6 +80,7 @@
         
         if ([resultCode isEqualToString:@"0000"]) {
             [weakSelf.tableView reloadData];
+            [weakSelf processShareInfo];
         }else{
             [MBProgressHUD showErrorMessage:message];
         }
@@ -88,6 +89,18 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nullable error) {
         [MBProgressHUD showErrorMessage:@"服务异常"];
     }];
+}
+
+- (void)processShareInfo
+{
+    CMBorrowProduct * product = [self.detail.properties firstObject];
+    if ([product isKindOfClass:[CMBorrowProduct class]]) {
+        self.shareInfo = @{
+                           @"title" : product.lendName,
+                           @"description" : product.lendSpecial,
+                           @"url" : product.lendUrl,
+                           };
+    }
 }
 
 #pragma mark - UITableViewDelegate,UITableViewDataSource

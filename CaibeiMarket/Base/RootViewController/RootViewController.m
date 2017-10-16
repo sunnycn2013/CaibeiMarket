@@ -43,6 +43,11 @@
     //是否显示返回按钮
     self.isShowLiftBack = YES;
     self.StatusBarStyle = UIStatusBarStyleLightContent;
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -76,7 +81,7 @@
 
 - (void)shareAction:(UIButton *)sender
 {
-    [CMShareManager shareView:self.view info:nil];
+    [CMShareManager shareView:self.view info:self.shareInfo];
 }
 #pragma mark ————— 跳转登录界面 —————
 - (void)goLogin

@@ -393,6 +393,7 @@
 		C39421991F413C4900D5BB7C /* CMBorrowDetailDesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMBorrowDetailDesCell.m; sourceTree = "<group>"; };
 		C394219B1F413DE100D5BB7C /* borrow_note_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "borrow_note_icon@2x.png"; sourceTree = "<group>"; };
 		C394219D1F4148FC00D5BB7C /* borrow_detail_head_note@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "borrow_detail_head_note@2x.png"; sourceTree = "<group>"; };
+		C39ED5CA1F74071B00BA3478 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		C3A4BB5A1F29A2DE0082030A /* CMMineHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMineHeaderView.h; sourceTree = "<group>"; };
 		C3A4BB5B1F29A2DE0082030A /* CMMineHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMineHeaderView.m; sourceTree = "<group>"; };
 		C3A4BB5E1F29A7110082030A /* CMRubikCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMRubikCellProtocol.h; sourceTree = "<group>"; };
@@ -2395,6 +2396,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				C33E337D1F37161000CB9D3D /* Base */,
+				C39ED5CA1F74071B00BA3478 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -2406,6 +2408,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -2455,6 +2458,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

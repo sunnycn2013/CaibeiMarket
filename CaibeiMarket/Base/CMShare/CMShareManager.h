@@ -8,9 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+static NSString * CBShareTitle = @"title";
+static NSString * CBShareDes = @"description";
+static NSString * CBShareURL = @"url";
+static NSString * CBShareImageURL = @"imageUrl";
+
 @interface CMShareManager : NSObject
 
-//+ (void)shareInfo:(NSDictionary *)params;
 + (void)shareView:(UIView *)view info:(NSDictionary *)params;
 
 @end
