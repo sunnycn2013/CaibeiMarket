@@ -35,7 +35,9 @@ NSString * CMHomeActionTypeContent = @"home_content";
         [contentStr appendString:[string substringWithRange:NSMakeRange(3 * i, 3)]];
         [contentStr appendString:@","];
     }
-    [contentStr appendString:[string substringWithRange:NSMakeRange(length - lastMoneyCount, lastMoneyCount)]];
+    if (string.length > 3) {
+        [contentStr appendString:[string substringWithRange:NSMakeRange(length - lastMoneyCount, lastMoneyCount)]];
+    }
     return [contentStr copy];
 }
 @end
