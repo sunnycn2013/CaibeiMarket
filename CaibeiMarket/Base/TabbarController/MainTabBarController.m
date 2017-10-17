@@ -90,7 +90,7 @@
 - (void)setViewControllers:(NSArray *)viewControllers {
     
     self.TabBar.badgeTitleFont         = SYSTEMFONT(11.0f);
-    self.TabBar.itemTitleFont          = SYSTEMFONT(9.0f);
+    self.TabBar.itemTitleFont          = SYSTEMFONT(10.0f);
     self.TabBar.itemImageRatio         = self.itemImageRatio == 0 ? 0.7 : self.itemImageRatio;
 //    self.TabBar.itemTitleColor         = KBlackColor;
     self.TabBar.itemTitleColor         = [UIColor colorWithHexString:@"#999999"];

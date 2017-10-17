@@ -159,9 +159,8 @@
 {
     if (!_applyLabel) {
         _applyLabel = [[UILabel alloc] initWithFrame:CGRectMake(_companyNameLabel.left, _companyNameLabel.bottom + kIPhone6PScale(7), kIPhone6PScale(62), kIPhone6PScale(14))];
-        _applyLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(10)];
+        _applyLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(11)];
         _applyLabel.text = @"申请人数:";
-        _applyLabel.font = [UIFont systemFontOfSize:10];
         _applyLabel.textColor = [UIColor lightGrayColor];
 //        _applyLabel.backgroundColor = [UIColor purpleColor];
     }
@@ -172,7 +171,7 @@
 {
     if (!_applyNumLabel) {
         _applyNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(_applyLabel.right, _applyLabel.top, kIPhone6PScale(70), _applyLabel.height)];
-        _applyNumLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(10)];
+        _applyNumLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(11)];
         _applyNumLabel.text = @"14028:";
         _applyNumLabel.textColor = [UIColor lightGrayColor];
     }
@@ -199,7 +198,7 @@
 {
     if (!_descriptionInfoLabel) {
         _descriptionInfoLabel = [[UILabel alloc] initWithFrame:CGRectMake(_companyNameLabel.left, _applyLabel.bottom + kIPhone6PScale(4), kIPhone6PScale(151), kIPhone6PScale(15))];
-        _descriptionInfoLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(9)];
+        _descriptionInfoLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(10)];
         _descriptionInfoLabel.text = @"全新平台,活动推广中,秒批";
         _descriptionInfoLabel.textColor = [UIColor lightGrayColor];
 //        _descriptionInfoLabel.backgroundColor = [UIColor greenColor];
