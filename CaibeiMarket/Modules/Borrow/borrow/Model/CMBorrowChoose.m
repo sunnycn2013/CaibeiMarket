@@ -57,7 +57,13 @@
             return isval ? [array objectAtIndex:index] : @"";
         }
             break;
-            
+            case CMBorrowChooseItemTypeHasCredit:
+        {
+            NSArray * array = @[@"有信用卡",@"无信用卡"];
+            BOOL isval = [array count] > index;
+            return isval ? [array objectAtIndex:index] : @"";
+        }
+            break;
         default:
             break;
     }
@@ -94,6 +100,10 @@
             array = @[@"不限",@"无逾期",@"年逾期<3次",@"年逾期>3次"];
         }
             break;
+        case CMBorrowChooseItemTypeHasCredit:
+        {
+            array = @[@"有信用卡",@"无信用卡"];
+        }
             
         default:
             break;

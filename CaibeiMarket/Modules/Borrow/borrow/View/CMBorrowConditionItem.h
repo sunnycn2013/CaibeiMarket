@@ -14,7 +14,7 @@ extern NSInteger CMBorrowConditionItemTag;
 
 typedef NS_ENUM(NSInteger, CMBorrowConditionItemType){
     CMBorrowConditionItemAscending = 0,
-    CMBorrowConditionItemDescending,
+    CMBorrowConditionItemDescending = 1,
     CMBorrowConditionItemSwitch
 };
 

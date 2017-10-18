@@ -42,6 +42,7 @@
     [super viewDidLoad];
     self.title = @"贷款";
     self.showChooseView = NO;
+    self.parameters = [NSMutableDictionary dictionary];
     
     [self.view addSubview:self.conditionView];
     CGFloat top = [UIApplication sharedApplication].statusBarFrame.size.height;
@@ -83,14 +84,16 @@
 }
 
 - (void)loadData{
-    NSMutableDictionary * params = [NSMutableDictionary dictionary];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
     NSDictionary * pages = @{@"number" : @"1"};
     [params addEntriesFromDictionary:pages];
-    [params addEntriesFromDictionary:[self.borrow searchConditions]];
+    [params addEntriesFromDictionary:self.parameters];
+    
+    NSLog(@"%@",params);
     
     __weak typeof(self) weakSelf = self;
     self.request = [UAHTTPSessionManager manager];
-    [self.request POST:@"lend/lendPage.json" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
+    [self.request POST:@"lend/lendPage.json" parameters:[params copy] progress:nil success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
         weakSelf.borrow = [CMBorrow mj_objectWithKeyValues:responseObject] ;
         NSString * resultCode = [responseObject objectForKey:@"resultCode"];
         NSString * message = [responseObject objectForKey:@"message"];
@@ -150,7 +153,17 @@
 #pragma mark - CMBorrowConditionViewDelegate
 - (void)borrowConditionView:(CMBorrowConditionView *)conditionView conditionType:(CMBorrowConditionType)type sortingCondition:(CMBorrowConditionItemType)sort
 {
-    NSLog(@"aa");
+    NSMutableDictionary * parameters = [NSMutableDictionary dictionary];
+    NSInteger sortType = (NSInteger)sort;
+    if (type == CMBorrowConditionTypeAmount) {
+        [parameters setObject:@(sortType) forKey:@"lendMoneySort"];
+    }else if (type == CMBorrowConditionTypeTimeLimit){
+        [parameters setObject:@(sortType) forKey:@"lendPeriodSort"];
+    }else if (type == CMBorrowConditionTypeInterest){
+        [parameters setObject:@(sortType) forKey:@"monthlyInterestRate"];
+    }
+    [self.parameters removeAllObjects];
+    [self.parameters addEntriesFromDictionary:[parameters copy]];
     [self hideChooseView];
     [self loadData];
 }
@@ -175,6 +188,8 @@
             }];
         }
     }else{
+        [self.parameters removeAllObjects];
+        [self.parameters addEntriesFromDictionary:[self.borrow searchConditions]];
         [self loadData];
     }
 }

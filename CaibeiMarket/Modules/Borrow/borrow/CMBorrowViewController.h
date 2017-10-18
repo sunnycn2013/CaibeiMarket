@@ -18,7 +18,7 @@
  //lendTotalPerid
  //throughputRate//
  */
-@property (nonatomic,strong) NSDictionary * parameters;
+@property (nonatomic,strong) NSMutableDictionary * parameters;
 
 - (instancetype)initWithMoney:(NSString *)money time:(NSString *)time;
 @end

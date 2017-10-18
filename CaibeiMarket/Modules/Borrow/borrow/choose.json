@@ -56,13 +56,12 @@
                                 ]
              },
              {
-             "title": "时间",
+             "title": "有无信用卡",
              "style": 5,
-             "lendTotalPerid": [
-                                "1",
-                                "2",
-                                "3"
-                                ]
+             "hasCredit": [
+                           "1",
+                           "2"
+                           ]
              }
              ],
     "conditions": [
@@ -81,14 +80,6 @@
                                            "1",
                                            "2"
                                            ]
-                   },
-                   {
-                   "title": "有无信用卡",
-                   "style": 8,
-                   "hasCredit": [
-                                 "1",
-                                 "2"
-                                 ]
                    }
                    ]
 }
