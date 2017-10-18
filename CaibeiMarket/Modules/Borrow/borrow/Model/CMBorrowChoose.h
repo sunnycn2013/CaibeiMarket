@@ -24,11 +24,8 @@ typedef NS_ENUM(NSInteger, CMBorrowChooseItemType) {
 @interface CMBorrowChooseItem : NSObject
 
 @property (nonatomic,strong) NSString * title;
-
 @property (nonatomic,strong) NSString * selectValue;
-
 @property (nonatomic,assign) BOOL       isSelected;
-
 @property (nonatomic,assign) CMBorrowChooseItemType  style;
 
 @property (nonatomic,strong) NSArray * lendMoney;

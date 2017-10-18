@@ -14,7 +14,7 @@
 {
     self = [super init];
     if (self) {
-        _selectValue = nil;
+        _selectValue = @"0";
     }
     return self;
 }
@@ -219,7 +219,6 @@
             [params addEntriesFromDictionary:dic];
         }
     }
-
     return params;
 }
 
@@ -238,8 +237,6 @@
             item.selectValue = value;
         }
     }
-
 }
-
 
 @end

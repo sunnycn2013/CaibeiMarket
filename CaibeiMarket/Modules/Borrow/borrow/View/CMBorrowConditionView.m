@@ -81,7 +81,6 @@ NSInteger CMBorrowConditionNum     = 4;
             [item setStatus:CMBorrowConditionItemStatusSelected];
         }
     }
-   
 }
 #pragma mark - CMBorrowConditionItemDeleage
 - (void)borrowConditionItem:(CMBorrowConditionItem *)item selectedAtIndex:(NSInteger)index

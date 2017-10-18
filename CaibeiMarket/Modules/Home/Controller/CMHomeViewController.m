@@ -55,7 +55,8 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapIndexView:)];
     [self.view addGestureRecognizer:tap];
     
-   
+    self.tableView.top = 0;
+//    self.edgesForExtendedLayout = UIRectEdgeTop;
 }
 
 - (void)viewWillAppear:(BOOL)animated
