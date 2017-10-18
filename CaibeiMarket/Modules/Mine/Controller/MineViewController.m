@@ -53,6 +53,7 @@
     self.tableView.tableHeaderView = self.headerView;
     [self.view addSubview:self.tableView];
     [self.tableView reloadData];
+    self.tableView.top = 0;
 }
 
 - (void)setupSections

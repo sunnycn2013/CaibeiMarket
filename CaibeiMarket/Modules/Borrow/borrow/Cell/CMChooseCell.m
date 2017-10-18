@@ -58,17 +58,22 @@
     self.backgroundColor = [UIColor whiteColor];
     NSInteger count = [self.choose numCount];
     CGFloat width = KScreenWidth / 5;
-    for (int i=0 ; i<count; i++) {
+    for (int i=0 ; i<count; i++)
+    {
         NSString * itemTitle = [self.choose titleAtIndex:i];
         CMChooseItemView * itemView = [[CMChooseItemView alloc] initWithFrame:CGRectMake(width * i, 0, width, 44)];
         itemView.userInteractionEnabled = YES;
         itemView.tag = CMChooseItemTag + i;
-        [itemView setStyle:CMChooseItemViewStyleNormal];
         itemView.titleLabel.font = [UIFont systemFontOfSize:14];
         [itemView setTitle:itemTitle forState:UIControlStateNormal];
         [itemView setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [itemView setTitleColor:[UIColor purpleColor] forState:UIControlStateSelected];
         [itemView addTarget:self action:@selector(conditionSelected:) forControlEvents:UIControlEventTouchUpInside];
+        if (i == [self.choose.selectValue integerValue]) {
+            [itemView setStyle:CMChooseItemViewStyleSelected];
+        }else{
+            [itemView setStyle:CMChooseItemViewStyleNormal];
+        }
         [self.scrollView addSubview:itemView];
     }
     self.scrollView.contentSize = CGSizeMake(width * count, 44);

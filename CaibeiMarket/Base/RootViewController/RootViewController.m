@@ -43,11 +43,15 @@
     //是否显示返回按钮
     self.isShowLiftBack = YES;
     self.StatusBarStyle = UIStatusBarStyleLightContent;
-//    if (@available(iOS 11.0, *)) {
-//        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-//    } else {
-//        self.automaticallyAdjustsScrollViewInsets = NO;
-//    }
+    CGFloat version = [[UIDevice currentDevice].systemVersion doubleValue];
+    if (version >= 11.0)
+    {
+//        if (@available(iOS 11.0, *)){
+//            self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+//        }
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -136,7 +140,9 @@
 - (UITableView *)tableView
 {
     if (_tableView == nil) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, KScreenHeight) style:UITableViewStylePlain];
+        CGSize statusBarSize = [UIApplication sharedApplication].statusBarFrame.size;
+        CGFloat marginTop = statusBarSize.height + 44;
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, marginTop, KScreenWidth, KScreenHeight) style:UITableViewStylePlain];
         //头部刷新        
         //底部刷新
 //        _tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerRereshing)];
