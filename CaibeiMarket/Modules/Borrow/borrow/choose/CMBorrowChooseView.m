@@ -19,7 +19,7 @@
 @property (nonatomic,strong)UITableView * tableView;
 @property (nonatomic,strong)NSArray * data;
 
-@property (nonatomic, strong)CMBorrow *borrow;
+@property (nonatomic, strong)CMBorrowChoose *borrowChoose;
 @property (nonatomic, strong)CMBorrowChooseFooterView  *footView;
 
 @end
@@ -45,16 +45,16 @@
 
 - (void)fillData:(id)model
 {
-    if (![model isKindOfClass:[CMBorrow class]]) {
+    if (![model isKindOfClass:[CMBorrowChoose class]]) {
         return;
     }
-    self.borrow = (CMBorrow *)model;
+    self.borrowChoose = (CMBorrowChoose *)model;
     [self.tableView reloadData];
 }
 #pragma mark - UITableViewDataSource,UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return self.borrow.borrowChoose.data.count;
+    return self.borrowChoose.data.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -66,7 +66,7 @@
 {
     static NSString * cellIdentifier = @"CMChooseCell";
     CMChooseCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    [cell fillData:[self.borrow.borrowChoose.data objectAtIndex:indexPath.section]];
+    [cell fillData:[self.borrowChoose.data objectAtIndex:indexPath.section]];
     return cell;
 }
 
@@ -78,7 +78,7 @@
 #pragma mark -  tableView  header
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    CMBorrowChooseItem * item = [self.borrow.borrowChoose.data objectAtIndex:section];
+    CMBorrowChooseItem * item = [self.borrowChoose.data objectAtIndex:section];
     CMBorrowChooseHeadView * headView = [[CMBorrowChooseHeadView alloc] initWithFrame:CGRectMake(20, 10, 200, 30)];
     headView.showTitle = item.title ? : @"放款速度";
     return headView;
@@ -93,9 +93,9 @@
 
 - (void)footView:(CMBorrowChooseFooterView *)footer didResetCondition:(NSString *)actionType
 {
-    [self.borrow resetSearchConditions];
+    [self.borrowChoose resetSearchConditions];
     if([self.delegate respondsToSelector:@selector(chooseView:shouldRefreashPage:)]){
-        [self.delegate chooseView:self shouldRefreashPage:self.borrow];
+        [self.delegate chooseView:self shouldRefreashPage:self.borrowChoose];
     }
     kWeakSelf(self);
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -106,7 +106,7 @@
 - (void)footView:(CMBorrowChooseFooterView *)footer didCommitCondition:(NSString *)actionType
 {
     if([self.delegate respondsToSelector:@selector(chooseView:shouldRefreashPage:)]){
-        [self.delegate chooseView:self shouldRefreashPage:self.borrow];
+        [self.delegate chooseView:self shouldRefreashPage:self.borrowChoose];
     }
 }
 #pragma mark -  set get

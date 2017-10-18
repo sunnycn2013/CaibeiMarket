@@ -30,13 +30,13 @@
 
 - (void)initData
 {
-    NSString * path = [[NSBundle mainBundle] pathForResource:@"choose.json" ofType:nil];
-    NSString * string = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-    if (string) {
-        NSDictionary * dict = [NSJSONSerialization JSONObjectWithData:[string dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
-        self.borrowChoose = [CMBorrowChoose mj_objectWithKeyValues:dict];
-        DLog(@"parise succes");
-    }
+//    NSString * path = [[NSBundle mainBundle] pathForResource:@"choose.json" ofType:nil];
+//    NSString * string = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+//    if (string) {
+//        NSDictionary * dict = [NSJSONSerialization JSONObjectWithData:[string dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
+//        self.borrowChoose = [CMBorrowChoose mj_objectWithKeyValues:dict];
+//        DLog(@"parise succes");
+//    }
 }
 
 + (NSDictionary *)mj_objectClassInArray
@@ -56,19 +56,19 @@
     }
 }
 
-- (void)resetSearchConditions
-{
-    [self.borrowChoose resetSearchConditions];
-}
-
-- (NSDictionary *)searchConditions
-{
-    return [self.borrowChoose searchConditions];
-}
-
-- (void)updateCondition:(NSString *)value style:(CMBorrowChooseItemType)style
-{
-    [self.borrowChoose updateCondition:value style:style];
-}
+//- (void)resetSearchConditions
+//{
+//    [self.borrowChoose resetSearchConditions];
+//}
+//
+//- (NSDictionary *)searchConditions
+//{
+//    return [self.borrowChoose searchConditions];
+//}
+//
+//- (void)updateCondition:(NSString *)value style:(CMBorrowChooseItemType)style
+//{
+//    [self.borrowChoose updateCondition:value style:style];
+//}
 
 @end

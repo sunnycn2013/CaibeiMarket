@@ -40,9 +40,6 @@ NSInteger CMBorrowConditionNum     = 4;
         [item setConditionText:array[i]];
         [item setTag:CMBorrowConditionItemTag + i];
         [item setDelegate:self];
-        if (i < 3) {
-            [item setConditionModel:self.borrow.borrowChoose.conditions[i]];
-        }
         [self addSubview:item];
     }
     [self addSubview:self.conditionLine];

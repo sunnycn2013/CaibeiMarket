@@ -24,6 +24,7 @@
 @property (nonatomic, assign)BOOL  showChooseView;
 @property(nonatomic,  strong)UAHTTPSessionManager * request;
 @property (nonatomic, strong)CMBorrow *borrow;
+@property (nonatomic,strong)CMBorrowChoose * borrowChoose;
 
 @end
 
@@ -61,6 +62,17 @@
     
     UITapGestureRecognizer * gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeConditionAction:)];
     [self.chooseBgView addGestureRecognizer:gesture];
+    
+    NSString * path = [[NSBundle mainBundle] pathForResource:@"choose.json" ofType:nil];
+    NSString * string = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    if (string)
+    {
+        NSDictionary * dict = [NSJSONSerialization JSONObjectWithData:[string dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
+        self.borrowChoose = [CMBorrowChoose mj_objectWithKeyValues:dict];
+        DLog(@"parise succes");
+        [self.chooseView fillData:self.borrowChoose];
+    }
+
 }
 
 -(void)naviBtnClick:(UIButton *)btn{
@@ -101,7 +113,6 @@
         if ([resultCode isEqualToString:@"0000"]) {
             [weakSelf.tableView reloadData];
             [weakSelf.conditionView fillData:weakSelf.borrow];
-            [weakSelf.chooseView fillData:weakSelf.borrow];
         }else{
             [MBProgressHUD showErrorMessage:message];
         }
@@ -222,7 +233,7 @@
     kWeakSelf(self)
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [weakself loadData];
-        NSLog(@"AAA: %@",[weakself.borrow searchConditions]);
+        NSLog(@"AAA: %@",[weakself.borrowChoose searchConditions]);
     });
 }
 
