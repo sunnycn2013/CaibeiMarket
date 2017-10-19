@@ -16,7 +16,6 @@ typedef NS_ENUM(NSInteger, CMBorrowChooseItemType) {
     CMBorrowChooseItemTypeCreditStanding,
     
     CMBorrowChooseItemTypeHasCredit,
-    CMBorrowChooseItemTypeLendTotalMoney,
     CMBorrowChooseItemTypeLendTotalPerid,
     CMBorrowChooseItemTypeThroughputRate,
 };

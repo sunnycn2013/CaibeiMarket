@@ -104,6 +104,7 @@
         {
             array = @[@"有信用卡",@"无信用卡"];
         }
+        break;
             
         default:
             break;
