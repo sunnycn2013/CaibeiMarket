@@ -54,6 +54,7 @@
     if (![data isKindOfClass:[CMBorrowChooseItem class]]) {
         return;
     }
+    [self.scrollView removeAllSubviews];
     self.choose = (CMBorrowChooseItem *)data;
     self.backgroundColor = [UIColor whiteColor];
     NSInteger count = [self.choose numCount];
@@ -69,11 +70,15 @@
         [itemView setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [itemView setTitleColor:[UIColor purpleColor] forState:UIControlStateSelected];
         [itemView addTarget:self action:@selector(conditionSelected:) forControlEvents:UIControlEventTouchUpInside];
-        if (i == [self.choose.selectValue integerValue]) {
-            [itemView setStyle:CMChooseItemViewStyleSelected];
-        }else{
-            [itemView setStyle:CMChooseItemViewStyleNormal];
-        }
+//        if (i > 0)
+//        {
+            if (i == [self.choose.selectValue integerValue]) {
+                [itemView setStyle:CMChooseItemViewStyleSelected];
+            }else{
+                [itemView setStyle:CMChooseItemViewStyleNormal];
+            }
+//        }
+       
         [self.scrollView addSubview:itemView];
     }
     self.scrollView.contentSize = CGSizeMake(width * count, 44);

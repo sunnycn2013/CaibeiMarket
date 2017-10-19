@@ -27,7 +27,7 @@
              },
              {
              "title": "上线时间",
-             "style": 2,
+             "style": 3,
              "onlineTime": [
                             "1",
                             "2",
@@ -38,21 +38,12 @@
              },
              {
              "title": "信用情况",
-             "style": 3,
+             "style": 4,
              "creditStanding": [
                                 "1",
                                 "2",
                                 "3",
                                 "4"
-                                ]
-             },
-             {
-             "title": "放贷总额",
-             "style": 4,
-             "lendTotalMoney": [
-                                "1",
-                                "2",
-                                "3"
                                 ]
              },
              {
