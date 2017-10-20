@@ -20,4 +20,5 @@
 
 @property (nonatomic,weak)id delegate;
 
+- (void)reloadData;
 @end

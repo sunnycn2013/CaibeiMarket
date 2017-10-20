@@ -70,14 +70,14 @@
         [itemView setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [itemView setTitleColor:[UIColor purpleColor] forState:UIControlStateSelected];
         [itemView addTarget:self action:@selector(conditionSelected:) forControlEvents:UIControlEventTouchUpInside];
-//        if (i > 0)
-//        {
+        if (i > 0)
+        {
             if (i == [self.choose.selectValue integerValue]) {
                 [itemView setStyle:CMChooseItemViewStyleSelected];
             }else{
                 [itemView setStyle:CMChooseItemViewStyleNormal];
             }
-//        }
+        }
        
         [self.scrollView addSubview:itemView];
     }
@@ -97,7 +97,9 @@
         }
     }
     NSInteger selectIndex = view.tag - CMChooseItemTag;
-    self.choose.selectValue = (selectIndex > 0) ? [NSString stringWithFormat:@"%ld",selectIndex] : @"";
+    if(selectIndex > 0){
+        self.choose.selectValue = [NSString stringWithFormat:@"%ld",selectIndex];
+    }
 }
 
 #pragma mark - set get

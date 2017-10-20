@@ -173,6 +173,7 @@
     }else if (type == CMBorrowConditionTypeInterest){
         [parameters setObject:@(sortType) forKey:@"monthlyInterestRate"];
     }
+    [self.borrowChoose resetSearchConditions];
     [self.parameters removeAllObjects];
     [self.parameters addEntriesFromDictionary:[parameters copy]];
     [self hideChooseView];
@@ -184,21 +185,12 @@
     if (index >= 3) {
         if (!self.showChooseView)
         {
-            [self.conditionView setConditionSwitchStyle:CMBorrowConditionSwitchTypeOpen];
-            self.chooseBgView.frame  = CGRectMake(0, 110, KScreenWidth, KScreenHeight);
-            [UIView animateWithDuration:0.2 animations:^{
-                self.showChooseView = YES;
-                self.chooseView.frame = CGRectMake(0, _conditionView.bottom, KScreenWidth, 424);
-            }];
+            [self showChooseView1];
         }else{
-            [self.conditionView setConditionSwitchStyle:CMBorrowConditionSwitchTypeclose];
-            self.chooseBgView.frame  = CGRectMake(0, 110, KScreenWidth, 0);
-            [UIView animateWithDuration:0.2 animations:^{
-                self.showChooseView = NO;
-                self.chooseView.frame = CGRectMake(0, _conditionView.bottom, KScreenWidth, 0);
-            }];
+            [self hideChooseView];
         }
     }else{
+        [self.borrowChoose resetSearchConditions];
         [self.parameters removeAllObjects];
         [self.parameters addEntriesFromDictionary:[self.borrow searchConditions]];
         [self loadData];
@@ -208,20 +200,22 @@
 - (void)showChooseView1
 {
     [self.conditionView setConditionSwitchStyle:CMBorrowConditionSwitchTypeOpen];
-    self.chooseBgView.frame  = CGRectMake(0, 110, KScreenWidth, KScreenHeight);
     [UIView animateWithDuration:0.2 animations:^{
         self.showChooseView = YES;
         self.chooseView.frame = CGRectMake(0, _conditionView.bottom, KScreenWidth, 424);
+    }completion:^(BOOL finished) {
+        [self.chooseView reloadData];
     }];
 }
 
 - (void)hideChooseView
 {
     [self.conditionView setConditionSwitchStyle:CMBorrowConditionSwitchTypeclose];
-    self.chooseBgView.frame  = CGRectMake(0, 110, KScreenWidth, 0);
     [UIView animateWithDuration:0.2 animations:^{
         self.showChooseView = NO;
         self.chooseView.frame = CGRectMake(0, _conditionView.bottom, KScreenWidth, 0);
+    }completion:^(BOOL finished) {
+        [self.chooseView reloadData];
     }];
 }
 

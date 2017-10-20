@@ -51,6 +51,13 @@
     self.borrowChoose = (CMBorrowChoose *)model;
     [self.tableView reloadData];
 }
+    
+- (void)reloadData
+{
+    [self.tableView reloadData];
+    [self.tableView setContentOffset:CGPointMake(0, 0) animated:YES];
+}
+
 #pragma mark - UITableViewDataSource,UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
