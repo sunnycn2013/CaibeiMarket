@@ -55,7 +55,9 @@
 - (void)reloadData
 {
     [self.tableView reloadData];
-    [self.tableView setContentOffset:CGPointMake(0, 0) animated:YES];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.tableView setContentOffset:CGPointMake(0, 0) animated:YES];
+    });
 }
 
 #pragma mark - UITableViewDataSource,UITableViewDelegate
@@ -112,9 +114,9 @@
 
 - (void)footView:(CMBorrowChooseFooterView *)footer didCommitCondition:(NSString *)actionType
 {
-    if([self.delegate respondsToSelector:@selector(chooseView:shouldRefreashPage:)]){
-        [self.delegate chooseView:self shouldRefreashPage:self.borrowChoose];
-    }
+//    if([self.delegate respondsToSelector:@selector(chooseView:shouldRefreashPage:)]){
+//        [self.delegate chooseView:self shouldRefreashPage:self.borrowChoose];
+//    }
 }
 #pragma mark -  set get
 - (UITableView *)tableView

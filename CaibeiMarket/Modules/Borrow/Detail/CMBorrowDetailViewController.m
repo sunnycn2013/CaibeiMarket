@@ -23,6 +23,7 @@
 @property (nonatomic,strong)NSArray * templateArray;
 @property (nonatomic,strong)NSDictionary * parameters;
 @property(nonatomic,strong) UAHTTPSessionManager * request;
+@property(nonatomic,strong) UAHTTPSessionManager * applyRequest;
 @property (nonatomic,strong)UIButton * applyButton;
 
 @property(nonatomic,strong) CMBorrowDetail *detail;
