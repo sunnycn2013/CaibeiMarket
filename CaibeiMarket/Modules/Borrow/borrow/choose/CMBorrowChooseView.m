@@ -114,9 +114,9 @@
 
 - (void)footView:(CMBorrowChooseFooterView *)footer didCommitCondition:(NSString *)actionType
 {
-//    if([self.delegate respondsToSelector:@selector(chooseView:shouldRefreashPage:)]){
-//        [self.delegate chooseView:self shouldRefreashPage:self.borrowChoose];
-//    }
+    if([self.delegate respondsToSelector:@selector(chooseView:shouldRefreashPage:)]){
+        [self.delegate chooseView:self shouldRefreashPage:self.borrowChoose];
+    }
 }
 #pragma mark -  set get
 - (UITableView *)tableView
