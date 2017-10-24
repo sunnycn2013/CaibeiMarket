@@ -89,7 +89,7 @@
     [self.totalApplyNumberLabel setText:[NSString stringWithFormat:@"%@人已经申请",self.model.totalApply]];
     [self.interestDesLabel setText:self.model.monthlyInterestRate];
     [self.approveLabel setText:[NSString stringWithFormat:@"%@",self.model.throughputRate]];
-    [self.todayApplyNumberLabel setText:[NSString stringWithFormat:@"%ld",(long)[self.model.applyCount integerValue]]];
+    [self.todayApplyNumberLabel setText:[NSString stringWithFormat:@"%ld",(long)[self.model.dayTodayApply integerValue]]];
 }
 
 - (void)layoutSubviews

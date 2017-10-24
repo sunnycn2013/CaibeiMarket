@@ -140,6 +140,7 @@
 
 - (void)applyForLend:(UIButton *)button
 {
+    [self loadApplyForLend];
     CMBorrowProduct * product = [self.detail.properties firstObject];
     NSDictionary * params = @{
                               @"title" : product.lendName ? : @"",
@@ -147,6 +148,47 @@
                               };
     RootWebViewController * detail = [[RootWebViewController alloc] initWithParams:params];
     [self.navigationController pushViewController:detail animated:YES];
+}
+
+/*
+ /front/order/lendApply.json
+ 马俊伟  13:57:14
+ @NotNull(message="产品标识不能为空")
+ private String identifier;
+ 
+ @NotNull(message="借款金额不能为空")
+ private BigDecimal lendTotalMoney;
+ 
+ @NotNull(message="借款周期不能为空")
+ private Integer lendTotalPerid;
+ */
+- (void)loadApplyForLend
+{
+    __weak typeof(self) weakSelf = self;
+    self.request = [UAHTTPSessionManager manager];
+    CMBorrowProduct * product = [self.detail.properties firstObject];
+
+    NSDictionary * params = @{
+                              @"identifier" : product.identifier ? : @"",
+                              @"lendTotalMoney" : product.lendMoney ? : @"",
+                              @"lendTotalPerid" : product.lendPeriod ? : @"",
+                              @"type" : @"1",
+
+                              };
+    [self.request POST:@"order/lendApply.json" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
+        NSString * resultCode = [responseObject objectForKey:@"resultCode"];
+        NSString * message = [responseObject objectForKey:@"message"];
+        
+        if ([resultCode isEqualToString:@"0000"]) {
+            
+        }else{
+            [MBProgressHUD showErrorMessage:message];
+        }
+        [weakSelf.tableView.mj_header endRefreshing];
+        [weakSelf.tableView reloadData];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nullable error) {
+        [MBProgressHUD showErrorMessage:@"服务异常"];
+    }];
 }
 #pragma mark - set get
 - (CMBorrowDetailNoteView *)noteView
