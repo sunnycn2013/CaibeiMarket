@@ -37,11 +37,4 @@
 @property (nonatomic,strong)NSString * message;
 @property (nonatomic,strong)NSArray  * listData;
 
-//@property (nonatomic,strong)CMBorrowChoose * borrowChoose;
-
-- (void)resetSearchConditions;
-
-- (NSDictionary *)searchConditions;
-
-- (void)updateCondition:(NSString *)value style:(CMBorrowChooseItemType)style;
 @end

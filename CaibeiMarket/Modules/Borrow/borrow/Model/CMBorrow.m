@@ -56,19 +56,5 @@
     }
 }
 
-//- (void)resetSearchConditions
-//{
-//    [self.borrowChoose resetSearchConditions];
-//}
-//
-//- (NSDictionary *)searchConditions
-//{
-//    return [self.borrowChoose searchConditions];
-//}
-//
-//- (void)updateCondition:(NSString *)value style:(CMBorrowChooseItemType)style
-//{
-//    [self.borrowChoose updateCondition:value style:style];
-//}
 
 @end

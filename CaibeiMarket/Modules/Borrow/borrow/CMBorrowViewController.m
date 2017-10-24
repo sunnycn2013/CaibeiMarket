@@ -33,8 +33,8 @@
 - (instancetype)initWithMoney:(NSString *)money time:(NSString *)time
 {
     self.borrow = [[CMBorrow alloc] init];
-    [self.borrow updateCondition:money style:CMBorrowChooseItemTypeLendMoney];
-    [self.borrow updateCondition:time style:CMBorrowChooseItemTypeOnlineTime];
+//    [self.borrow updateCondition:money style:CMBorrowChooseItemTypeLendMoney];
+//    [self.borrow updateCondition:time style:CMBorrowChooseItemTypeOnlineTime];
     return [super initWithParams:nil];
 }
 
@@ -88,8 +88,7 @@
 {
     kWeakSelf(self)
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [weakself.borrow resetSearchConditions];
-        NSLog(@"AAA: %@",[self.borrow searchConditions]);
+        NSLog(@"AAA: %@",[self.borrowChoose searchConditions]);
         [weakself loadData];
     });
     
@@ -192,7 +191,7 @@
     }else{
         [self.borrowChoose resetSearchConditions];
         [self.parameters removeAllObjects];
-        [self.parameters addEntriesFromDictionary:[self.borrow searchConditions]];
+        [self.parameters addEntriesFromDictionary:[self.borrowChoose searchConditions]];
         [self loadData];
     }
 }
@@ -226,8 +225,8 @@
     [self borrowConditionView:nil selectedChooseView:3];
     kWeakSelf(self)
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [weakself.parameters addEntriesFromDictionary:[weakself.borrowChoose searchConditions]];
         [weakself loadData];
-        NSLog(@"AAA: %@",[weakself.borrowChoose searchConditions]);
     });
 }
 

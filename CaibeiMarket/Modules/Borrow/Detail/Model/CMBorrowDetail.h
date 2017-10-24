@@ -45,7 +45,7 @@
 @property (nonatomic,strong)NSString        * updateDate;
 @property (nonatomic,strong)NSNumber        * applyCount;
 
-@property (nonatomic,strong)NSNumber        * dayTodayApply;
+@property (nonatomic,strong)NSNumber        * dayTotalApply;
 @end
 
 @interface CMBorrowDetail : NSObject
