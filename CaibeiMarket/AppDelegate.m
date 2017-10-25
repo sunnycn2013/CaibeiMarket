@@ -25,6 +25,8 @@
 {
     // Override point for customization after application launch.
     //初始化window   aaaa
+
+    //初始化window  bbbb
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     
     [XGManager initXG];
