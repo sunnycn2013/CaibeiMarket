@@ -44,12 +44,14 @@
 
 #pragma mark ————— 初始化TabBar —————
 -(void)setUpTabBar{
-    TabBar *tabBar = [[TabBar alloc] init];
-    tabBar.frame     = self.tabBar.bounds;
-    tabBar.delegate  = self;
-    
-//    self.TabBar = tabBar;
-    [self.tabBar addSubview:tabBar];
+    [self.tabBar addSubview:({
+
+        TabBar *tabBar = [[TabBar alloc] init];
+        tabBar.frame     = self.tabBar.bounds;
+        tabBar.delegate  = self;
+
+        self.TabBar = tabBar;
+    })];
 }
 #pragma mark - ——————— 初始化VC ————————
 -(void)setUpAllChildViewController{
