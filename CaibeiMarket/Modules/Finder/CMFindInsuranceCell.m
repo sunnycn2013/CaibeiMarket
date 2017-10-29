@@ -7,7 +7,7 @@
 //
 
 #import "CMFindInsuranceCell.h"
-#import "CMFindInsurance.h"
+#import "CMFindItem.h"
 
 @interface CMFindInsuranceCell ()
 
@@ -21,7 +21,7 @@
 
 @property (nonatomic,strong) UIImageView * nextImageView;
 
-@property (nonatomic,strong) CMFindInsuranceCard * model;
+@property (nonatomic,strong) CMFindWare * model;
 
 //@property (nonatomic,strong) CALayer * lineView;
 @property (nonatomic,strong) UIView * lineView;
@@ -62,13 +62,13 @@
 
 - (void)fillData:(id)model
 {
-    if ([model isKindOfClass:[CMFindInsuranceCard class]]) {
-        self.model = (CMFindInsuranceCard *)model;
+    if ([model isKindOfClass:[CMFindWare class]]) {
+        self.model = (CMFindWare *)model;
     }
-    NSString * imageURL = [NSString stringWithFormat:@"%@%@",URL_main,self.model.safePicUrl];
+    NSString * imageURL = [NSString stringWithFormat:@"%@%@",URL_main,self.model.img];
     [self.iconImageView setImageWithURL:[NSURL URLWithString:imageURL] placeholder:[UIImage imageNamed:@"icaibei_placeholder"]];
-    [self.insuranceTitleLabel setText:self.model.safeName];
-    [self.totoalMoneyLabel setText:self.model.safeSpecial];
+    [self.insuranceTitleLabel setText:self.model.title];
+    [self.totoalMoneyLabel setText:self.model.subTitle];
 }
 
 - (void)awakeFromNib {

@@ -7,12 +7,15 @@
 //
 
 #import "CMHomeBannerCell.h"
-#import <iCarousel/iCarousel.h>
+#import "iCarousel.h"
+#import "CMHomeModel.h"
+#import "CMHomeBanner.h"
 
 @interface CMHomeBannerCell ()<iCarouselDelegate,iCarouselDataSource>
 
 @property (nonatomic,strong)iCarousel * scrollView;
 @property (nonatomic,strong)UIPageControl * pageControl;
+@property (nonatomic,strong)CMHomeInfo * bannerModel;
 
 @end
 
@@ -38,7 +41,7 @@
     _scrollView.dataSource = self;
     _scrollView.pagingEnabled = YES;
 
-    _scrollView.type = iCarouselTypeInvertedRotary;//iCarouselTypeLinear;
+    _scrollView.type = iCarouselTypeCycle;//iCarouselTypeLinear;
     _scrollView.pagingEnabled = YES;
     _scrollView.bounceDistance = 0.5;
     _scrollView.decelerationRate = 0.5;
@@ -52,19 +55,22 @@
     [_pageControl setNumberOfPages:5];
     [_pageControl setCurrentPage:0];
     [self addSubview:_pageControl];
-    
-    self.contentView.backgroundColor = [UIColor purpleColor];
 }
 
 - (void)fillData:(id)model
 {
+    if (![model isKindOfClass:[CMHomeInfo class]]) {
+        return;
+    }
+    self.bannerModel = (CMHomeInfo *)model;
+    [self.scrollView reloadData];
 }
 
 #pragma iCarousel
 
 - (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel
 {
-    return 5;
+    return self.bannerModel.bannerList.count;
 }
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view
@@ -72,10 +78,10 @@
     CGFloat width = KScreenWidth;
     CGFloat height = kIPhone6Scale(250);
     UIImageView * reuseView = (UIImageView *)view;
+    CMHomeBanner * banner = [self.bannerModel.bannerList objectAtIndex:index];
     if (!reuseView) {
         reuseView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, width, height)];
-        [reuseView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"index_banner"]]];
-        reuseView.backgroundColor = [self randomColor];
+        [reuseView setImageURL:[NSURL URLWithString:banner.img]];
     }
     return reuseView;
 }

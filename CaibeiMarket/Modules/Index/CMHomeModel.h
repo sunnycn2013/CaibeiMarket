@@ -16,43 +16,31 @@ extern NSString * CMHomeActionTypeContent;
 
 @interface CMHomeInfo : NSObject<CMHomeDataProtocol>
 
-@property (nonatomic,strong)NSString * createDate;
-@property (nonatomic,strong)NSString * lendMoney;
-@property (nonatomic,strong)NSString * phone;
-@property (nonatomic,strong)NSString * servicePersonTime;
-@property (nonatomic,strong)NSString * totalLendMoney;
+@property (nonatomic,strong)NSString * pattern;
+@property (nonatomic,strong)NSArray  * bannerList;
+@property (nonatomic,strong)NSArray  * entranceList;
+@property (nonatomic,strong)NSArray  * productList;
 
-@property (nonatomic,strong)NSString * actionType;
+#pragma ware
 @property (nonatomic,strong)NSString * title;
-@property (nonatomic,strong)NSString * jumUrl;
+@property (nonatomic,strong)NSString * des;
+@property (nonatomic,strong)NSString * time;
+@property (nonatomic,strong)NSString * author;
+@property (nonatomic,strong)NSString * url;
+@property (nonatomic,strong)NSString * img;
 
 @end
 
-@interface CMHomeModel : NSObject
-
-@property (nonatomic,strong)NSString * message;
-
-@property (nonatomic,strong)NSMutableArray * homeModels;
-
-@property (nonatomic,strong)NSArray * properties;
+@interface CMHomeModel : NSObject<CMHomeDataProtocol>
 
 @property (nonatomic,strong)NSNumber * resultCode;
-
-@property (nonatomic,strong)CMHomeInfo * homeInfo;
+@property (nonatomic,strong)NSString * message;
+@property (nonatomic,strong)NSString * pageSize;
+@property (nonatomic,strong)NSString * pageNumber;
+@property (nonatomic,strong)NSString * totalCount;
+@property (nonatomic,strong)NSString * pageCount;
+@property (nonatomic,strong)NSArray  * listData;
+@property (nonatomic,strong)NSArray  * floors;
 
 @end
 
-
-/*
- message = "\U64cd\U4f5c\U6210\U529f";
- properties =     (
- {
- createDate = 1501840949000;
- lendMoney = 2000;
- phone = "1****85858";
- servicePersonTime = 18;
- totalLendMoney = 25000;
- }
- );
- resultCode = 0000;
- */

@@ -7,7 +7,7 @@
 //
 
 #import "CMFindCreditCell.h"
-#import "CMFindCredit.h"
+#import "CMFindItem.h"
 
 @interface CMFindCreditCardView ()
 
@@ -17,7 +17,7 @@
 
 @property (nonatomic,strong) UILabel * cardDesLabel;
 
-@property (nonatomic,strong) CMFindCreditCard * model;
+@property (nonatomic,strong) CMFindWare * model;
 
 - (void)fillData:(id)model;
 
@@ -51,13 +51,13 @@
 
 - (void)fillData:(id)model
 {
-    if ([model isKindOfClass:[CMFindCreditCard  class]]) {
-        self.model = (CMFindCreditCard *)model;
+    if ([model isKindOfClass:[CMFindWare  class]]) {
+        self.model = (CMFindWare *)model;
     }
-    NSString * imageURL = [NSString stringWithFormat:@"%@%@",URL_main,self.model.criditPicUrl];
+    NSString * imageURL = [NSString stringWithFormat:@"%@%@",URL_main,self.model.img];
     [self.cardImageView setImageWithURL:[NSURL URLWithString:imageURL] placeholder:[UIImage imageNamed:@"icaibei_placeholder"]];
-    [self.cardTitleLabel setText:self.model.criditName];
-    [self.cardDesLabel setText:self.model.criditSpecial];
+    [self.cardTitleLabel setText:self.model.title];
+    [self.cardDesLabel setText:self.model.subTitle];
 }
 
 #pragma mark - set get
@@ -104,7 +104,9 @@
 
 @property (nonatomic,strong) CMFindCreditCardView * rightCreditCards;
 
-@property (nonatomic,strong) CMFindCreditItem * model;
+@property (nonatomic,strong) CMFindWare * model;
+
+@property (nonatomic,strong) NSArray * items;
 
 @end
 
@@ -136,11 +138,14 @@
 
 - (void)fillData:(id)model
 {
-    if ([model isKindOfClass:[CMFindCreditItem  class]]) {
-        self.model = (CMFindCreditItem *)model;
+    if ([model isKindOfClass:[NSArray  class]]) {
+        self.items = (NSArray *)model;
     }
-    [self.leftCreditCards fillData:self.model.leftItem];
-    [self.rightCreditCards fillData:self.model.rightItem];
+    CMFindWare * leftModel = [self.items firstObject];
+    CMFindWare * rightModel = [self.items lastObject];
+
+    [self.leftCreditCards fillData:leftModel];
+    [self.rightCreditCards fillData:rightModel];
 }
 
 - (void)setTapBlock:(void (^)(id))TapBlock

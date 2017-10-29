@@ -21,8 +21,6 @@ target 'CaibeiMarket' do
   pod 'SDWebImage', '~> 4.0.0'
   pod 'MJRefresh', '~> 3.1.12'
   pod 'MJExtension', '~> 3.0.13'
-
-  pod 'iCarousel', '~> 1.8.3'
   
   #腾讯bugly
   pod 'Bugly', '~> 2.4.8'

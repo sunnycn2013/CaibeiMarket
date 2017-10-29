@@ -7,21 +7,20 @@
 //
 
 #import "CMFindViewController.h"
-#import "CMFindCredit.h"
-#import "CMFindInsurance.h"
 #import "CMFindHeadView.h"
 #import "CMFindCreditCell.h"
 #import "CMFindInsuranceCell.h"
 #import "CMFindProtocol.h"
-#import "CMFindCredit.h"
+#import "CBAPIUtil.h"
+#import "CMFind.h"
+#import "CMFindItem.h"
+#import "CMFindDataProtocol.h"
 
 @interface CMFindViewController ()<UITableViewDelegate,UITableViewDataSource>
 
-@property (nonatomic,strong) CMFindCredit    * credit;
-@property (nonatomic,strong) CMFindInsurance * insurance;
+@property (nonatomic,strong) CMFind    * find;
 
 @property(nonatomic,  strong)UAHTTPSessionManager * creditRequest;
-@property(nonatomic,  strong)UAHTTPSessionManager * insuranceRequest;
 
 @end
 
@@ -36,12 +35,17 @@
     self.tableView.mj_footer = self.footer;
 
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [self.tableView registerClass:[CMFindCreditCell class] forCellReuseIdentifier:@"CMFindCreditCell"];
-    [self.tableView registerClass:[CMFindInsuranceCell class] forCellReuseIdentifier:@"CMFindInsuranceCell"];
+    
+    [self.tableView registerClass:[CMFindCreditCell class] forCellReuseIdentifier:CMHomeActionTypeCredit];
+    [self.tableView registerClass:[CMFindInsuranceCell class] forCellReuseIdentifier:CMHomeActionTypeSafe];
 
     [self.view addSubview:self.tableView];
     [self.tableView reloadData];
     [self loadData];
+    
+    NSDictionary * params = [CBAPIUtil getAPIDataWith:@"find.md"];
+    self.find = [CMFind mj_objectWithKeyValues:params];
+    NSLog(@"aa");
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,29 +67,14 @@
     __weak typeof(self) weakSelf = self;
     self.creditRequest = [UAHTTPSessionManager manager];
     [self.creditRequest POST:@"credit/creditPage.json" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
-        weakSelf.credit = [CMFindCredit mj_objectWithKeyValues:responseObject] ;
+        responseObject = [CBAPIUtil getAPIDataWith:@"find.md"];
+        self.find = [CMFind mj_objectWithKeyValues:params];
+        weakSelf.find = [CMFind mj_objectWithKeyValues:responseObject] ;
         NSString * resultCode = [responseObject objectForKey:@"resultCode"];
         NSString * message = [responseObject objectForKey:@"message"];
         
         if ([resultCode isEqualToString:@"0000"]) {
             [weakSelf.tableView reloadData];
-        }else{
-            [MBProgressHUD showErrorMessage:message];
-        }
-        [weakSelf.tableView.mj_header endRefreshing];
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nullable error) {
-        [MBProgressHUD showErrorMessage:@"服务异常"];
-        [weakSelf.tableView.mj_header endRefreshing];
-    }];
-    
-    self.insuranceRequest = [UAHTTPSessionManager manager];
-    [self.insuranceRequest POST:@"safe/safePage.json" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
-        weakSelf.insurance = [CMFindInsurance mj_objectWithKeyValues:responseObject] ;
-        NSString * resultCode = [responseObject objectForKey:@"resultCode"];
-        NSString * message = [responseObject objectForKey:@"message"];
-        
-        if ([resultCode isEqualToString:@"0000"]) {
-            [weakSelf.tableView reloadSection:1 withRowAnimation:UITableViewRowAnimationNone];
         }else{
             [MBProgressHUD showErrorMessage:message];
         }
@@ -107,56 +96,21 @@
 #pragma mark - UITableViewDelegate,UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return self.find.listData.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == 0) {
-        return self.credit.listCreditData.count;
-    }else if (section == 1){
-        return self.insurance.listData.count;
-    }
-    return 2;
+    CMFindItem<CMFindDataProtocol> *  item = [self.find.listData objectAtIndex:section];
+    return [item numberOfRowsInFloor];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString * cellIdentifier = @"cellIdentifier";
-    if (indexPath.section == 0) {
-        cellIdentifier = @"CMFindCreditCell";
-    }else{
-        cellIdentifier = @"CMFindInsuranceCell";
-    }
-    UITableViewCell<CMFindProtocol> * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    kWeakSelf(self)
-    if (indexPath.section == 0) {
-        [cell fillData:[self.credit.listCreditData objectAtIndex:indexPath.row]];
-        [cell setTapBlock:^(id obj){
-            if ([obj isKindOfClass:[CMFindCreditCard class]]) {
-                CMFindCreditCard * model = (CMFindCreditCard *)obj;
-                NSDictionary * params = @{
-                                          @"url" : model.criditUrl ? : @"",
-                                          @"title" : model.criditName ? : @"",
-                                          };
-                RootWebViewController * vc = [[RootWebViewController alloc] initWithParams:params];
-                [weakself.navigationController pushViewController:vc animated:YES];
-            }
-        }];
-    }else if (indexPath.section == 1){
-        [cell fillData:[self.insurance.listData objectAtIndex:indexPath.row]];
-        [cell setTapBlock:^(id obj){
-            if ([obj isKindOfClass:[CMFindInsuranceCard class]]) {
-                CMFindInsuranceCard * model = (CMFindInsuranceCard *)obj;
-                NSDictionary * params = @{
-                                          @"url" : model.safeUrl ? : @"",
-                                          @"title" : model.safeName ? : @"",
-                                          };
-                RootWebViewController * vc = [[RootWebViewController alloc] initWithParams:params];
-                [weakself.navigationController pushViewController:vc animated:YES];
-            }
-        }];
-    }
+    CMFindItem<CMFindDataProtocol> * item = [self.find.listData objectAtIndex:indexPath.section];
+    id wareInfo = [item floorModelAtIndex:indexPath.row];
+    UITableViewCell<CMFindProtocol> * cell = [tableView dequeueReusableCellWithIdentifier:[item pattern]];
+    [cell fillData:wareInfo];
     return cell;
 }
 
@@ -178,12 +132,8 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     CMFindHeadView * headerView = [[CMFindHeadView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, 44)];
-    
-    if (section == 0) {
-        headerView.showTitle = @"办理信用卡";
-    }else{
-        headerView.showTitle = @"保险";
-    }
+    CMFindItem * item = [self.find.listData objectAtIndex:section];
+    headerView.showTitle = item.title;
     return headerView;
 }
 

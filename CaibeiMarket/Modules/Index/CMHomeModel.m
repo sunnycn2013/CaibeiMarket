@@ -9,19 +9,37 @@
 #import "CMHomeModel.h"
 #import "CMHomeBanner.h"
 #import "CMHomeApp.h"
-#import "CMHomeContent.h"
 
-NSString * CMHomeActionTypeBanner = @"home_banner";
-NSString * CMHomeActionTypeApp = @"home_app";
-NSString * CMHomeActionTypeContent = @"home_content";
+NSString * CMHomeActionTypeBanner = @"banner";
+NSString * CMHomeActionTypeApp = @"entrance";
+NSString * CMHomeActionTypeContent = @"product";
 
 @implementation CMHomeInfo
 
-- (void)mj_keyValuesDidFinishConvertingToObject
++ (NSDictionary *)mj_objectClassInArray
 {
-    self.servicePersonTime = [self formattingByString:self.servicePersonTime];
-    self.totalLendMoney = [self formattingByString:self.totalLendMoney];
+    return @{
+             @"bannerList" : @"CMHomeBanner",
+             @"entranceList" : @"CMHomeApp",
+             };
+}
 
+- (CGFloat)heightForRowCell
+{
+    if ([self.pattern isEqualToString:@"banner"]) {
+        return kIPhone6Scale(176);
+    }else if ([self.pattern isEqualToString:@"entrance"])
+    {
+        NSInteger row = (NSInteger)self.entranceList.count/5;
+        if (row == 2) {
+            return kIPhone6Scale(95.0*2);
+        }
+        return kIPhone6Scale(95.0);
+    }else if ([self.pattern isEqualToString:@"product"])
+    {
+        return kIPhone6Scale(90.0);
+    }
+    return kIPhone6Scale(0.0);
 }
 
 - (NSString *)formattingByString:(NSString *)string
@@ -44,42 +62,47 @@ NSString * CMHomeActionTypeContent = @"home_content";
 
 @implementation CMHomeModel
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        [self initData];
-    }
-    return self;
-}
-
-- (void)initData
-{
-    CMHomeBanner * banner = [CMHomeBanner new];
-    banner.actionType = CMHomeActionTypeBanner;
-    CMHomeApp * app = [CMHomeApp new];
-    app.actionType = CMHomeActionTypeApp;
-    
-    CMHomeContent  * content = [CMHomeContent new];
-    content.actionType = CMHomeActionTypeContent;
-    
-    self.homeModels = [NSMutableArray array];
-    [self.homeModels addObject:banner];
-    [self.homeModels addObject:app];
-    [self.homeModels addObject:content];
-}
-
 + (NSDictionary *)mj_objectClassInArray
 {
     return @{
-             @"properties" : @"CMHomeInfo"
+             @"listData" : @"CMHomeInfo"
              };
 }
 
-- (void)mj_keyValuesDidFinishConvertingToObject
-{
-    self.homeInfo = self.properties.firstObject;
-    [self.homeModels addObject:_homeInfo];
+//- (void)mj_keyValuesDidFinishConvertingToObject
+//{
+//    NSMutableArray * modelArray = [NSMutableArray array];
+//    for (NSDictionary *floorDict in self.listData) {
+//        NSString* modelType = [self getModelWithPattern:floorDict[@"pattern"]];
+//        if (modelType)
+//        {
+//            Class aclass = NSClassFromString(modelType);
+//            if (aclass)
+//            {
+//                id<CMHomeDataProtocol> floorModel = [aclass mj_objectWithKeyValues:floorDict];
+//                if (floorModel) {
+//                    [modelArray addObject:floorModel];
+//                }
+//            }
+//        }
+//    }
+//    
+//    self.floors = modelArray;
+//}
 
+- (NSString *)getModelWithPattern:(NSString *)pattern
+{
+    if ([pattern isEqualToString:CMHomeActionTypeBanner]) {
+        return @"CMHomeInfo";
+    }
+    if ([pattern isEqualToString:CMHomeActionTypeApp]) {
+        return @"CMHomeInfo";
+    }
+    if ([pattern isEqualToString:CMHomeActionTypeContent]) {
+        return @"CMHomeInfo";
+    }
+    
+    return nil;
 }
+
 @end

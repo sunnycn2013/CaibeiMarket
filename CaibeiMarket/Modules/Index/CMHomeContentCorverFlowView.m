@@ -7,7 +7,7 @@
 //
 
 #import "CMHomeContentCorverFlowView.h"
-#import <iCarousel/iCarousel.h>
+#import "iCarousel.h"
 #import "CMHomeContentCorverFlowItem.h"
 
 #define CMHomeContentCorverFlowTag 5000
@@ -140,7 +140,7 @@
         _scrollView.dataSource = self;
         _scrollView.pagingEnabled = YES;
         
-        _scrollView.type = iCarouselTypeCustom;//iCarouselTypeLinear;
+        _scrollView.type = iCarouselTypeCycle;//iCarouselTypeLinear;
         _scrollView.pagingEnabled = YES;
         _scrollView.bounceDistance = 0.5;
         _scrollView.decelerationRate = 0.3;

@@ -9,7 +9,7 @@
 #import "CMHomeViewController.h"
 #import "CMHomeBannerCell.h"
 #import "CMHomeAppCell.h"
-#import "CMHomeContentCell.h"
+#import "CMHomeWareCell.h"
 
 #import "CMHomeModel.h"
 
@@ -18,6 +18,7 @@
 #import "LoginViewController.h"
 
 #import "CMBorrowViewController.h"
+#import "CBAPIUtil.h"
 
 #define itemWidthHeight ((kScreenWidth-10)/2)
 
@@ -42,10 +43,13 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.tableView.mj_header = self.header;
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.showsVerticalScrollIndicator = NO;
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self];
+    [self.tableView registerClass:[CMHomeBannerCell class] forCellReuseIdentifier:CMHomeActionTypeBanner];
+    [self.tableView registerClass:[CMHomeAppCell class] forCellReuseIdentifier:CMHomeActionTypeApp];
+    [self.tableView registerClass:[CMHomeWareCell class] forCellReuseIdentifier:CMHomeActionTypeContent];
     [self.view addSubview:self.tableView];
     self.dataArray = @[kCMHomeBannerCellIdentifier,kCMHomeFastEntranceCellIdentifier,kCMHomeContentCellIdentifier];
     
@@ -57,6 +61,10 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
     
     self.tableView.top = 0;
 //    self.edgesForExtendedLayout = UIRectEdgeTop;
+    
+    NSDictionary * params = [CBAPIUtil getAPIDataWith:@"index.md"];
+    self.homeModel = [CMHomeModel mj_objectWithKeyValues:params];
+    NSLog(@"aa");
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -92,6 +100,7 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
     __weak typeof(self) weakSelf = self;
     self.request = [UAHTTPSessionManager manager];
     [self.request POST:@"order/newOrderInfo.json" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
+        responseObject = [CBAPIUtil getAPIDataWith:@"index.md"];
         weakSelf.homeModel = [CMHomeModel mj_objectWithKeyValues:responseObject] ;
         NSString * resultCode = [responseObject objectForKey:@"resultCode"];
         NSString * message = [responseObject objectForKey:@"message"];
@@ -121,34 +130,26 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.dataArray count];
+    return [self.homeModel.listData count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString * cellIndetifier = [self.dataArray objectAtIndex:indexPath.row];
+    CMHomeInfo * model = [self.homeModel.listData objectAtIndex:indexPath.row];
+    NSString * cellIndetifier = [model pattern];
     UITableViewCell<CMHomeRenderProtocol> * cell = [tableView dequeueReusableCellWithIdentifier:cellIndetifier];
-    if (!cell) {
-        if ([cellIndetifier isEqualToString:kCMHomeBannerCellIdentifier]) {
-            cell = [[CMHomeBannerCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndetifier];
-        }else if ([cellIndetifier isEqualToString:kCMHomeFastEntranceCellIdentifier]){
-            cell = [[CMHomeAppCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndetifier];
-        }else if ([cellIndetifier isEqualToString:kCMHomeContentCellIdentifier]){
-            cell = [[CMHomeContentCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndetifier];
-            [(CMHomeContentCell *)cell setDelegate:self];
-        }
-    }
+    
     kWeakSelf(self)
     [cell setTapBlock:^(id obj){
         [weakself processWithModel:obj];
     }];
-    [cell fillData:self.homeModel.homeInfo];
+    [cell fillData:model];
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    id<CMHomeDataProtocol> model = [self.data.homeModels objectAtIndex:indexPath.row];
+    CMHomeInfo * model = [self.homeModel.listData objectAtIndex:indexPath.row];
     return [model heightForRowCell];
 }
 
@@ -180,19 +181,6 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
         [self resetTableOffset];
     } completion:^(BOOL finished) {
     }];
-}
-
-- (void)contentDidBeginEditing:(CMHomeContentCell *)cell description:(NSString *)des
-{
-    [UIView animateWithDuration:0.5 animations:^{
-        [self.tableView setContentOffset:CGPointMake(0, 100)];
-    } completion:^(BOOL finished) {
-    }];
-}
-    
-- (void)contentShouldReturn:(CMHomeContentCell *)cell value:(NSString *)value
-{
-    [self resetTableOffset];
 }
 
 - (void)resetTableOffset

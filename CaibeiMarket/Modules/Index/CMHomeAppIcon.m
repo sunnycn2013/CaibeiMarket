@@ -7,6 +7,7 @@
 //
 
 #import "CMHomeAppIcon.h"
+#import "CMHomeApp.h"
 
 @interface CMHomeAppIcon ()
 
@@ -39,8 +40,9 @@
     CGFloat labelHeight = kIPhone6Scale(18);
     _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, _imageView.bottom + kIPhone6Scale(5), self.width, labelHeight)];
     [_titleLabel setText:@"常见问题"];
-    [_titleLabel setFont:[UIFont systemFontOfSize:11.0]];
+    [_titleLabel setFont:[UIFont systemFontOfSize:kIPhone6Scale(12)]];
     [_titleLabel setTextAlignment:NSTextAlignmentCenter];
+    [_titleLabel setAdjustsFontSizeToFitWidth:YES];
     [self addSubview:_titleLabel];
     
     UITapGestureRecognizer * gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
@@ -51,7 +53,7 @@
 {
     _data = data;
     
-    [_imageView setImage:[UIImage imageNamed:data.imageName]];
+    [_imageView setImageWithURL:[NSURL URLWithString:data.img] placeholder:[UIImage imageNamed:@"icon-50"]];
     [_titleLabel setText:data.title];
 }
 

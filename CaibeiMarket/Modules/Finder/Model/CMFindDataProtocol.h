@@ -1,18 +1,20 @@
 //
-//  CMHomeDataProtocol.h
+//  CMFindDataProtocol.h
 //  CaibeiMarket
 //
-//  Created by icaibei on 2017/7/23.
+//  Created by alibaba on 2017/10/29.
 //  Copyright © 2017年 qianji. All rights reserved.
 //
 
-#ifndef CMHomeDataProtocol_h
-#define CMHomeDataProtocol_h
+#ifndef CMFindDataProtocol_h
+#define CMFindDataProtocol_h
 
-@protocol CMHomeDataProtocol <NSObject>
+
+@protocol CMFindDataProtocol <NSObject>
 
 @optional
 - (NSInteger)numberOfRowsInFloor;
+- (id)floorModelAtIndex:(NSInteger)index;
 - (CGFloat)heightForRowCell;
 
 @property (nonatomic,strong)NSString * actionType;
@@ -21,4 +23,4 @@
 
 @end
 
-#endif /* CMHomeDataProtocol_h */
+#endif /* CMFindDataProtocol_h */

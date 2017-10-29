@@ -10,7 +10,6 @@
 #import "CMHomeContentCorverFlowView.h"
 #import "CMTextFieldView.h"
 #import "CMHomeModel.h"
-#import "CMHomeContent.h"
 
 @interface CMHomeContentCell ()
 
@@ -24,7 +23,6 @@
 @property (nonatomic,strong) UILabel * borrowDes01Label; //已经服务多少人
 @property (nonatomic,strong) UILabel * borrowDes02Label; //累计服务多少额度
 @property (nonatomic,strong) CMHomeInfo * homeInfo;
-@property (nonatomic,strong) CMHomeContent * content;
 
 @end
 
@@ -54,60 +52,17 @@
 
 - (void)applyOrder:(UIButton *)button
 {
-    self.content.totalMoney = self.borrowTextFiled.text;
-    if (self.tapBlock) {
-        self.tapBlock(self.content);
-    }
+//    self.content.totalMoney = self.borrowTextFiled.text;
+//    if (self.tapBlock) {
+//        self.tapBlock(self.content);
+//    }
 }
 
 - (void)fillData:(id)model
 {
     self.homeInfo = model;
-    CMHomeContent  * content = [CMHomeContent new];
-    content.actionType = CMHomeActionTypeContent;
-    self.content = content;
     //07-07 12:12 137*****000的用户借款成功1000元
-    NSDate * date = [NSDate dateWithTimeIntervalSince1970:[self.homeInfo.createDate doubleValue]/1000];
-    NSString * dateStr = [date description];
-    if ([dateStr length] > 10) {
-        NSString * placeholder = @"的用户借款成功";
-        NSString * subDatestr = [NSString stringWithFormat:@"%@  ",[dateStr substringWithRange:NSMakeRange(0, 10)]];
-        NSString * lengingText = [NSString stringWithFormat:@"%@%@%@%@元",subDatestr,self.homeInfo.phone,placeholder,self.homeInfo.totalLendMoney];
-        NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:lengingText];
-        NSInteger phoneStartIndex = subDatestr.length;
-        NSInteger phoneLength = self.homeInfo.phone.length;
-        NSInteger lendMoneyStartIndex = subDatestr.length + placeholder.length + self.homeInfo.phone.length;
-        NSInteger lendMoneyLength = self.homeInfo.totalLendMoney.length;
-
-        if(subDatestr.length > 0 && self.homeInfo.phone.length > 0 && self.homeInfo.totalLendMoney.length >0)
-        {
-            [attrStr addAttribute:NSForegroundColorAttributeName value:CMThemeColor range:NSMakeRange(phoneStartIndex,phoneLength)];
-            [attrStr addAttribute:NSForegroundColorAttributeName value:CMThemeColor range:NSMakeRange(lendMoneyStartIndex,lendMoneyLength)];
-            [self.recentLendingLabel setAttributedText:attrStr];
-        }
-    }
     
-    NSString * servicePeople = self.homeInfo.servicePersonTime;
-    NSString * totalLendMoney = self.homeInfo.totalLendMoney;
-    if (servicePeople.length > 0) {
-        NSString * serviceStr = [NSString stringWithFormat:@"已服务%@人完成借款",servicePeople];
-        NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:serviceStr];
-        NSInteger start = 3;
-        NSInteger length = servicePeople.length;
-        [attrStr addAttribute:NSForegroundColorAttributeName value:CMThemeColor range:NSMakeRange(start,length)];
-        [self.borrowDes01Label setAttributedText:attrStr];
-    }
-
-    if (totalLendMoney.length > 0) {
-        NSString * moneyStr = [NSString stringWithFormat:@"累计额度%@",totalLendMoney];
-        NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:moneyStr];
-        NSInteger start = 3;
-        NSInteger length = totalLendMoney.length;
-        [attrStr addAttribute:NSForegroundColorAttributeName value:CMThemeColor range:NSMakeRange(start,length)];
-        [self.borrowDes02Label setAttributedText:attrStr];
-    }
-//   _borrowDes01Label.text = @"已服务2,146人完成借款";
-//    _borrowDes02Label.text = @"累计额度312,480,678";
 
 }
 
