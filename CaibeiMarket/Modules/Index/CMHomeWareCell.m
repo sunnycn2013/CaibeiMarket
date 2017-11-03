@@ -62,15 +62,14 @@
     self.model = (CMHomeInfo *)model;
     [self.newsImageView setImageWithURL:[NSURL URLWithString:self.model.img] placeholder:[UIImage imageNamed:@"icon-50"]];
     [self.newsTitleLabel setText:self.model.title];
-    [self.newsDesLabel setText:self.model.des];
     [self.newsTimeLabel setText:self.model.time];
-
+    [self.newsDesLabel setText:self.model.des];
 }
 
 - (void)tapAction:(UITapGestureRecognizer *)tap
 {
     if (self.tapBlock) {
-        self.tapBlock(self.model);
+        self.tapBlock(self.model.jump);
     }
 }
 #pragma mark -  set get
@@ -87,8 +86,11 @@
 - (UIImageView *)newsImageView
 {
     if (!_newsImageView) {
-        _newsImageView = [[UIImageView alloc] initWithFrame:CGRectMake(kIPhone6Scale(25), kIPhone6Scale(18), kIPhone6Scale(39), kIPhone6Scale(39))];
+        _newsImageView = [[UIImageView alloc] initWithFrame:CGRectMake(11, 11, kIPhone6Scale(105), kIPhone6Scale(70))];
         _newsImageView.image = [UIImage imageNamed:@"find_head_note"];
+        _newsImageView.layer.cornerRadius = 4.0;
+        _newsImageView.layer.masksToBounds = YES;
+        _newsImageView.backgroundColor = [UIColor purpleColor];
     }
     return _newsImageView;
 }
@@ -96,11 +98,12 @@
 - (UILabel *)newsTitleLabel
 {
     if (!_newsTitleLabel) {
-        _newsTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(_newsImageView.right+10, kIPhone6Scale(15), kIPhone6Scale(170), kIPhone6Scale(30))];
-        _newsTitleLabel.textColor = [UIColor grayColor];
-        _newsTitleLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(16)];
+        CGFloat width = KScreenWidth - kIPhone6Scale(105) - 30;
+        _newsTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(_newsImageView.right+10, _newsImageView.top, width, kIPhone6Scale(35))];
+        _newsTitleLabel.textColor = [UIColor blackColor];
+        _newsTitleLabel.font = [UIFont boldSystemFontOfSize:kIPhone6PScale(15)];
         _newsTitleLabel.text = @"会员免费意外保险";
-        _newsTitleLabel.adjustsFontSizeToFitWidth = YES;
+        _newsTitleLabel.numberOfLines = 0;
     }
     return _newsTitleLabel;
 }
@@ -108,35 +111,65 @@
 - (UILabel *)newsDesLabel
 {
     if (!_newsDesLabel) {
-        _newsDesLabel = [[UILabel alloc] initWithFrame:CGRectMake(_newsTitleLabel.left, _newsTitleLabel.bottom+kIPhone6Scale(4), kIPhone6Scale(180), kIPhone6Scale(21))];
+        CGFloat width = KScreenWidth - kIPhone6Scale(105) - 30;
+        _newsDesLabel = [[UILabel alloc] initWithFrame:CGRectMake(_newsTitleLabel.left, _newsTitleLabel.bottom, width, kIPhone6Scale(21))];
         _newsDesLabel.textColor = [UIColor grayColor];
         _newsDesLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(12)];
+        _newsDesLabel.numberOfLines = 0;
         _newsDesLabel.text = @"100.0元";
     }
     return _newsDesLabel;
 }
 
-- (UILabel *)newsAuthorLabel
-{
-    if (!_newsAuthorLabel) {
-        _newsAuthorLabel = [[UILabel alloc] initWithFrame:CGRectMake(KScreenWidth - kIPhone6Scale(125), kIPhone6Scale(27), kIPhone6Scale(100), kIPhone6Scale(15))];
-        _newsAuthorLabel.textColor = [UIColor grayColor];
-        _newsAuthorLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(10)];
-        _newsAuthorLabel.text = @"Logo";
-        _newsAuthorLabel.textColor = [UIColor grayColor];
-        _newsAuthorLabel.textAlignment = NSTextAlignmentRight;
-    }
-    return _newsAuthorLabel;
-}
+
 
 - (UILabel *)newsTimeLabel
 {
     if (!_newsTimeLabel) {
-        _newsTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(_newsAuthorLabel.left, _newsAuthorLabel.bottom, kIPhone6Scale(106), kIPhone6Scale(10))];
+        _newsTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(_newsDesLabel.left, _newsDesLabel.bottom+kIPhone6PScale(3), kIPhone6Scale(100), kIPhone6Scale(10))];
         _newsTimeLabel.text = @"2017.10.25";
-        _newsTimeLabel.backgroundColor = [UIColor purpleColor];
+        _newsTimeLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(10)];
+        _newsTimeLabel.textColor = [UIColor grayColor];
     }
     return _newsTimeLabel;
 }
+- (UILabel *)newsAuthorLabel
+{
+    if (!_newsAuthorLabel) {
+        CGFloat marginLeft = KScreenWidth - kIPhone6Scale(56) - 10;
+        _newsAuthorLabel = [[UILabel alloc] initWithFrame:CGRectMake(marginLeft, _newsDesLabel.bottom+kIPhone6PScale(3), kIPhone6Scale(56), kIPhone6Scale(10))];
+        _newsAuthorLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(10)];
+        _newsAuthorLabel.text = @"来源：采贝";
+        _newsAuthorLabel.textColor = [UIColor grayColor];
+        _newsAuthorLabel.textAlignment = NSTextAlignmentLeft;
+    }
+    return _newsAuthorLabel;
+}
+
+//- (UILabel *)newsAuthorLabel
+//{
+//    if (!_newsAuthorLabel) {
+//        _newsAuthorLabel = [[UILabel alloc] initWithFrame:CGRectMake(_newsDesLabel.left, _newsDesLabel.bottom+kIPhone6PScale(3), kIPhone6Scale(100), kIPhone6Scale(10))];
+////        _newsAuthorLabel.backgroundColor = [UIColor purpleColor];
+//        _newsAuthorLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(10)];
+//        _newsAuthorLabel.text = @"2017.10.25";
+//        _newsAuthorLabel.textColor = [UIColor grayColor];
+//        _newsAuthorLabel.textAlignment = NSTextAlignmentLeft;
+//    }
+//    return _newsAuthorLabel;
+//}
+//
+//- (UILabel *)newsTimeLabel
+//{
+//    if (!_newsTimeLabel) {
+//        CGFloat marginLeft = KScreenWidth - kIPhone6Scale(56) - 10;
+//        _newsTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(marginLeft, _newsAuthorLabel.top, kIPhone6Scale(56), kIPhone6Scale(10))];
+//        _newsTimeLabel.text = @"来源：采贝";
+//        _newsTimeLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(10)];
+//        _newsTimeLabel.textColor = [UIColor grayColor];
+//    }
+//    return _newsTimeLabel;
+//}
+
 
 @end

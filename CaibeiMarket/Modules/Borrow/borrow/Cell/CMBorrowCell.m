@@ -97,6 +97,11 @@
     [self.starImageView updateTitle:[NSString stringWithFormat:@"%ld",self.data.index + 1]];
 }
 
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    self.linesView.frame = CGRectMake(0,self.height - 3, KScreenWidth, 3);
+}
 #pragma mark - set get
 
 - (UIImageView *)iconImageView
@@ -227,7 +232,7 @@
 - (UIView *)linesView
 {
     if (!_linesView) {
-        _linesView = [[UIView alloc] initWithFrame:CGRectMake(0,kIPhone6PScale(87), KScreenWidth, kIPhone6PScale(3))];
+        _linesView = [[UIView alloc] initWithFrame:CGRectMake(0,_iconImageView.bottom+3, KScreenWidth, kIPhone6PScale(3))];
         _linesView.backgroundColor = [UIColor colorWithHexString:@"#F6F6F6"];
     }
     return _linesView;

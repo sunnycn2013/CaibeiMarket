@@ -7,11 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-typedef NS_ENUM(NSInteger,CMRegistActionType) {
-    CMRegistActionTypeRegist = 2,
-    CMRegistActionTypeResetPwd = 3
-};
+#import "CMPersonInfoSetingViewController.h"
 
 @interface CMRegistViewController : RootViewController
 

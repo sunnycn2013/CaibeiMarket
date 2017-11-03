@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "CMHomeDataProtocol.h"
+#import "CMJump.h"
 
 @interface CMHomeBanner : NSObject<CMHomeDataProtocol>
 
 @property (nonatomic,strong)NSString * img;
 @property (nonatomic,strong)NSString * url;
+@property (nonatomic,strong)CMJump   * jump;
 
 @end

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CMFindPwdViewController : UIViewController
+@interface CMFindPwdViewController : RootViewController
 
 - (instancetype)initWithUserName:(NSString *)userName;
 

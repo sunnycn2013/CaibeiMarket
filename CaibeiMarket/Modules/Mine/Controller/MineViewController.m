@@ -27,6 +27,7 @@
 #import "XBSettingSectionModel.h"
 
 #import "CMPortraitViewController.h"
+#import "LoginViewController.h"
 
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource,CMMineHeaderViewDelegate>
 {
@@ -44,6 +45,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = CMThemeColor;
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.delegate = self;
@@ -54,6 +56,7 @@
     [self.view addSubview:self.tableView];
     [self.tableView reloadData];
     self.tableView.top = 0;
+    [self.headerView refreashData];
 }
 
 - (void)setupSections
@@ -117,8 +120,7 @@
 {
     [super viewWillAppear:animated];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    //去掉导航栏底部的黑线
-    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -194,9 +196,12 @@
 - (void)headerView:(CMMineHeaderView *)view didTaped:(id)obj
 {
     if (![[CMUserManager sharedInstance] isLogined]) {
-        [[CMUserManager sharedInstance] login:kUserLoginTypePwd completion:^(BOOL success, NSString *des) {
-            //
-        }];
+        LoginViewController * loginVC = [[LoginViewController alloc] init];
+        UINavigationController * navi = [[UINavigationController alloc] initWithRootViewController:loginVC];
+        [self presentViewController:navi animated:YES completion:nil];
+//        [[CMUserManager sharedInstance] login:kUserLoginTypePwd completion:^(BOOL success, NSString *des) {
+//            //
+//        }];
     }else{
         CMPortraitViewController * portrait = [[CMPortraitViewController alloc] init];
         [self.navigationController pushViewController:portrait animated:YES];

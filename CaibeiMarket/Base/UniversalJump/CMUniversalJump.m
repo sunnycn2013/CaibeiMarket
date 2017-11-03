@@ -55,12 +55,13 @@ SINGLETON_FOR_CLASS(CMUniversalJump);
 - (void)presentTo:(NSString *)url params:(NSDictionary *)parameters
 {
     UIViewController * viewController = nil;
+    UINavigationController * navi = nil;
     self.currentController = [self currentViewController];
     if ([url isEqualToString:CMUJmupLogin]) {
         viewController = [[LoginViewController alloc] initWithParams:parameters];
+        navi = [[UINavigationController alloc] initWithRootViewController:viewController];
     }
-    
-    [self.currentController presentViewController:viewController animated:YES completion:nil];
+    [self.currentController presentViewController:navi animated:YES completion:nil];
 }
 
 - (void)dismissViewController

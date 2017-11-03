@@ -31,6 +31,7 @@ NSString * CMHomeActionTypeContent = @"product";
     }else if ([self.pattern isEqualToString:@"entrance"])
     {
         NSInteger row = (NSInteger)self.entranceList.count/5;
+        row = 1;
         if (row == 2) {
             return kIPhone6Scale(95.0*2);
         }
@@ -57,6 +58,15 @@ NSString * CMHomeActionTypeContent = @"product";
         [contentStr appendString:[string substringWithRange:NSMakeRange(length - lastMoneyCount, lastMoneyCount)]];
     }
     return [contentStr copy];
+}
+
+- (CMJump *)jump
+{
+    CMJump * jp = [[CMJump alloc] init];
+    jp.url = self.url;
+    jp.type = @"h5";
+    jp.title = self.title;
+    return jp;
 }
 @end
 

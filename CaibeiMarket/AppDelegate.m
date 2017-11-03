@@ -28,7 +28,7 @@
 
     //初始化window  bbbb
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
-    
+    [[CMUserManager sharedInstance] loadUserInfo];
     [XGManager initXG];
     [XGManager handleLaunching:launchOptions];
     [BuglyManager initBugly];
@@ -37,7 +37,7 @@
     [self registerAPNS];
 
     [self initWindow];
-    
+
     //UMeng初始化
     [self initUMeng];
 
@@ -52,6 +52,8 @@
     
     //广告页
     [AppManager appStart];
+    [self initGuideView];
+
     return YES;
 }
 

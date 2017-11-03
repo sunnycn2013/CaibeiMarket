@@ -31,7 +31,7 @@
 
 - (void)setUI
 {
-    self.backgroundColor = CMThemeColor;
+    self.backgroundColor = [UIColor colorWithHexString:@"#6F5CD5"];
     [self addSubview:self.picBgView];
     [self addSubview:self.picImageView];
     [self addSubview:self.phoneNumLabel];
@@ -47,6 +47,12 @@
     if ([self.delegate respondsToSelector:@selector(headerView:didTaped:)]) {
         [self.delegate headerView:self didTaped:nil];
     }
+}
+
+- (void)refreashData
+{
+    CMUserInfo * userInfo = [CMUserManager sharedInstance].curUserInfo;
+    self.phoneNumLabel.text = userInfo.userName ? : @"点击登录";
 }
 
 #pragma mark -  set get
@@ -77,7 +83,7 @@
 {
     if (!_phoneNumLabel) {
         _phoneNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(_picImageView.right+16, 80, kIPhone6PScale(300), kIPhone6PScale(28))];
-        _phoneNumLabel.text = @"1312782572";
+        _phoneNumLabel.text = @"立即登录";
         _phoneNumLabel.font = [UIFont systemFontOfSize:18];
         _phoneNumLabel.textColor = [UIColor whiteColor];
     }

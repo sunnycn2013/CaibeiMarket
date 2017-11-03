@@ -8,8 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSInteger,CMRegistActionType) {
+    CMRegistActionTypeRegist = 2,
+    CMRegistActionTypeResetPwd = 3
+};
+
 @interface CMPersonInfoSetingViewController : RootViewController
 
-- (instancetype)initWithUserName:(NSString *)userName;
+- (instancetype)initWithUserName:(NSString *)userName type:(CMRegistActionType)type;;
 
 @end

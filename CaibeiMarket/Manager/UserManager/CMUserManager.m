@@ -28,6 +28,7 @@ SINGLETON_FOR_CLASS(CMUserManager);
                                                  selector:@selector(onKick)
                                                      name:KNotificationOnKick
                                                    object:nil];
+        [self loadUserInfo];
     }
     return self;
 }
@@ -41,8 +42,8 @@ SINGLETON_FOR_CLASS(CMUserManager);
 #pragma mark ————— 带参数登录 —————
 -(void)login:(UserLoginType )loginType params:(NSDictionary *)params completion:(loginBlock)completion
 {
-    [[CMUniversalJump sharedInstance] pushViewController:CMUJmupLogin params:nil];
-//    [[CMUniversalJump sharedInstance] presentTo:CMUJmupLogin params:nil];
+//    [[CMUniversalJump sharedInstance] pushViewController:CMUJmupLogin params:nil];
+    [[CMUniversalJump sharedInstance] presentTo:CMUJmupLogin params:nil];
 
 }
 

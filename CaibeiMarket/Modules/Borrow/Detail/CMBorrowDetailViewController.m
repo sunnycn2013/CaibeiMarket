@@ -46,12 +46,12 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.frame = CGRectMake(0, 25, KScreenWidth, KScreenHeight);
     
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.noteView];
     [self.view addSubview:self.applyButton];
-    
+    self.tableView.frame = CGRectMake(0, _noteView.height, KScreenWidth, KScreenHeight);
+
     self.templateArray = @[@"CMBorrowDetailContentCell",@"CMBorrowDetailSpaceCell",@"CMBorrowDetailNotesCell",@"CMBorrowDetailSpaceCell",@"CMBorrowDetailDesCell"];
     [self.tableView registerClass:[CMBorrowDetailContentCell class] forCellReuseIdentifier:@"CMBorrowDetailContentCell"];
     [self.tableView registerClass:[CMBorrowDetailNotesCell class] forCellReuseIdentifier:@"CMBorrowDetailNotesCell"];
@@ -140,6 +140,13 @@
 
 - (void)applyForLend:(UIButton *)button
 {
+    if (![[CMUserManager sharedInstance] isLogined])
+    {
+        LoginViewController * loginVC = [[LoginViewController alloc] init];
+        UINavigationController * navi = [[UINavigationController alloc] initWithRootViewController:loginVC];
+        [self presentViewController:navi animated:YES completion:nil];
+        return;
+    }
     [self loadApplyForLend];
     CMBorrowProduct * product = [self.detail.properties firstObject];
     NSDictionary * params = @{
@@ -177,12 +184,11 @@
                               };
     [self.request POST:@"order/lendApply.json" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
         NSString * resultCode = [responseObject objectForKey:@"resultCode"];
-        NSString * message = [responseObject objectForKey:@"message"];
-        
+//        NSString * message = [responseObject objectForKey:@"message"];
         if ([resultCode isEqualToString:@"0000"]) {
             
         }else{
-            [MBProgressHUD showErrorMessage:message];
+//            [MBProgressHUD showErrorMessage:message];
         }
         [weakSelf.tableView.mj_header endRefreshing];
         [weakSelf.tableView reloadData];

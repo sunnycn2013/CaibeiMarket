@@ -19,6 +19,7 @@
 
 #import "CMBorrowViewController.h"
 #import "CBAPIUtil.h"
+#import "CMJump.h"
 
 #define itemWidthHeight ((kScreenWidth-10)/2)
 
@@ -55,16 +56,16 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
     
     self.data = [[CMHomeModel alloc] init];
     
-    [self loadData];
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapIndexView:)];
     [self.view addGestureRecognizer:tap];
     
     self.tableView.top = 0;
-//    self.edgesForExtendedLayout = UIRectEdgeTop;
+    self.edgesForExtendedLayout = UIRectEdgeTop;
     
-    NSDictionary * params = [CBAPIUtil getAPIDataWith:@"index.md"];
+    NSDictionary * params = [CBAPIUtil getAPIDataWith:@"index.json"];
     self.homeModel = [CMHomeModel mj_objectWithKeyValues:params];
     NSLog(@"aa");
+    [self loadData];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -100,7 +101,6 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
     __weak typeof(self) weakSelf = self;
     self.request = [UAHTTPSessionManager manager];
     [self.request POST:@"order/newOrderInfo.json" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
-        responseObject = [CBAPIUtil getAPIDataWith:@"index.md"];
         weakSelf.homeModel = [CMHomeModel mj_objectWithKeyValues:responseObject] ;
         NSString * resultCode = [responseObject objectForKey:@"resultCode"];
         NSString * message = [responseObject objectForKey:@"message"];
@@ -156,31 +156,18 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
 - (void)processWithModel:(id)model
 {
     UIViewController * viewController = nil;
-    if([model conformsToProtocol:@protocol(CMHomeDataProtocol)])
+    if([model isKindOfClass:[CMJump class]])
     {
-        NSString * actionType = [(id<CMHomeDataProtocol>)model actionType];
-        if ([actionType isEqualToString:CMHomeActionTypeBanner])
-        {
-           
-        }else if ([actionType isEqualToString:CMHomeActionTypeApp]){
-            NSString * title = [(id<CMHomeDataProtocol>)model title] ? : @"";
-            NSString * jumpUrl = [(id<CMHomeDataProtocol>)model jumUrl] ? : @"";
-            viewController = [[RootWebViewController alloc] initWithParams:@{@"title" : title,@"url" : jumpUrl}];
-        }else if ([actionType isEqualToString:CMHomeActionTypeContent]){
-            if (![[CMUserManager sharedInstance] isLogined]) {
-                viewController = [[LoginViewController alloc] init];
-            }else{
-                viewController = [[CMBorrowViewController alloc] initWithParams:nil];
-            }
+        CMJump * jump = (CMJump *)model;
+        if ([jump.type isEqualToString:@"h5"]) {
+            RootWebViewController * webViewVC = [[RootWebViewController alloc] initWithUrl:jump.url];
+            [self.navigationController pushViewController:webViewVC animated:YES];
+        }else if ([jump.type isEqualToString:@"native"]){
+            
         }
     }
     
     [self.navigationController pushViewController:viewController animated:YES];
-
-    [UIView animateWithDuration:0.5 animations:^{
-        [self resetTableOffset];
-    } completion:^(BOOL finished) {
-    }];
 }
 
 - (void)resetTableOffset

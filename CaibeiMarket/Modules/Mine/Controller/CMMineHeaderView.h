@@ -18,4 +18,5 @@
 
 @property (nonatomic,weak) id delegate;
 
+- (void)refreashData;
 @end

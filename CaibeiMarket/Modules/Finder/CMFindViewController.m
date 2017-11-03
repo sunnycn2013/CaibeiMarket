@@ -32,7 +32,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.mj_header = self.header;
-    self.tableView.mj_footer = self.footer;
+//    self.tableView.mj_footer = self.footer;
 
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
@@ -43,7 +43,7 @@
     [self.tableView reloadData];
     [self loadData];
     
-    NSDictionary * params = [CBAPIUtil getAPIDataWith:@"find.md"];
+    NSDictionary * params = [CBAPIUtil getAPIDataWith:@"find.json"];
     self.find = [CMFind mj_objectWithKeyValues:params];
     NSLog(@"aa");
 }
@@ -66,9 +66,8 @@
     NSDictionary * params = @{@"number" : @"1"};
     __weak typeof(self) weakSelf = self;
     self.creditRequest = [UAHTTPSessionManager manager];
-    [self.creditRequest POST:@"credit/creditPage.json" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
-        responseObject = [CBAPIUtil getAPIDataWith:@"find.md"];
-        self.find = [CMFind mj_objectWithKeyValues:params];
+    [self.creditRequest POST:@"order/findOrderInfo.json" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
+        weakSelf.find = [CMFind mj_objectWithKeyValues:params];
         weakSelf.find = [CMFind mj_objectWithKeyValues:responseObject] ;
         NSString * resultCode = [responseObject objectForKey:@"resultCode"];
         NSString * message = [responseObject objectForKey:@"message"];
@@ -111,6 +110,10 @@
     id wareInfo = [item floorModelAtIndex:indexPath.row];
     UITableViewCell<CMFindProtocol> * cell = [tableView dequeueReusableCellWithIdentifier:[item pattern]];
     [cell fillData:wareInfo];
+    kWeakSelf(self)
+    [cell setTapBlock:^(id obj){
+        [weakself processWithModel:obj];
+    }];
     return cell;
 }
 
@@ -137,4 +140,20 @@
     return headerView;
 }
 
+- (void)processWithModel:(id)model
+{
+    UIViewController * viewController = nil;
+    if([model isKindOfClass:[CMJump class]])
+    {
+        CMJump * jump = (CMJump *)model;
+        if ([jump.type isEqualToString:@"h5"]) {
+            RootWebViewController * webViewVC = [[RootWebViewController alloc] initWithUrl:jump.url];
+            [self.navigationController pushViewController:webViewVC animated:YES];
+        }else if ([jump.type isEqualToString:@"native"]){
+            
+        }
+    }
+    
+    [self.navigationController pushViewController:viewController animated:YES];
+}
 @end

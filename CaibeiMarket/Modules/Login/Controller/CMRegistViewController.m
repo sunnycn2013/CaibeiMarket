@@ -36,7 +36,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"注册";
+    if(self.registType == CMRegistActionTypeRegist)
+    {
+        self.title = @"注册";
+    }else{
+        self.title = @"找回密码";
+    }
+    
     self.view.backgroundColor = [UIColor colorWithHexString:@"#F6F6F6"];
     [self.view addSubview:self.pwdBgView];
     [self.view addSubview:self.phoneNumTextField];
@@ -52,7 +58,7 @@
         return;
     }
 
-    NSDictionary * params = @{@"phone":phone ? : @"", @"type" : @(2)};
+    NSDictionary * params = @{@"phone":phone ? : @"", @"type" : @(self.registType)};
     self.request = [UAHTTPSessionManager manager];
     __weak typeof(self) weakself = self;
     [self.request POST:@"veriCodes/send.json" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
@@ -70,23 +76,29 @@
 
 - (void)jumpToNext
 {
-    if (self.registType == CMRegistActionTypeRegist) {
-        NSCharacterSet * character = [NSCharacterSet whitespaceAndNewlineCharacterSet];
-        NSString * phone = [self.phoneNumTextField.text stringByTrimmingCharactersInSet:character];
-        CMPersonInfoSetingViewController * viewController = [[CMPersonInfoSetingViewController alloc] initWithUserName:phone];
-        [self.navigationController pushViewController:viewController animated:YES];
-    }else
-    {
-//        CMFindPwdViewController * viewController = [[CMFindPwdViewController alloc] init];
+    NSCharacterSet * character = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    NSString * phone = [self.phoneNumTextField.text stringByTrimmingCharactersInSet:character];
+    CMPersonInfoSetingViewController * viewController = [[CMPersonInfoSetingViewController alloc] initWithUserName:phone type:self.registType];
+    [self.navigationController pushViewController:viewController animated:YES];
+//    if (self.registType == CMRegistActionTypeRegist) {
+//        NSCharacterSet * character = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+//        NSString * phone = [self.phoneNumTextField.text stringByTrimmingCharactersInSet:character];
+//        CMPersonInfoSetingViewController * viewController = [[CMPersonInfoSetingViewController alloc] initWithUserName:phone type:self.registType];
 //        [self.navigationController pushViewController:viewController animated:YES];
-    }
+//    }else
+//    {
+//        NSCharacterSet * character = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+//        NSString * phone = [self.phoneNumTextField.text stringByTrimmingCharactersInSet:character];
+//        CMFindPwdViewController * viewController = [[CMFindPwdViewController alloc] initWithUserName:phone];
+//        [self.navigationController pushViewController:viewController animated:YES];
+//    }
 }
 
 #pragma mark - set get
 - (UIView *)pwdBgView
 {
     if (!_pwdBgView) {
-        _pwdBgView = [[UIView alloc] initWithFrame:CGRectMake(0, 84, KScreenWidth, 35)];
+        _pwdBgView = [[UIView alloc] initWithFrame:CGRectMake(0, 84, KScreenWidth, kIPhone6PScale(40))];
         _pwdBgView.backgroundColor = [UIColor whiteColor];
     }
     return _pwdBgView;
@@ -95,7 +107,7 @@
 - (CMTextFieldView *)phoneNumTextField
 {
     if (!_phoneNumTextField) {
-        _phoneNumTextField = [[CMTextFieldView alloc] initWithFrame:CGRectMake(20, _pwdBgView.top, KScreenWidth-120, 35)];
+        _phoneNumTextField = [[CMTextFieldView alloc] initWithFrame:CGRectMake(20, _pwdBgView.top, KScreenWidth-120, kIPhone6PScale(40))];
         _phoneNumTextField.placeholder = @"请输入手机号";
         _phoneNumTextField.textFieldBgColor = [UIColor lightGrayColor];
         _phoneNumTextField.showRoundedCorner = NO;

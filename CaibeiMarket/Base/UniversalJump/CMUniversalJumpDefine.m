@@ -9,3 +9,5 @@
 #import "CMUniversalJumpDefine.h"
 
 NSString * const CMUJmupLogin = @"com.icaibei.login";
+
+NSString * const CMUJmupBorrow = @"com.icaibei.borrow";

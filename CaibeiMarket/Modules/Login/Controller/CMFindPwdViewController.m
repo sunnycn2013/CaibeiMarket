@@ -13,11 +13,20 @@
 
 @property (nonatomic, strong) NSString * userName;
 
+@property (nonatomic, strong) UILabel          *noteLabel;
+
 @property (nonatomic, strong) UIView           *pwdBgView;
+
+@property (nonatomic, strong) UIButton         * areaTextButton;
+@property (nonatomic, strong) CMTextFieldView  * phoneTextField;
+@property (nonatomic, strong) UIButton         * verificationButton;
+
+@property (nonatomic, strong) UIView           *veriCodeBgView;
 @property (nonatomic, strong) CMTextFieldView  *veriCodeTextField;
-@property (nonatomic, strong) UIButton         *verificationButton;
+
 @property (nonatomic, strong) UIView           *conformPwdBgView;
 @property (nonatomic, strong) CMTextFieldView  *pwdTextFiled;
+
 @property (nonatomic, strong) UIButton         *nextButton;
 
 @property(nonatomic, strong) UAHTTPSessionManager * veriRequest;
@@ -40,15 +49,21 @@
     [super viewDidLoad];
     self.title = @"重置密码";
     self.view.backgroundColor = [UIColor colorWithHexString:@"#F6F6F6"];
-    
+    [self.view addSubview:self.noteLabel];
     [self.view addSubview:self.pwdBgView];
-    [self.view addSubview:self.veriCodeTextField];
+    [self.view addSubview:self.areaTextButton];
+    [self.view addSubview:self.phoneTextField];
     [self.view addSubview:self.verificationButton];
+    
+    [self.view addSubview:self.veriCodeBgView];
+    [self.view addSubview:self.veriCodeTextField];
+    
     [self.view addSubview:self.conformPwdBgView];
     [self.view addSubview:self.pwdTextFiled];
     [self.view addSubview:self.nextButton];
     
-    // Do any additional setup after loading the view.
+    self.phoneTextField.text = self.userName;
+    [self.phoneTextField setUserInteractionEnabled:NO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,7 +79,7 @@
 - (void)nextAction:(UIButton *)sender
 {
     NSCharacterSet * character = [NSCharacterSet whitespaceAndNewlineCharacterSet];
-    NSString * verfiCode = [self.veriCodeTextField.text stringByTrimmingCharactersInSet:character];
+    NSString * verfiCode = [self.phoneTextField.text stringByTrimmingCharactersInSet:character];
     
     NSDictionary * params = @{
                               @"phone":self.userName ? : @"",
@@ -120,33 +135,58 @@
 }
 #pragma mark -  set get
 
+- (UILabel *)noteLabel
+{
+    if (!_noteLabel) {
+        _noteLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 84, KScreenWidth, kIPhone6PScale(10))];
+        _noteLabel.text = @"  请输入手机号验证码，请设置新的登录密码";
+        _noteLabel.font = [UIFont systemFontOfSize:12];
+        _noteLabel.textColor = [UIColor lightGrayColor];
+        _noteLabel.textAlignment = NSTextAlignmentLeft;
+    }
+    return _noteLabel;
+}
+
 - (UIView *)pwdBgView
 {
     if (!_pwdBgView) {
-        _pwdBgView = [[UIView alloc] initWithFrame:CGRectMake(0, 84, KScreenWidth, 35)];
+        _pwdBgView = [[UIView alloc] initWithFrame:CGRectMake(77, _noteLabel.bottom+13, KScreenWidth, kIPhone6PScale(40))];
         _pwdBgView.backgroundColor = [UIColor whiteColor];
     }
     return _pwdBgView;
 }
 
-- (CMTextFieldView *)veriCodeTextField
+- (UIButton *)areaTextButton
 {
-    if (!_veriCodeTextField) {
-        _veriCodeTextField = [[CMTextFieldView alloc] initWithFrame:CGRectMake(20, _pwdBgView.top, KScreenWidth-120, 35)];
-        _veriCodeTextField.placeholder = @"请输入手机号";
-        _veriCodeTextField.textFieldBgColor = [UIColor lightGrayColor];
-        _veriCodeTextField.showRoundedCorner = NO;
-        _veriCodeTextField.fontSize = 14;
+    if (!_areaTextButton) {
+        _areaTextButton = [[UIButton alloc] initWithFrame:CGRectMake(0, _pwdBgView.top, 75, kIPhone6PScale(40))];
+        [_areaTextButton setTitle:@"+86" forState:UIControlStateNormal];
+        [_areaTextButton setTitleColor:CMThemeColor forState:UIControlStateNormal];
+        _areaTextButton.backgroundColor = [UIColor whiteColor];
     }
-    return _veriCodeTextField;
+    return _areaTextButton;
+}
+
+- (CMTextFieldView *)phoneTextField
+{
+    if (!_phoneTextField) {
+        
+        _phoneTextField = [[CMTextFieldView alloc] initWithFrame:CGRectMake(_areaTextButton.right+2, _pwdBgView.top, KScreenWidth-120-77, kIPhone6PScale(40))];
+        _phoneTextField.placeholder = @"请输入手机号";
+        _phoneTextField.textFieldBgColor = [UIColor lightGrayColor];
+        _phoneTextField.textColor = [UIColor lightGrayColor];
+        _phoneTextField.showRoundedCorner = NO;
+        _phoneTextField.fontSize = 14;
+    }
+    return _phoneTextField;
 }
 
 - (UIButton *)verificationButton
 {
     if (!_verificationButton) {
-        CGFloat width = KScreenWidth - _pwdTextFiled.right - 10;
+        CGFloat width = 100;
         _verificationButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _verificationButton.frame = CGRectMake(_pwdTextFiled.right, _pwdTextFiled.top+2, width, 30);
+        _verificationButton.frame = CGRectMake(KScreenWidth - width-20, _phoneTextField.top+5, width, 30);
         _verificationButton.backgroundColor = CMThemeColor;
         _verificationButton.titleLabel.font = [UIFont systemFontOfSize:10];
         [_verificationButton setTitle:@"获取验证码(60秒)" forState:UIControlStateNormal];
@@ -155,10 +195,32 @@
     return _verificationButton;
 }
 
+//@property (nonatomic, strong) UIView           *veriCodeBgView;
+//@property (nonatomic, strong) CMTextFieldView  *veriCodeTextField1;
+- (UIView *)veriCodeBgView
+{
+    if (!_veriCodeBgView) {
+        _veriCodeBgView = [[UIView alloc] initWithFrame:CGRectMake(0, _pwdBgView.bottom + kIPhone6Scale(13), KScreenWidth, kIPhone6Scale(40))];
+        _veriCodeBgView.backgroundColor = [UIColor whiteColor];
+    }
+    return _veriCodeBgView;
+}
+
+- (CMTextFieldView *)veriCodeTextField
+{
+    if (!_veriCodeTextField) {
+        _veriCodeTextField = [[CMTextFieldView alloc] initWithFrame:CGRectMake(20,_veriCodeBgView.top, KScreenWidth-120, kIPhone6Scale(40))];
+        _veriCodeTextField.placeholder = @"请输入验证码";
+        _veriCodeTextField.showRoundedCorner = NO;
+        _veriCodeTextField.fontSize = 14;
+    }
+    return _veriCodeTextField;
+}
+
 - (UIView *)conformPwdBgView
 {
     if (!_conformPwdBgView) {
-        _conformPwdBgView = [[UIView alloc] initWithFrame:CGRectMake(0, _pwdTextFiled.bottom + kIPhone6Scale(13), KScreenWidth, 35)];
+        _conformPwdBgView = [[UIView alloc] initWithFrame:CGRectMake(0, _veriCodeBgView.bottom + kIPhone6Scale(13), KScreenWidth, kIPhone6Scale(40))];
         _conformPwdBgView.backgroundColor = [UIColor whiteColor];
     }
     return _conformPwdBgView;
@@ -167,8 +229,8 @@
 - (CMTextFieldView *)pwdTextFiled
 {
     if (!_pwdTextFiled) {
-        _pwdTextFiled = [[CMTextFieldView alloc] initWithFrame:CGRectMake(20,_conformPwdBgView.top, KScreenWidth-120, 35)];
-        _pwdTextFiled.placeholder = @"请确认密码";
+        _pwdTextFiled = [[CMTextFieldView alloc] initWithFrame:CGRectMake(20,_conformPwdBgView.top, KScreenWidth-120, kIPhone6Scale(40))];
+        _pwdTextFiled.placeholder = @"请输入密码";
         _pwdTextFiled.showRoundedCorner = NO;
         _pwdTextFiled.fontSize = 14;
     }
@@ -178,10 +240,9 @@
 - (UIButton *)nextButton
 {
     if (!_nextButton) {
-        CGFloat margin = kIPhone6Scale(96) / 2.0;
-        CGFloat marginTop = _pwdTextFiled.bottom + 20;
+        CGFloat marginLeft = 45;
         _nextButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _nextButton.frame = CGRectMake(margin, marginTop, KScreenWidth-90, 45);
+        _nextButton.frame = CGRectMake(marginLeft, _conformPwdBgView.bottom+kIPhone6Scale(13), KScreenWidth-90, 45);
         _nextButton.backgroundColor = CMThemeColor;
         _nextButton.layer.cornerRadius = 22.5;
         [_nextButton setTitle:@"下一步" forState:UIControlStateNormal];

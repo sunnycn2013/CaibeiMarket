@@ -15,4 +15,13 @@
     return kIPhone6Scale(95.0);
 }
 
+- (CMJump *)jump
+{
+    CMJump * jp = [[CMJump alloc] init];
+    jp.url = self.url;
+    jp.type = @"h5";
+    jp.title = self.title;
+    return jp;
+}
+
 @end

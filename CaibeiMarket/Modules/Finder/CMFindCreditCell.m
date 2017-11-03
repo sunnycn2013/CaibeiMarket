@@ -43,7 +43,7 @@
     kWeakSelf(self)
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithActionBlock:^(id  _Nonnull sender) {
         if (weakself.TapBlock) {
-            weakself.TapBlock(weakself.model);
+            weakself.TapBlock(weakself.model.jump);
         }
     }];
     [self addGestureRecognizer:tap];
@@ -171,7 +171,6 @@
         CGFloat padding = (KScreenWidth - 130*2 - 48)/2.0;
         _leftCreditCards = [[CMFindCreditCardView alloc] initWithFrame:CGRectMake(padding, 10, kIPhone6Scale(124), kIPhone6Scale(11))];
         _leftCreditCards.TapBlock = self.TapBlock;
-//        _leftCreditCards.backgroundColor = [UIColor redColor];
     }
     return _leftCreditCards;
 }

@@ -20,6 +20,7 @@
 
 //初始化 window
 -(void)initWindow;
+- (void)initGuideView;
 
 //初始化 UMeng
 -(void)initUMeng;

@@ -53,7 +53,7 @@
     kWeakSelf(self)
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithActionBlock:^(id  _Nonnull sender) {
         if (weakself.TapBlock) {
-            weakself.TapBlock(weakself.model);
+            weakself.TapBlock(weakself.model.jump);
         }
     }];
     [self addGestureRecognizer:tap];
@@ -112,7 +112,6 @@
         _totoalMoneyLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(16)];
         _totoalMoneyLabel.text = @"100.0元";
 //        _totoalMoneyLabel.backgroundColor = [UIColor purpleColor];
-
     }
     return _totoalMoneyLabel;
 }

@@ -51,6 +51,9 @@
 
 - (void)setData:(CMHomeApp *)data
 {
+    if(![data isKindOfClass:[CMHomeApp class]]){
+        return;
+    }
     _data = data;
     
     [_imageView setImageWithURL:[NSURL URLWithString:data.img] placeholder:[UIImage imageNamed:@"icon-50"]];
@@ -60,7 +63,7 @@
 - (void)tapAction:(UITapGestureRecognizer *)tap
 {
     if (self.tapBlock) {
-        self.tapBlock(self.data);
+        self.tapBlock(self.data.jump);
     }
 }
 @end

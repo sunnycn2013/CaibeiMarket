@@ -20,6 +20,7 @@
 
 @property (nonatomic,strong)NSString * placeholder;
 @property (nonatomic,strong)NSString * text;
+@property (nonatomic,strong)UIColor  * textColor;
 @property (nonatomic,strong)UIColor  * textFieldBgColor;
 @property (nonatomic,assign)BOOL      showRoundedCorner;
 @property (nonatomic,assign)CGFloat   placeholderFontSize;
@@ -27,5 +28,7 @@
 @property (nonatomic,assign)BOOL      secureTextEntry;
 @property (nonatomic,assign)id        delegate;
 @property (nonatomic,assign)UIKeyboardType keyboardType;
+
+- (void)resignFirstResponder;
 
 @end

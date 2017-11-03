@@ -60,18 +60,23 @@
 
 - (void)setShowRoundedCorner:(BOOL)showRoundedCorner
 {
-    if (showRoundedCorner) {
-        self.layer.cornerRadius = self.height/2;
-    }else{
-        self.layer.cornerRadius = 0;
-    }
-    _showRoundedCorner = showRoundedCorner;
+//    if (showRoundedCorner) {
+//        self.layer.cornerRadius = self.height/2;
+//    }else{
+//        self.layer.cornerRadius = 0;
+//    }
+//    _showRoundedCorner = showRoundedCorner;
 }
 
 - (void)setFontSize:(CGFloat)fontSize
 {
     self.textField.font = [UIFont systemFontOfSize:fontSize];
     _fontSize = fontSize;
+}
+
+- (void)setText:(NSString *)text
+{
+    self.textField.text = text;
 }
 
 - (NSString *)text
@@ -87,6 +92,16 @@
 - (void)setKeyboardType:(UIKeyboardType)keyboardType
 {
     _textField.keyboardType = keyboardType;
+}
+
+- (void)setTextColor:(UIColor *)textColor
+{
+    _textField.textColor = textColor;
+}
+
+- (void)resignFirstResponder
+{
+    [self.textField resignFirstResponder];
 }
 
 #pragma mark - UITextFieldDelegate
@@ -128,7 +143,6 @@
         _textField.backgroundColor = [UIColor whiteColor];
         _textField.font = [UIFont systemFontOfSize:kIPhone6Scale(14)];
         _textField.delegate = self;
-//        _textField.backgroundColor = [UIColor redColor];
     }
     return _textField;
 }

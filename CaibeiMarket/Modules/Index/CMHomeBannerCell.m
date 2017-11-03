@@ -55,6 +55,7 @@
     [_pageControl setNumberOfPages:5];
     [_pageControl setCurrentPage:0];
     [self addSubview:_pageControl];
+    self.clipsToBounds = YES;
 }
 
 - (void)fillData:(id)model
@@ -91,6 +92,14 @@
     NSInteger index = _scrollView.scrollOffset;
     
     [_pageControl setCurrentPage:index];
+}
+
+- (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
+{
+    CMHomeBanner * banner = [self.bannerModel.bannerList objectAtIndex:index];
+    if(self.tapBlock){
+        self.tapBlock(banner.jump);
+    }
 }
 
 - (UIColor *) randomColor

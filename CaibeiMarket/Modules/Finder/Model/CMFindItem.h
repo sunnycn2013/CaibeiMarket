@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CMJump.h"
 
 @interface CMFindWare : NSObject
 
@@ -15,6 +16,7 @@
 @property (nonatomic,strong)NSString * img;
 @property (nonatomic,strong)NSString * url;
 @property (nonatomic,strong)NSString * subTitle;
+@property (nonatomic,strong)CMJump * jump;
 
 @end
 

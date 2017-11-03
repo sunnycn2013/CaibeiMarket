@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CMHomeDataProtocol.h"
-
+#import "CMJump.h"
 
 extern NSString * CMHomeActionTypeBanner;
 extern NSString * CMHomeActionTypeApp;
@@ -28,6 +28,8 @@ extern NSString * CMHomeActionTypeContent;
 @property (nonatomic,strong)NSString * author;
 @property (nonatomic,strong)NSString * url;
 @property (nonatomic,strong)NSString * img;
+
+@property (nonatomic,strong)CMJump   * jump;
 
 @end
 

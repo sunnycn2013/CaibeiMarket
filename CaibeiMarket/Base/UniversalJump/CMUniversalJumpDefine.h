@@ -9,3 +9,7 @@
 #import <Foundation/Foundation.h>
 
 extern NSString * const CMUJmupLogin;
+
+extern NSString * const CMUJmupBorrow;
+
+

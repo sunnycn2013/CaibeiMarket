@@ -1,25 +1,41 @@
 {
     "resultCode": "0000",
     "message": "操作成功",
+    "properties": [],
     "pageSize": 10,
     "pageNumber": 1,
-    "totalCount": 1,
-    "pageCount": 1,
+    "totalCount": 0,
+    "pageCount": 0,
     "listData": [
         {
             "pattern": "banner",
             "bannerList": [
                 {
                     "img": "https://cdn.daishangqian.com/vue/static/img/banner6.ca2ff41.png",
-                    "url": "https://api.daishangqian.com/vue/?channel=595b17afd070#!/active/promotion/page6"
+                    "url": "https://api.daishangqian.com/vue/?channel=595b17afd070#!/active/promotion/page6",
+                    "jump": {
+                        "title": "title",
+                        "type": "h5",
+                        "url": "https://api.daishangqian.com/vue/?channel=595b17afd070#!/active/promotion/page6"
+                    }
                 },
                 {
                     "img": "https://files.coinmarketcap.com/static/img/coins/128x128/ethereum.png",
-                    "url": "https://api.daishangqian.com/vue/?channel=595b17afd070#!/active/promotion/page6"
+                    "url": "https://api.daishangqian.com/vue/?channel=595b17afd070#!/active/promotion/page6",
+                    "jump": {
+                        "title": "title",
+                        "type": "h5",
+                        "url": "https://api.daishangqian.com/vue/?channel=595b17afd070#!/active/promotion/page6"
+                    }
                 },
                 {
                     "img": "https://files.coinmarketcap.com/static/img/coins/128x128/ripple.png",
-                    "url": "https://api.daishangqian.com/vue/?channel=595b17afd070#!/active/promotion/page6"
+                    "url": "https://api.daishangqian.com/vue/?channel=595b17afd070#!/active/promotion/page6",
+                    "jump": {
+                        "title": "title",
+                        "type": "h5",
+                        "url": "https://api.daishangqian.com/vue/?channel=595b17afd070#!/active/promotion/page6"
+                    }
                 }
             ]
         },
@@ -27,52 +43,27 @@
             "pattern": "entrance",
             "entranceList": [
                 {
-                    "img": "https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png",
+                    "img": "https://icaibei.cn/backupscreen/app/entrance_01.png",
                     "url": "https://www.baidu.com/",
                     "title": "小额贷"
                 },
                 {
-                    "img": "https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png",
+                    "img": "https://icaibei.cn/backupscreen/app/entrance_02.png",
                     "url": "https://www.baidu.com/",
                     "title": "大额免息"
                 },
                 {
-                    "img": "https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png",
+                    "img": "https://icaibei.cn/backupscreen/app/entrance_03.png",
                     "url": "https://www.baidu.com/",
                     "title": "白领贷"
                 },
                 {
-                    "img": "https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png",
+                    "img": "https://icaibei.cn/backupscreen/app/entrance_03.png",
                     "url": "https://www.baidu.com/",
                     "title": "公积金查询"
                 },
                 {
-                    "img": "https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png",
-                    "url": "https://www.baidu.com/",
-                    "title": "常见问题"
-                },
-                {
-                    "img": "https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png",
-                    "url": "https://www.baidu.com/",
-                    "title": "小额贷"
-                },
-                {
-                    "img": "https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png",
-                    "url": "https://www.baidu.com/",
-                    "title": "大额免息"
-                },
-                {
-                    "img": "https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png",
-                    "url": "https://www.baidu.com/",
-                    "title": "白领贷"
-                },
-                {
-                    "img": "https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png",
-                    "url": "https://www.baidu.com/",
-                    "title": "公积金查询"
-                },
-                {
-                    "img": "https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png",
+                    "img": "https://icaibei.cn/backupscreen/app/entrance_03.png",
                     "url": "https://www.baidu.com/",
                     "title": "常见问题"
                 }

@@ -27,6 +27,7 @@
 //用户model缓存
 #define KUserModelCache @"KUserModelCache"
 
+#define KCB_APP_FIRST_INSTALL @"app_first_install"
 
 
 #pragma mark - ——————— 网络状态相关 ————————

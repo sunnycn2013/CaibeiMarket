@@ -8,6 +8,16 @@
 
 #import "CMFindItem.h"
 @implementation CMFindWare
+
+- (CMJump *)jump
+{
+    CMJump * jp = [[CMJump alloc] init];
+    jp.url = self.url;
+    jp.type = @"h5";
+    jp.title = self.title;
+    return jp;
+}
+
 @end
 
 @implementation CMFindItem
