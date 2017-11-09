@@ -71,7 +71,7 @@
     
     configuration.userContentController = userContentController;
     configuration.preferences.javaScriptEnabled = YES;//打开js交互
-    _wkwebView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, KScreenHeight) configuration:configuration];
+    _wkwebView = [[WKWebView alloc] initWithFrame:CGRectMake(0, kMarginTop, KScreenWidth, KScreenHeight) configuration:configuration];
     [self.view addSubview:_wkwebView];
     _wkwebView.backgroundColor = [UIColor clearColor];
     _wkwebView.allowsBackForwardNavigationGestures =YES;//打开网页间的 滑动返回

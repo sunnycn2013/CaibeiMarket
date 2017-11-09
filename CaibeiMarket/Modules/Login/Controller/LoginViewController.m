@@ -179,6 +179,7 @@
         _licenseButton.frame = CGRectMake(7, _pwdTextFiled.bottom + kIPhone6Scale(5), kIPhone6Scale(230), kIPhone6Scale(20));
         _licenseButton.backgroundColor = [UIColor clearColor];
         _licenseButton.titleLabel.font = [UIFont systemFontOfSize:14];
+        _licenseButton.titleLabel.adjustsFontSizeToFitWidth = YES;
         [_licenseButton setTitle:@"登录即表示阅读并同意《采贝协议》" forState:UIControlStateNormal];
         [_licenseButton setTitleColor:CMThemeColor forState:UIControlStateNormal];
         [_licenseButton addTarget:self action:@selector(acceptLicense:) forControlEvents:UIControlEventTouchUpInside];

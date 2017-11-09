@@ -20,6 +20,8 @@
 		B0D0C96F1F1F9C6900EBA36F /* CaibeiMarketTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D0C96E1F1F9C6900EBA36F /* CaibeiMarketTests.m */; };
 		B0D0C97A1F1F9C6900EBA36F /* CaibeiMarketUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D0C9791F1F9C6900EBA36F /* CaibeiMarketUITests.m */; };
 		B87857BA1FCF538DD25D77B8 /* libPods-CaibeiMarketTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1657DC69D41D6AAC9F81AE5C /* libPods-CaibeiMarketTests.a */; };
+		C30A00991FB098FA00CABAD5 /* CBShowInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C30A00981FB098FA00CABAD5 /* CBShowInfoViewController.m */; };
+		C30A00C01FB2FAD700CABAD5 /* Default_02.png in Resources */ = {isa = PBXBuildFile; fileRef = C30A00BF1FB2FAD700CABAD5 /* Default_02.png */; };
 		C327941C1F397B1E00AE02A3 /* CMPortraitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C327941B1F397B1E00AE02A3 /* CMPortraitViewController.m */; };
 		C327941F1F397BB200AE02A3 /* CMSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C327941E1F397BB200AE02A3 /* CMSettingCell.m */; };
 		C33E33581F344CF300CB9D3D /* UIColor+CMColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C33E33571F344CF300CB9D3D /* UIColor+CMColor.m */; };
@@ -303,6 +305,9 @@
 		B0D0C97B1F1F9C6900EBA36F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B638DE5B7D50090D9D04D095 /* libPods-CaibeiMarket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CaibeiMarket.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C012453212F1B5FC71806B9D /* libPods-CaibeiMarketUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CaibeiMarketUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C30A00971FB098FA00CABAD5 /* CBShowInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBShowInfoViewController.h; sourceTree = "<group>"; };
+		C30A00981FB098FA00CABAD5 /* CBShowInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBShowInfoViewController.m; sourceTree = "<group>"; };
+		C30A00BF1FB2FAD700CABAD5 /* Default_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default_02.png; sourceTree = "<group>"; };
 		C327941A1F397B1E00AE02A3 /* CMPortraitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMPortraitViewController.h; sourceTree = "<group>"; };
 		C327941B1F397B1E00AE02A3 /* CMPortraitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMPortraitViewController.m; sourceTree = "<group>"; };
 		C327941D1F397BB200AE02A3 /* CMSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMSettingCell.h; sourceTree = "<group>"; };
@@ -762,6 +767,8 @@
 				B05C5B811F2B27F2009E5CC6 /* CMSettingViewController.m */,
 				C327941A1F397B1E00AE02A3 /* CMPortraitViewController.h */,
 				C327941B1F397B1E00AE02A3 /* CMPortraitViewController.m */,
+				C30A00971FB098FA00CABAD5 /* CBShowInfoViewController.h */,
+				C30A00981FB098FA00CABAD5 /* CBShowInfoViewController.m */,
 			);
 			name = Setting;
 			path = Controller;
@@ -1549,6 +1556,7 @@
 		C3B3BB631F21AEC8000C9DC8 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				C30A00BF1FB2FAD700CABAD5 /* Default_02.png */,
 				C3A8B5091FA751C200AD9610 /* web01 */,
 				C3B3BB641F21AEC8000C9DC8 /* DazFire.png */,
 				C3B3BB651F21AEC8000C9DC8 /* MBProgressHUD */,
@@ -2075,6 +2083,7 @@
 				C3B3BBE61F21AEC9000C9DC8 /* DazFire.png in Resources */,
 				C3B3BBED1F21AEC9000C9DC8 /* MBHUD_Warn@2x.png in Resources */,
 				C34740A41F4A60550015914A /* fish_02@2x.png in Resources */,
+				C30A00C01FB2FAD700CABAD5 /* Default_02.png in Resources */,
 				C340D7A31F473A1000AD0DAE /* about@3x.png in Resources */,
 				C3B6B1CA1F42890600916C7F /* find_head_note@2x.png in Resources */,
 				C3B3BBF91F21AEC9000C9DC8 /* icon_tabbar_merchant_selected.png in Resources */,
@@ -2323,6 +2332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C30A00991FB098FA00CABAD5 /* CBShowInfoViewController.m in Sources */,
 				B05C5B7E1F2B2485009E5CC6 /* CMMineDefine.m in Sources */,
 				C3B3BBC41F21AEC9000C9DC8 /* SecondViewController.m in Sources */,
 				C39AD67C1FA21DEE00A000FA /* ZZCACircleProgress.m in Sources */,
@@ -2611,7 +2621,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.icaibei.caibeijiekuan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "eafb8085-4489-4d6a-9d95-98cab2475c7c";
+				PROVISIONING_PROFILE = "db5787d7-2430-402f-b4d9-f5a3366e84f1";
 				PROVISIONING_PROFILE_SPECIFIER = caibeijiekuan_Dev;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

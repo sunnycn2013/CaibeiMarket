@@ -38,15 +38,15 @@
     [self removeAllSubviews];
     self.backgroundColor = [UIColor colorWithHexString:@"#FFFFFF"];
     CGFloat paddingLeft = 20;
-    CGFloat iconWidth = (KScreenWidth - 40 - 40)/5;//192
+    CGFloat iconWidth = (KScreenWidth - 40 - 40)/4;//192
     CGFloat iconHeight = kIPhone6Scale(85);//
     CGFloat gapSpace = 10;
     
-    NSInteger row = (NSInteger)self.model.entranceList.count / 5;
+    NSInteger row = (NSInteger)self.model.entranceList.count / 4;
     row = 1;
     for (int i = 0; i < row; i++)
     {
-        for (int j = 0; j < 5; j++) {
+        for (int j = 0; j < 4; j++) {
             CGFloat iconY = 5 + i * (iconHeight + gapSpace);
             CGFloat iconX = paddingLeft + j * (iconWidth + gapSpace);
             CGRect frame = CGRectMake(iconX, iconY, iconWidth, iconHeight);

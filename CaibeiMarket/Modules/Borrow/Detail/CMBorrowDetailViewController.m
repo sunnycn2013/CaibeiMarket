@@ -50,7 +50,7 @@
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.noteView];
     [self.view addSubview:self.applyButton];
-    self.tableView.frame = CGRectMake(0, _noteView.height, KScreenWidth, KScreenHeight);
+    self.tableView.frame = CGRectMake(0, _noteView.bottom, KScreenWidth, KScreenHeight - 64);
 
     self.templateArray = @[@"CMBorrowDetailContentCell",@"CMBorrowDetailSpaceCell",@"CMBorrowDetailNotesCell",@"CMBorrowDetailSpaceCell",@"CMBorrowDetailDesCell"];
     [self.tableView registerClass:[CMBorrowDetailContentCell class] forCellReuseIdentifier:@"CMBorrowDetailContentCell"];
@@ -62,7 +62,6 @@
     [self loadData];
 
     [self setShareButton];
-    self.automaticallyAdjustsScrollViewInsets = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -200,7 +199,7 @@
 - (CMBorrowDetailNoteView *)noteView
 {
     if (!_noteView) {
-        _noteView = [[CMBorrowDetailNoteView alloc] initWithFrame:CGRectMake(0, 64, KScreenWidth, 25)];
+        _noteView = [[CMBorrowDetailNoteView alloc] initWithFrame:CGRectMake(0, kMarginTop, KScreenWidth, 25)];
         _noteView.backgroundColor = [UIColor colorWithHexString:@"#FFE8EA"];
     }
     return _noteView;
@@ -213,7 +212,7 @@
         _applyButton = [[UIButton alloc] initWithFrame:CGRectMake(0, kScreenHeight - height,KScreenWidth, height)];
         _applyButton.backgroundColor = CMThemeColor;
         [_applyButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [_applyButton setTitle:@"申请贷款" forState:UIControlStateNormal];
+        [_applyButton setTitle:@"申请" forState:UIControlStateNormal];
         [_applyButton addTarget:self action:@selector(applyForLend:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _applyButton;

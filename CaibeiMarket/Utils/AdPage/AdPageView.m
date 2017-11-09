@@ -67,6 +67,7 @@ static int const showtime = 5;
         NSString *filePath = [self getFilePathWithImageName:[kUserDefaults valueForKey:adImageName]];
         
         BOOL isExist = [self isFileExistWithFilePath:filePath];
+        isExist = YES;
         if (isExist) {// 图片存在
             
 //            AdvertiseView *advertiseView = [[AdvertiseView alloc] initWithFrame:self.window.bounds];

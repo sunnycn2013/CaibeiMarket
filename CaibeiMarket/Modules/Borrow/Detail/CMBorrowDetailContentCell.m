@@ -84,7 +84,7 @@
 
     [self.totalMoneylabel setText:[NSString stringWithFormat:@"%@元",self.model.lendMoney?:@"0"]];
     [self.totalMoneyPricelabel setText:[NSString stringWithFormat:@"每日手续费%@元",self.model.lendPeriod]];
-    [self.supplyNameLabel setText:self.model.lendName ? : @"喵贷贷款"];
+    [self.supplyNameLabel setText:self.model.lendName ? : @"喵推荐"];
     [self.lendingTimeLabel setText:[NSString stringWithFormat:@"放款时间: %@小时放款",self.model.loanTime]];
     [self.totalApplyNumberLabel setText:[NSString stringWithFormat:@"%@人已经申请",self.model.totalApply]];
     [self.interestDesLabel setText:self.model.monthlyInterestRate];
@@ -138,7 +138,6 @@
 {
     if (!_supplyNameLabel) {
         _supplyNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(kIPhone6PScale(184), kIPhone6PScale(22), kIPhone6PScale(143), kIPhone6PScale(24))];
-//        _supplyNameLabel.text = @"喵贷贷款";
         _supplyNameLabel.font = [UIFont systemFontOfSize:14];
 //        _supplyNameLabel.backgroundColor = [UIColor redColor];
     }

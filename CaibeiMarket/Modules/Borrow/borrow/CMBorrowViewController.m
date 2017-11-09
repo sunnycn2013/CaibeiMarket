@@ -18,6 +18,8 @@
 @interface CMBorrowViewController ()<UITableViewDelegate,UITableViewDataSource,CMBorrowConditionViewDelegate>
 
 @property (nonatomic, strong)CMBorrowConditionView * conditionView;
+//@property (nonatomic, strong)UIView * bgConditionView;
+
 @property (nonatomic, strong)CMBorrowChooseView *chooseView;
 @property (nonatomic, strong)UIView *chooseBgView;
 
@@ -35,15 +37,16 @@
     self.borrow = [[CMBorrow alloc] init];
 //    [self.borrow updateCondition:money style:CMBorrowChooseItemTypeLendMoney];
 //    [self.borrow updateCondition:time style:CMBorrowChooseItemTypeOnlineTime];
+    self.parameters = [NSMutableDictionary dictionary];
+
     return [super initWithParams:nil];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"贷款";
+    self.title = @"推荐";
     self.showChooseView = NO;
-    self.parameters = [NSMutableDictionary dictionary];
     
     [self.view addSubview:self.conditionView];
     CGFloat top = [UIApplication sharedApplication].statusBarFrame.size.height;
@@ -201,6 +204,7 @@
     [self.conditionView setConditionSwitchStyle:CMBorrowConditionSwitchTypeOpen];
     [UIView animateWithDuration:0.2 animations:^{
         self.showChooseView = YES;
+        self.chooseBgView.height = self.view.height;
         self.chooseView.frame = CGRectMake(0, _conditionView.bottom, KScreenWidth, 424);
     }completion:^(BOOL finished) {
         [self.chooseView reloadData];
@@ -212,6 +216,7 @@
     [self.conditionView setConditionSwitchStyle:CMBorrowConditionSwitchTypeclose];
     [UIView animateWithDuration:0.2 animations:^{
         self.showChooseView = NO;
+        self.chooseBgView.height = 0;
         self.chooseView.frame = CGRectMake(0, _conditionView.bottom, KScreenWidth, 0);
     }completion:^(BOOL finished) {
         [self.chooseView reloadData];
@@ -231,6 +236,17 @@
 }
 
 #pragma mark - set get
+//- (UIView *)bgConditionView
+//{
+//    if (!_bgConditionView) {
+//        _bgConditionView = [[UIView alloc] initWithFrame:self.view.bounds];
+//        _bgConditionView.backgroundColor = [UIColor blackColor];
+//        _bgConditionView.alpha = 0.6;
+//        _bgConditionView.height = 0;
+//    }
+//    return _bgConditionView;
+//}
+
 - (CMBorrowConditionView *)conditionView
 {
     if (!_conditionView) {
@@ -259,7 +275,7 @@
 - (UIView *)chooseBgView
 {
     if (!_chooseBgView) {
-        _chooseBgView = [[UIView alloc] initWithFrame:CGRectMake(0, 104, KScreenWidth, 0)];
+        _chooseBgView = [[UIView alloc] initWithFrame:CGRectMake(0, 240, KScreenWidth, 0)];
         _chooseBgView.backgroundColor = [UIColor blackColor];
         _chooseBgView.alpha = 0.6;
     }

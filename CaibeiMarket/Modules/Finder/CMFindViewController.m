@@ -32,6 +32,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.mj_header = self.header;
+    self.tableView.height = KScreenHeight - 44;
 //    self.tableView.mj_footer = self.footer;
 
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;

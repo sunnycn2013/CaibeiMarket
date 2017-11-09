@@ -44,8 +44,8 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.tableView.mj_header = self.header;
-//    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.height = KScreenHeight - 44;
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self];
     [self.tableView registerClass:[CMHomeBannerCell class] forCellReuseIdentifier:CMHomeActionTypeBanner];
@@ -156,14 +156,31 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
 - (void)processWithModel:(id)model
 {
     UIViewController * viewController = nil;
+    NSDictionary * params = nil;
     if([model isKindOfClass:[CMJump class]])
     {
         CMJump * jump = (CMJump *)model;
         if ([jump.type isEqualToString:@"h5"]) {
-            RootWebViewController * webViewVC = [[RootWebViewController alloc] initWithUrl:jump.url];
-            [self.navigationController pushViewController:webViewVC animated:YES];
-        }else if ([jump.type isEqualToString:@"native"]){
-            
+            viewController = [[RootWebViewController alloc] initWithUrl:jump.url];
+        }else if ([jump.type isEqualToString:@"native"])
+        {
+            if([jump.patton isEqualToString:@"jisu"]){
+                params = @{@"lendPeriodSort" : @"1"};
+                CMBorrowViewController * borrow = [[CMBorrowViewController alloc] init];
+                borrow.parameters = [NSMutableDictionary dictionaryWithDictionary:params];
+                viewController = borrow;
+            }else if ([jump.patton isEqualToString:@"xinyong"]){
+                params = @{@"creditStanding" : @"1"};
+                CMBorrowViewController * borrow = [[CMBorrowViewController alloc] init];
+                borrow.parameters = [NSMutableDictionary dictionaryWithDictionary:params];
+                viewController = borrow;
+            }else if ([jump.patton isEqualToString:@"bailing"]){
+                params = @{@"onlineTime" : @"1"};
+                CMBorrowViewController * borrow = [[CMBorrowViewController alloc] init];
+                borrow.parameters = [NSMutableDictionary dictionaryWithDictionary:params];
+                viewController = borrow;
+            }
+           
         }
     }
     

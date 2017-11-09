@@ -27,7 +27,7 @@ NSString * CMHomeActionTypeContent = @"product";
 - (CGFloat)heightForRowCell
 {
     if ([self.pattern isEqualToString:@"banner"]) {
-        return kIPhone6Scale(176);
+        return kIPhone6Scale(194);
     }else if ([self.pattern isEqualToString:@"entrance"])
     {
         NSInteger row = (NSInteger)self.entranceList.count/5;

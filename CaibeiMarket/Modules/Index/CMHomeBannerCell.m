@@ -35,7 +35,7 @@
 - (void)setUI
 {
     CGFloat width = KScreenWidth;
-    CGFloat height = kIPhone6Scale(176.0);
+    CGFloat height = kIPhone6Scale(194.0);
     _scrollView = [[iCarousel alloc] initWithFrame:CGRectMake(0, 0, width, height)];
     _scrollView.delegate = self;
     _scrollView.dataSource = self;
@@ -51,7 +51,7 @@
     
     _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, 0, 70, 20)];
     [_pageControl setCenterX:self.centerX];
-    [_pageControl setMj_y:_scrollView.height - 25];
+    [_pageControl setMj_y:kIPhone6Scale(194) - 25];
     [_pageControl setNumberOfPages:5];
     [_pageControl setCurrentPage:0];
     [self addSubview:_pageControl];
@@ -82,6 +82,7 @@
     CMHomeBanner * banner = [self.bannerModel.bannerList objectAtIndex:index];
     if (!reuseView) {
         reuseView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, width, height)];
+        reuseView.contentMode = UIViewContentModeScaleAspectFill;
         [reuseView setImageURL:[NSURL URLWithString:banner.img]];
     }
     return reuseView;

@@ -18,22 +18,24 @@
 +(void)appStart{
     //加载广告
     AdPageView *adView = [[AdPageView alloc] initWithFrame:kScreen_Bounds withTapBlock:^{
-        RootWebViewController * viewController = [[RootWebViewController alloc] initWithUrl:@"http://www.hao123.com"];
-        UITabBarController * tabBarViewController = (UITabBarController *)[UIApplication sharedApplication].delegate.window.rootViewController;
-        if ([tabBarViewController isKindOfClass:[UITabBarController class]]) {
-            [(UINavigationController *)tabBarViewController.selectedViewController pushViewController:viewController animated:YES];
-        }
+//        RootWebViewController * viewController = [[RootWebViewController alloc] initWithUrl:@"http://www.hao123.com"];
+//        UITabBarController * tabBarViewController = (UITabBarController *)[UIApplication sharedApplication].delegate.window.rootViewController;
+//        if ([tabBarViewController isKindOfClass:[UITabBarController class]]) {
+//            [(UINavigationController *)tabBarViewController.selectedViewController pushViewController:viewController animated:YES];
+//        }
     }];
     adView = adView;
 }
 #pragma mark ————— FPS 监测 —————
 +(void)showFPS{
+#ifdef DEBUG
     YYFPSLabel *_fpsLabel = [YYFPSLabel new];
     [_fpsLabel sizeToFit];
     _fpsLabel.bottom = KScreenHeight - 55;
     _fpsLabel.right = KScreenWidth - 10;
     //    _fpsLabel.alpha = 0;
     [kAppWindow addSubview:_fpsLabel];
+#endif
 }
 
 @end

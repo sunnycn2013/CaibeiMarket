@@ -23,6 +23,9 @@
 #define KScreenWidth ([[UIScreen mainScreen] bounds].size.width)
 #define KScreenHeight [[UIScreen mainScreen] bounds].size.height
 #define kScreen_Bounds [UIScreen mainScreen].bounds
+#define kStatusBarHeight ([UIApplication sharedApplication].statusBarFrame.size.height)
+#define kNavBarHeight 44
+#define kMarginTop kNavBarHeight + kStatusBarHeight
 
 #define Iphone6ScaleWidth KScreenWidth/375.0
 #define Iphone6ScaleHeight KScreenHeight/667.0

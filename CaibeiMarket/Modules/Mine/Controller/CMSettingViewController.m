@@ -13,7 +13,7 @@
 #import "XBSettingItemModel.h"
 #import "XBSettingSectionModel.h"
 #import "RootWebViewController.h"
-
+#import "CBShowInfoViewController.h"
 #import "CMUserManager.h"
 
 @interface CMSettingViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -88,7 +88,7 @@
     item6.detailImage = [UIImage imageNamed:@"next_normal"];
     item6.accessoryType = XBSettingAccessoryTypeNone;
     item6.executeCode = ^{
-        NSString * url = @"https://www.icaibei.cn/admin/about/help.html";
+        NSString * url = @"http://www.icaibei.com/about/help.html";
         NSString * title = @"帮助中心";
         RootWebViewController * webview = [[RootWebViewController alloc] initWithParams:@{@"title" : title,@"url" : url}];
         [self.navigationController pushViewController:webview animated:YES];
@@ -106,7 +106,7 @@
     item7.accessoryType = XBSettingAccessoryTypeNone;
     item7.detailImage = [UIImage imageNamed:@"next_normal"];
     item7.executeCode = ^{
-        RootWebViewController * viewController = [[RootWebViewController alloc] initWithUrl:URL_icaibei_about_url];
+        RootWebViewController * viewController = [[RootWebViewController alloc] initWithUrl:@"http://www.icaibei.com/about/index.html"];
         [weakSelf.navigationController pushViewController:viewController animated:YES];
     };
     
@@ -124,9 +124,17 @@
     item9.accessoryType = XBSettingAccessoryTypeNone;
     item9.detailText = versionStr;
     
+    XBSettingItemModel *item15 = [[XBSettingItemModel alloc]init];
+    item15.funcName = @"查看Token";
+    item15.accessoryType = XBSettingAccessoryTypeNone;
+    item15.executeCode = ^{
+        CBShowInfoViewController * info = [[CBShowInfoViewController alloc] init];
+        [weakSelf.navigationController pushViewController:info animated:YES];
+    };
+    
     XBSettingSectionModel *section3 = [[XBSettingSectionModel alloc]init];
     section3.sectionHeaderHeight = 18;
-    section3.itemArray = @[item7,item8,item9];
+    section3.itemArray = @[item7,item8,item9,item15];
     
     //************************************section4
     
@@ -180,6 +188,12 @@
     return cell;
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView * headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, 18)];
+    headView.backgroundColor = [UIColor colorWithHexString:@"#F6F6F6"];
+    return headView;
+}
 #pragma - mark UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {

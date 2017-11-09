@@ -60,7 +60,7 @@
     [self setupChildViewController:homeVC title:@"首页" imageName:@"tab_index_normal" seleceImageName:@"tab_index_light"];
     
     CMBorrowViewController *makeFriendVC = [[CMBorrowViewController alloc]init];
-    [self setupChildViewController:makeFriendVC title:@"贷款" imageName:@"tab_dai_normal" seleceImageName:@"tab_dai_light"];
+    [self setupChildViewController:makeFriendVC title:@"推荐" imageName:@"tab_dai_normal" seleceImageName:@"tab_dai_light"];
     
     CMFindViewController *msgVC = [[CMFindViewController alloc]init];
     [self setupChildViewController:msgVC title:@"发现" imageName:@"tab_find_normal" seleceImageName:@"tab_find_light"];

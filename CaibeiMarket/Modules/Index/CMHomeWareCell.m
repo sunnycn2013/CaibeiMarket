@@ -45,11 +45,12 @@
 
 - (void)setUI
 {
-    [self.contentView addSubview:self.newsImageView];
     [self.contentView addSubview:self.newsTitleLabel];
     [self.contentView addSubview:self.newsDesLabel];
     [self.contentView addSubview:self.newsAuthorLabel];
     [self.contentView addSubview:self.newsTimeLabel];
+    
+    [self.contentView addSubview:self.newsImageView];
     UITapGestureRecognizer * gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
     [self addGestureRecognizer:gesture];
 }
@@ -81,18 +82,6 @@
         _lineView.backgroundColor = [UIColor lightGrayColor].CGColor;
     }
     return _lineView;
-}
-
-- (UIImageView *)newsImageView
-{
-    if (!_newsImageView) {
-        _newsImageView = [[UIImageView alloc] initWithFrame:CGRectMake(11, 11, kIPhone6Scale(105), kIPhone6Scale(70))];
-        _newsImageView.image = [UIImage imageNamed:@"find_head_note"];
-        _newsImageView.layer.cornerRadius = 4.0;
-        _newsImageView.layer.masksToBounds = YES;
-        _newsImageView.backgroundColor = [UIColor purpleColor];
-    }
-    return _newsImageView;
 }
 
 - (UILabel *)newsTitleLabel
@@ -146,30 +135,16 @@
     return _newsAuthorLabel;
 }
 
-//- (UILabel *)newsAuthorLabel
-//{
-//    if (!_newsAuthorLabel) {
-//        _newsAuthorLabel = [[UILabel alloc] initWithFrame:CGRectMake(_newsDesLabel.left, _newsDesLabel.bottom+kIPhone6PScale(3), kIPhone6Scale(100), kIPhone6Scale(10))];
-////        _newsAuthorLabel.backgroundColor = [UIColor purpleColor];
-//        _newsAuthorLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(10)];
-//        _newsAuthorLabel.text = @"2017.10.25";
-//        _newsAuthorLabel.textColor = [UIColor grayColor];
-//        _newsAuthorLabel.textAlignment = NSTextAlignmentLeft;
-//    }
-//    return _newsAuthorLabel;
-//}
-//
-//- (UILabel *)newsTimeLabel
-//{
-//    if (!_newsTimeLabel) {
-//        CGFloat marginLeft = KScreenWidth - kIPhone6Scale(56) - 10;
-//        _newsTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(marginLeft, _newsAuthorLabel.top, kIPhone6Scale(56), kIPhone6Scale(10))];
-//        _newsTimeLabel.text = @"来源：采贝";
-//        _newsTimeLabel.font = [UIFont systemFontOfSize:kIPhone6Scale(10)];
-//        _newsTimeLabel.textColor = [UIColor grayColor];
-//    }
-//    return _newsTimeLabel;
-//}
-
+- (UIImageView *)newsImageView
+{
+    if (!_newsImageView) {
+        _newsImageView = [[UIImageView alloc] initWithFrame:CGRectMake(11, 11, kIPhone6Scale(105), kIPhone6Scale(70))];
+        _newsImageView.image = [UIImage imageNamed:@"find_head_note"];
+        _newsImageView.layer.cornerRadius = 4.0;
+        _newsImageView.layer.masksToBounds = YES;
+        _newsImageView.backgroundColor = [UIColor purpleColor];
+    }
+    return _newsImageView;
+}
 
 @end

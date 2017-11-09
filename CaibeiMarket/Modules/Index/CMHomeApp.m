@@ -19,8 +19,9 @@
 {
     CMJump * jp = [[CMJump alloc] init];
     jp.url = self.url;
-    jp.type = @"h5";
+    jp.type = self.type;
     jp.title = self.title;
+    jp.patton = self.patton;
     return jp;
 }
 

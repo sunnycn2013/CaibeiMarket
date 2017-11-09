@@ -39,7 +39,7 @@
 - (void)mj_keyValuesDidFinishConvertingToObject
 {
     NSMutableArray * array = [NSMutableArray array];
-    for (int i = 0; i<= (NSInteger)self.productList.count/2; i++) {
+    for (int i = 0; i< (NSInteger)self.productList.count/2; i++) {
         NSMutableArray * temp = [NSMutableArray array];
         CMFindWare * firstItem = [self.productList objectAtIndex:i];
         CMFindWare * secondItem = [self.productList objectAtIndex:i+1];
