@@ -13,6 +13,8 @@
 NSString * CMHomeActionTypeBanner = @"banner";
 NSString * CMHomeActionTypeApp = @"entrance";
 NSString * CMHomeActionTypeContent = @"product";
+NSString * CMHomeActionTypeContentNone = @"productNone";
+NSString * CMHomeActionTypeContent1_3 = @"product1_3";
 
 @implementation CMHomeInfo
 
@@ -38,7 +40,13 @@ NSString * CMHomeActionTypeContent = @"product";
         return kIPhone6Scale(95.0);
     }else if ([self.pattern isEqualToString:@"product"])
     {
-        return kIPhone6Scale(90.0);
+        return 114.0;
+    }else if ([self.pattern isEqualToString:@"productNone"])
+    {
+        return 100.0;
+    }else if ([self.pattern isEqualToString:@"product1_3"])
+    {
+        return 196.0;
     }
     return kIPhone6Scale(0.0);
 }
@@ -111,7 +119,12 @@ NSString * CMHomeActionTypeContent = @"product";
     if ([pattern isEqualToString:CMHomeActionTypeContent]) {
         return @"CMHomeInfo";
     }
-    
+    if ([pattern isEqualToString:CMHomeActionTypeContentNone]) {
+        return @"CMHomeInfo";
+    }
+    if ([pattern isEqualToString:CMHomeActionTypeContent1_3]) {
+        return @"CMHomeInfo";
+    }
     return nil;
 }
 

@@ -64,6 +64,8 @@
 		C368EEDA1F3834C8008146D2 /* CMFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C368EED91F3834C8008146D2 /* CMFindViewController.m */; };
 		C38540191FAAE2C7003E7156 /* index.json in Resources */ = {isa = PBXBuildFile; fileRef = C38540171FAAE2C7003E7156 /* index.json */; };
 		C385401A1FAAE2C7003E7156 /* find.json in Resources */ = {isa = PBXBuildFile; fileRef = C38540181FAAE2C7003E7156 /* find.json */; };
+		C385B75D1FB498DD00DDBA87 /* CMHomeWareNoneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C385B75C1FB498DD00DDBA87 /* CMHomeWareNoneCell.m */; };
+		C385B7601FB498F400DDBA87 /* CMHomeWare1_3Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = C385B75F1FB498F400DDBA87 /* CMHomeWare1_3Cell.m */; };
 		C39AD65B1FA21DEE00A000FA /* CMBorrowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C39AD6151FA21DEE00A000FA /* CMBorrowCell.m */; };
 		C39AD65C1FA21DEE00A000FA /* CMChooseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C39AD6171FA21DEE00A000FA /* CMChooseCell.m */; };
 		C39AD65D1FA21DEE00A000FA /* CMBorrowChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = C39AD61A1FA21DEE00A000FA /* CMBorrowChooseView.m */; };
@@ -369,6 +371,10 @@
 		C368EED91F3834C8008146D2 /* CMFindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMFindViewController.m; sourceTree = "<group>"; };
 		C38540171FAAE2C7003E7156 /* index.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = index.json; sourceTree = "<group>"; };
 		C38540181FAAE2C7003E7156 /* find.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = find.json; sourceTree = "<group>"; };
+		C385B75B1FB498DD00DDBA87 /* CMHomeWareNoneCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMHomeWareNoneCell.h; sourceTree = "<group>"; };
+		C385B75C1FB498DD00DDBA87 /* CMHomeWareNoneCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMHomeWareNoneCell.m; sourceTree = "<group>"; };
+		C385B75E1FB498F400DDBA87 /* CMHomeWare1_3Cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMHomeWare1_3Cell.h; sourceTree = "<group>"; };
+		C385B75F1FB498F400DDBA87 /* CMHomeWare1_3Cell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMHomeWare1_3Cell.m; sourceTree = "<group>"; };
 		C39AD6141FA21DEE00A000FA /* CMBorrowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMBorrowCell.h; sourceTree = "<group>"; };
 		C39AD6151FA21DEE00A000FA /* CMBorrowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMBorrowCell.m; sourceTree = "<group>"; };
 		C39AD6161FA21DEE00A000FA /* CMChooseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMChooseCell.h; sourceTree = "<group>"; };
@@ -1224,6 +1230,10 @@
 			children = (
 				C3A8B4DE1FA3675C00AD9610 /* CMHomeWareCell.h */,
 				C3A8B4DF1FA3675C00AD9610 /* CMHomeWareCell.m */,
+				C385B75B1FB498DD00DDBA87 /* CMHomeWareNoneCell.h */,
+				C385B75C1FB498DD00DDBA87 /* CMHomeWareNoneCell.m */,
+				C385B75E1FB498F400DDBA87 /* CMHomeWare1_3Cell.h */,
+				C385B75F1FB498F400DDBA87 /* CMHomeWare1_3Cell.m */,
 			);
 			name = Ware;
 			sourceTree = "<group>";
@@ -2388,6 +2398,7 @@
 				C3B788431F3D6BA10024737A /* PPNetworkCache.m in Sources */,
 				C39AD6741FA21DEE00A000FA /* CMBorrowDetailContentCell.m in Sources */,
 				C340D7AB1F47AA7F00AD0DAE /* MOBShareSDKHelper.m in Sources */,
+				C385B7601FB498F400DDBA87 /* CMHomeWare1_3Cell.m in Sources */,
 				C39AD6761FA21DEE00A000FA /* CMBorrowDetailNotesCell.m in Sources */,
 				C39AD6781FA21DEE00A000FA /* CMBorrowDetailSpaceCell.m in Sources */,
 				C3B3BBD81F21AEC9000C9DC8 /* PersonListCollectionViewCell.m in Sources */,
@@ -2435,6 +2446,7 @@
 				B0D0C9531F1F9C6900EBA36F /* main.m in Sources */,
 				C39AD67B1FA21DEE00A000FA /* NSTimer+timerBlock.m in Sources */,
 				C3B3BBC71F21AEC9000C9DC8 /* WaterFallListLogic.m in Sources */,
+				C385B75D1FB498DD00DDBA87 /* CMHomeWareNoneCell.m in Sources */,
 				C3D2E08A1F21DFFB0037CFF3 /* CMHomeContentCell.m in Sources */,
 				C3B3BBB01F21AEC9000C9DC8 /* RootViewController.m in Sources */,
 				C3B6B1C51F41AEE700916C7F /* XBSettingCell.m in Sources */,

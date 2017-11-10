@@ -10,6 +10,8 @@
 #import "CMHomeBannerCell.h"
 #import "CMHomeAppCell.h"
 #import "CMHomeWareCell.h"
+#import "CMHomeWareNoneCell.h"
+#import "CMHomeWare1_3Cell.h"
 
 #import "CMHomeModel.h"
 
@@ -45,12 +47,17 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
     
     self.tableView.mj_header = self.header;
     self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.height = KScreenHeight - 44;
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self];
     [self.tableView registerClass:[CMHomeBannerCell class] forCellReuseIdentifier:CMHomeActionTypeBanner];
     [self.tableView registerClass:[CMHomeAppCell class] forCellReuseIdentifier:CMHomeActionTypeApp];
     [self.tableView registerClass:[CMHomeWareCell class] forCellReuseIdentifier:CMHomeActionTypeContent];
+    
+    [self.tableView registerClass:[CMHomeWareNoneCell class] forCellReuseIdentifier:CMHomeActionTypeContentNone];
+    [self.tableView registerClass:[CMHomeWare1_3Cell class] forCellReuseIdentifier:CMHomeActionTypeContent1_3];
+
     [self.view addSubview:self.tableView];
     self.dataArray = @[kCMHomeBannerCellIdentifier,kCMHomeFastEntranceCellIdentifier,kCMHomeContentCellIdentifier];
     

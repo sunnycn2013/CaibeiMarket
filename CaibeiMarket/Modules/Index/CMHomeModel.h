@@ -13,6 +13,8 @@
 extern NSString * CMHomeActionTypeBanner;
 extern NSString * CMHomeActionTypeApp;
 extern NSString * CMHomeActionTypeContent;
+extern NSString * CMHomeActionTypeContentNone;
+extern NSString * CMHomeActionTypeContent1_3;
 
 @interface CMHomeInfo : NSObject<CMHomeDataProtocol>
 
