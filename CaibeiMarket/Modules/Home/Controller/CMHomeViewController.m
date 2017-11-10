@@ -138,12 +138,16 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
     CMHomeInfo * model = [self.homeModel.listData objectAtIndex:indexPath.row];
     NSString * cellIndetifier = [model pattern];
     UITableViewCell<CMHomeRenderProtocol> * cell = [tableView dequeueReusableCellWithIdentifier:cellIndetifier];
-    
-    kWeakSelf(self)
-    [cell setTapBlock:^(id obj){
-        [weakself processWithModel:obj];
-    }];
-    [cell fillData:model];
+    if(cell == nil){
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndetifier];
+    }else{
+        kWeakSelf(self)
+        [cell setTapBlock:^(id obj){
+            [weakself processWithModel:obj];
+        }];
+        [cell fillData:model];
+    }
+   
     return cell;
 }
 
