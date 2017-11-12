@@ -47,7 +47,6 @@
 {
     [super layoutSubviews];
     _lineView.frame = CGRectMake(28, self.height - 1, KScreenWidth - 28*2, 1);
-    
 }
 
 - (void)setUI
@@ -64,14 +63,17 @@
 
 - (void)fillData:(id)model
 {
-//    if (![model isKindOfClass:[CMHomeInfo class]]) {
-//        return;
-//    }
-//    self.model = (CMHomeInfo *)model;
-//    [self.newsImageView setImageWithURL:[NSURL URLWithString:self.model.img] placeholder:[UIImage imageNamed:@"icon-50"]];
-//    [self.newsTitleLabel setText:self.model.title];
-//    [self.newsTimeLabel setText:self.model.time];
-//    [self.newsDesLabel setText:self.model.des];
+    if (![model isKindOfClass:[CMHomeInfo class]]) {
+        return;
+    }
+    self.model = (CMHomeInfo *)model;
+    [self.newsTitleLabel setText:self.model.title];
+    [self.newsTimeLabel setText:self.model.time];
+}
+
+- (CGFloat)heightForCellWith:(id)model
+{
+    return 100;
 }
 
 - (void)tapAction:(UITapGestureRecognizer *)tap
@@ -86,11 +88,12 @@
 {
     if (!_newsTitleLabel) {
         CGFloat width = kIPhone6PScale(414-28-28);
-        _newsTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(28, 28, width, kIPhone6Scale(32))];
+        _newsTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(26, 20, width, 45)];
         _newsTitleLabel.textColor = [UIColor blackColor];
-        _newsTitleLabel.font = [UIFont boldSystemFontOfSize:kIPhone6PScale(15)];
+        _newsTitleLabel.font = [UIFont boldSystemFontOfSize:kIPhone6PScale(16)];
         _newsTitleLabel.text = @"会员免费意外保险";
         _newsTitleLabel.numberOfLines = 0;
+//        _newsTitleLabel.backgroundColor = [UIColor redColor];
     }
     return _newsTitleLabel;
 }
@@ -99,7 +102,7 @@
 {
     if (!_newsAuthorLabel) {
         _newsAuthorLabel = [[UILabel alloc] initWithFrame:CGRectMake(_newsTitleLabel.left, _newsTitleLabel.bottom+15, kIPhone6PScale(100), kIPhone6PScale(10))];
-        _newsAuthorLabel.font = [UIFont systemFontOfSize:kIPhone6PScale(12)];
+        _newsAuthorLabel.font = [UIFont systemFontOfSize:kIPhone6PScale(9)];
         _newsAuthorLabel.text = @"来源:采贝  评论 0";
         _newsAuthorLabel.textColor = [UIColor grayColor];
         _newsAuthorLabel.textAlignment = NSTextAlignmentLeft;
@@ -110,10 +113,10 @@
 - (UILabel *)newsTimeLabel
 {
     if (!_newsTimeLabel) {
-        CGFloat marginLeft = KScreenWidth - kIPhone6PScale(120) - 28;
+        CGFloat marginLeft = KScreenWidth - kIPhone6PScale(120) - 26;
         _newsTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(marginLeft, _newsAuthorLabel.top, kIPhone6PScale(120), kIPhone6PScale(10))];
         _newsTimeLabel.text = @"2017.10.25";
-        _newsTimeLabel.font = [UIFont systemFontOfSize:kIPhone6PScale(12)];
+        _newsTimeLabel.font = [UIFont systemFontOfSize:kIPhone6PScale(9)];
         _newsTimeLabel.textAlignment = NSTextAlignmentRight;
         _newsTimeLabel.textColor = [UIColor grayColor];
     }
@@ -124,8 +127,8 @@
 {
     if (!_lineView) {
         _lineView = [[CALayer alloc] init];
-        _lineView.frame = CGRectMake(28, 0, KScreenWidth - 28*2, 1);
-        _lineView.backgroundColor = [UIColor lightGrayColor].CGColor;
+        _lineView.frame = CGRectMake(26, 0, KScreenWidth - 26*2, 1);
+        _lineView.backgroundColor = [UIColor colorWithHexString:@"#E8E8E8"].CGColor;
     }
     return _lineView;
 }

@@ -16,6 +16,8 @@ NSString * CMHomeActionTypeContent = @"product";
 NSString * CMHomeActionTypeContentNone = @"productNone";
 NSString * CMHomeActionTypeContent1_3 = @"product1_3";
 
+NSString * CMHomeActionTypeSeperate = @"Seperate";
+
 @implementation CMHomeInfo
 
 + (NSDictionary *)mj_objectClassInArray
@@ -28,6 +30,8 @@ NSString * CMHomeActionTypeContent1_3 = @"product1_3";
 
 - (CGFloat)heightForRowCell
 {
+
+    
     if ([self.pattern isEqualToString:@"banner"]) {
         return kIPhone6Scale(194);
     }else if ([self.pattern isEqualToString:@"entrance"])
@@ -37,16 +41,25 @@ NSString * CMHomeActionTypeContent1_3 = @"product1_3";
         if (row == 2) {
             return kIPhone6Scale(95.0*2);
         }
-        return kIPhone6Scale(95.0);
+        return (105.0);
     }else if ([self.pattern isEqualToString:@"product"])
     {
+//        CGSize titleSize = [self.title sizeForFont:[UIFont boldSystemFontOfSize:(15)] size:CGSizeMake(kIPhone6PScale(230), 50) mode:NSLineBreakByWordWrapping];
+//        CGFloat height = (titleSize.height > 50) ? 50 : titleSize.height;
         return 114.0;
     }else if ([self.pattern isEqualToString:@"productNone"])
     {
+//        CGSize titleSize = [self.title sizeForFont:[UIFont boldSystemFontOfSize:(15)] size:CGSizeMake(kIPhone6PScale(230), 50) mode:NSLineBreakByWordWrapping];
+//        CGFloat height = (titleSize.height > 50) ? 50 : titleSize.height;
         return 100.0;
     }else if ([self.pattern isEqualToString:@"product1_3"])
     {
-        return 196.0;
+//        CGSize titleSize = [self.title sizeForFont:[UIFont boldSystemFontOfSize:(15)] size:CGSizeMake(kIPhone6PScale(230), 50) mode:NSLineBreakByWordWrapping];
+//        CGFloat height = (titleSize.height > 50) ? 50 : titleSize.height;
+        return 189.0;
+    }else if ([self.pattern isEqualToString:@"Seperate"])
+    {
+        return 4.0;
     }
     return kIPhone6Scale(0.0);
 }
@@ -87,26 +100,17 @@ NSString * CMHomeActionTypeContent1_3 = @"product1_3";
              };
 }
 
-//- (void)mj_keyValuesDidFinishConvertingToObject
-//{
-//    NSMutableArray * modelArray = [NSMutableArray array];
-//    for (NSDictionary *floorDict in self.listData) {
-//        NSString* modelType = [self getModelWithPattern:floorDict[@"pattern"]];
-//        if (modelType)
-//        {
-//            Class aclass = NSClassFromString(modelType);
-//            if (aclass)
-//            {
-//                id<CMHomeDataProtocol> floorModel = [aclass mj_objectWithKeyValues:floorDict];
-//                if (floorModel) {
-//                    [modelArray addObject:floorModel];
-//                }
-//            }
-//        }
-//    }
-//    
-//    self.floors = modelArray;
-//}
+- (void)mj_keyValuesDidFinishConvertingToObject
+{
+    CMHomeInfo * sep = [CMHomeInfo new];
+    sep.pattern = @"Seperate";
+    NSMutableArray * temArray = [NSMutableArray arrayWithArray:self.listData];
+    if (temArray.count >=2) {
+        [temArray insertObject:sep atIndex:2];
+    }
+   
+    self.listData = temArray;
+}
 
 - (NSString *)getModelWithPattern:(NSString *)pattern
 {

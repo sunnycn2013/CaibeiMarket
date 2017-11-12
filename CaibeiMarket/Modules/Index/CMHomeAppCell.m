@@ -47,7 +47,7 @@
     for (int i = 0; i < row; i++)
     {
         for (int j = 0; j < 4; j++) {
-            CGFloat iconY = 5 + i * (iconHeight + gapSpace);
+            CGFloat iconY = 2+ i * (iconHeight + gapSpace);
             CGFloat iconX = paddingLeft + j * (iconWidth + gapSpace);
             CGRect frame = CGRectMake(iconX, iconY, iconWidth, iconHeight);
             CMHomeAppIcon * app = [[CMHomeAppIcon alloc] initWithFrame:frame];
@@ -57,4 +57,10 @@
         }
     }
 }
+
+- (CGFloat)heightForCellWith:(id)model
+{
+    return (105.0);
+}
+
 @end

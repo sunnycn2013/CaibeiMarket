@@ -35,6 +35,57 @@
     [self.view addSubview:self.tableView];
     [self setupSections];
     [self.tableView reloadData];
+    
+    NSString * path = NSHomeDirectory();
+    [self removeNoDataImage];
+    NSLog(@"%@",path);
+}
+
+- (NSString *)pathForLocalImageCache
+{
+    NSString * path = NSHomeDirectory();
+    NSString * imageCachePath = [NSString stringWithFormat:@"%@/Library/Caches",path];
+    NSString * yyImagePath = [NSString stringWithFormat:@"%@/com.ibireme.yykit",imageCachePath];
+    return yyImagePath;
+}
+
+- (void)removeCacheImageWithPath:(NSString *)path
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if ([fileManager removeItemAtPath:path error:NULL]) {
+        [MBProgressHUD showInfoMessage:@"缓存清除成功"];
+    }
+}
+
+- (NSString *)sizeOfLocalFilesWithPath:(NSString *)path
+{
+    CGFloat  size = [self folderSizeAtPath:path];
+    if (size > 1) {
+        return [NSString stringWithFormat:@"%.2fM",size];
+    }else{
+        return [NSString stringWithFormat:@"%.2fK",size*1024];
+    }
+}
+//获得单个文件的大小
+- (long long) fileSizeAtPath:(NSString*) filePath{
+    NSFileManager* manager = [NSFileManager defaultManager];
+    if ([manager fileExistsAtPath:filePath]){
+        return [[manager attributesOfItemAtPath:filePath error:nil] fileSize];
+    }
+    return 0;
+}
+//获得文件夹（遍历）的大小
+- (float) folderSizeAtPath:(NSString*) folderPath{
+    NSFileManager* manager = [NSFileManager defaultManager];
+    if (![manager fileExistsAtPath:folderPath]) return 0;
+    NSEnumerator *childFilesEnumerator = [[manager subpathsAtPath:folderPath] objectEnumerator];
+    NSString* fileName;
+    long long folderSize = 0;
+    while ((fileName = [childFilesEnumerator nextObject]) != nil){
+        NSString* fileAbsolutePath = [folderPath stringByAppendingPathComponent:fileName];
+        folderSize += [self fileSizeAtPath:fileAbsolutePath];
+    }
+    return folderSize/(1024.0*1024.0*1024.0);
 }
 
 - (void)showAlert:(NSString *)title
@@ -67,10 +118,18 @@
         [alert show];
     };
 
+    XBSettingItemModel *item3 = [[XBSettingItemModel alloc]init];
+    item3.funcName = @"清楚缓存";
+    item3.detailText = [self sizeOfLocalFilesWithPath:[self pathForLocalImageCache]];
+    item3.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
+    item3.executeCode = ^
+    {
+        [weakSelf removeCacheImageWithPath:[self pathForLocalImageCache]];
+    };
     
     XBSettingSectionModel *section1 = [[XBSettingSectionModel alloc]init];
     section1.sectionHeaderHeight = 18;
-    section1.itemArray = @[item1,item2];
+    section1.itemArray = @[item1,item2,item3];
     
     //************************************section2
     XBSettingItemModel *item4 = [[XBSettingItemModel alloc]init];

@@ -12,7 +12,7 @@ platform :ios, '8.0'
 target 'CaibeiMarket' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
-  
+  pod 'FXPageControl', '~> 1.5'
   pod 'AFNetworking', '~> 3.0'
   pod 'YYKit', '~> 1.0.9'
   pod 'MBProgressHUD', '~> 1.0.0'

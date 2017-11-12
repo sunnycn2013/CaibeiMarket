@@ -15,6 +15,7 @@ extern NSString * CMHomeActionTypeApp;
 extern NSString * CMHomeActionTypeContent;
 extern NSString * CMHomeActionTypeContentNone;
 extern NSString * CMHomeActionTypeContent1_3;
+extern NSString * CMHomeActionTypeSeperate;
 
 @interface CMHomeInfo : NSObject<CMHomeDataProtocol>
 
@@ -30,6 +31,7 @@ extern NSString * CMHomeActionTypeContent1_3;
 @property (nonatomic,strong)NSString * author;
 @property (nonatomic,strong)NSString * url;
 @property (nonatomic,strong)NSString * img;
+@property (nonatomic,strong)NSArray * images;
 
 @property (nonatomic,strong)CMJump   * jump;
 

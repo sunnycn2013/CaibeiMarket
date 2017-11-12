@@ -967,7 +967,13 @@ NSComparisonResult compareViewDepth(UIView *view1, UIView *view2, iCarousel *sel
             _numberOfVisibleItems = ceil(width / itemWidth) + 2;
             break;
         }
-        case iCarouselTypeCycle:
+        case iCarouselTypeCycle:{
+                //exact number required to fill screen
+                CGFloat width = _vertical ? self.bounds.size.height: self.bounds.size.width;
+                CGFloat itemWidth = _itemWidth;
+                _numberOfVisibleItems = ceil(width / itemWidth) + 2;
+                break;
+        }
         case iCarouselTypeCoverFlow:
         case iCarouselTypeCoverFlow2:
         {

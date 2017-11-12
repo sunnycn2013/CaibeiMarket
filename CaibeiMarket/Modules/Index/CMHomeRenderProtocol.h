@@ -13,4 +13,6 @@
 @property (nonatomic ,copy)void(^tapBlock)(id obj);
 
 - (void)fillData:(id)model;
+
++ (CGFloat)heightForCellWith:(id)model;
 @end

@@ -30,7 +30,7 @@
 - (void)setUI
 {
     self.backgroundColor = [UIColor colorWithHexString:@"#FFFFFF"];
-    CGFloat iconWith = kIPhone6Scale(94/2.0);
+    CGFloat iconWith = kIPhone6PScale(51);//kIPhone6Scale(94/2.0);
     CGFloat marginLeft = (self.width - iconWith) / 2.0;
     CGFloat paddingTop = 18.0;
     _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(marginLeft, paddingTop, iconWith, iconWith)];
@@ -38,7 +38,8 @@
     [self addSubview:_imageView];
     
     CGFloat labelHeight = kIPhone6Scale(18);
-    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, _imageView.bottom + kIPhone6Scale(5), self.width, labelHeight)];
+    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, _imageView.bottom + 4, self.width, labelHeight)];
+    [_titleLabel setTextColor:[UIColor colorWithHexString:@"#333333"]];
     [_titleLabel setText:@"常见问题"];
     [_titleLabel setFont:[UIFont systemFontOfSize:kIPhone6Scale(12)]];
     [_titleLabel setTextAlignment:NSTextAlignmentCenter];

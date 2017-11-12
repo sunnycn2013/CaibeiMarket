@@ -26,6 +26,7 @@
 		C327941F1F397BB200AE02A3 /* CMSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C327941E1F397BB200AE02A3 /* CMSettingCell.m */; };
 		C33E33581F344CF300CB9D3D /* UIColor+CMColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C33E33571F344CF300CB9D3D /* UIColor+CMColor.m */; };
 		C33E337E1F37161000CB9D3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C33E337C1F37161000CB9D3D /* LaunchScreen.storyboard */; };
+		C33FD9181FB69196003C1A0D /* CMHomeSeperateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C33FD9171FB69196003C1A0D /* CMHomeSeperateCell.m */; };
 		C340D7A31F473A1000AD0DAE /* about@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C340D7A11F473A1000AD0DAE /* about@3x.png */; };
 		C340D7A41F473A1000AD0DAE /* apply@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C340D7A21F473A1000AD0DAE /* apply@3x.png */; };
 		C340D7A61F473A1600AD0DAE /* mydata@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C340D7A51F473A1600AD0DAE /* mydata@3x.png */; };
@@ -317,6 +318,8 @@
 		C33E33561F344CF300CB9D3D /* UIColor+CMColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CMColor.h"; sourceTree = "<group>"; };
 		C33E33571F344CF300CB9D3D /* UIColor+CMColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CMColor.m"; sourceTree = "<group>"; };
 		C33E337D1F37161000CB9D3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C33FD9161FB69196003C1A0D /* CMHomeSeperateCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMHomeSeperateCell.h; sourceTree = "<group>"; };
+		C33FD9171FB69196003C1A0D /* CMHomeSeperateCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMHomeSeperateCell.m; sourceTree = "<group>"; };
 		C340D7A11F473A1000AD0DAE /* about@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about@3x.png"; sourceTree = "<group>"; };
 		C340D7A21F473A1000AD0DAE /* apply@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apply@3x.png"; sourceTree = "<group>"; };
 		C340D7A51F473A1600AD0DAE /* mydata@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mydata@3x.png"; sourceTree = "<group>"; };
@@ -1870,6 +1873,8 @@
 				C35220231F2437AE002707E8 /* CMHomeRenderProtocol.h */,
 				C3F646FD1F24AAB9005952EC /* App */,
 				C3F646FC1F24AAAE005952EC /* Banner */,
+				C33FD9161FB69196003C1A0D /* CMHomeSeperateCell.h */,
+				C33FD9171FB69196003C1A0D /* CMHomeSeperateCell.m */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -2399,6 +2404,7 @@
 				C39AD6741FA21DEE00A000FA /* CMBorrowDetailContentCell.m in Sources */,
 				C340D7AB1F47AA7F00AD0DAE /* MOBShareSDKHelper.m in Sources */,
 				C385B7601FB498F400DDBA87 /* CMHomeWare1_3Cell.m in Sources */,
+				C33FD9181FB69196003C1A0D /* CMHomeSeperateCell.m in Sources */,
 				C39AD6761FA21DEE00A000FA /* CMBorrowDetailNotesCell.m in Sources */,
 				C39AD6781FA21DEE00A000FA /* CMBorrowDetailSpaceCell.m in Sources */,
 				C3B3BBD81F21AEC9000C9DC8 /* PersonListCollectionViewCell.m in Sources */,
