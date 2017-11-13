@@ -11,6 +11,7 @@
 
 extern NSString * CMHomeActionTypeCredit;
 extern NSString * CMHomeActionTypeSafe;
+extern NSString * CMHomeActionTypeJiZhang;
 
 @interface CMFind : NSObject<CMFindDataProtocol>
 
@@ -25,5 +26,11 @@ extern NSString * CMHomeActionTypeSafe;
 @property (nonatomic,strong)NSNumber * totalCount;
 
 @property (nonatomic,strong)NSArray  * listData;
+
+- (NSInteger)count;
+
+- (id)floorModelAtIndexPath:(NSIndexPath *)indexPath;
+
+- (NSString *)floorIdentifierAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

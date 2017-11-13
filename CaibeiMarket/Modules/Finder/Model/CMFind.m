@@ -7,9 +7,11 @@
 //
 
 #import "CMFind.h"
+#import "CMFindItem.h"
 
 NSString * CMHomeActionTypeCredit = @"credit";
 NSString * CMHomeActionTypeSafe = @"safe";
+NSString * CMHomeActionTypeJiZhang = @"jizhang";
 
 @implementation CMFind
 
@@ -23,6 +25,35 @@ NSString * CMHomeActionTypeSafe = @"safe";
 - (NSInteger)numberOfRowsInFloor
 {
     return self.listData.count;
+}
+
+- (void)mj_keyValuesDidFinishConvertingToObject
+{
+//    NSMutableArray * array = [NSMutableArray array];
+//    CMFindItem * wareInfo = [[CMFindItem alloc] init];
+//    wareInfo.pattern = @"jizhang";
+//    [array addObject:wareInfo];
+//    [array addObjectsFromArray:self.listData];
+//    
+//    self.listData = [array copy];
+//    NSLog(@"aa");
+}
+
+- (NSInteger)count
+{
+    return self.listData.count;
+}
+
+- (NSString *)floorIdentifierAtIndexPath:(NSIndexPath *)indexPath
+{
+    CMFindItem * item = [self.listData objectAtIndex:indexPath.section];
+    return item.pattern;
+}
+
+- (id)floorModelAtIndexPath:(NSIndexPath *)indexPath
+{
+    id<CMFindDataProtocol> item = [self.listData objectAtIndex:indexPath.section];
+    return [item floorModelAtIndex:indexPath.row];
 }
 
 @end

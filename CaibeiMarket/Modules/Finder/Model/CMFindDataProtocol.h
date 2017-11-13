@@ -13,8 +13,10 @@
 @protocol CMFindDataProtocol <NSObject>
 
 @optional
+- (NSString *)floorIdentifierAtIndexPath:(NSIndexPath *)indexPath;
 - (NSInteger)numberOfRowsInFloor;
 - (id)floorModelAtIndex:(NSInteger)index;
+- (id)floorModelAtIndexPath:(NSIndexPath *)indexPath;
 - (CGFloat)heightForRowCell;
 
 @property (nonatomic,strong)NSString * actionType;

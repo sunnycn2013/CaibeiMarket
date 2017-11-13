@@ -24,6 +24,7 @@
 		C30A00C01FB2FAD700CABAD5 /* Default_02.png in Resources */ = {isa = PBXBuildFile; fileRef = C30A00BF1FB2FAD700CABAD5 /* Default_02.png */; };
 		C327941C1F397B1E00AE02A3 /* CMPortraitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C327941B1F397B1E00AE02A3 /* CMPortraitViewController.m */; };
 		C327941F1F397BB200AE02A3 /* CMSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C327941E1F397BB200AE02A3 /* CMSettingCell.m */; };
+		C331554E1FB86D0800FD26CC /* CMFindJiZhangCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C331554D1FB86D0800FD26CC /* CMFindJiZhangCell.m */; };
 		C33E33581F344CF300CB9D3D /* UIColor+CMColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C33E33571F344CF300CB9D3D /* UIColor+CMColor.m */; };
 		C33E337E1F37161000CB9D3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C33E337C1F37161000CB9D3D /* LaunchScreen.storyboard */; };
 		C33FD9181FB69196003C1A0D /* CMHomeSeperateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C33FD9171FB69196003C1A0D /* CMHomeSeperateCell.m */; };
@@ -315,6 +316,8 @@
 		C327941B1F397B1E00AE02A3 /* CMPortraitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMPortraitViewController.m; sourceTree = "<group>"; };
 		C327941D1F397BB200AE02A3 /* CMSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMSettingCell.h; sourceTree = "<group>"; };
 		C327941E1F397BB200AE02A3 /* CMSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMSettingCell.m; sourceTree = "<group>"; };
+		C331554C1FB86D0800FD26CC /* CMFindJiZhangCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMFindJiZhangCell.h; sourceTree = "<group>"; };
+		C331554D1FB86D0800FD26CC /* CMFindJiZhangCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMFindJiZhangCell.m; sourceTree = "<group>"; };
 		C33E33561F344CF300CB9D3D /* UIColor+CMColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CMColor.h"; sourceTree = "<group>"; };
 		C33E33571F344CF300CB9D3D /* UIColor+CMColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CMColor.m"; sourceTree = "<group>"; };
 		C33E337D1F37161000CB9D3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -1002,6 +1005,8 @@
 				C3B6B1CC1F428B1700916C7F /* CMFindCreditCell.m */,
 				C3B6B1CE1F428E0200916C7F /* CMFindInsuranceCell.h */,
 				C3B6B1CF1F428E0200916C7F /* CMFindInsuranceCell.m */,
+				C331554C1FB86D0800FD26CC /* CMFindJiZhangCell.h */,
+				C331554D1FB86D0800FD26CC /* CMFindJiZhangCell.m */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -2363,6 +2368,7 @@
 				C3B3BBB51F21AEC9000C9DC8 /* NJKWebViewProgress.m in Sources */,
 				B0D0C9561F1F9C6900EBA36F /* AppDelegate.m in Sources */,
 				B05C5B821F2B27F2009E5CC6 /* CMSettingViewController.m in Sources */,
+				C331554E1FB86D0800FD26CC /* CMFindJiZhangCell.m in Sources */,
 				C3B3BBE21F21AEC9000C9DC8 /* ProfileViewController.m in Sources */,
 				C3BB83611F3C9EDB008C8EA7 /* UAHttpRequestModel.m in Sources */,
 				C3B788461F3D6BA10024737A /* YYFPSLabel.m in Sources */,

@@ -10,6 +10,8 @@
 #import "CMFindHeadView.h"
 #import "CMFindCreditCell.h"
 #import "CMFindInsuranceCell.h"
+#import "CMFindJiZhangCell.h"
+
 #import "CMFindProtocol.h"
 #import "CBAPIUtil.h"
 #import "CMFind.h"
@@ -33,11 +35,10 @@
     self.tableView.dataSource = self;
     self.tableView.mj_header = self.header;
     self.tableView.height = KScreenHeight - 44;
-//    self.tableView.mj_footer = self.footer;
 
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
     [self.tableView registerClass:[CMFindCreditCell class] forCellReuseIdentifier:CMHomeActionTypeCredit];
+    [self.tableView registerClass:[CMFindJiZhangCell class] forCellReuseIdentifier:CMHomeActionTypeJiZhang];
     [self.tableView registerClass:[CMFindInsuranceCell class] forCellReuseIdentifier:CMHomeActionTypeSafe];
 
     [self.view addSubview:self.tableView];
@@ -96,7 +97,7 @@
 #pragma mark - UITableViewDelegate,UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return self.find.listData.count;
+    return [self.find count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -107,10 +108,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CMFindItem<CMFindDataProtocol> * item = [self.find.listData objectAtIndex:indexPath.section];
-    id wareInfo = [item floorModelAtIndex:indexPath.row];
-    UITableViewCell<CMFindProtocol> * cell = [tableView dequeueReusableCellWithIdentifier:[item pattern]];
-    [cell fillData:wareInfo];
+    NSString * cellIdentifier = [self.find floorIdentifierAtIndexPath:indexPath];
+    id<CMFindDataProtocol> item = [self.find floorModelAtIndexPath:indexPath];
+    UITableViewCell<CMFindProtocol> * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    [cell fillData:item];
     kWeakSelf(self)
     [cell setTapBlock:^(id obj){
         [weakself processWithModel:obj];
@@ -120,7 +121,9 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0) {
+    if(indexPath.section == 0) {
+        return kIPhone6Scale(135.0);
+    }else if(indexPath.section == 1) {
         return kIPhone6Scale(135.0);
     }else{
         return kIPhone6Scale(70.0);

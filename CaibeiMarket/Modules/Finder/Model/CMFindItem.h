@@ -16,7 +16,7 @@
 @property (nonatomic,strong)NSString * img;
 @property (nonatomic,strong)NSString * url;
 @property (nonatomic,strong)NSString * subTitle;
-@property (nonatomic,strong)CMJump * jump;
+@property (nonatomic,strong)CMJump   * jump;
 
 @end
 
@@ -28,4 +28,5 @@
 @property (nonatomic,strong)NSArray  * secondList;
 
 - (NSInteger)itemCount;
+
 @end

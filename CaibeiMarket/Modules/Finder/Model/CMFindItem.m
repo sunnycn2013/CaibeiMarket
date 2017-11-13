@@ -64,6 +64,9 @@
     if ([self.pattern isEqualToString:@"credit"]) {
         return [self.secondList objectAtIndex:index];
     }
+    if ([self.pattern isEqualToString:@"jizhang"]) {
+        return self;
+    }
     return [self.productList objectAtIndex:index];
 }
 @end
