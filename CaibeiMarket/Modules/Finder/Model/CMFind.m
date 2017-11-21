@@ -27,21 +27,27 @@ NSString * CMHomeActionTypeJiZhang = @"jizhang";
     return self.listData.count;
 }
 
-- (void)mj_keyValuesDidFinishConvertingToObject
-{
+//- (void)mj_keyValuesDidFinishConvertingToObject
+//{
 //    NSMutableArray * array = [NSMutableArray array];
 //    CMFindItem * wareInfo = [[CMFindItem alloc] init];
 //    wareInfo.pattern = @"jizhang";
 //    [array addObject:wareInfo];
 //    [array addObjectsFromArray:self.listData];
-//    
+//
 //    self.listData = [array copy];
 //    NSLog(@"aa");
-}
+//}
 
-- (NSInteger)count
+- (NSInteger)numberOfSections
 {
     return self.listData.count;
+}
+
+- (NSInteger)numberOfRowsInSection:(NSInteger)section
+{
+    CMFindItem * item = [self.listData objectAtIndex:section];
+    return [item itemCount];
 }
 
 - (NSString *)floorIdentifierAtIndexPath:(NSIndexPath *)indexPath

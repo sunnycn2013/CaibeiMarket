@@ -27,7 +27,9 @@ extern NSString * CMHomeActionTypeJiZhang;
 
 @property (nonatomic,strong)NSArray  * listData;
 
-- (NSInteger)count;
+- (NSInteger)numberOfSections;
+
+- (NSInteger)numberOfRowsInSection:(NSInteger)section;
 
 - (id)floorModelAtIndexPath:(NSIndexPath *)indexPath;
 

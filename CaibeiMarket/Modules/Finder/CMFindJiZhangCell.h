@@ -10,4 +10,6 @@
 
 @interface CMFindJiZhangCell : UITableViewCell
 
+@property (nonatomic,copy)void(^TapBlock)(id obj);
+
 @end

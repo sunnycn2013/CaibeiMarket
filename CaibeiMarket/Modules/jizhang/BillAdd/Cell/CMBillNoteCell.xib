@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="CMBillNoteCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CrS-l9-htZ">
+                        <rect key="frame" x="8" y="10" width="304" height="50"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="nE7-ab-8PP"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="备注：不超过80字（选填）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XtV-Qp-Y8R">
+                        <rect key="frame" x="12" y="16" width="218" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="218" id="FaV-J8-vbz"/>
+                            <constraint firstAttribute="width" secondItem="XtV-Qp-Y8R" secondAttribute="height" multiplier="218:25" id="RRN-cV-b6K"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.66255432367324829" green="0.66665184497833252" blue="0.67071288824081421" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Qm-BZ-ZRa">
+                        <rect key="frame" x="0.0" y="69" width="320" height="1"/>
+                        <color key="backgroundColor" red="0.92919379469999996" green="0.93333435060000003" blue="0.93734973669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="X2Z-41-t8d"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.97232657670974731" green="0.97647422552108765" blue="0.98048216104507446" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="5Qm-BZ-ZRa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="8BQ-dL-RFf"/>
+                    <constraint firstItem="XtV-Qp-Y8R" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="8NJ-TK-fi0"/>
+                    <constraint firstItem="5Qm-BZ-ZRa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="69" id="EWD-fA-wqk"/>
+                    <constraint firstAttribute="trailing" secondItem="5Qm-BZ-ZRa" secondAttribute="trailing" id="EYG-Cc-frj"/>
+                    <constraint firstAttribute="trailing" secondItem="CrS-l9-htZ" secondAttribute="trailing" constant="8" id="GKK-jM-bMi"/>
+                    <constraint firstItem="CrS-l9-htZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="KEa-OY-7fy"/>
+                    <constraint firstItem="XtV-Qp-Y8R" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="YtK-Z3-Xl5"/>
+                    <constraint firstItem="CrS-l9-htZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="eYw-An-i0v"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="noteLabel" destination="XtV-Qp-Y8R" id="rCR-fq-39w"/>
+                <outlet property="textView" destination="CrS-l9-htZ" id="d3A-BW-aly"/>
+            </connections>
+            <point key="canvasLocation" x="25" y="52"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -22,6 +22,24 @@
 		B87857BA1FCF538DD25D77B8 /* libPods-CaibeiMarketTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1657DC69D41D6AAC9F81AE5C /* libPods-CaibeiMarketTests.a */; };
 		C30A00991FB098FA00CABAD5 /* CBShowInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C30A00981FB098FA00CABAD5 /* CBShowInfoViewController.m */; };
 		C30A00C01FB2FAD700CABAD5 /* Default_02.png in Resources */ = {isa = PBXBuildFile; fileRef = C30A00BF1FB2FAD700CABAD5 /* Default_02.png */; };
+		C31529261FBC7CD0009319DC /* CMBillListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C31529251FBC7CD0009319DC /* CMBillListHeaderView.m */; };
+		C315292B1FBC83F1009319DC /* CMBillAddQuDaoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C31529291FBC83F1009319DC /* CMBillAddQuDaoCell.m */; };
+		C315292C1FBC83F1009319DC /* CMBillAddQuDaoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C315292A1FBC83F1009319DC /* CMBillAddQuDaoCell.xib */; };
+		C31529301FBDDE4E009319DC /* CMBillProjectNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C315292E1FBDDE4E009319DC /* CMBillProjectNameCell.m */; };
+		C31529311FBDDE4E009319DC /* CMBillProjectNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C315292F1FBDDE4E009319DC /* CMBillProjectNameCell.xib */; };
+		C315293B1FBDDEB4009319DC /* CMBillMoneyNumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C31529391FBDDEB4009319DC /* CMBillMoneyNumCell.m */; };
+		C315293C1FBDDEB4009319DC /* CMBillMoneyNumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C315293A1FBDDEB4009319DC /* CMBillMoneyNumCell.xib */; };
+		C31529401FBDDEC8009319DC /* CMBillMoneyTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C315293E1FBDDEC8009319DC /* CMBillMoneyTimeCell.m */; };
+		C31529411FBDDEC8009319DC /* CMBillMoneyTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C315293F1FBDDEC8009319DC /* CMBillMoneyTimeCell.xib */; };
+		C315294B1FBDDF1A009319DC /* CMBillMoneyLilvCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C31529491FBDDF1A009319DC /* CMBillMoneyLilvCell.m */; };
+		C315294C1FBDDF1A009319DC /* CMBillMoneyLilvCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C315294A1FBDDF1A009319DC /* CMBillMoneyLilvCell.xib */; };
+		C31529501FBDDF2E009319DC /* CMBillMoneyLimitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C315294E1FBDDF2E009319DC /* CMBillMoneyLimitCell.m */; };
+		C31529511FBDDF2E009319DC /* CMBillMoneyLimitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C315294F1FBDDF2E009319DC /* CMBillMoneyLimitCell.xib */; };
+		C31529551FBDDF5B009319DC /* CMBillMoneyNoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C31529531FBDDF5B009319DC /* CMBillMoneyNoteCell.m */; };
+		C31529561FBDDF5B009319DC /* CMBillMoneyNoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C31529541FBDDF5B009319DC /* CMBillMoneyNoteCell.xib */; };
+		C315295D1FBE93E2009319DC /* CBillAddHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C315295C1FBE93E2009319DC /* CBillAddHeaderView.m */; };
+		C31529621FBF2CC6009319DC /* CMBillNoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C31529601FBF2CC6009319DC /* CMBillNoteCell.m */; };
+		C31529631FBF2CC6009319DC /* CMBillNoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C31529611FBF2CC6009319DC /* CMBillNoteCell.xib */; };
 		C327941C1F397B1E00AE02A3 /* CMPortraitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C327941B1F397B1E00AE02A3 /* CMPortraitViewController.m */; };
 		C327941F1F397BB200AE02A3 /* CMSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C327941E1F397BB200AE02A3 /* CMSettingCell.m */; };
 		C331554E1FB86D0800FD26CC /* CMFindJiZhangCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C331554D1FB86D0800FD26CC /* CMFindJiZhangCell.m */; };
@@ -68,6 +86,8 @@
 		C385401A1FAAE2C7003E7156 /* find.json in Resources */ = {isa = PBXBuildFile; fileRef = C38540181FAAE2C7003E7156 /* find.json */; };
 		C385B75D1FB498DD00DDBA87 /* CMHomeWareNoneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C385B75C1FB498DD00DDBA87 /* CMHomeWareNoneCell.m */; };
 		C385B7601FB498F400DDBA87 /* CMHomeWare1_3Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = C385B75F1FB498F400DDBA87 /* CMHomeWare1_3Cell.m */; };
+		C397701A1FC1AAE0001063C4 /* CMBillSpaceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C39770181FC1AAE0001063C4 /* CMBillSpaceCell.m */; };
+		C397701B1FC1AAE0001063C4 /* CMBillSpaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C39770191FC1AAE0001063C4 /* CMBillSpaceCell.xib */; };
 		C39AD65B1FA21DEE00A000FA /* CMBorrowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C39AD6151FA21DEE00A000FA /* CMBorrowCell.m */; };
 		C39AD65C1FA21DEE00A000FA /* CMChooseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C39AD6171FA21DEE00A000FA /* CMChooseCell.m */; };
 		C39AD65D1FA21DEE00A000FA /* CMBorrowChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = C39AD61A1FA21DEE00A000FA /* CMBorrowChooseView.m */; };
@@ -107,10 +127,20 @@
 		C39AD67F1FA21DEE00A000FA /* ZZCountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C39AD6591FA21DEE00A000FA /* ZZCountingLabel.m */; };
 		C39AD6841FA22A0600A000FA /* CBAPIUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C39AD6831FA22A0600A000FA /* CBAPIUtil.m */; };
 		C39AD6951FA2C63900A000FA /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = C39AD6941FA2C63900A000FA /* iCarousel.m */; };
+		C39C2C7E1FBA7FC300AF8470 /* CMFindTableViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C39C2C7D1FBA7FC300AF8470 /* CMFindTableViewHeader.m */; };
 		C3A4BB5C1F29A2DE0082030A /* CMMineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A4BB5B1F29A2DE0082030A /* CMMineHeaderView.m */; };
 		C3A4BB641F29A88E0082030A /* CMMineItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A4BB631F29A88E0082030A /* CMMineItem.m */; };
 		C3A4BB671F29B8E50082030A /* CMMineHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A4BB661F29B8E50082030A /* CMMineHeader.m */; };
 		C3A4BB6A1F29B9390082030A /* CMMineHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A4BB691F29B9390082030A /* CMMineHeaderCell.m */; };
+		C3A7D53E1FBB421B009204A8 /* CMBillListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A7D5361FBB421B009204A8 /* CMBillListViewController.m */; };
+		C3A7D5401FBB421B009204A8 /* CBBillDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A7D53C1FBB421B009204A8 /* CBBillDetailViewController.m */; };
+		C3A7D54C1FBBFEF7009204A8 /* CMBillAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A7D54A1FBBFEF7009204A8 /* CMBillAddViewController.m */; };
+		C3A7D54D1FBBFEF7009204A8 /* CMBillAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3A7D54B1FBBFEF7009204A8 /* CMBillAddViewController.xib */; };
+		C3A7D5511FBC015B009204A8 /* CMBillListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A7D54F1FBC015B009204A8 /* CMBillListCell.m */; };
+		C3A7D5521FBC015B009204A8 /* CMBillListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3A7D5501FBC015B009204A8 /* CMBillListCell.xib */; };
+		C3A7D55A1FBC08DF009204A8 /* CMBillListSpaceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A7D5581FBC08DF009204A8 /* CMBillListSpaceCell.m */; };
+		C3A7D55B1FBC08DF009204A8 /* CMBillListSpaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3A7D5591FBC08DF009204A8 /* CMBillListSpaceCell.xib */; };
+		C3A7D55D1FBC0A26009204A8 /* tub4_x3.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A7D55C1FBC0A26009204A8 /* tub4_x3.png */; };
 		C3A8B4E01FA3675C00AD9610 /* CMHomeWareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A8B4DF1FA3675C00AD9610 /* CMHomeWareCell.m */; };
 		C3A8B4E71FA56B5100AD9610 /* CMFind.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A8B4E61FA56B5100AD9610 /* CMFind.m */; };
 		C3A8B4EA1FA56B8A00AD9610 /* CMFindItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A8B4E91FA56B8A00AD9610 /* CMFindItem.m */; };
@@ -238,6 +268,7 @@
 		C3D2E0811F21DDC90037CFF3 /* CMHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D2E0801F21DDC90037CFF3 /* CMHomeModel.m */; };
 		C3D2E0871F21DFE30037CFF3 /* CMHomeAppCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D2E0861F21DFE30037CFF3 /* CMHomeAppCell.m */; };
 		C3D2E08A1F21DFFB0037CFF3 /* CMHomeContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D2E0891F21DFFB0037CFF3 /* CMHomeContentCell.m */; };
+		C3D95A351FBAB0AA00341547 /* CMFindNexNoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D95A341FBAB0AA00341547 /* CMFindNexNoteView.m */; };
 		C3E3E17D1F301EAD0021EB09 /* index_banner@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E3E17C1F301EAD0021EB09 /* index_banner@2x.png */; };
 		C3E3E1851F302FCC0021EB09 /* icon_01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E3E17F1F302FCC0021EB09 /* icon_01@2x.png */; };
 		C3E3E1861F302FCC0021EB09 /* icon_01@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E3E1801F302FCC0021EB09 /* icon_01@3x.png */; };
@@ -312,6 +343,35 @@
 		C30A00971FB098FA00CABAD5 /* CBShowInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBShowInfoViewController.h; sourceTree = "<group>"; };
 		C30A00981FB098FA00CABAD5 /* CBShowInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBShowInfoViewController.m; sourceTree = "<group>"; };
 		C30A00BF1FB2FAD700CABAD5 /* Default_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default_02.png; sourceTree = "<group>"; };
+		C31529241FBC7CD0009319DC /* CMBillListHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMBillListHeaderView.h; sourceTree = "<group>"; };
+		C31529251FBC7CD0009319DC /* CMBillListHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMBillListHeaderView.m; sourceTree = "<group>"; };
+		C31529281FBC83F1009319DC /* CMBillAddQuDaoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMBillAddQuDaoCell.h; sourceTree = "<group>"; };
+		C31529291FBC83F1009319DC /* CMBillAddQuDaoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMBillAddQuDaoCell.m; sourceTree = "<group>"; };
+		C315292A1FBC83F1009319DC /* CMBillAddQuDaoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CMBillAddQuDaoCell.xib; sourceTree = "<group>"; };
+		C315292D1FBDDE4E009319DC /* CMBillProjectNameCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMBillProjectNameCell.h; sourceTree = "<group>"; };
+		C315292E1FBDDE4E009319DC /* CMBillProjectNameCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMBillProjectNameCell.m; sourceTree = "<group>"; };
+		C315292F1FBDDE4E009319DC /* CMBillProjectNameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CMBillProjectNameCell.xib; sourceTree = "<group>"; };
+		C31529381FBDDEB4009319DC /* CMBillMoneyNumCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMBillMoneyNumCell.h; sourceTree = "<group>"; };
+		C31529391FBDDEB4009319DC /* CMBillMoneyNumCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMBillMoneyNumCell.m; sourceTree = "<group>"; };
+		C315293A1FBDDEB4009319DC /* CMBillMoneyNumCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CMBillMoneyNumCell.xib; sourceTree = "<group>"; };
+		C315293D1FBDDEC8009319DC /* CMBillMoneyTimeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMBillMoneyTimeCell.h; sourceTree = "<group>"; };
+		C315293E1FBDDEC8009319DC /* CMBillMoneyTimeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMBillMoneyTimeCell.m; sourceTree = "<group>"; };
+		C315293F1FBDDEC8009319DC /* CMBillMoneyTimeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CMBillMoneyTimeCell.xib; sourceTree = "<group>"; };
+		C31529481FBDDF1A009319DC /* CMBillMoneyLilvCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMBillMoneyLilvCell.h; sourceTree = "<group>"; };
+		C31529491FBDDF1A009319DC /* CMBillMoneyLilvCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMBillMoneyLilvCell.m; sourceTree = "<group>"; };
+		C315294A1FBDDF1A009319DC /* CMBillMoneyLilvCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CMBillMoneyLilvCell.xib; sourceTree = "<group>"; };
+		C315294D1FBDDF2E009319DC /* CMBillMoneyLimitCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMBillMoneyLimitCell.h; sourceTree = "<group>"; };
+		C315294E1FBDDF2E009319DC /* CMBillMoneyLimitCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMBillMoneyLimitCell.m; sourceTree = "<group>"; };
+		C315294F1FBDDF2E009319DC /* CMBillMoneyLimitCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CMBillMoneyLimitCell.xib; sourceTree = "<group>"; };
+		C31529521FBDDF5B009319DC /* CMBillMoneyNoteCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMBillMoneyNoteCell.h; sourceTree = "<group>"; };
+		C31529531FBDDF5B009319DC /* CMBillMoneyNoteCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMBillMoneyNoteCell.m; sourceTree = "<group>"; };
+		C31529541FBDDF5B009319DC /* CMBillMoneyNoteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CMBillMoneyNoteCell.xib; sourceTree = "<group>"; };
+		C315295B1FBE93E2009319DC /* CBillAddHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBillAddHeaderView.h; sourceTree = "<group>"; };
+		C315295C1FBE93E2009319DC /* CBillAddHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBillAddHeaderView.m; sourceTree = "<group>"; };
+		C315295E1FBEB08A009319DC /* CMBillCellProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMBillCellProtocol.h; sourceTree = "<group>"; };
+		C315295F1FBF2CC6009319DC /* CMBillNoteCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMBillNoteCell.h; sourceTree = "<group>"; };
+		C31529601FBF2CC6009319DC /* CMBillNoteCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMBillNoteCell.m; sourceTree = "<group>"; };
+		C31529611FBF2CC6009319DC /* CMBillNoteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CMBillNoteCell.xib; sourceTree = "<group>"; };
 		C327941A1F397B1E00AE02A3 /* CMPortraitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMPortraitViewController.h; sourceTree = "<group>"; };
 		C327941B1F397B1E00AE02A3 /* CMPortraitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMPortraitViewController.m; sourceTree = "<group>"; };
 		C327941D1F397BB200AE02A3 /* CMSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMSettingCell.h; sourceTree = "<group>"; };
@@ -381,6 +441,9 @@
 		C385B75C1FB498DD00DDBA87 /* CMHomeWareNoneCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMHomeWareNoneCell.m; sourceTree = "<group>"; };
 		C385B75E1FB498F400DDBA87 /* CMHomeWare1_3Cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMHomeWare1_3Cell.h; sourceTree = "<group>"; };
 		C385B75F1FB498F400DDBA87 /* CMHomeWare1_3Cell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMHomeWare1_3Cell.m; sourceTree = "<group>"; };
+		C39770171FC1AAE0001063C4 /* CMBillSpaceCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMBillSpaceCell.h; sourceTree = "<group>"; };
+		C39770181FC1AAE0001063C4 /* CMBillSpaceCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMBillSpaceCell.m; sourceTree = "<group>"; };
+		C39770191FC1AAE0001063C4 /* CMBillSpaceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CMBillSpaceCell.xib; sourceTree = "<group>"; };
 		C39AD6141FA21DEE00A000FA /* CMBorrowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMBorrowCell.h; sourceTree = "<group>"; };
 		C39AD6151FA21DEE00A000FA /* CMBorrowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMBorrowCell.m; sourceTree = "<group>"; };
 		C39AD6161FA21DEE00A000FA /* CMChooseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMChooseCell.h; sourceTree = "<group>"; };
@@ -447,6 +510,8 @@
 		C39AD6831FA22A0600A000FA /* CBAPIUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBAPIUtil.m; sourceTree = "<group>"; };
 		C39AD6931FA2C63900A000FA /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		C39AD6941FA2C63900A000FA /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		C39C2C7C1FBA7FC300AF8470 /* CMFindTableViewHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMFindTableViewHeader.h; sourceTree = "<group>"; };
+		C39C2C7D1FBA7FC300AF8470 /* CMFindTableViewHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMFindTableViewHeader.m; sourceTree = "<group>"; };
 		C39ED5CA1F74071B00BA3478 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		C3A4BB5A1F29A2DE0082030A /* CMMineHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMineHeaderView.h; sourceTree = "<group>"; };
 		C3A4BB5B1F29A2DE0082030A /* CMMineHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMineHeaderView.m; sourceTree = "<group>"; };
@@ -458,6 +523,20 @@
 		C3A4BB661F29B8E50082030A /* CMMineHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMineHeader.m; sourceTree = "<group>"; };
 		C3A4BB681F29B9390082030A /* CMMineHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMineHeaderCell.h; sourceTree = "<group>"; };
 		C3A4BB691F29B9390082030A /* CMMineHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMineHeaderCell.m; sourceTree = "<group>"; };
+		C3A7D5361FBB421B009204A8 /* CMBillListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMBillListViewController.m; sourceTree = "<group>"; };
+		C3A7D5371FBB421B009204A8 /* CMBillListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMBillListViewController.h; sourceTree = "<group>"; };
+		C3A7D53C1FBB421B009204A8 /* CBBillDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBBillDetailViewController.m; sourceTree = "<group>"; };
+		C3A7D53D1FBB421B009204A8 /* CBBillDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBBillDetailViewController.h; sourceTree = "<group>"; };
+		C3A7D5491FBBFEF7009204A8 /* CMBillAddViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMBillAddViewController.h; sourceTree = "<group>"; };
+		C3A7D54A1FBBFEF7009204A8 /* CMBillAddViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMBillAddViewController.m; sourceTree = "<group>"; };
+		C3A7D54B1FBBFEF7009204A8 /* CMBillAddViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CMBillAddViewController.xib; sourceTree = "<group>"; };
+		C3A7D54E1FBC015B009204A8 /* CMBillListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMBillListCell.h; sourceTree = "<group>"; };
+		C3A7D54F1FBC015B009204A8 /* CMBillListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMBillListCell.m; sourceTree = "<group>"; };
+		C3A7D5501FBC015B009204A8 /* CMBillListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CMBillListCell.xib; sourceTree = "<group>"; };
+		C3A7D5571FBC08DF009204A8 /* CMBillListSpaceCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMBillListSpaceCell.h; sourceTree = "<group>"; };
+		C3A7D5581FBC08DF009204A8 /* CMBillListSpaceCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMBillListSpaceCell.m; sourceTree = "<group>"; };
+		C3A7D5591FBC08DF009204A8 /* CMBillListSpaceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CMBillListSpaceCell.xib; sourceTree = "<group>"; };
+		C3A7D55C1FBC0A26009204A8 /* tub4_x3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tub4_x3.png; sourceTree = "<group>"; };
 		C3A8B4DE1FA3675C00AD9610 /* CMHomeWareCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMHomeWareCell.h; sourceTree = "<group>"; };
 		C3A8B4DF1FA3675C00AD9610 /* CMHomeWareCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMHomeWareCell.m; sourceTree = "<group>"; };
 		C3A8B4E51FA56B5100AD9610 /* CMFind.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMFind.h; sourceTree = "<group>"; };
@@ -667,6 +746,8 @@
 		C3D2E0861F21DFE30037CFF3 /* CMHomeAppCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMHomeAppCell.m; sourceTree = "<group>"; };
 		C3D2E0881F21DFFB0037CFF3 /* CMHomeContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMHomeContentCell.h; sourceTree = "<group>"; };
 		C3D2E0891F21DFFB0037CFF3 /* CMHomeContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMHomeContentCell.m; sourceTree = "<group>"; };
+		C3D95A331FBAB0AA00341547 /* CMFindNexNoteView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMFindNexNoteView.h; sourceTree = "<group>"; };
+		C3D95A341FBAB0AA00341547 /* CMFindNexNoteView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMFindNexNoteView.m; sourceTree = "<group>"; };
 		C3E3E17C1F301EAD0021EB09 /* index_banner@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "index_banner@2x.png"; path = "../index_banner@2x.png"; sourceTree = "<group>"; };
 		C3E3E17F1F302FCC0021EB09 /* icon_01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_01@2x.png"; sourceTree = "<group>"; };
 		C3E3E1801F302FCC0021EB09 /* icon_01@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_01@3x.png"; sourceTree = "<group>"; };
@@ -888,6 +969,50 @@
 			path = CaibeiMarketUITests;
 			sourceTree = "<group>";
 		};
+		C31529271FBC83C4009319DC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C31529281FBC83F1009319DC /* CMBillAddQuDaoCell.h */,
+				C31529291FBC83F1009319DC /* CMBillAddQuDaoCell.m */,
+				C315292A1FBC83F1009319DC /* CMBillAddQuDaoCell.xib */,
+				C315292D1FBDDE4E009319DC /* CMBillProjectNameCell.h */,
+				C315292E1FBDDE4E009319DC /* CMBillProjectNameCell.m */,
+				C315292F1FBDDE4E009319DC /* CMBillProjectNameCell.xib */,
+				C31529381FBDDEB4009319DC /* CMBillMoneyNumCell.h */,
+				C31529391FBDDEB4009319DC /* CMBillMoneyNumCell.m */,
+				C315293A1FBDDEB4009319DC /* CMBillMoneyNumCell.xib */,
+				C315293D1FBDDEC8009319DC /* CMBillMoneyTimeCell.h */,
+				C315293E1FBDDEC8009319DC /* CMBillMoneyTimeCell.m */,
+				C315293F1FBDDEC8009319DC /* CMBillMoneyTimeCell.xib */,
+				C31529481FBDDF1A009319DC /* CMBillMoneyLilvCell.h */,
+				C31529491FBDDF1A009319DC /* CMBillMoneyLilvCell.m */,
+				C315294A1FBDDF1A009319DC /* CMBillMoneyLilvCell.xib */,
+				C315294D1FBDDF2E009319DC /* CMBillMoneyLimitCell.h */,
+				C315294E1FBDDF2E009319DC /* CMBillMoneyLimitCell.m */,
+				C315294F1FBDDF2E009319DC /* CMBillMoneyLimitCell.xib */,
+				C31529521FBDDF5B009319DC /* CMBillMoneyNoteCell.h */,
+				C31529531FBDDF5B009319DC /* CMBillMoneyNoteCell.m */,
+				C31529541FBDDF5B009319DC /* CMBillMoneyNoteCell.xib */,
+				C315295F1FBF2CC6009319DC /* CMBillNoteCell.h */,
+				C31529601FBF2CC6009319DC /* CMBillNoteCell.m */,
+				C31529611FBF2CC6009319DC /* CMBillNoteCell.xib */,
+				C39770171FC1AAE0001063C4 /* CMBillSpaceCell.h */,
+				C39770181FC1AAE0001063C4 /* CMBillSpaceCell.m */,
+				C39770191FC1AAE0001063C4 /* CMBillSpaceCell.xib */,
+				C315295E1FBEB08A009319DC /* CMBillCellProtocol.h */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C31529571FBE92DA009319DC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C315295B1FBE93E2009319DC /* CBillAddHeaderView.h */,
+				C315295C1FBE93E2009319DC /* CBillAddHeaderView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		C340D7B31F47B88F00AD0DAE /* BuglyManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -985,6 +1110,7 @@
 		C368EED71F3834C8008146D2 /* Finder */ = {
 			isa = PBXGroup;
 			children = (
+				C39C2C781FBA7E9700AF8470 /* View */,
 				C3B6B1D31F42994A00916C7F /* Model */,
 				C3B6B1C91F42890600916C7F /* find_head_note@2x.png */,
 				C3B6B1D11F42962F00916C7F /* find_inssurance_next@2x.png */,
@@ -1197,6 +1323,17 @@
 			path = iCarousel;
 			sourceTree = "<group>";
 		};
+		C39C2C781FBA7E9700AF8470 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C39C2C7C1FBA7FC300AF8470 /* CMFindTableViewHeader.h */,
+				C39C2C7D1FBA7FC300AF8470 /* CMFindTableViewHeader.m */,
+				C3D95A331FBAB0AA00341547 /* CMFindNexNoteView.h */,
+				C3D95A341FBAB0AA00341547 /* CMFindNexNoteView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		C3A4BB591F29A2B60082030A /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -1231,6 +1368,53 @@
 				C3A4BB661F29B8E50082030A /* CMMineHeader.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		C3A7D5351FBB421B009204A8 /* BillList */ = {
+			isa = PBXGroup;
+			children = (
+				C3A7D5371FBB421B009204A8 /* CMBillListViewController.h */,
+				C3A7D5361FBB421B009204A8 /* CMBillListViewController.m */,
+				C3A7D5411FBB4220009204A8 /* View */,
+			);
+			path = BillList;
+			sourceTree = "<group>";
+		};
+		C3A7D5381FBB421B009204A8 /* BillAdd */ = {
+			isa = PBXGroup;
+			children = (
+				C31529571FBE92DA009319DC /* View */,
+				C31529271FBC83C4009319DC /* Cell */,
+				C3A7D5491FBBFEF7009204A8 /* CMBillAddViewController.h */,
+				C3A7D54A1FBBFEF7009204A8 /* CMBillAddViewController.m */,
+				C3A7D54B1FBBFEF7009204A8 /* CMBillAddViewController.xib */,
+			);
+			path = BillAdd;
+			sourceTree = "<group>";
+		};
+		C3A7D53B1FBB421B009204A8 /* BillDetail */ = {
+			isa = PBXGroup;
+			children = (
+				C3A7D53D1FBB421B009204A8 /* CBBillDetailViewController.h */,
+				C3A7D53C1FBB421B009204A8 /* CBBillDetailViewController.m */,
+			);
+			path = BillDetail;
+			sourceTree = "<group>";
+		};
+		C3A7D5411FBB4220009204A8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C3A7D55C1FBC0A26009204A8 /* tub4_x3.png */,
+				C3A7D54E1FBC015B009204A8 /* CMBillListCell.h */,
+				C3A7D54F1FBC015B009204A8 /* CMBillListCell.m */,
+				C3A7D5501FBC015B009204A8 /* CMBillListCell.xib */,
+				C3A7D5571FBC08DF009204A8 /* CMBillListSpaceCell.h */,
+				C3A7D5581FBC08DF009204A8 /* CMBillListSpaceCell.m */,
+				C3A7D5591FBC08DF009204A8 /* CMBillListSpaceCell.xib */,
+				C31529241FBC7CD0009319DC /* CMBillListHeaderView.h */,
+				C31529251FBC7CD0009319DC /* CMBillListHeaderView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		C3A8B4DD1FA3670500AD9610 /* Ware */ = {
@@ -1398,6 +1582,7 @@
 		C3B3BB121F21AEC8000C9DC8 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C3D95A361FBAB95100341547 /* jizhang */,
 				C39AD6801FA21E4400A000FA /* API */,
 				C39AD6111FA21DEE00A000FA /* Borrow */,
 				C368EED71F3834C8008146D2 /* Finder */,
@@ -1884,6 +2069,16 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
+		C3D95A361FBAB95100341547 /* jizhang */ = {
+			isa = PBXGroup;
+			children = (
+				C3A7D5381FBB421B009204A8 /* BillAdd */,
+				C3A7D53B1FBB421B009204A8 /* BillDetail */,
+				C3A7D5351FBB421B009204A8 /* BillList */,
+			);
+			path = jizhang;
+			sourceTree = "<group>";
+		};
 		C3E3E17E1F302FBE0021EB09 /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -2068,9 +2263,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C397701B1FC1AAE0001063C4 /* CMBillSpaceCell.xib in Resources */,
 				C3B3BBF21F21AEC9000C9DC8 /* icon_tabbar_discovery_selected.png in Resources */,
 				C3B6B1D21F42962F00916C7F /* find_inssurance_next@2x.png in Resources */,
 				C340D7A81F473B2E00AD0DAE /* setting@3x.png in Resources */,
+				C31529511FBDDF2E009319DC /* CMBillMoneyLimitCell.xib in Resources */,
+				C315294C1FBDDF1A009319DC /* CMBillMoneyLilvCell.xib in Resources */,
 				C3B6B1C41F41AEE700916C7F /* XBMeHeaderView.xib in Resources */,
 				C39AD6691FA21DEE00A000FA /* condition_normal_low@2x.png in Resources */,
 				C3B3BBF51F21AEC9000C9DC8 /* icon_tabbar_homepage_selected.png in Resources */,
@@ -2087,13 +2285,17 @@
 				C3B3BBFA1F21AEC9000C9DC8 /* icon_tabbar_merchant_selected@2x.png in Resources */,
 				C3B3BBE81F21AEC9000C9DC8 /* MBHUD_Error@3x.png in Resources */,
 				C39AD66B1FA21DEE00A000FA /* icon-50@2x.png in Resources */,
+				C315292C1FBC83F1009319DC /* CMBillAddQuDaoCell.xib in Resources */,
 				C3B3BBF31F21AEC9000C9DC8 /* icon_tabbar_homepage.png in Resources */,
 				C3B3BBD11F21AEC9000C9DC8 /* 4.jpg in Resources */,
+				C31529411FBDDEC8009319DC /* CMBillMoneyTimeCell.xib in Resources */,
+				C315293C1FBDDEB4009319DC /* CMBillMoneyNumCell.xib in Resources */,
 				C3E691D41FAB664F0033AF10 /* 04.png in Resources */,
 				C3B696D81F492FD70003A5E1 /* advertise@2x.png in Resources */,
 				C3E3E17D1F301EAD0021EB09 /* index_banner@2x.png in Resources */,
 				C3B3BC051F21AEC9000C9DC8 /* icon_tabbar_onsite@2x.png in Resources */,
 				C3B3BBFE1F21AEC9000C9DC8 /* icon_tabbar_mine_selected@2x.png in Resources */,
+				C3A7D5521FBC015B009204A8 /* CMBillListCell.xib in Resources */,
 				C3E691D51FAB664F0033AF10 /* 01.png in Resources */,
 				C3E3E1891F302FCC0021EB09 /* icon_04@2x.png in Resources */,
 				C3A8B50E1FA751C200AD9610 /* reset.css in Resources */,
@@ -2105,6 +2307,7 @@
 				C34740A41F4A60550015914A /* fish_02@2x.png in Resources */,
 				C30A00C01FB2FAD700CABAD5 /* Default_02.png in Resources */,
 				C340D7A31F473A1000AD0DAE /* about@3x.png in Resources */,
+				C31529561FBDDF5B009319DC /* CMBillMoneyNoteCell.xib in Resources */,
 				C3B6B1CA1F42890600916C7F /* find_head_note@2x.png in Resources */,
 				C3B3BBF91F21AEC9000C9DC8 /* icon_tabbar_merchant_selected.png in Resources */,
 				C3B3BBCD1F21AEC9000C9DC8 /* 12.jpg in Resources */,
@@ -2134,17 +2337,21 @@
 				C39AD67D1FA21DEE00A000FA /* ZZCircleProgress.bundle in Resources */,
 				C39AD6671FA21DEE00A000FA /* condition_light_select@2x.png in Resources */,
 				C3E3E1881F302FCC0021EB09 /* icon_03@3x.png in Resources */,
+				C3A7D55D1FBC0A26009204A8 /* tub4_x3.png in Resources */,
+				C31529311FBDDE4E009319DC /* CMBillProjectNameCell.xib in Resources */,
 				C34740AA1F4A60550015914A /* fish_08@2x.png in Resources */,
 				C3B3BBCB1F21AEC9000C9DC8 /* 10.jpg in Resources */,
 				C34740A11F4A60550015914A /* fish_012@2x.png in Resources */,
 				C39AD6611FA21DEE00A000FA /* choose.json in Resources */,
 				C3B3BBD61F21AEC9000C9DC8 /* 9.jpg in Resources */,
+				C31529631FBF2CC6009319DC /* CMBillNoteCell.xib in Resources */,
 				C3B3BBD51F21AEC9000C9DC8 /* 8.jpg in Resources */,
 				C3B3BBE91F21AEC9000C9DC8 /* MBHUD_Info@2x.png in Resources */,
 				C3B3BBE71F21AEC9000C9DC8 /* MBHUD_Error@2x.png in Resources */,
 				C385401A1FAAE2C7003E7156 /* find.json in Resources */,
 				C3B3BC021F21AEC9000C9DC8 /* icon_tabbar_misc_selected@2x.png in Resources */,
 				C34740A81F4A60550015914A /* fish_06@2x.png in Resources */,
+				C3A7D55B1FBC08DF009204A8 /* CMBillListSpaceCell.xib in Resources */,
 				C3B3BBD41F21AEC9000C9DC8 /* 7.jpg in Resources */,
 				C34740AB1F4A60550015914A /* fish_09@2x.png in Resources */,
 				C3E3E18A1F302FCC0021EB09 /* icon_04@3x.png in Resources */,
@@ -2173,6 +2380,7 @@
 				C34740A71F4A60550015914A /* fish_05@2x.png in Resources */,
 				C3B3BC041F21AEC9000C9DC8 /* icon_tabbar_nearby_selected.png in Resources */,
 				C3B3BBFB1F21AEC9000C9DC8 /* icon_tabbar_mine.png in Resources */,
+				C3A7D54D1FBBFEF7009204A8 /* CMBillAddViewController.xib in Resources */,
 				C34740A91F4A60550015914A /* fish_07@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2359,12 +2567,16 @@
 				C3F647001F24AAD5005952EC /* CMHomeAppIcon.m in Sources */,
 				C3B6B1C81F42883400916C7F /* CMFindHeadView.m in Sources */,
 				C3F647061F24D229005952EC /* CMFindPwdViewController.m in Sources */,
+				C397701A1FC1AAE0001063C4 /* CMBillSpaceCell.m in Sources */,
 				C3B7883B1F3D6BA10024737A /* AdPageView.m in Sources */,
 				C3B788471F3D6BA10024737A /* XYTransition.m in Sources */,
 				C3E3E1911F304B700021EB09 /* CMHomeContentCorverFlowItem.m in Sources */,
+				C3A7D54C1FBBFEF7009204A8 /* CMBillAddViewController.m in Sources */,
 				C35220201F243523002707E8 /* CMHomeBannerCell.m in Sources */,
 				C3D2E0871F21DFE30037CFF3 /* CMHomeAppCell.m in Sources */,
 				C3B3BBD91F21AEC9000C9DC8 /* WaterFallCollectionViewCell.m in Sources */,
+				C31529501FBDDF2E009319DC /* CMBillMoneyLimitCell.m in Sources */,
+				C39C2C7E1FBA7FC300AF8470 /* CMFindTableViewHeader.m in Sources */,
 				C3B3BBB51F21AEC9000C9DC8 /* NJKWebViewProgress.m in Sources */,
 				B0D0C9561F1F9C6900EBA36F /* AppDelegate.m in Sources */,
 				B05C5B821F2B27F2009E5CC6 /* CMSettingViewController.m in Sources */,
@@ -2378,6 +2590,7 @@
 				C327941C1F397B1E00AE02A3 /* CMPortraitViewController.m in Sources */,
 				C3B3BBBF1F21AEC9000C9DC8 /* CMUserManager.m in Sources */,
 				C3B3BBAF1F21AEC9000C9DC8 /* RootNavigationController.m in Sources */,
+				C31529551FBDDF5B009319DC /* CMBillMoneyNoteCell.m in Sources */,
 				C3BB83651F3CA3CB008C8EA7 /* UAUtil.m in Sources */,
 				C3B7883C1F3D6BA10024737A /* AESCipher.m in Sources */,
 				C3B3BBC11F21AEC9000C9DC8 /* EmitterViewController.m in Sources */,
@@ -2397,6 +2610,7 @@
 				C39AD65E1FA21DEE00A000FA /* CMBorrowChooseFooterView.m in Sources */,
 				C3B3BBBE1F21AEC9000C9DC8 /* CMUserInfo.m in Sources */,
 				C3C8160A1F46A3DF0027115F /* CMShareManager.m in Sources */,
+				C315294B1FBDDF1A009319DC /* CMBillMoneyLilvCell.m in Sources */,
 				C3B788421F3D6BA10024737A /* HeaderModel.m in Sources */,
 				C39AD65C1FA21DEE00A000FA /* CMChooseCell.m in Sources */,
 				C327941F1F397BB200AE02A3 /* CMSettingCell.m in Sources */,
@@ -2412,25 +2626,34 @@
 				C385B7601FB498F400DDBA87 /* CMHomeWare1_3Cell.m in Sources */,
 				C33FD9181FB69196003C1A0D /* CMHomeSeperateCell.m in Sources */,
 				C39AD6761FA21DEE00A000FA /* CMBorrowDetailNotesCell.m in Sources */,
+				C31529261FBC7CD0009319DC /* CMBillListHeaderView.m in Sources */,
 				C39AD6781FA21DEE00A000FA /* CMBorrowDetailSpaceCell.m in Sources */,
+				C315295D1FBE93E2009319DC /* CBillAddHeaderView.m in Sources */,
 				C3B3BBD81F21AEC9000C9DC8 /* PersonListCollectionViewCell.m in Sources */,
+				C3A7D53E1FBB421B009204A8 /* CMBillListViewController.m in Sources */,
 				C3A8B4EA1FA56B8A00AD9610 /* CMFindItem.m in Sources */,
 				C3B3BBC51F21AEC9000C9DC8 /* CMHomeViewController.m in Sources */,
 				C3A4BB6A1F29B9390082030A /* CMMineHeaderCell.m in Sources */,
 				C35220301F245127002707E8 /* CMRegistViewController.m in Sources */,
 				C3BB83681F3CA63F008C8EA7 /* UAHTTPSessionManager.m in Sources */,
 				C39AD6771FA21DEE00A000FA /* CMBorrowDetailNoteView.m in Sources */,
+				C3A7D55A1FBC08DF009204A8 /* CMBillListSpaceCell.m in Sources */,
+				C315292B1FBC83F1009319DC /* CMBillAddQuDaoCell.m in Sources */,
 				C39AD65B1FA21DEE00A000FA /* CMBorrowCell.m in Sources */,
 				C3B7883D1F3D6BA10024737A /* BaseRequestAPI.m in Sources */,
 				C3B3BBB11F21AEC9000C9DC8 /* MainTabBarController.m in Sources */,
 				C340D7E31F47BF4000AD0DAE /* MTAManager.m in Sources */,
 				C3B6B1D01F428E0200916C7F /* CMFindInsuranceCell.m in Sources */,
 				C3F647031F24C773005952EC /* CMPersonInfoSetingViewController.m in Sources */,
+				C31529401FBDDEC8009319DC /* CMBillMoneyTimeCell.m in Sources */,
 				C39AD66F1FA21DEE00A000FA /* CMBorrowConditionView.m in Sources */,
 				C3B3BBC81F21AEC9000C9DC8 /* PersonModel.m in Sources */,
+				C31529301FBDDE4E009319DC /* CMBillProjectNameCell.m in Sources */,
+				C3A7D5511FBC015B009204A8 /* CMBillListCell.m in Sources */,
 				C3B788451F3D6BA10024737A /* OpenUDID.m in Sources */,
 				C3BB83621F3C9EDB008C8EA7 /* UAHttpRequestModelManager.m in Sources */,
 				C3B3BBC61F21AEC9000C9DC8 /* PersonListLogic.m in Sources */,
+				C3A7D5401FBB421B009204A8 /* CBBillDetailViewController.m in Sources */,
 				C340D7B71F47B88F00AD0DAE /* BuglyManager.m in Sources */,
 				C3E3E18E1F3032980021EB09 /* CMHomeContentCorverFlowView.m in Sources */,
 				C3B3BBBC1F21AEC9000C9DC8 /* ShareManager.m in Sources */,
@@ -2446,6 +2669,7 @@
 				C3B3BBDB1F21AEC9000C9DC8 /* LoginViewController.m in Sources */,
 				C39AD66C1FA21DEE00A000FA /* CMBorrow.m in Sources */,
 				C3D2E0811F21DDC90037CFF3 /* CMHomeModel.m in Sources */,
+				C31529621FBF2CC6009319DC /* CMBillNoteCell.m in Sources */,
 				C39AD6601FA21DEE00A000FA /* CMChooseItemView.m in Sources */,
 				C3E691CE1FAB64B70033AF10 /* CBNewGuideView.m in Sources */,
 				C3B3BBB91F21AEC9000C9DC8 /* RxWebViewNavigationViewController.m in Sources */,
@@ -2456,6 +2680,7 @@
 				C3B3BBE01F21AEC9000C9DC8 /* MsgLogic.m in Sources */,
 				C39AD67A1FA21DEE00A000FA /* CMBorrowDetail.m in Sources */,
 				B0D0C9531F1F9C6900EBA36F /* main.m in Sources */,
+				C3D95A351FBAB0AA00341547 /* CMFindNexNoteView.m in Sources */,
 				C39AD67B1FA21DEE00A000FA /* NSTimer+timerBlock.m in Sources */,
 				C3B3BBC71F21AEC9000C9DC8 /* WaterFallListLogic.m in Sources */,
 				C385B75D1FB498DD00DDBA87 /* CMHomeWareNoneCell.m in Sources */,
@@ -2470,6 +2695,7 @@
 				C3B3BBBD1F21AEC9000C9DC8 /* GameInfo.m in Sources */,
 				C3C295FE1F447A3B005F65B8 /* CMUniversalJumpDefine.m in Sources */,
 				C3B3BBB31F21AEC9000C9DC8 /* TabBarBadge.m in Sources */,
+				C315293B1FBDDEB4009319DC /* CMBillMoneyNumCell.m in Sources */,
 				C39AD6701FA21DEE00A000FA /* CMBorrwoStarView.m in Sources */,
 				C340D7E91F47ED4600AD0DAE /* MTADefine.m in Sources */,
 				C35220261F243809002707E8 /* CMHomeBanner.m in Sources */,

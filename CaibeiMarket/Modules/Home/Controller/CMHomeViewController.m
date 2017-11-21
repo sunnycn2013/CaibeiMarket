@@ -72,7 +72,6 @@ NSString * const kCMHomeContentCellIdentifier      = @"HomeContent";
     
     NSDictionary * params = [CBAPIUtil getAPIDataWith:@"index.json"];
     self.homeModel = [CMHomeModel mj_objectWithKeyValues:params];
-    NSLog(@"aa");
     [self loadData];
 }
 

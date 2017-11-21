@@ -51,9 +51,10 @@
 
 - (void)fillData:(id)model
 {
-    if ([model isKindOfClass:[CMFindWare  class]]) {
-        self.model = (CMFindWare *)model;
+    if (![model isKindOfClass:[CMFindWare  class]]) {
+        return;
     }
+    self.model = (CMFindWare *)model;
     NSString * imageURL = [NSString stringWithFormat:@"%@%@",URL_main,self.model.img];
     [self.cardImageView setImageWithURL:[NSURL URLWithString:imageURL] placeholder:[UIImage imageNamed:@"icaibei_placeholder"]];
     [self.cardTitleLabel setText:self.model.title];

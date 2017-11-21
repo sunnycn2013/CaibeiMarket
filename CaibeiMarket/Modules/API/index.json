@@ -1,145 +1,116 @@
-{
-    "resultCode": "0000",
-    "message": "操作成功",
-    "properties": [],
-    "pageSize": 10,
-    "pageNumber": 1,
-    "totalCount": 0,
-    "pageCount": 0,
-    "listData": [
-        {
-            "pattern": "banner",
-            "bannerList": [
-                {
-                    "img": "https://cdn.daishangqian.com/vue/static/img/banner6.ca2ff41.png",
-                    "url": "https://api.daishangqian.com/vue/?channel=595b17afd070#!/active/promotion/page6",
-                    "jump": {
-                        "title": "title",
-                        "type": "h5",
-                        "url": "https://api.daishangqian.com/vue/?channel=595b17afd070#!/active/promotion/page6"
-                    }
-                },
-                {
-                    "img": "https://files.coinmarketcap.com/static/img/coins/128x128/ethereum.png",
-                    "url": "https://api.daishangqian.com/vue/?channel=595b17afd070#!/active/promotion/page6",
-                    "jump": {
-                        "title": "title",
-                        "type": "h5",
-                        "url": "https://api.daishangqian.com/vue/?channel=595b17afd070#!/active/promotion/page6"
-                    }
-                },
-                {
-                    "img": "https://files.coinmarketcap.com/static/img/coins/128x128/ripple.png",
-                    "url": "https://api.daishangqian.com/vue/?channel=595b17afd070#!/active/promotion/page6",
-                    "jump": {
-                        "title": "title",
-                        "type": "h5",
-                        "url": "https://api.daishangqian.com/vue/?channel=595b17afd070#!/active/promotion/page6"
-                    }
-                }
-            ]
-        },
-        {
-            "pattern": "entrance",
-            "entranceList": [
-                {
-                    "img": "https://icaibei.cn/backupscreen/app/entrance_01.png",
-                    "url": "https://www.baidu.com/",
-                    "title": "小额贷"
-                },
-                {
-                    "img": "https://icaibei.cn/backupscreen/app/entrance_02.png",
-                    "url": "https://www.baidu.com/",
-                    "title": "大额免息"
-                },
-                {
-                    "img": "https://icaibei.cn/backupscreen/app/entrance_03.png",
-                    "url": "https://www.baidu.com/",
-                    "title": "白领贷"
-                },
-                {
-                    "img": "https://icaibei.cn/backupscreen/app/entrance_03.png",
-                    "url": "https://www.baidu.com/",
-                    "title": "公积金查询"
-                },
-                {
-                    "img": "https://icaibei.cn/backupscreen/app/entrance_03.png",
-                    "url": "https://www.baidu.com/",
-                    "title": "常见问题"
-                }
-            ]
-        },
-        {
-            "pattern": "product",
-            "title": "库币将于11月2日上线阿希Asch(XAS)",
-            "des": "与许多关注中国发展的外国学者一样，这些天拉鲁什最关心的话题",
-            "time": "2017.10.25",
-            "author": "product",
-            "url": "https://api.daishangqian.com/vue/?channel=595b17afd070#!/active/promotion/page6",
-            "img": "https://pavo.elongstatic.com/trip600/000avwfB.jpg"
-        },
-        {
-            "pattern": "product",
-            "title": "库币将于11月2日上线阿希Asch(XAS)",
-            "des": "与许多关注中国发展的外国学者一样，这些天拉鲁什最关心的话题",
-            "time": "2017.10.25",
-            "author": "product",
-            "url": "https://api.daishangqian.com/vue/?channel=595b17afd070#!/active/promotion/page6",
-            "img": "https://pavo.elongstatic.com/trip600/000avwfB.jpg"
-        },
-        {
-            "pattern": "product",
-            "title": "库币将于11月2日上线阿希Asch(XAS)",
-            "des": "与许多关注中国发展的外国学者一样，这些天拉鲁什最关心的话题",
-            "time": "2017.10.25",
-            "author": "product",
-            "url": "https://api.daishangqian.com/vue/?channel=595b17afd070#!/active/promotion/page6",
-            "img": "https://pavo.elongstatic.com/trip600/000avwfB.jpg"
-        },
-        {
-            "pattern": "product",
-            "title": "库币将于11月2日上线阿希Asch(XAS)",
-            "des": "与许多关注中国发展的外国学者一样，这些天拉鲁什最关心的话题",
-            "time": "2017.10.25",
-            "author": "product",
-            "url": "https://api.daishangqian.com/vue/?channel=595b17afd070#!/active/promotion/page6",
-            "img": "https://pavo.elongstatic.com/trip600/000avwfB.jpg"
-        },
-        {
-            "pattern": "product",
-            "title": "库币将于11月2日上线阿希Asch(XAS)",
-            "des": "与许多关注中国发展的外国学者一样，这些天拉鲁什最关心的话题",
-            "time": "2017.10.25",
-            "author": "product",
-            "url": "https://api.daishangqian.com/vue/?channel=595b17afd070#!/active/promotion/page6",
-            "img": "https://pavo.elongstatic.com/trip600/000avwfB.jpg"
-        },
-        {
-            "pattern": "product",
-            "title": "库币将于11月2日上线阿希Asch(XAS)",
-            "des": "与许多关注中国发展的外国学者一样，这些天拉鲁什最关心的话题",
-            "time": "2017.10.25",
-            "author": "product",
-            "url": "https://api.daishangqian.com/vue/?channel=595b17afd070#!/active/promotion/page6",
-            "img": "https://pavo.elongstatic.com/trip600/000avwfB.jpg"
-        },
-        {
-            "pattern": "product",
-            "title": "库币将于11月2日上线阿希Asch(XAS)",
-            "des": "与许多关注中国发展的外国学者一样，这些天拉鲁什最关心的话题",
-            "time": "2017.10.25",
-            "author": "product",
-            "url": "https://api.daishangqian.com/vue/?channel=595b17afd070#!/active/promotion/page6",
-            "img": "https://pavo.elongstatic.com/trip600/000avwfB.jpg"
-        },
-        {
-            "pattern": "product",
-            "title": "库币将于11月2日上线阿希Asch(XAS)",
-            "des": "与许多关注中国发展的外国学者一样，这些天拉鲁什最关心的话题",
-            "time": "2017.10.25",
-            "author": "product",
-            "url": "https://api.daishangqian.com/vue/?channel=595b17afd070#!/active/promotion/page6",
-            "img": "https://pavo.elongstatic.com/trip600/000avwfB.jpg"
-        }
-    ]
-}
+ [
+  {
+  "pattern": "banner",
+  "bannerList": [
+                 {
+                 "img": "https://icaibei.cn/backupscreen/banner01.png",
+                 "url": "https://api.daishangqian.com/vue/?channel=595b17afd070#!/active/promotion/page6",
+                 "jump": {
+                 "title": "title",
+                 "type": "h5",
+                 "url": "https://caibei.coding.me/2017/11/08/01%E8%B4%B7%E6%AC%BE%E6%80%BB%E8%A2%AB%E6%8B%92%EF%BC%9F%E8%B4%B7%E6%AC%BE%E6%94%BB%E7%95%A5%E5%A4%A7%E5%85%A8/"
+                 }
+                 },
+                 {
+                 "img": "https://icaibei.cn/backupscreen/banner02.png",
+                 "url": "https://api.daishangqian.com/vue/?channel=595b17afd070#!/active/promotion/page6",
+                 "jump": {
+                 "title": "title",
+                 "type": "h5",
+                 "url": "https://caibei.coding.me/2017/11/08/01%E8%B4%B7%E6%AC%BE%E6%80%BB%E8%A2%AB%E6%8B%92%EF%BC%9F%E8%B4%B7%E6%AC%BE%E6%94%BB%E7%95%A5%E5%A4%A7%E5%85%A8/"
+                 }
+                 },
+                 {
+                 "img": "https://icaibei.cn/backupscreen/banner03.png",
+                 "url": "https://api.daishangqian.com/vue/?channel=595b17afd070#!/active/promotion/page6",
+                 "jump": {
+                 "title": "title",
+                 "type": "h5",
+                 "url": "https://caibei.coding.me/2017/11/08/01%E8%B4%B7%E6%AC%BE%E6%80%BB%E8%A2%AB%E6%8B%92%EF%BC%9F%E8%B4%B7%E6%AC%BE%E6%94%BB%E7%95%A5%E5%A4%A7%E5%85%A8/"
+                 }
+                 }
+                 ]
+  },
+  {
+  "pattern": "entrance",
+  "entranceList": [
+                   {
+                   "img": "https://icaibei.cn/backupscreen/app/entrance_01@3x.png",
+                   "url": "https://www.baidu.com/",
+                   "patton": "jisu",
+                   "type": "native",
+                   "title": "极速贷"
+                   },
+                   {
+                   "img": "https://icaibei.cn/backupscreen/app/entrance_02@3x.png",
+                   "url": "https://www.baidu.com/",
+                   "patton": "xinyong",
+                   "type": "native",
+                   "title": "信用贷"
+                   },
+                   {
+                   "img": "https://icaibei.cn/backupscreen/app/entrance_03@3x.png",
+                   "url": "https://www.baidu.com/",
+                   "patton": "bailing",
+                   "type": "native",
+                   "title": "白领贷"
+                   },
+                   {
+                   "img": "https://icaibei.cn/backupscreen/app/entrance_04@3x.png",
+                   "url": "http://www.icaibei.com/about/index.html",
+                   "type": "h5",
+                   "title": "关于我们"
+                   }
+                   ]
+  },
+  {
+  "pattern": "product",
+  "title": "申请贷款总被拒？为什么我总是借不到钱？网贷相比于一般的银行贷款，是属于比较简单方便的",
+  "des": "你是不是三无人员？没工作，没收入，没资产？那你基本上不具备任何还款能力了，网贷平台自然是不会借钱给你的",
+  "time": "2017.10.25",
+  "author": "product",
+  "url": "https://caibei.coding.me/2017/11/08/01%E8%B4%B7%E6%AC%BE%E6%80%BB%E8%A2%AB%E6%8B%92%EF%BC%9F%E8%B4%B7%E6%AC%BE%E6%94%BB%E7%95%A5%E5%A4%A7%E5%85%A8/",
+  "img": "https://icaibei.cn/backupscreen/app/news/new01.png"
+  },
+  {
+  "pattern": "productNone",
+  "title": "关于贷款，你所不知道的贷款必杀技",
+  "des": "生活中，我们每个人都难免遇到缺钱的情况，或资金周转，或创业，这个时候除了向亲戚、朋友、家人借钱之外",
+  "time": "2017.10.25",
+  "author": "product",
+  "url": "https://caibei.coding.me/2017/11/08/02%E5%85%B3%E4%BA%8E%E8%B4%B7%E6%AC%BE%EF%BC%8C%E4%BD%A0%E6%89%80%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E8%B4%B7%E6%AC%BE%E5%BF%85%E6%9D%80%E6%8A%80/",
+  "img": "https://icaibei.cn/backupscreen/app/news/new02.png"
+  },
+  {
+  "pattern": "product1_3",
+  "title": "小额贷款公司的贷款流程,小额贷款公司的贷款流程一般有哪些呢",
+  "des": "不管是向银行申请小额贷款还是向小贷公司申请贷款，一般都需要提前准备好贷款资料，如身份证件、工作证明以及个人征信报告。而准备好这些资料，就进入了贷款流程",
+  "time": "2017.10.25",
+  "author": "product",
+  "url": "https://caibei.coding.me/2017/11/08/04%E5%B0%8F%E9%A2%9D%E8%B4%B7%E6%AC%BE%E5%88%A9%E6%81%AF%E4%B8%BA%E4%BB%80%E4%B9%88%E6%AF%94%E9%93%B6%E8%A1%8C%E8%B4%B7%E6%AC%BE%E9%AB%98/",
+  "img": "https://icaibei.cn/backupscreen/app/news/new03.png",
+  "images": [
+             "https://icaibei.cn/backupscreen/app/news/new03.png",
+             "https://icaibei.cn/backupscreen/app/news/new03.png",
+             "https://icaibei.cn/backupscreen/app/news/new03.png"
+             ]
+  },
+  {
+  "pattern": "product",
+  "title": "曝借款人信息1.5元1条倒卖涉这些平台",
+  "des": "在记者的调查中，各大网贷平台的贷款数据以每条0.1元至1.5元不等的价格直接出售给需要购买数据的人们",
+  "time": "2017.10.25",
+  "author": "product",
+  "url": "https://caibei.coding.me/2017/11/08/03%E5%B0%8F%E9%A2%9D%E8%B4%B7%E6%AC%BE%E5%85%AC%E5%8F%B8%E7%9A%84%E8%B4%B7%E6%AC%BE%E6%B5%81%E7%A8%8B/",
+  "img": "https://icaibei.cn/backupscreen/app/news/new04.png"
+  },
+  {
+  "pattern": "product",
+  "title": "资本热捧互联网保险 明日之星还是昨日黄花？",
+  "des": "互联网保险公司越来越多，而当前的从业者大多似乎是被动地进入互联网保险这个行业的，但随着资本的热捧，可以预见更多的互联网人会加入进来",
+  "time": "2017.10.25",
+  "author": "product",
+  "url": "https://caibei.coding.me/2017/11/08/find04_zibenrepenghujin/",
+  "img": "https://icaibei.cn/backupscreen/app/news/new04.png"
+  }
+  ]

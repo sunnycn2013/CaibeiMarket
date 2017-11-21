@@ -19,6 +19,11 @@
 - (id)floorModelAtIndexPath:(NSIndexPath *)indexPath;
 - (CGFloat)heightForRowCell;
 
+
+- (NSInteger)numberOfSections;
+
+- (NSInteger)numberOfRowsInSection:(NSInteger)section;
+
 @property (nonatomic,strong)NSString * actionType;
 @property (nonatomic,strong)NSString * title;
 @property (nonatomic,strong)NSString * jumUrl;
